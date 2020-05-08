@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+<TITLE>Price Calculator</TITLE>
+<STYLE type="text/css">
+
+a:link { text-decoration: none; color: white }
+a:visited { text-decoration: none; color: white }
+a:hover { background: none; color: #ff8000 }
+
+.Title {font-size: 16pt; color: #ff8000; text-align: left }
+.label {font-size: 12pt; text-align: left; color: white }
+.dot {background-color: #111111; color: #ff8000;}
+TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: white; border: 1; overflow: auto }
+INPUT	{background-color: #111111; color: white}
+SELECT	{background-color: #111111; color: #AFA06E}
+
+table.pcalc {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: none;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: #111111;
+	width: 450px;
+	height: 220px;
+}
+table.pcalc th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.pcalc td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: #111111;
+	-moz-border-radius: ;
+}
+table.topp {
+	border-width: 2px;
+	border-spacing: 0px;
+	border-style: ridge;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: #111111;
+	width: 420px;
+}
+table.topp th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.topp td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: #111111;
+	-moz-border-radius: ;
+}
+table.ropp {
+	border-width: 2px;
+	border-spacing: 0px;
+	border-style: ridge;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: #111111;
+	width: 450px;
+}
+table.ropp th {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.ropp td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: none;
+	border-color: gray;
+	background-color: #111111;
+	-moz-border-radius: ;
+}
+</STYLE>
+<SCRIPT LANGUAGE="Javascript" SRC="price.js"></SCRIPT>
+<SCRIPT language="Javascript" SRC="rare.js"></SCRIPT>
+<link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body bgcolor="#2d2d2d">
+<SCRIPT LANGUAGE="Javascript" SRC="layout.js">
+</SCRIPT>
+<center>
+<form Name="SelectItm">
+<table class="topp">
+  <tr>
+    <td class="celll" style="border-bottom-style: ridge" colspan="3">Diablo Item Price Calculator</td>
+  </tr>
+  <tr>
+    <td>
+      <table class="pcalc">
+        <tr>
+          <td colspan="3" class="label" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
+        </tr>
+        <tr>
+          <td class="label">Prefix:<br><select width="50%" name="Prefx" DISABLED onChange="updatePrefx();calcPrice();"></select></td>
+          <td style="text-align: center" class="label">Base Item:<br><select name="Bse" DISABLED onChange="updateSource();calcPrice();"></select></td>
+          <td class="label">Suffix:<br><select name="Suffx" DISABLED onChange="updateSuffx();calcPrice();"></select></td>
+        </tr>
+        <tr>
+          <td class="label">Value:<br><select name="Pvalue" DISABLED onChange="calcPrice();"></select></td>
+          <td style="text-align: center; border-style: none" class="label">
+            <input name="Source" type="radio" class="dot" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris" STYLE="font-style: normal">Griswold</a><br>
+            <input name="Source" type="radio" class="dot" value="Wirt" onClick="calcPrice();"><a ID="Wirt" STYLE="font-style: normal">Wirt</a><br>
+            <input name="Source" type="radio" class="dot" value="Sale" onClick="calcPrice();"><a ID="Sale" STYLE="font-style: normal">Resale</a>
+          </td>
+          <td class="label">Value:<br><select name="Svalue" DISABLED onChange="calcPrice();"></select></td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan="5" class="label">Price: <a class="label" name="Price" ID="Price">0</a></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="font-size: 6pt; text-align: left; color: #ff8000"><i>Created by: <a href="https://web.archive.org/web/2012*/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></td>
+        </tr>
+          <script language="Javascript" type="text/javascript">
+          reset();
+          </script>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+<br>
+<br>
+<FORM Name="SelectItem">
+<TABLE class="ropp">
+	<TR>
+		<TD class="celll" style="border-bottom-style: ridge" colspan="3">Diablo Item Rarity Calculator</a></TD>
+	</TR>
+	<TR>
+		<INPUT type="hidden" name="blank1">
+		<TD colspan="3" class="label" style="text-align: center">Item Class:<BR>
+			<SELECT name="Class" onChange="updateSelectMenu();">
+				<OPTION value="unvalid" SELECTED>Select this first</OPTION>
+				<OPTION>Helm</OPTION>
+				<OPTION>Armor</OPTION>
+				<OPTION>Shield</OPTION>
+				<OPTION>Sword</OPTION>
+				<OPTION>Axe</OPTION>
+				<OPTION>Club</OPTION>
+				<OPTION>Bow</OPTION>
+				<OPTION>Staff</OPTION>
+				<OPTION>Jewelry</OPTION>
+			</SELECT>	
+			<INPUT type="hidden" name="blank2">
+		</TD>
+	<TR>
+		<TD align="center">
+			<table>
+        			<TR>
+					<TD class="label"><font color="ffffff">Prefix:</font></a><BR>
+						<select name="Prefix" DISABLED onChange="validate();">
+							<OPTION SELECTED></OPTION>
+							<OPTION>1234567890</OPTION>
+						</select>
+					</TD>
+					<TD class="label"><font color="ffffff">Base Item:</font></a><BR>
+						<select name="Base" DISABLED>
+							<OPTION SELECTED>Select this second</OPTION>
+						</select>
+					</TD>
+					<TD class="label"><font color="ffffff">Suffix:</font></a><BR>
+						<select name="Suffix" DISABLED onChange="validate();">
+							<OPTION SELECTED></OPTION>
+							<OPTION>1234567890</OPTION>
+						</select>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<TABLE align="right">
+				<TR>
+					<TD ID="Valid" style="font-size: 10pt; text-align: center; color: #FFFFFA">
+					</TD>
+					<TD align="right">
+						<input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD colspan="3" class="label">Results:<BR>
+			<textarea name="Results" rows=25 cols=60 wrap="off" READONLY></textarea>
+		</TD>
+	</TR>
+	<TR>
+		<TD colspan="3" style="font-size: 6pt; text-align: left; color: #ff8000"><i>Created by: <a href="https://web.archive.org/web/2012*/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></TD>
+		</TD>
+	</TR>
+</TABLE>
+</FORM>
+</body>
+</html>

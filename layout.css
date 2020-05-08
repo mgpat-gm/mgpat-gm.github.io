@@ -1,0 +1,141 @@
+.cell   
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #FFFFFF;
+	font-size: 10pt;
+}
+.cell2  
+{
+	text-align: left;
+	white-space: nowrap;
+	color: #FFFFFF;
+	font-size: 14pt;
+}
+.cellc  
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #E16C6C;
+	font-size: 10pt;
+}
+.is 
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #ff8000;
+	font-size: 13pt;
+}
+.cellj  
+{
+	border-left: none;
+	color: #AFA06E;
+	font-size: 10pt;
+}
+.celll  
+{
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-image: url(pictures/items/orangesphere.gif);
+	text-align: center;
+	white-space: nowrap;
+	color: #AFA06E;
+	font-size: 7pt;
+}
+.cellm  
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #A0A5C8;
+	font-size: 10pt;
+}
+.cellnd  
+{
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-image: url(pictures/items/redsphere.gif);
+	text-align: right;
+	white-space: nowrap;
+	color: #AFA06E;
+	font-size: 6pt;
+}
+.cellu  
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #AFA06E;
+	font-size: 10pt;
+}
+.cellud  
+{
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-image: url(pictures/items/orangesphere.gif);
+	text-align: right;
+	white-space: nowrap;
+	color: #AFA06E;
+	font-size: 6pt;
+}
+
+.unique	{color: #AFA06E}
+.magic	{color: #A0A5C8}
+.cursed	{color: #E16C6C}
+.norm   {color: #FFFFFF}
+.oj     {color: #FF8000}
+
+.banner {
+	margin: 0;
+	font-size: 85%;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: 0em;
+	width: 10%;
+	right: auto;}
+
+.banner p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	background: #2d2d2d;
+	border: none;
+	color: #ff8000;}
+
+.banner a, div.banner em { display: block; margin: 0 0.5em }
+.banner a, div.banner em { border-top: 0px groove #CCC }
+.banner a:first-child { border-top: none }
+.banner em { color: #CFC }
+
+.banner a:link { text-decoration: none; color: white }
+.banner a:visited { text-decoration: none; color: white }
+.banner a:hover { background: none; color: #ff8000 }
+
+.banner2 {
+	margin: 0;
+	font-size: 85%;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: auto;
+	width: 10%;
+	right: 0em;
+}
+
+.banner2 p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	border: none;
+	color: #ff8000;
+}
+
+.banner2 a, div.banner em { display: block; margin: 0 0.5em }
+.banner2 a, div.banner em { border-top: 0px groove #CCC }
+.banner2 a:first-child { border-top: none }
+.banner2 em { color: #CFC }
+
+.banner2 a:link { text-decoration: none; color: white }
+.banner2 a:visited { text-decoration: none; color: white }
+.banner2 a:hover { background: none; color: #ff8000 }
