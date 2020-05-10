@@ -127,6 +127,7 @@
 .banner2 p {
 	margin: 0; 
 	padding: 0.3em 0.4em;
+	background: #2d2d2d;
 	border: none;
 	color: #ff8000;
 }
