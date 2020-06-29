@@ -3,34 +3,34 @@
 	text-align: center;
 	white-space: nowrap;
 	color: #FFFFFF;
-	font-size: 10pt;
+	font-size: .83em;
 }
 .cell2  
 {
 	text-align: left;
 	white-space: nowrap;
 	color: #FFFFFF;
-	font-size: 14pt;
+	font-size: 1.15em;
 }
 .cellc  
 {
 	text-align: center;
 	white-space: nowrap;
 	color: #E16C6C;
-	font-size: 10pt;
+	font-size: .83em;
 }
 .is 
 {
 	text-align: center;
 	white-space: nowrap;
 	color: #ff8000;
-	font-size: 13pt;
+	font-size: 1.08em;
 }
 .cellj  
 {
 	border-left: none;
 	color: #AFA06E;
-	font-size: 10pt;
+	font-size: .85em;
 }
 .celll  
 {
@@ -40,14 +40,14 @@
 	text-align: center;
 	white-space: nowrap;
 	color: #AFA06E;
-	font-size: 7pt;
+	font-size: .584em;
 }
 .cellm  
 {
 	text-align: center;
 	white-space: nowrap;
 	color: #A0A5C8;
-	font-size: 10pt;
+	font-size: .83em;
 }
 .cellnd  
 {
@@ -57,14 +57,14 @@
 	text-align: right;
 	white-space: nowrap;
 	color: #AFA06E;
-	font-size: 6pt;
+	font-size: .5em;
 }
 .cellu  
 {
 	text-align: center;
 	white-space: nowrap;
 	color: #AFA06E;
-	font-size: 10pt;
+	font-size: .85em;
 }
 .cellud  
 {
@@ -74,18 +74,29 @@
 	text-align: right;
 	white-space: nowrap;
 	color: #AFA06E;
-	font-size: 6pt;
+	font-size: .5em;
 }
 
-.unique	{color: #AFA06E}
-.magic	{color: #A0A5C8}
+.title
+{
+color: #AFA06E;
+font-size: 1.5em;
+}
+
 .cursed	{color: #E16C6C}
 .norm   {color: #FFFFFF}
 .oj     {color: #FF8000}
+.unique	{color: #AFA06E}
+.magic	{color: #A0A5C8}
+.magic1 
+{
+	color: #A0A5C8;
+	font-size: 1.2em;
+}
 
 .banner {
 	margin: 0;
-	font-size: 85%;
+	font-size: .85em;
 	font-weight: none;
 	line-height: 1.1;
 	text-align: left;
@@ -113,7 +124,7 @@
 
 .banner2 {
 	margin: 0;
-	font-size: 85%;
+	font-size: .85em;
 	font-weight: none;
 	line-height: 1.1;
 	text-align: left;
