@@ -2,17 +2,17 @@
 <HTML>
 <HEAD>
 <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
-<TITLE>Diablo Calculators</TITLE>
+<TITLE>Calculators</TITLE>
 <STYLE type="text/css">
 
 a:link { text-decoration: none; color: white }
 a:visited { text-decoration: none; color: white }
 a:hover { background: none; color: #ff8000 }
 
-.Title {font-size: 16pt; color: #ff8000; text-align: left }
-.label {font-size: 12pt; text-align: left; color: white }
+.label {text-align: left; color: #FFFFFF }
+.labelm {text-align: left; color: #A0A5C8 }
 .dot {background-color: #111111; color: #ff8000;}
-TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: white; border: 1; overflow: auto }
+TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: #A0A5C8; border: 1; overflow: auto }
 INPUT	{background-color: #111111; color: white}
 SELECT	{background-color: #111111; color: #AFA06E}
 
@@ -23,8 +23,8 @@ table.pcalc {
 	border-color: gray;
 	border-collapse: separate;
 	background-color: #111111;
-	width: 450px;
-	height: 220px;
+	width: 25%;
+	height: 15%;
 }
 table.pcalc th {
 	border-width: 1px;
@@ -49,7 +49,7 @@ table.topp {
 	border-color: gray;
 	border-collapse: separate;
 	background-color: #111111;
-	width: 420px;
+	width: 25%;
 }
 table.topp th {
 	border-width: 1px;
@@ -74,7 +74,7 @@ table.ropp {
 	border-color: gray;
 	border-collapse: separate;
 	background-color: #111111;
-	width: 450px;
+	width: 25%;
 }
 table.ropp th {
 	border-width: 1px;
@@ -103,41 +103,41 @@ table.ropp td {
 <center>
 <form Name="SelectItm">
 <table class="topp">
-  <tr>
-    <td class="celll" style="border-bottom-style: ridge" colspan="3">Diablo Item Price Calculator</td>
-  </tr>
-  <tr>
-    <td>
-      <table class="pcalc">
-        <tr>
-          <td colspan="3" class="label" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
-        </tr>
-        <tr>
-          <td class="label">Prefix:<br><select width="50%" name="Prefx" DISABLED onChange="updatePrefx();calcPrice();"></select></td>
-          <td style="text-align: center" class="label">Base Item:<br><select name="Bse" DISABLED onChange="updateSource();calcPrice();"></select></td>
-          <td class="label">Suffix:<br><select name="Suffx" DISABLED onChange="updateSuffx();calcPrice();"></select></td>
-        </tr>
-        <tr>
-          <td class="label">Value:<br><select name="Pvalue" DISABLED onChange="calcPrice();"></select></td>
-          <td style="text-align: center; border-style: none" class="label">
-            <input name="Source" type="radio" class="dot" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris" STYLE="font-style: normal">Griswold</a><br>
-            <input name="Source" type="radio" class="dot" value="Wirt" onClick="calcPrice();"><a ID="Wirt" STYLE="font-style: normal">Wirt</a><br>
-            <input name="Source" type="radio" class="dot" value="Sale" onClick="calcPrice();"><a ID="Sale" STYLE="font-style: normal">Resale</a>
-          </td>
-          <td class="label">Value:<br><select name="Svalue" DISABLED onChange="calcPrice();"></select></td>
-        </tr>
-        <tr>
-          <td style="text-align: left" colspan="5" class="label">Price: <a class="label" name="Price" ID="Price">0</a></td>
-        </tr>
-        <tr>
-          <td colspan="3" style="font-size: 6pt; text-align: left; color: #ff8000"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></td>
-        </tr>
-          <script language="Javascript" type="text/javascript">
-          reset();
-          </script>
-      </table>
-    </td>
-  </tr>
+	<tr>
+		<td class="celll" style="border-bottom-style: ridge" colspan="3">Item Price Calculator</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<table class="pcalc">
+				<tr>
+					<td colspan="3" class="label" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
+				</tr>
+				<tr>
+					<td class="label">Prefix:<br><select width="50%" name="Prefx" DISABLED onChange="updatePrefx();calcPrice();"></select></td>
+					<td style="text-align: center" class="label">Base Item:<br><select name="Bse" DISABLED onChange="updateSource();calcPrice();"></select></td>
+					<td class="label">Suffix:<br><select name="Suffx" DISABLED onChange="updateSuffx();calcPrice();"></select></td>
+				</tr>
+				<tr>
+					<td class="label">Value:<br><select name="Pvalue" DISABLED onChange="calcPrice();"></select></td>
+					<td style="text-align: center; border-style: none" class="label">
+						<input name="Source" type="radio" class="dot" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris" STYLE="font-style: normal">Griswold</a><br>
+						<input name="Source" type="radio" class="dot" value="Wirt" onClick="calcPrice();"><a ID="Wirt" STYLE="font-style: normal">Wirt</a><br>
+						<input name="Source" type="radio" class="dot" value="Sale" onClick="calcPrice();"><a ID="Sale" STYLE="font-style: normal">Resale</a>
+					</td>
+					<td class="label">Value:<br><select name="Svalue" DISABLED onChange="calcPrice();"></select></td>
+				</tr>
+				<tr>
+					<td style="text-align: left" colspan="5" class="labelm">Price: <a class="labelm" name="Price" ID="Price">0</a></td>
+				</tr>
+				<script language="Javascript" type="text/javascript">
+				reset();
+				</script>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="cellus"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></td>
+	</tr>
 </table>
 </form>
 <br>
@@ -145,7 +145,7 @@ table.ropp td {
 <FORM Name="SelectItem">
 <TABLE class="ropp">
 	<TR>
-		<TD class="celll" style="border-bottom-style: ridge" colspan="3">Diablo Item Rarity Calculator</a></TD>
+		<TD class="celll" style="border-bottom-style: ridge" colspan="3">Item Rarity Calculator</a></TD>
 	</TR>
 	<TR>
 		<INPUT type="hidden" name="blank1">
@@ -168,18 +168,18 @@ table.ropp td {
 		<TD align="center">
 			<table>
         			<TR>
-					<TD class="label"><font color="ffffff">Prefix:</font></a><BR>
+					<TD class="label">Prefix:</a><BR>
 						<select name="Prefix" DISABLED onChange="validate();">
 							<OPTION SELECTED></OPTION>
 							<OPTION>1234567890</OPTION>
 						</select>
 					</TD>
-					<TD class="label"><font color="ffffff">Base Item:</font></a><BR>
+					<TD class="label">Base Item:</a><BR>
 						<select name="Base" DISABLED>
 							<OPTION SELECTED>Select this second</OPTION>
 						</select>
 					</TD>
-					<TD class="label"><font color="ffffff">Suffix:</font></a><BR>
+					<TD class="label">Suffix:</a><BR>
 						<select name="Suffix" DISABLED onChange="validate();">
 							<OPTION SELECTED></OPTION>
 							<OPTION>1234567890</OPTION>
@@ -190,10 +190,10 @@ table.ropp td {
 		</TD>
 	</TR>
 	<TR>
-		<TD>
+		<TD align="center">
 			<TABLE align="right">
 				<TR>
-					<TD ID="Valid" style="font-size: 10pt; text-align: center; color: #FFFFFA">
+					<TD ID="Valid" class="normc">
 					</TD>
 					<TD align="right">
 						<input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED>
@@ -204,11 +204,11 @@ table.ropp td {
 	</TR>
 	<TR>
 		<TD colspan="3" class="label">Results:<BR>
-			<textarea name="Results" rows=25 cols=60 wrap="off" READONLY></textarea>
+			<textarea name="Results" rows=25 cols=74 wrap="off" READONLY></textarea>
 		</TD>
 	</TR>
 	<TR>
-		<TD colspan="3" style="font-size: 6pt; text-align: left; color: #ff8000"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></TD>
+		<TD colspan="3" class="cellus"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></TD>
 		</TD>
 	</TR>
 </TABLE>

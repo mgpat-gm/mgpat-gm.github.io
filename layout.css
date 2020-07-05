@@ -3,7 +3,6 @@
 	text-align: center;
 	white-space: nowrap;
 	color: #FFFFFF;
-	font-size: .83em;
 }
 .cell2  
 {
@@ -23,14 +22,13 @@
 {
 	text-align: center;
 	white-space: nowrap;
-	color: #ff8000;
-	font-size: 1.08em;
+	color: #FFFFFF;
+	font-size: 1.2em;
 }
 .cellj  
 {
 	border-left: none;
 	color: #AFA06E;
-	font-size: .85em;
 }
 .celll  
 {
@@ -47,7 +45,13 @@
 	text-align: center;
 	white-space: nowrap;
 	color: #A0A5C8;
-	font-size: .83em;
+}
+.cellm2
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #A0A5C8;
+	font-size: 1.2em;
 }
 .cellnd  
 {
@@ -64,7 +68,6 @@
 	text-align: center;
 	white-space: nowrap;
 	color: #AFA06E;
-	font-size: .85em;
 }
 .cellud  
 {
@@ -76,7 +79,13 @@
 	color: #AFA06E;
 	font-size: .5em;
 }
-
+.cellus
+{
+	text-align: left;
+	white-space: nowrap;
+	color: #AFA06E;
+	font-size: .5em;
+}
 .title
 {
 color: #FFFFFF;
@@ -85,6 +94,11 @@ font-size: 1.5em;
 
 .cursed	{color: #E16C6C}
 .norm   {color: #FFFFFF}
+.normc
+{
+	text-align: center;
+	color: #FFFFFF;
+}
 .oj     {color: #FF8000}
 .unique	{color: #AFA06E}
 .magic	{color: #A0A5C8}
@@ -96,7 +110,7 @@ font-size: 1.5em;
 
 .banner {
 	margin: 0;
-	font-size: .85em;
+	font-size: 1em;
 	font-weight: none;
 	line-height: 1.1;
 	text-align: left;
@@ -124,7 +138,7 @@ font-size: 1.5em;
 
 .banner2 {
 	margin: 0;
-	font-size: .85em;
+	font-size: 1em;
 	font-weight: none;
 	line-height: 1.1;
 	text-align: left;
