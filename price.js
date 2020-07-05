@@ -1658,7 +1658,7 @@ function calcPrice()
 	{
 		if (price > 140000)
 		{
-			document.getElementById("Price").firstChild.nodeValue = "This itm is too expensive to buy";
+			document.getElementById("Price").firstChild.nodeValue = "This item is too expensive to buy";
 			return;
 		}
 		price = Math.floor(price);
@@ -1667,7 +1667,7 @@ function calcPrice()
 	{
 		if (price > 90000)
 		{
-			document.getElementById("Price").firstChild.nodeValue = "This itm is too expensive to buy";
+			document.getElementById("Price").firstChild.nodeValue = "This item is too expensive to buy";
 			return;
 		}
 		price = Math.floor(price*1.5);

@@ -11,8 +11,8 @@ a:hover { background: none; color: #ff8000 }
 
 .label {text-align: left; color: #FFFFFF }
 .labelm {text-align: left; color: #A0A5C8 }
-.dot {background-color: #111111; color: #ff8000;}
-TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: #A0A5C8; border: 1; overflow: auto }
+
+TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: #A0A5C8; border: none; overflow: auto; resize: none; }
 INPUT	{background-color: #111111; color: white}
 SELECT	{background-color: #111111; color: #AFA06E}
 
@@ -119,15 +119,16 @@ table.ropp td {
 				</tr>
 				<tr>
 					<td class="label">Value:<br><select name="Pvalue" DISABLED onChange="calcPrice();"></select></td>
-					<td style="text-align: center; border-style: none" class="label">
-						<input name="Source" type="radio" class="dot" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris" STYLE="font-style: normal">Griswold</a><br>
-						<input name="Source" type="radio" class="dot" value="Wirt" onClick="calcPrice();"><a ID="Wirt" STYLE="font-style: normal">Wirt</a><br>
-						<input name="Source" type="radio" class="dot" value="Sale" onClick="calcPrice();"><a ID="Sale" STYLE="font-style: normal">Resale</a>
+					<td border-style: none" class="label">
+						<input name="Source" type="radio" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris">Griswold</a><br>
+						<input name="Source" type="radio" value="Wirt" onClick="calcPrice();"><a ID="Wirt">Wirt</a><br>
+						<input name="Source" type="radio" value="Sale" onClick="calcPrice();"><a ID="Sale">Resale</a>
 					</td>
 					<td class="label">Value:<br><select name="Svalue" DISABLED onChange="calcPrice();"></select></td>
 				</tr>
 				<tr>
-					<td style="text-align: left" colspan="5" class="labelm">Price: <a class="labelm" name="Price" ID="Price">0</a></td>
+					<td style="text-align: right" class="labelm">Price:</td>
+					<td colspan="2" class="labelm" name="Price" ID="Price">0</td>
 				</tr>
 				<script language="Javascript" type="text/javascript">
 				reset();
@@ -136,7 +137,7 @@ table.ropp td {
 		</td>
 	</tr>
 	<tr>
-		<td colspan="3" class="cellus"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></td>
+		<td colspan="3" class="cellus"><i>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
 	</tr>
 </table>
 </form>
@@ -204,11 +205,11 @@ table.ropp td {
 	</TR>
 	<TR>
 		<TD colspan="3" class="label">Results:<BR>
-			<textarea name="Results" rows=25 cols=74 wrap="off" READONLY></textarea>
+			<textarea name="Results" rows=24 cols=54 wrap="soft" READONLY></textarea>
 		</TD>
 	</TR>
 	<TR>
-		<TD colspan="3" class="cellus"><i>Created by: <a href="https://web.archive.org/web/20120530085008/http://www.dpsyche.com/index.html">Eso aka the_Langolier</i></a></TD>
+		<TD colspan="3" class="cellus"><i>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></TD>
 		</TD>
 	</TR>
 </TABLE>
