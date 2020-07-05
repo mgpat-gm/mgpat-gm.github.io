@@ -32,9 +32,6 @@
 }
 .celll  
 {
-	background-repeat:no-repeat;
-	background-position:center left;
-	background-image: url(pictures/items/orangesphere.gif);
 	text-align: center;
 	white-space: nowrap;
 	color: #AFA06E;
@@ -55,9 +52,6 @@
 }
 .cellnd  
 {
-	background-repeat:no-repeat;
-	background-position:center left;
-	background-image: url(pictures/items/redsphere.gif);
 	text-align: right;
 	white-space: nowrap;
 	color: #AFA06E;
@@ -71,9 +65,6 @@
 }
 .cellud  
 {
-	background-repeat:no-repeat;
-	background-position:center left;
-	background-image: url(pictures/items/orangesphere.gif);
 	text-align: right;
 	white-space: nowrap;
 	color: #AFA06E;
