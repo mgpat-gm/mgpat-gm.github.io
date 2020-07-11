@@ -1,9 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-<link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
-<TITLE>Calculators</TITLE>
-<STYLE type="text/css">
+<html>
+<head>
+<title>Calculators</title>
+<meta name="description" content="Ghast's Grotto is my personal site about Diablo.">
+<meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list">
+<script SRC="layout.js"></SCRIPT>
+<script language="Javascript" src="price.js"></script>
+<script language="Javascript" src="rare.js"></script>
+<link rel="shortcut icon" href="pictures\favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="layout.css">
+<style>
 
 a:link { text-decoration: none; color: white }
 a:visited { text-decoration: none; color: white }
@@ -92,14 +98,10 @@ table.ropp td {
 	background-color: #111111;
 	-moz-border-radius: ;
 }
-</STYLE>
-<SCRIPT LANGUAGE="Javascript" SRC="price.js"></SCRIPT>
-<SCRIPT language="Javascript" SRC="rare.js"></SCRIPT>
-<link rel="stylesheet" type="text/css" href="layout.css">
+</style>
+
 </head>
 <body bgcolor="#2d2d2d">
-<SCRIPT LANGUAGE="Javascript" SRC="layout.js">
-</SCRIPT>
 <center>
 <form Name="SelectItm">
 <table class="topp">
@@ -148,75 +150,75 @@ table.ropp td {
 <br>
 <br>
 <FORM Name="SelectItem">
-<TABLE class="ropp">
-	<TR>
-		<TD class="celll" style="border-bottom-style: ridge" colspan="3">Item Rarity Calculator</a></TD>
-	</TR>
-	<TR>
+<table class="ropp">
+	<tr>
+		<td class="celll" style="border-bottom-style: ridge" colspan="3">Item Rarity Calculator</a></td>
+	</tr>
+	<tr>
 		<INPUT type="hidden" name="blank1">
-		<TD colspan="3" class="label" style="text-align: center">Item Class:<BR>
+		<td colspan="3" class="label" style="text-align: center">Item Class:<BR>
 			<SELECT name="Class" onChange="updateSelectMenu();">
-				<OPTION value="unvalid" SELECTED>Select this first</OPTION>
-				<OPTION>Helm</OPTION>
-				<OPTION>Armor</OPTION>
-				<OPTION>Shield</OPTION>
-				<OPTION>Sword</OPTION>
-				<OPTION>Axe</OPTION>
-				<OPTION>Club</OPTION>
-				<OPTION>Bow</OPTION>
-				<OPTION>Staff</OPTION>
-				<OPTION>Jewelry</OPTION>
+				<option value="unvalid" SELECTED>Select this first</option>
+				<option>Helm</option>
+				<option>Armor</option>
+				<option>Shield</option>
+				<option>Sword</option>
+				<option>Axe</option>
+				<option>Club</option>
+				<option>Bow</option>
+				<option>Staff</option>
+				<option>Jewelry</option>
 			</SELECT>	
 			<INPUT type="hidden" name="blank2">
-		</TD>
-	<TR>
-		<TD align="center">
+		</td>
+	<tr>
+		<td align="center">
 			<table>
-        			<TR>
-					<TD class="label">Prefix:</a><BR>
+        			<tr>
+					<td class="label">Prefix:</a><BR>
 						<select name="Prefix" DISABLED onChange="validate();">
-							<OPTION SELECTED></OPTION>
-							<OPTION>1234567890</OPTION>
+							<option SELECTED></option>
+							<option>1234567890</option>
 						</select>
-					</TD>
-					<TD class="label">Base Item:</a><BR>
+					</td>
+					<td class="label">Base Item:</a><BR>
 						<select name="Base" DISABLED>
-							<OPTION SELECTED>Select this second</OPTION>
+							<option SELECTED>Select this second</option>
 						</select>
-					</TD>
-					<TD class="label">Suffix:</a><BR>
+					</td>
+					<td class="label">Suffix:</a><BR>
 						<select name="Suffix" DISABLED onChange="validate();">
-							<OPTION SELECTED></OPTION>
-							<OPTION>1234567890</OPTION>
+							<option SELECTED></option>
+							<option>1234567890</option>
 						</select>
-					</TD>
-				</TR>
-			</TABLE>
-		</TD>
-	</TR>
-	<TR>
-		<TD align="center">
-			<TABLE align="right">
-				<TR>
-					<TD ID="Valid" class="normc">
-					</TD>
-					<TD align="right">
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<table align="right">
+				<tr>
+					<td ID="Valid" class="normc">
+					</td>
+					<td align="right">
 						<input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED>
-					</TD>
-				</TR>
-			</TABLE>
-		</TD>
-	</TR>
-	<TR>
-		<TD colspan="3" class="label">Results:<BR>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="label">Results:<BR>
 			<textarea name="Results" rows=24 cols=54 wrap="soft" READONLY></textarea>
-		</TD>
-	</TR>
-	<TR>
-		<TD colspan="3" class="cellus"><i>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></TD>
-		</TD>
-	</TR>
-</TABLE>
-</FORM>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="cellus"><i>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
+		</td>
+	</tr>
+</table>
+</form>
 </body>
 </html>
