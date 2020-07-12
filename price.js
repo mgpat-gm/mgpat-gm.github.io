@@ -93,23 +93,23 @@ bseEQ[68]=new Itm("Amulet",16,"Jewelry",1200);
 
 //unique itm declarations
 unique = new Array(75);
-unique[0]= new Itm("Aguinara’s Hatchet",0,"Small Axe",24800);
-unique[1]= new Itm("Baranar’s Star",0,"Morning Star",6850);
+unique[0]= new Itm("Aguinara's Hatchet",0,"Small Axe",24800);
+unique[1]= new Itm("Baranar's Star",0,"Morning Star",6850);
 unique[2]= new Itm("Black Razor",0,"Dagger",2000);
 unique[3]= new Itm("Blackoak Shield",0,"Small Shield",5725);
 unique[4]= new Itm("Bloodslayer",0,"Broad Axe",2500);
 unique[5]= new Itm("Bow of the Dead",0,"Composite Bow",2500);
-unique[6]= new Itm("Civerb’s Cudgel",0,"Mace",2000);
+unique[6]= new Itm("Civerb's Cudgel",0,"Mace",2000);
 unique[7]= new Itm("Constricting Ring",0,"Ring",62000);
 unique[8]= new Itm("Deadly Hunter",0,"Composite Bow",8750);
 unique[9]= new Itm("Demonspike Coat",0,"Full Plate Mail",251175);
 unique[10]= new Itm("Doombringer",0,"Bastard Sword",18250);
-unique[11]= new Itm("Dragon’s Breach",0,"Kite Shield",19200);
+unique[11]= new Itm("Dragon's Breach",0,"Kite Shield",19200);
 unique[12]= new Itm("Dreamflange",0,"Mace",26450);
 unique[13]= new Itm("Eaglehorn",0,"Long Battle Bow",42500);
-unique[14]= new Itm("Flamedart",0,"Hunter’s Bow",14250);
+unique[14]= new Itm("Flamedart",0,"Hunter's Bow",14250);
 unique[15]= new Itm("Fleshstinger",0,"Longbow",16500);
-unique[16]= new Itm("Fool’s Crest",0,"Helm",10150);
+unique[16]= new Itm("Fool's Crest",0,"Helm",10150);
 unique[17]= new Itm("Gibbous Moon",0,"Broadsword",6660);
 unique[18]= new Itm("Gleamsong",0,"Short Staff",6520);
 unique[19]= new Itm("Gnarled Root",0,"Club",9820);
@@ -124,18 +124,18 @@ unique[27]= new Itm("Immolator",0,"Long Staff",3900);
 unique[28]= new Itm("Inferno",0,"Long Sword",34600);
 unique[29]= new Itm("Leather of Aut",0,"Leather Armor",10550);
 unique[30]= new Itm("Lightsabre",0,"Sabre",19150);
-unique[31]= new Itm("Messerschmidt’s Reaver",0,"Great Axe",58000);
+unique[31]= new Itm("Messerschmidt's Reaver",0,"Great Axe",58000);
 unique[32]= new Itm("Mindcry",0,"Quarter Staff",41500);
-unique[33]= new Itm("Naj’s Light Plate",0,"Plate Mail",78700);
-unique[34]= new Itm("Naj’s Puzzler",0,"Long Staff",34000);
+unique[33]= new Itm("Naj's Light Plate",0,"Plate Mail",78700);
+unique[34]= new Itm("Naj's Puzzler",0,"Long Staff",34000);
 unique[35]= new Itm("Nightscape",0,"Cape",11600);
-unique[36]= new Itm("Overlord’s Helm",0,"Helm",12500);
+unique[36]= new Itm("Overlord's Helm",0,"Helm",12500);
 unique[37]= new Itm("Ring of Engagement",0,"Ring",12476);
 unique[38]= new Itm("Ring of Regha",0,"Ring",4175);
 unique[39]= new Itm("Rod of Onan",0,"War Staff",44167);
 unique[40]= new Itm("Royal Circlet",0,"Crown",24875);
 unique[41]= new Itm("Scavenger Carapace",0,"Breastplate",14000);
-unique[42]= new Itm("Schaefer’s Hammer",0,"War Hammer",56125);
+unique[42]= new Itm("Schaefer's Hammer",0,"War Hammer",56125);
 unique[43]= new Itm("Shadowhawk",0,"Broadsword",13750);
 unique[44]= new Itm("Sharp Beak",0,"Large Axe",2850);
 unique[45]= new Itm("Sparking Mail",0,"Chain Mail",15750);
@@ -152,9 +152,9 @@ unique[55]= new Itm("The Celestial Bow",0,"Long Bow",1200);
 unique[56]= new Itm("The Celestial Star",0,"Flail",7810);
 unique[57]= new Itm("The Cranium Basher",0,"Maul",36500);
 unique[58]= new Itm("The Defender",0,"Sabre",2000);
-unique[59]= new Itm("The Executioner’s Blade",0,"Falchion",7080);
-unique[60]= new Itm("The Falcon’s Talon",0,"Scimitar",7867);
-unique[61]= new Itm("The Gladiator’s Bane",0,"Studded Leather Armor",3450);
+unique[59]= new Itm("The Executioner's Blade",0,"Falchion",7080);
+unique[60]= new Itm("The Falcon's Talon",0,"Scimitar",7867);
+unique[61]= new Itm("The Gladiator's Bane",0,"Studded Leather Armor",3450);
 unique[62]= new Itm("The Grandfather",0,"Great Sword",119800);
 unique[63]= new Itm("The Grizzly",0,"Two-Handed Sword",50000);
 unique[64]= new Itm("The Needler",0,"Short Bow",8900);
@@ -166,7 +166,7 @@ unique[69]= new Itm("Thundercall",0,"Composite Staff",22250);
 unique[70]= new Itm("Torn Flesh of Souls",0,"Rags",4825);
 unique[71]= new Itm("Wicked Axe",0,"Large Axe",31150);
 unique[72]= new Itm("Windforce",0,"Long War Bow",37750);
-unique[73]= new Itm("Wisdom’s Wrap",0,"Robe",6200);
+unique[73]= new Itm("Wisdom's Wrap",0,"Robe",6200);
 unique[74]= new Itm("Wizardspike",0,"Dagger",12920);
 
 
@@ -863,7 +863,7 @@ function updateClas()
 		document.SelectItm.Source[0].disabled = true;
 		document.getElementById("Wirt").style.color = "#C0C0C0";
 		document.SelectItm.Source[1].disabled = true;
-		document.getElementById("Sale").style.color = "#FFFFFA";
+		document.getElementById("Sale").style.color = "#FFFFFF";
 		document.SelectItm.Source[2].disabled = false;
 		return;
 	}
@@ -877,7 +877,7 @@ function updateClas()
 	{
 		document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	}
-	document.getElementById("Sale").style.color = "#FFFFFA";
+	document.getElementById("Sale").style.color = "#FFFFFF";
 	document.SelectItm.Source[2].disabled = false;
 	updatePrefx();
 	updateSuffx();
@@ -1231,9 +1231,9 @@ function updateSource()
 	{
 		var suffxS = ((document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value=="None")? "None": suffx[document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value]);
 	}
-	document.getElementById("Gris").style.color = "#FFFFFA";
+	document.getElementById("Gris").style.color = "#FFFFFF";
 	document.getElementById("Gris").style.fontStyle = "normal";
-	document.getElementById("Wirt").style.color = "#FFFFFA";
+	document.getElementById("Wirt").style.color = "#FFFFFF";
 	document.getElementById("Wirt").style.fontStyle = "normal";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[1].disabled = false;
@@ -1422,12 +1422,12 @@ function reset()
 	document.SelectItm.Svalue.options[1] = new Option("12345"," ");
 	document.SelectItm.Svalue.disabled = true;
 
-	document.getElementById("Gris").style.color = "#FFFFFA";
+	document.getElementById("Gris").style.color = "#FFFFFF";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[0].checked = true;
-	document.getElementById("Wirt").style.color = "#FFFFFA";
+	document.getElementById("Wirt").style.color = "#FFFFFF";
 	document.SelectItm.Source[1].disabled = false;
-	document.getElementById("Sale").style.color = "#FFFFFA";
+	document.getElementById("Sale").style.color = "#FFFFFF";
 	document.SelectItm.Source[2].disabled = false;
 	document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	document.getElementById("Price").firstChild.nodeValue = "0";
