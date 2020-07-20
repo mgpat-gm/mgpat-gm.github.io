@@ -4,11 +4,23 @@
 <title>My Uniques</title>
 <meta name="description" content="Ghast's Grotto is my personal site about Diablo.">
 <meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list">
-<script src="jquery.js" type="text/javascript"></script>
-<script src="ttip.js" type="text/javascript"></script>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/ttip.js" type="text/javascript"></script>
 <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="layout.css">
 <style>
+a:link {
+	text-decoration: none;
+	color: #ffffff
+}
+a:visited {
+	text-decoration: none;
+	color: #ffffff
+}
+a:hover {
+	background: none;
+	color: #ff8000
+}
 #tooltip {
 	position:absolute;
 	display:none;
@@ -49,21 +61,55 @@ table.main td {
 	border-color: gray;
 	-moz-border-radius: ;
 }
-a:link 
-{
-text-decoration: none;
-color: #ffffff
+.banner {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: 0em;
+	width: 10%;
+	right: auto;}
+
+.banner p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	background: #2d2d2d;
+	border: none;
+	color: #ff8000;}
+
+.banner a, div.banner em { display: block; margin: 0 0.5em }
+.banner a, div.banner em { border-top: 0px groove #CCC }
+.banner a:first-child { border-top: none }
+.banner em { color: #CFC }
+
+.banner2 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: auto;
+	width: 10%;
+	right: 0em;
 }
-a:visited
-{
-text-decoration: none;
-color: #ffffff
+
+.banner2 p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	background: #2d2d2d;
+	border: none;
+	color: #ff8000;
 }
-a:hover
-{
-background: none;
-color: #ff8000
-}
+
+.banner2 a, div.banner em { display: block; margin: 0 0.5em }
+.banner2 a, div.banner em { border-top: 0px groove #CCC }
+.banner2 a:first-child { border-top: none }
+.banner2 em { color: #CFC }
 </style>
 </head>
 <body bgcolor="#2d2d2d">
@@ -72,11 +118,16 @@ color: #ff8000
 	<br>
 	<br>
 	<a title="News, updates, and more!" href="index.html">Home</a>
+	<br>
+	<a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
+	<br>
 	<a title="My characters and their items" href="characters.html">Characters</a>
+	<br>
 	<a title="A list of all the uniques I have collected so far" href="uniques.html">Uniques</a>
-	<a title="Item Price/Rarity Calculators, created by Eso aka the_Langolier" href="calcs.html">Calcs</a>
+	<br>
 	<a title="Self explanatory" href="shrinelist.html">Shrines</a>
-	<a title="A list of oldies(but goodies) and current Diablo related sites, projects, and forums" href="links.html">Links</a>
+	<br>
+	<a title="A list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
 	</p>
 </div>
 <div class="banner2">
@@ -84,13 +135,21 @@ color: #ff8000
 	<br>
 	<br>
         <a href="#armors">Armors</a>
+	<br>
         <a href="#axes">Axes</a>
+	<br>
         <a href="#bows">Bows</a>
+	<br>
         <a href="#clubs">Clubs</a>
+	<br>
         <a href="#helmets">Helmets</a>
+	<br>
         <a href="#jewelry">Jewelry</a>
+	<br>
         <a href="#shields">Shields</a>
+	<br>
         <a href="#staves">Staves</a>
+	<br>
         <a href="#swords">Swords</a>
     </p>
 </div>
@@ -330,7 +389,7 @@ color: #ff8000
 	<tr class="tooltip" title="AC variations:<br> 4">
 		<td align="center"><img src="pictures\items\thinkingcap.gif"></td>
 		<td class="cellu">Thinking Cap<br>(Skull Cap)</td>
-		<td class="cellu">Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
+		<td class="cellu">Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
 		<td class="cellu">Armor: <font color="#E16C6C">(2-4)</font><br>Dur: 1</td>
 	</tr>
 </table>
@@ -507,7 +566,13 @@ color: #ff8000
 	</tr>
 </table>
 <br>
+<table width="80%">
+<tr>
+<td style="text-align: center;">
 <font class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</font>
+</td>
+</tr>
+</table>
 </center>
 </body>
 </html>

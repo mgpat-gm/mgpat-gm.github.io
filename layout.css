@@ -1,3 +1,4 @@
+
 .cell   
 {
 	text-align: center;
@@ -30,13 +31,7 @@
 	border-left: none;
 	color: #AFA06E;
 }
-.celll  
-{
-	text-align: center;
-	white-space: nowrap;
-	color: #AFA06E;
-	font-size: .584em;
-}
+
 .cellm  
 {
 	text-align: center;
@@ -63,13 +58,6 @@
 	white-space: nowrap;
 	color: #AFA06E;
 }
-.cellud  
-{
-	text-align: right;
-	white-space: nowrap;
-	color: #AFA06E;
-	font-size: .7em;
-}
 .cellus
 {
 	text-align: left;
@@ -77,12 +65,6 @@
 	color: #AFA06E;
 	font-size: .7em;
 }
-.title
-{
-color: #FFFFFF;
-font-size: 1.5em;
-}
-
 .cursed	{color: #E16C6C}
 .norm   {color: #FFFFFF}
 .normc
@@ -98,61 +80,3 @@ font-size: 1.5em;
 	color: #A0A5C8;
 	font-size: 1.2em;
 }
-
-.banner {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: 0em;
-	width: 10%;
-	right: auto;}
-
-.banner p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	background: #2d2d2d;
-	border: none;
-	color: #ff8000;}
-
-.banner a, div.banner em { display: block; margin: 0 0.5em }
-.banner a, div.banner em { border-top: 0px groove #CCC }
-.banner a:first-child { border-top: none }
-.banner em { color: #CFC }
-
-.banner a:link { text-decoration: none; color: white }
-.banner a:visited { text-decoration: none; color: white }
-.banner a:hover { background: none; color: #ff8000 }
-
-.banner2 {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: auto;
-	width: 10%;
-	right: 0em;
-}
-
-.banner2 p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	background: #2d2d2d;
-	border: none;
-	color: #ff8000;
-}
-
-.banner2 a, div.banner em { display: block; margin: 0 0.5em }
-.banner2 a, div.banner em { border-top: 0px groove #CCC }
-.banner2 a:first-child { border-top: none }
-.banner2 em { color: #CFC }
-
-.banner2 a:link { text-decoration: none; color: white }
-.banner2 a:visited { text-decoration: none; color: white }
-.banner2 a:hover { background: none; color: #ff8000 }

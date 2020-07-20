@@ -1,9 +1,9 @@
 /*
-This Diablo itm price calculator was created by Eso aka the_Langolier.
+This Diablo item price calculator was created by Eso aka the_Langolier.
 Copying, hosting, or other uses of this code may be done freely so long as it remains
 unchanged and credit is given to the original author.  The style rules above, however,
 may be changed for aesthetic purpsoses only.  The information used by this calculator 
-was obtained in Jarulf's Guide to Diablo and Hellfire including itms and all the 
+was obtained in Jarulf's Guide to Diablo and Hellfire including items and all the 
 information in Chapter 3.6.  To report any errors or bugs, send me a Private Message 
 using the forum software.
 */
@@ -12,7 +12,7 @@ using the forum software.
 //BEGIN PREFIX/BASE ITEM/SUFFIX DEFINITIONS
 ///////////////////////////////////////////
 
-//bse itm declarations
+//base item declarations
 function Itm(nam,ilvvl,iClas,price)
 {
 	this.nam = nam;
@@ -91,7 +91,7 @@ bseEQ[66]=new Itm("War Staff",12,"Staff",1500);
 bseEQ[67]=new Itm("Ring",5,"Jewelry",1000);
 bseEQ[68]=new Itm("Amulet",16,"Jewelry",1200);
 
-//unique itm declarations
+//unique item declarations
 unique = new Array(75);
 unique[0]= new Itm("Aguinara's Hatchet",0,"Small Axe",24800);
 unique[1]= new Itm("Baranar's Star",0,"Morning Star",6850);
@@ -171,7 +171,7 @@ unique[74]= new Itm("Wizardspike",0,"Dagger",12920);
 
 
 
-//prefx declarations
+//prefix declarations
 function Affx(nam,qlvvl,value,spawnn,cursd,B,range,M)
 {
 	this.nam = nam;
@@ -266,7 +266,7 @@ prefx[78]= new Affx("Bountiful",9,"x3 charges","---T--",false,3000,0,3);
 prefx[79]= new Affx("Flaming",7,"+1-10 fire damage","--WT--",false,5000,0,2);
 prefx[80]= new Affx("Lightning",18,"+2-20 lightning damage","--WT--",false,10000,0,2);
 
-//suffx declarations
+//suffix declarations
 suffx = new Array(95);
 suffx[0]= new Affx("Frailty",3,"-10-6 strength","ASW-BJ",true,0,0,-3);
 suffx[1]= new Affx("Weakness",1,"-5-1 strength","ASW-BJ",true,0,0,-2);
@@ -364,7 +364,7 @@ suffx[92]= new Affx("Blocking",5,"fast block","-S----",false,4000,0,4);
 suffx[93]= new Affx("Thieves",11,"absorb half trap damage","AS---J",false,1500,0,2);
 suffx[94]= new Affx("Thorns",1,"attacker takes 1-3 damage","AS----",false,500,0,2);
 
-//spel declarations
+//spell declarations
 function Spel(nam,qlvvl,charges,spawnnStaff,P)
 {
 	this.nam = nam;
@@ -403,7 +403,7 @@ spel[25] = new Spel("Telekinesis",2,"20-40",true,40);
 spel[26] = new Spel("Teleport",12,"16-32",true,250);
 spel[27] = new Spel("Town Portal",3,"8-12",true,40);
 
-//invalid affx combinations
+//invalid affix combinations
 invalidComb = new Array(48);
 invalidComb[0]="Angel's";	invalidComb[24]="Trouble";
 invalidComb[1]="Arch-Angel's";	invalidComb[25]="Trouble";
@@ -434,7 +434,7 @@ invalidComb[23]="Vicious";	invalidComb[47]="Radiance";
 //BEGIN TABLE DISPLAY FUNCTIONS
 ///////////////////////////////
 
-//change bsed on clas
+//change based on class
 function updateClas()
 {
 	var i;
@@ -496,7 +496,7 @@ function updateClas()
 	//new entries
 	if (iClas == "Helm")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -510,13 +510,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=0; i<=5; i++)
 		{
 			document.SelectItm.Bse.options[i] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -532,7 +532,7 @@ function updateClas()
 	}
 	else if (iClas == "Armor")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -547,13 +547,13 @@ function updateClas()
 
 		}
 
-		//bse itm
+		//base item
 		for (i=6; i<=22; i++)
 		{
 			document.SelectItm.Bse.options[i-6] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -569,7 +569,7 @@ function updateClas()
 	}
 	else if (iClas == "Shield")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -583,13 +583,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=23; i<=28; i++)
 		{
 			document.SelectItm.Bse.options[i-23] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -605,7 +605,7 @@ function updateClas()
 	}
 	else if (iClas == "Sword")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -619,13 +619,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=29; i<=40; i++)
 		{
 			document.SelectItm.Bse.options[i-29] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -641,7 +641,7 @@ function updateClas()
 	}
 	else if (iClas == "Axe")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -655,13 +655,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=41; i<=46; i++)
 		{
 			document.SelectItm.Bse.options[i-41] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -677,7 +677,7 @@ function updateClas()
 	}
 	else if (iClas == "Club")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -691,13 +691,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=47; i<=53; i++)
 		{
 			document.SelectItm.Bse.options[i-47] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -713,7 +713,7 @@ function updateClas()
 	}
 	else if (iClas == "Bow")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -727,13 +727,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=54; i<=61; i++)
 		{
 			document.SelectItm.Bse.options[i-54] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -749,7 +749,7 @@ function updateClas()
 	}
 	else if (iClas == "Staff")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -763,13 +763,13 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		for (i=62; i<=66; i++)
 		{
 			document.SelectItm.Bse.options[i-62] = new Option(bseEQ[i].nam,i);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -792,7 +792,7 @@ function updateClas()
 	}
 	else if (iClas == "Jewelry")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option("None","None",true);
 		for (i=0; i<prefx.length; i++)
 		{
@@ -806,11 +806,11 @@ function updateClas()
 			}
 		}
 
-		//bse itm
+		//base item
 		document.SelectItm.Bse.options[0] = new Option("Ring",67,true);
 		document.SelectItm.Bse.options[1] = new Option("Amulet",68);
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option("None","None",true);
 		for (i=0; i<suffx.length; i++)
 		{
@@ -826,18 +826,18 @@ function updateClas()
 	}
 	else if (iClas == "Unique")
 	{
-		//prefx
+		//prefix
 		document.SelectItm.Prefx.options[0] = new Option(" "," ",true);
 		document.SelectItm.Prefx.options[1] = new Option("1234567890"," ");
 		document.SelectItm.Prefx.disabled = true;
 
-		//bse itm
+		//base item
 		for (i=0; i<unique.length; i++)
 		{
 			document.SelectItm.Bse.options[i] = new Option(unique[i].nam,unique[i].nam);
 		}
 
-		//suffx
+		//suffix
 		document.SelectItm.Suffx.options[0] = new Option(" "," ",true);
 		document.SelectItm.Suffx.options[1] = new Option("1234567890"," ");
 		document.SelectItm.Suffx.disabled = true;
@@ -859,11 +859,11 @@ function updateClas()
 		document.SelectItm.Svalue.disabled = true;
 
 		//source
-		document.getElementById("Gris").style.color = "#C0C0C0";
+		document.getElementById("Gris").style.color = "#4C4C4C";
 		document.SelectItm.Source[0].disabled = true;
-		document.getElementById("Wirt").style.color = "#C0C0C0";
+		document.getElementById("Wirt").style.color = "#4C4C4C";
 		document.SelectItm.Source[1].disabled = true;
-		document.getElementById("Sale").style.color = "#FFFFFF";
+		document.getElementById("Sale").style.color = "#A0A5C8";
 		document.SelectItm.Source[2].disabled = false;
 		return;
 	}
@@ -877,13 +877,13 @@ function updateClas()
 	{
 		document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	}
-	document.getElementById("Sale").style.color = "#FFFFFF";
+	document.getElementById("Sale").style.color = "#A0A5C8";
 	document.SelectItm.Source[2].disabled = false;
 	updatePrefx();
 	updateSuffx();
 }
 
-//change bsed on prefx
+//change based on prefix
 function updatePrefx()
 {
 	var i;	var j;
@@ -926,22 +926,22 @@ function updatePrefx()
 		}
 	}
 
-	//grey out invalid suffxs
+	//grey out invalid suffixs
 	if (prefxS == "None")
 	{
 		if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Staff" || document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Jewelry")
 		{
-			document.SelectItm.Suffx.options[0].style.color = "#C0C0C0";
+			document.SelectItm.Suffx.options[0].style.color = "#4C4C4C";
 			for (i=1; i<=document.SelectItm.Suffx.options.length-1; i++)
 			{
-				document.SelectItm.Suffx.options[i].style.color = "#AFA06E";
+				document.SelectItm.Suffx.options[i].style.color = "#A0A5C8";
 			}
 		}
 		else
 		{
 			for (i=0; i<=document.SelectItm.Suffx.options.length-1; i++)
 			{
-				document.SelectItm.Suffx.options[i].style.color = "#AFA06E";
+				document.SelectItm.Suffx.options[i].style.color = "#A0A5C8";
 			}
 		}
 	}
@@ -954,16 +954,16 @@ function updatePrefx()
 			{
 				for (i=0; i<13; i++)
 				{
-					document.SelectItm.Suffx.options[i].style.color = "#C0C0C0";
+					document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 				}
 				for (i=13; i<=document.SelectItm.Suffx.options.length-1; i++)
 				{
-					document.SelectItm.Suffx.options[i].style.color = "#AFA06E";
+					document.SelectItm.Suffx.options[i].style.color = "#A0A5C8";
 				}
 			}
 			else
 			{
-				document.SelectItm.Suffx.options[0].style.color = "#AFA06E";
+				document.SelectItm.Suffx.options[0].style.color = "#A0A5C8";
 				for (i=1; i<13; i++)
 				{
 					var qlvvlMin = ((prefxS.qlvvl < suffx[document.SelectItm.Suffx.options[i].value].qlvvl) ? prefxS.qlvvl: suffx[document.SelectItm.Suffx.options[i].value].qlvvl);
@@ -974,18 +974,18 @@ function updatePrefx()
 					}
 					if (qlvvlMin < Math.floor(qlvvlMax/2))
 					{
-						document.SelectItm.Suffx.options[i].style.color = "#C0C0C0";
+						document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 					}
 					else
 					{
-						document.SelectItm.Suffx.options[i].style.color = "#AFA06E";
+						document.SelectItm.Suffx.options[i].style.color = "#A0A5C8";
 					}
 				}
 			}
 		}
-		else //rules for a prefx and suffx
+		else //rules for a prefix and suffix
 		{
-			document.SelectItm.Suffx.options[0].style.color = "#AFA06E";
+			document.SelectItm.Suffx.options[0].style.color = "#A0A5C8";
 			for (i=1; i<=document.SelectItm.Suffx.options.length-1; i++)
 			{
 				var qlvvlMin = ((prefxS.qlvvl < suffx[document.SelectItm.Suffx.options[i].value].qlvvl) ? prefxS.qlvvl: suffx[document.SelectItm.Suffx.options[i].value].qlvvl);
@@ -996,19 +996,19 @@ function updatePrefx()
 				}
 				if (qlvvlMin < Math.floor(qlvvlMax/2))
 				{
-					document.SelectItm.Suffx.options[i].style.color = "#C0C0C0";
+					document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 				}
 				else
 				{
-					document.SelectItm.Suffx.options[i].style.color = "#AFA06E";
+					document.SelectItm.Suffx.options[i].style.color = "#A0A5C8";
 				}
 
-				//check invalid affx combinations
+				//check invalid affix combinations
 				for (j=0; j<24; j++)
 				{
 					if (prefxS.nam == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].nam == invalidComb[j+24])
 					{
-						document.SelectItm.Suffx.options[i].style.color = "#C0C0C0";
+						document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 					}
 				}
 			}
@@ -1031,7 +1031,7 @@ function updatePrefx()
 	updateSource();
 }
 
-//change bsed on suffx
+//change based on suffix
 function updateSuffx()
 {
 	var i;	var j;
@@ -1108,21 +1108,21 @@ function updateSuffx()
 		}
 	}
 
-	//gray out invalid prefxs
+	//gray out invalid prefixs
 	if (suffxS == "None")
 	{
 		if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Staff" || document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Jewelry")
 		{
-			document.SelectItm.Prefx.options[0].style.color = "#C0C0C0";
+			document.SelectItm.Prefx.options[0].style.color = "#4C4C4C";
 			for (i=1; i<=document.SelectItm.Prefx.options.length-1; i++)
 			{
 				if (prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
 				{
-					document.SelectItm.Prefx.options[i].style.color = "#C0C0C0";
+					document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 				}
 				else
 				{
-					document.SelectItm.Prefx.options[i].style.color = "#AFA06E";
+					document.SelectItm.Prefx.options[i].style.color = "#A0A5C8";
 				}
 			}
 		}
@@ -1130,7 +1130,7 @@ function updateSuffx()
 		{
 			for (i=0; i<=document.SelectItm.Prefx.options.length-1; i++)
 			{
-				document.SelectItm.Prefx.options[i].style.color = "#AFA06E";
+				document.SelectItm.Prefx.options[i].style.color = "#A0A5C8";
 			}
 		}
 	}
@@ -1143,12 +1143,12 @@ function updateSuffx()
 			{
 				for (i=0; i<=document.SelectItm.Prefx.options.length-1; i++)
 				{
-					document.SelectItm.Prefx.options[i].style.color = "#AFA06E";
+					document.SelectItm.Prefx.options[i].style.color = "#A0A5C8";
 				}
 			}
 			else
 			{
-				document.SelectItm.Prefx.options[0].style.color = "#AFA06E";
+				document.SelectItm.Prefx.options[0].style.color = "#A0A5C8";
 				for (i=1; i<=document.SelectItm.Prefx.options.length-1; i++)
 				{
 					var qlvvlMin = ((suffxS.qlvvl < prefx[document.SelectItm.Prefx.options[i].value].qlvvl) ? suffxS.qlvvl: prefx[document.SelectItm.Prefx.options[i].value].qlvvl);
@@ -1159,18 +1159,18 @@ function updateSuffx()
 					}
 					if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
 					{
-						document.SelectItm.Prefx.options[i].style.color = "#C0C0C0";
+						document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 					}
 					else
 					{
-						document.SelectItm.Prefx.options[i].style.color = "#AFA06E";
+						document.SelectItm.Prefx.options[i].style.color = "#A0A5C8";
 					}
 				}
 			}
 		}
-		else //rules for a prefx and suffx
+		else //rules for a prefix and suffix
 		{
-			document.SelectItm.Prefx.options[0].style.color = "#AFA06E";
+			document.SelectItm.Prefx.options[0].style.color = "#A0A5C8";
 			for (i=1; i<=document.SelectItm.Prefx.options.length-1; i++)
 			{
 				var qlvvlMin = ((suffxS.qlvvl < prefx[document.SelectItm.Prefx.options[i].value].qlvvl) ? suffxS.qlvvl: prefx[document.SelectItm.Prefx.options[i].value].qlvvl);
@@ -1181,19 +1181,19 @@ function updateSuffx()
 				}
 				if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
 				{
-					document.SelectItm.Prefx.options[i].style.color = "#C0C0C0";
+					document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 				}
 				else
 				{
-					document.SelectItm.Prefx.options[i].style.color = "#AFA06E";
+					document.SelectItm.Prefx.options[i].style.color = "#A0A5C8";
 				}
 
-				//check invalid affx combinations
+				//check invalid affix combinations
 				for (j=0; j<24; j++)
 				{
 					if (suffxS.nam == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].nam == invalidComb[j+24])
 					{
-						document.SelectItm.Suffx.options[i].style.color = "#C0C0C0";
+						document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 					}
 				}
 			}
@@ -1216,7 +1216,7 @@ function updateSuffx()
 	updateSource();
 }
 
-//change bsed on bse itm
+//change based on bse item
 function updateSource()
 {
 	if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text != "Unique")
@@ -1231,110 +1231,110 @@ function updateSource()
 	{
 		var suffxS = ((document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value=="None")? "None": suffx[document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value]);
 	}
-	document.getElementById("Gris").style.color = "#FFFFFF";
+	document.getElementById("Gris").style.color = "#A0A5C8";
 	document.getElementById("Gris").style.fontStyle = "normal";
-	document.getElementById("Wirt").style.color = "#FFFFFF";
+	document.getElementById("Wirt").style.color = "#A0A5C8";
 	document.getElementById("Wirt").style.fontStyle = "normal";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[1].disabled = false;
 
-	//rules for the prefx
+	//rules for the prefix
 	if (prefxS != "None" && document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text != "Staff")
 	{
 		if (prefxS.cursd)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
-			document.getElementById("Wirt").style.color = "#C0C0C0";
+			document.getElementById("Wirt").style.color = "#4C4C4C";
 			document.getElementById("Wirt").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 			document.SelectItm.Source[1].disabled = true;
 		}
 		if (prefxS.qlvvl > 30)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
 		if (bseS.ilvvl < Math.floor(prefxS.qlvvl/4) || bseS.ilvvl > prefxS.qlvvl*2+1)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
 		if (bseS.ilvvl > prefxS.qlvvl)
 		{
-			document.getElementById("Wirt").style.color = "#C0C0C0";
+			document.getElementById("Wirt").style.color = "#4C4C4C";
 			document.getElementById("Wirt").style.fontStyle = "italic";
 			document.SelectItm.Source[1].disabled = true;
 		}
 	}
 
-	//rules for bse itm alone
+	//rules for base item alone
 	if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Staff")
 	{
 		if (bseS.ilvvl > 16)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
-		document.getElementById("Wirt").style.color = "#C0C0C0";
+		document.getElementById("Wirt").style.color = "#4C4C4C";
 		document.getElementById("Wirt").style.fontStyle = "italic";
 		document.SelectItm.Source[1].disabled = true;
 	}
 	else if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Jewelry")
 	{
 
-		document.getElementById("Gris").style.color = "#C0C0C0";
+		document.getElementById("Gris").style.color = "#4C4C4C";
 		document.getElementById("Gris").style.fontStyle = "italic";
-		document.getElementById("Wirt").style.color = "#C0C0C0";
+		document.getElementById("Wirt").style.color = "#4C4C4C";
 		document.getElementById("Wirt").style.fontStyle = "italic";
 		document.SelectItm.Source[0].disabled = true;
 		document.SelectItm.Source[1].disabled = true;
 	}
 
-	//rules for the suffx
+	//rules for the suffix
 	if (suffxS != "None" && document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text != "Staff")
 	{
 		if (suffxS.cursd)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
-			document.getElementById("Wirt").style.color = "#C0C0C0";
+			document.getElementById("Wirt").style.color = "#4C4C4C";
 			document.getElementById("Wirt").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 			document.SelectItm.Source[1].disabled = true;
 		}
 		if (suffxS.qlvvl > 30)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
 		if (bseS.ilvvl < Math.floor(suffxS.qlvvl/4) || bseS.ilvvl > suffxS.qlvvl*2+1)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
 		if (bseS.ilvvl > suffxS.qlvvl)
 		{
-			document.getElementById("Wirt").style.color = "#C0C0C0";
+			document.getElementById("Wirt").style.color = "#4C4C4C";
 			document.getElementById("Wirt").style.fontStyle = "italic";
 			document.SelectItm.Source[1].disabled = true;
 		}
 	}
 
-	//rules if prefx and suffx are none
+	//rules if prefix and suffix are none
 	if (prefxS == "None" && suffxS == "None")
 	{
-		document.getElementById("Wirt").style.color = "#C0C0C0";
+		document.getElementById("Wirt").style.color = "#4C4C4C";
 		document.getElementById("Wirt").style.fontStyle = "italic";
 		document.SelectItm.Source[1].disabled = true;
 		if (bseS.ilvvl > 16)
 		{
-			document.getElementById("Gris").style.color = "#C0C0C0";
+			document.getElementById("Gris").style.color = "#4C4C4C";
 			document.getElementById("Gris").style.fontStyle = "italic";
 			document.SelectItm.Source[0].disabled = true;
 		}
@@ -1344,21 +1344,21 @@ function updateSource()
 	//change checked
 	/*for (i=0; i<=2; i++)
 	{
-		if (document.SelectItm.Source[i].disabled)
+		if (document.SelectItem.Source[i].disabled)
 		{
-			document.SelectItm.Source[i].checked = false;
+			document.SelectItem.Source[i].checked = false;
 		}
 	}
 
-	if (document.SelectItm.Source[0].disabled && document.SelectItm.Source[0].checked)
+	if (document.SelectItem.Source[0].disabled && document.SelectItem.Source[0].checked)
 	{
-		document.SelectItm.Source[0].checked = false;
-		document.SelectItm.Source[1].checked = true;
+		document.SelectItem.Source[0].checked = false;
+		document.SelectItem.Source[1].checked = true;
 	}
-	if (document.SelectItm.Source[1].disabled && document.SelectItm.Source[1].checked)
+	if (document.SelectItem.Source[1].disabled && document.SelectItem.Source[1].checked)
 	{
-		document.SelectItm.Source[1].checked = false;
-		document.SelectItm.Source[2].checked = true;
+		document.SelectItem.Source[1].checked = false;
+		document.SelectItem.Source[2].checked = true;
 	}*/
 }
 
@@ -1422,12 +1422,12 @@ function reset()
 	document.SelectItm.Svalue.options[1] = new Option("12345"," ");
 	document.SelectItm.Svalue.disabled = true;
 
-	document.getElementById("Gris").style.color = "#FFFFFF";
+	document.getElementById("Gris").style.color = "#A0A5C8";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[0].checked = true;
-	document.getElementById("Wirt").style.color = "#FFFFFF";
+	document.getElementById("Wirt").style.color = "#A0A5C8";
 	document.SelectItm.Source[1].disabled = false;
-	document.getElementById("Sale").style.color = "#FFFFFF";
+	document.getElementById("Sale").style.color = "#A0A5C8";
 	document.SelectItm.Source[2].disabled = false;
 	document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	document.getElementById("Price").firstChild.nodeValue = "0";
@@ -1437,7 +1437,7 @@ function reset()
 //BEGIN PRICE FUNCTION
 //////////////////////
 
-//verify valid itm
+//verify valid item
 function validat()
 {
 	var prefxS = ((document.SelectItm.Prefx.options[document.SelectItm.Prefx.selectedIndex].value=="None")? "None": prefx[document.SelectItm.Prefx.options[document.SelectItm.Prefx.selectedIndex].value]);
@@ -1451,7 +1451,7 @@ function validat()
 		var suffxS = ((document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value=="None")? "None": suffx[document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value]);
 	}
 
-	//if itm selected
+	//if item selected
 	if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Select this first")
 	{
 		return false;
@@ -1527,7 +1527,7 @@ function validat()
 //calculate price
 function calcPrice()
 {
-	//check for valid itm
+	//check for valid item
 	if (!validat())
 	{
 		document.getElementById("Price").firstChild.nodeValue = "0";

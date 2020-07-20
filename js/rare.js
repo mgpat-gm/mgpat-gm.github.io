@@ -786,11 +786,11 @@ function updatePrefix()
 	//grey out invalid suffixs
 	if (prefixS.name == "None" || prefixS.name == "Any")
 	{
-		document.SelectItem.Suffix.options[0].style.color = "#C0C0C0";
-		document.SelectItem.Suffix.options[1].style.color = "#C0C0C0";
+		document.SelectItem.Suffix.options[0].style.color = "#4C4C4C";
+		document.SelectItem.Suffix.options[1].style.color = "#4C4C4C";
 		for (i=2; i<=document.SelectItem.Suffix.options.length-1; i++)
 		{
-			document.SelectItem.Suffix.options[i].style.color = "#AFA06E";
+			document.SelectItem.Suffix.options[i].style.color = "#A0A5C8";
 		}
 	}
 	else
@@ -802,17 +802,17 @@ function updatePrefix()
 			{
 				for (i=0; i<14; i++)
 				{
-					document.SelectItem.Suffix.options[i].style.color = "#C0C0C0";
+					document.SelectItem.Suffix.options[i].style.color = "#4C4C4C";
 				}
 				for (i=14; i<=document.SelectItem.Suffix.options.length-1; i++)
 				{
-					document.SelectItem.Suffix.options[i].style.color = "#AFA06E";
+					document.SelectItem.Suffix.options[i].style.color = "#A0A5C8";
 				}
 			}
 			else
 			{
-				document.SelectItem.Suffix.options[0].style.color = "#AFA06E";
-				document.SelectItem.Suffix.options[1].style.color = "#AFA06E";
+				document.SelectItem.Suffix.options[0].style.color = "#A0A5C8";
+				document.SelectItem.Suffix.options[1].style.color = "#A0A5C8";
 				for (i=2; i<14; i++)
 				{
 					var qlvlMin = ((prefixS.qlvl < suffix[document.SelectItem.Suffix.options[i].value].qlvl) ? prefixS.qlvl: suffix[document.SelectItem.Suffix.options[i].value].qlvl);
@@ -823,23 +823,23 @@ function updatePrefix()
 					}
 					if (qlvlMin < Math.floor(qlvlMax/2))
 					{
-						document.SelectItem.Suffix.options[i].style.color = "#C0C0C0";
+						document.SelectItem.Suffix.options[i].style.color = "#4C4C4C";
 					}
 					else
 					{
-						document.SelectItem.Suffix.options[i].style.color = "#AFA06E";
+						document.SelectItem.Suffix.options[i].style.color = "#A0A5C8";
 					}
 				}
 				for (i=14; i<=document.SelectItem.Suffix.options.length-1; i++)
 				{
-					document.SelectItem.Suffix.options[i].style.color = "#AFA06E";
+					document.SelectItem.Suffix.options[i].style.color = "#A0A5C8";
 				}
 			}
 		}
 		else //rules for a prefix and suffix
 		{
-			document.SelectItem.Suffix.options[0].style.color = "#AFA06E";
-			document.SelectItem.Suffix.options[1].style.color = "#AFA06E";
+			document.SelectItem.Suffix.options[0].style.color = "#A0A5C8";
+			document.SelectItem.Suffix.options[1].style.color = "#A0A5C8";
 			for (i=2; i<=document.SelectItem.Suffix.options.length-1; i++)
 			{
 				var qlvlMin = ((prefixS.qlvl < suffix[document.SelectItem.Suffix.options[i].value].qlvl) ? prefixS.qlvl: suffix[document.SelectItem.Suffix.options[i].value].qlvl);
@@ -850,11 +850,11 @@ function updatePrefix()
 				}
 				if (qlvlMin < Math.floor(qlvlMax/2))
 				{
-					document.SelectItem.Suffix.options[i].style.color = "#C0C0C0";
+					document.SelectItem.Suffix.options[i].style.color = "#4C4C4C";
 				}
 				else
 				{
-					document.SelectItem.Suffix.options[i].style.color = "#AFA06E";
+					document.SelectItem.Suffix.options[i].style.color = "#A0A5C8";
 				}
 
 				//check invalid affix combinations
@@ -862,7 +862,7 @@ function updatePrefix()
 				{
 					if (prefixS.name == invalidCombo[j] && suffix[document.SelectItem.Suffix.options[i].value].name == invalidCombo[j+24])
 					{
-						document.SelectItem.Suffix.options[i].style.color = "#C0C0C0";
+						document.SelectItem.Suffix.options[i].style.color = "#4C4C4C";
 					}
 				}
 			}
@@ -886,17 +886,17 @@ function updateSuffix()
 	//gray out invalid prefixs
 	if (suffixS.name == "None" || suffixS.name == "Any")
 	{
-		document.SelectItem.Prefix.options[0].style.color = "#C0C0C0";
-		document.SelectItem.Prefix.options[1].style.color = "#C0C0C0";
+		document.SelectItem.Prefix.options[0].style.color = "#4C4C4C";
+		document.SelectItem.Prefix.options[1].style.color = "#4C4C4C";
 		for (i=2; i<=document.SelectItem.Prefix.options.length-1; i++)
 		{
 			if (prefix[document.SelectItem.Prefix.options[i].value].name == "Bountiful" || prefix[document.SelectItem.Prefix.options[i].value].name == "Plentiful")
 			{
-				document.SelectItem.Prefix.options[i].style.color = "#C0C0C0";
+				document.SelectItem.Prefix.options[i].style.color = "#4C4C4C";
 			}
 			else
 			{
-				document.SelectItem.Prefix.options[i].style.color = "#AFA06E";
+				document.SelectItem.Prefix.options[i].style.color = "#A0A5C8";
 			}
 		}
 	}
@@ -909,13 +909,13 @@ function updateSuffix()
 			{
 				for (i=0; i<=document.SelectItem.Prefix.options.length-1; i++)
 				{
-					document.SelectItem.Prefix.options[i].style.color = "#AFA06E";
+					document.SelectItem.Prefix.options[i].style.color = "#A0A5C8";
 				}
 			}
 			else
 			{
-				document.SelectItem.Prefix.options[0].style.color = "#AFA06E";
-				document.SelectItem.Prefix.options[1].style.color = "#AFA06E";
+				document.SelectItem.Prefix.options[0].style.color = "#A0A5C8";
+				document.SelectItem.Prefix.options[1].style.color = "#A0A5C8";
 				for (i=2; i<=document.SelectItem.Prefix.options.length-1; i++)
 				{
 					var qlvlMin = ((suffixS.qlvl < prefix[document.SelectItem.Prefix.options[i].value].qlvl) ? suffixS.qlvl: prefix[document.SelectItem.Prefix.options[i].value].qlvl);
@@ -926,19 +926,19 @@ function updateSuffix()
 					}
 					if (qlvlMin < Math.floor(qlvlMax/2) || prefix[document.SelectItem.Prefix.options[i].value].name == "Bountiful" || prefix[document.SelectItem.Prefix.options[i].value].name == "Plentiful")
 					{
-						document.SelectItem.Prefix.options[i].style.color = "#C0C0C0";
+						document.SelectItem.Prefix.options[i].style.color = "#4C4C4C";
 					}
 					else
 					{
-						document.SelectItem.Prefix.options[i].style.color = "#AFA06E";
+						document.SelectItem.Prefix.options[i].style.color = "#A0A5C8";
 					}
 				}
 			}
 		}
 		else //rules for a prefix and suffix
 		{
-			document.SelectItem.Prefix.options[0].style.color = "#AFA06E";
-			document.SelectItem.Prefix.options[1].style.color = "#AFA06E";
+			document.SelectItem.Prefix.options[0].style.color = "#A0A5C8";
+			document.SelectItem.Prefix.options[1].style.color = "#A0A5C8";
 			for (i=2; i<=document.SelectItem.Prefix.options.length-1; i++)
 			{
 				var qlvlMin = ((suffixS.qlvl < prefix[document.SelectItem.Prefix.options[i].value].qlvl) ? suffixS.qlvl: prefix[document.SelectItem.Prefix.options[i].value].qlvl);
@@ -949,11 +949,11 @@ function updateSuffix()
 				}
 				if (qlvlMin < Math.floor(qlvlMax/2) || prefix[document.SelectItem.Prefix.options[i].value].name == "Bountiful" || prefix[document.SelectItem.Prefix.options[i].value].name == "Plentiful")
 				{
-					document.SelectItem.Prefix.options[i].style.color = "#C0C0C0";
+					document.SelectItem.Prefix.options[i].style.color = "#4C4C4C";
 				}
 				else
 				{
-					document.SelectItem.Prefix.options[i].style.color = "#AFA06E";
+					document.SelectItem.Prefix.options[i].style.color = "#A0A5C8";
 				}
 
 				//check invalid affix combinations
@@ -961,7 +961,7 @@ function updateSuffix()
 				{
 					if (suffixS.name == invalidCombo[j] && suffix[document.SelectItem.Suffix.options[i].value].name == invalidCombo[j+24])
 					{
-						document.SelectItem.Suffix.options[i].style.color = "#C0C0C0";
+						document.SelectItem.Suffix.options[i].style.color = "#4C4C4C";
 					}
 				}
 			}

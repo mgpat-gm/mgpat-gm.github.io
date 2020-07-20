@@ -7,6 +7,22 @@
 <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="layout.css">
 <style>
+a:link {
+	text-decoration: none;
+	color: #ffffff
+}
+a:visited {
+	text-decoration: none;
+	color: #ffffff
+}
+a:hover {
+	background: none;
+	color: #ff8000
+}
+.title {
+	font-size: 1.5em;
+	text-align: left;
+}
 table.char {
 	border-width: 2px;
 	border-spacing: 0px;
@@ -84,6 +100,55 @@ table.item td {
 	background-color: #111111;
 	-moz-border-radius: ;
 }
+.banner {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: 0em;
+	width: 10%;
+	right: auto;}
+
+.banner p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	background: #2d2d2d;
+	border: none;
+	color: #ff8000;}
+
+.banner a, div.banner em { display: block; margin: 0 0.5em }
+.banner a, div.banner em { border-top: 0px groove #CCC }
+.banner a:first-child { border-top: none }
+.banner em { color: #CFC }
+
+.banner2 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: auto;
+	width: 10%;
+	right: 0em;
+}
+
+.banner2 p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	background: #2d2d2d;
+	border: none;
+	color: #ff8000;
+}
+
+.banner2 a, div.banner em { display: block; margin: 0 0.5em }
+.banner2 a, div.banner em { border-top: 0px groove #CCC }
+.banner2 a:first-child { border-top: none }
+.banner2 em { color: #CFC }
 </style>
 </head>
 <body bgcolor="#2d2d2d">
@@ -92,10 +157,15 @@ table.item td {
 	<br>
 	<br>
 	<a title="News, updates, and more!" href="index.html">Home</a>
+	<br>
+	<a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
+	<br>
 	<a title="My characters and their items" href="characters.html">Characters</a>
+	<br>
 	<a title="A list of all the uniques I have collected so far" href="uniques.html">Uniques</a>
-	<a title="Item Price/Rarity Calculators, created by Eso aka the_Langolier" href="calcs.html">Calcs</a>
+	<br>
 	<a title="Self explanatory" href="shrinelist.html">Shrines</a>
+	<br>
 	<a title="A list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
 	</p>
 </div>
@@ -104,6 +174,7 @@ table.item td {
 	<br>
 	<br>
         <a href="#Ghast">GhastMaster</a>
+	<br>
         <a href="#Sym">Symrustar</a>
     </p>
 </div>
@@ -111,15 +182,15 @@ table.item td {
 <table class="char" width="80%">
 	<tr>
 		<td colspan="4">
-   		<font class="title"><a name="Ghast">GhastMaster</a><br><img src="pictures\characters\sorcerer.jpg"></font>
+   		<font class="title"><a style="color:#FFFFFF;" name="Ghast">GhastMaster</a><br><img src="pictures\characters\sorcerer.jpg"></font>
 			<table class="stat" width="100%">
 				<tr>
 					<td colspan="4" style="text-align: left"><font class="cell2">Statistics:</font></td>
 				</tr>
 				<tr>
 					<td class="cell">Level:<font class="norm">  43</font></td>
-					<td class="cell">Armor Class:<font class="magic">  80</font></td>
-					<td class="cell">Experience:<font class="norm">  364926521</font></td>
+					<td class="cell">Armor Class:<font class="norm">  82</font></td>
+					<td class="cell">Experience:<font class="norm">  365834753</font></td>
 				</tr>
 				<tr>
 					<td class="cell">Strength:<font class="magic">  63</font></td>
@@ -127,19 +198,19 @@ table.item td {
 					<td class="cell">Next Level:<font class="norm">  399335440</font></td>
 				</tr>
 				<tr>
-					<td class="cell">Magic:<font class="magic">  366</font></td>
+					<td class="cell">Magic:<font class="magic">  345</font></td>
 					<td class="cell">Damage:<font class="norm">  28-35</font></td>
-					<td class="cell">Resist Magic:<font class="unique">  75%</font></td>
+					<td class="cell">Resist Magic:<font class="unique">  MAX</font></td>
 				</tr>
 				<tr>
 					<td class="cell">Dexterity:<font class="magic">  103</font></td>
 					<td class="cell">Life:<font class="magic">  150</font></td>
-					<td class="cell">Resist Fire:<font class="magic">  72%</font></td>
+					<td class="cell">Resist Fire:<font class="unique">  MAX</font></td>
 				</tr>
 				<tr>
 					<td class="cell">Vitality:<font class="magic">  98</font></td>
-					<td class="cell">Mana:<font class="magic">  976</font></td>
-					<td class="cell">Resist Lightning:<font class="magic">  72%</font></td>
+					<td class="cell">Mana:<font class="magic">  990</font></td>
+					<td class="cell">Resist Lightning:<font class="magic">  40%</font></td>
 				</tr>
 			</table>
 			<br>
@@ -154,7 +225,7 @@ table.item td {
 	<tr>
 		<td align="center"><img src="pictures\items\thinkingcap.gif"></td>
 		<td class="cellu">Thinking Cap<br>(Skull Cap)</td>
-		<td class="cellu">Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
+		<td class="cellu">Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
 		<td class="cellu">Armor: 4<br>Dur: 41</td>
 	</tr>
 	<tr>
@@ -167,8 +238,7 @@ table.item td {
 		<td align="center"><img src="pictures\items\mace.gif"></td>
 		<td class="cellu">Dreamflange<br>(Mace)</td>
 		<td class="cellu">+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level</td>
-		<td class="cellu">Damage: 1-8
-		<br>Dur: 192<br>Required: 16 Str</td>
+		<td class="cellu">Damage: 1-8<br>Dur: 192<br>Required: 16 Str</td>
 	</tr>
 	<tr>
 		<td align="center"><img src="pictures\items\towershield.gif"></td>
@@ -178,9 +248,9 @@ table.item td {
 	</tr>
 	<tr>
 		<td align="center"><img src="pictures\items\amulet.gif"></td>
-		<td class="cellm">Obsidian Amulet Of Wizardry</td>
-		<td class="cellm">Resist All: 32%</td>
-		<td class="cellm">+21 To Magic</td>
+		<td class="cellm">Dragon's Amulet</td>
+		<td class="cellm">Mana: +56</td>
+		<td class="cellm"></td>
 	</tr>
 	<tr>
 		<td align="center"><img src="pictures\items\ring.gif"></td>
@@ -191,8 +261,8 @@ table.item td {
 	<tr>
 		<td align="center"><img src="pictures\items\ring.gif"></td>
 		<td class="cellm">Ring Of Wizardry</td>
-		<td class="cellm">+30 To Magic</td>
 		<td></td>
+		<td class="cellm">+30 To Magic</td>
 	</tr>
 	<tr>
 		<td class="is" colspan="4">Inventory</td>
@@ -200,7 +270,7 @@ table.item td {
 	<tr>
 		<td align="center"><img src="pictures\items\largegold.gif"></td>
 		<td class="cell">Gold Pieces</td>
-		<td class="cell">5000</td>
+		<td class="cell">15,000</td>
 		<td class="cellm"></td>
 	</tr>
 </table>
@@ -208,7 +278,7 @@ table.item td {
 <table class="char"width="80%">
 	<tr>
 		<td colspan="4">
-		<font class="title"><a name="Sym">Symrustar</a><br>
+		<font class="title"><a  style="color:#FFFFFF;" name="Sym">Symrustar</a><br>
 		<img src="pictures\characters\rogue.jpg"></font>
 			<table class="stat" width="100%">
 				<tr>
@@ -304,7 +374,13 @@ table.item td {
 <br>
 <font class="norm">Updated: 2019-10-26</font>
 <br>
+<table width="80%">
+<tr>
+<td style="text-align: center;">
 <font class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</font>
+</td>
+</tr>
+</table>
 </center>
 </body>
 </html>
