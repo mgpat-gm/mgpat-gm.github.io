@@ -1,7 +1,6 @@
 <!DOCtype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <title>Calculators</title>
 <meta name="description" content="Ghast's Grotto is my personal site about Diablo.">
 <meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list">
@@ -10,7 +9,10 @@
 <script language="Javascript" src="js/block.js"></script>
 <script language="Javascript" src="js/char.js"></script>
 <script language="Javascript" src="js/cth.js"></script>
+<!-- Must have jquery before qlvl.js -->
+<script language="javascript" src="js/jquery.js"></script>
 <script language="Javascript" src="js/price.js"></script>
+<script language="javascript" src="js/qlvl.js"></script>
 <script language="Javascript" src="js/rare.js"></script>
 <script language="Javascript" src="js/weapdam.js"></script>
 <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
@@ -141,6 +143,12 @@ table.blog {
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#weapdam">Weapon</a>
 	<br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#armor">Armor</a>
+    </p>
+<br>
+    <p> Royal:
+	<br>
+	<br>
+        <a title="See what qlvl items you'll find at the vendors." href="#shopqlvl">Shop qlvl</a>
     </p>
 </div>
 <center>
@@ -1171,8 +1179,7 @@ updated();
 				<td><br>
 			</tr>
 				<td>Damage</td>
-				<td><input type="text" name="dammin" size="5" maxlength="3"></td>
-				<td>-</td>
+				<td><input type="text" name="dammin" size="5" maxlength="3"> -</td>
 				<td><input type="text" name="dammax" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
@@ -1673,7 +1680,7 @@ updated();
 		<td class="title" colspan=7><a name="armor" style="color:#ffffff;">Armor Calculator</a></td>
 	</tr>
 	<tr>
-		<td>Armor</th>
+		<td>Armor</td>
 		<td colspan="3">+% Armor</td>
 		<td colspan="2">Result</td>
 	</tr>
@@ -1692,5 +1699,62 @@ updated();
 	</tr>
 </table>
 </form>
+<!-- //////// Shop qlvl Calculator //////// -->
+<br>
+<form id="calc">
+<table class="blog">
+<tr>
+<td>
+	<table>
+	<tr>
+		<td colspan=2 class="title"><a name="shopqlvl" style="color:#ffffff;">Shop qlvl Calculator</a></td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label>
+		<td><button type="submit">Calculate</button></td
+</form>
+	</tr>
+	</table>
+<br>
+	<table>
+	<tr class="gris">
+		<td colspan=2>Griswold</td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2><textarea id="grisresult" COLS=40 ROWS=14 WRAP="virtual"></textarea></td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2>Wirt:</td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2><textarea id="wirtresult" COLS=32 ROWS=2 WRAP="virtual"></textarea></td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2>Adria:</td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2><textarea id="adriaresult" COLS=63 ROWS=3 WRAP="virtual"></textarea></td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td colspan=2><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">Royal</i></a></td>
+		</td>
+	</tr>
+</td>
+</tr>
+</table>
 </body>
 </html>
