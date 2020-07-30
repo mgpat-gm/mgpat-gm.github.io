@@ -11,6 +11,7 @@
 <script language="Javascript" src="js/cth.js"></script>
 <!-- Must have jquery before qlvl.js -->
 <script language="javascript" src="js/jquery.js"></script>
+<script language="javascript" src="js/orkin.js"></script>
 <script language="Javascript" src="js/price.js"></script>
 <script language="javascript" src="js/qlvl.js"></script>
 <script language="Javascript" src="js/rare.js"></script>
@@ -149,6 +150,12 @@ table.blog {
 	<br>
 	<br>
         <a title="See what qlvl items you'll find at the vendors." href="#shopqlvl">Shop qlvl</a>
+    </p>
+<br>
+    <p> OrkinMan:
+	<br>
+	<br>
+        <a title="Another price Calculator with no price limit" href="#orkin">Orkin Price</a>
     </p>
 </div>
 <center>
@@ -1349,8 +1356,9 @@ updated();
 			with(document){
  			for(i=0 ;i<=basmax;i++){
  			write("<option>",base[i].name,"</option>");
-			 }
-			}</script></select></td>
+			}
+			}
+		</script></select></td>
 		<td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
 		<td>+</td>
 		<td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
@@ -1409,58 +1417,136 @@ updated();
 <br>
 <form id="calc">
 <table class="blog">
-<tr>
-<td>
-	<table>
 	<tr>
-		<td colspan=2 class="title"><a name="shopqlvl" style="color:#ffffff;">Shop qlvl Calculator</a></td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label>
-		<td><button type="submit">Calculate</button></td
-</form>
-	</tr>
-	</table>
-<br>
-	<table>
-	<tr class="gris">
-		<td colspan="2">Griswold</td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2"><textarea id="grisresult" COLS="40" ROWS="14" WRAP="virtual"></textarea></td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2">Wirt:</td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2"><textarea id="wirtresult" COLS="32" ROWS="2" WRAP="virtual"></textarea></td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2">Adria(MP):</td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2"><textarea id="adriaresult" COLS="64" ROWS="3" WRAP="virtual"></textarea></td>
-	</tr>
-	</table>
-	<table>
-	<tr>
-		<td colspan="2"><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">Royal</i></a></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan=2 class="title"><a name="shopqlvl" style="color:#ffffff;">Shop qlvl Calculator</a></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label>
+					<td><button type="submit">Calculate</button></td>
+
+				</tr>
+			</table><br>
+			<table>
+				<tr class="gris">
+					<td colspan="2">Griswold</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2"><textarea id="grisresult" COLS="40" ROWS="14" WRAP="virtual"></textarea></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2">Wirt:</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2"><textarea id="wirtresult" COLS="32" ROWS="2" WRAP="virtual"></textarea></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2">Adria(MP):</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2"><textarea id="adriaresult" COLS="64" ROWS="3" WRAP="virtual"></textarea></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td colspan="2"><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">Royal</i></a></td>
+				</tr>
+			</table>
 		</td>
 	</tr>
-</td>
-</tr>
 </table>
+</form>
+<br>
+<!-- //////// Orkin Price Calculator //////// -->
+<form name="SelectMenu">
+<table class="blog">
+	<tr>
+		<td colspan=2 class="title"><a name="orkin" style="color:#ffffff;">Orkin Price Calculator</a></td>
+	</tr>
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td>Prefix<BR>
+					<select name="Prefi" onChange="changeprefix(this.form)">
+					<script language="javascript">
+					with(document){
+					for(i=0;i<prefix_trueLength;i++){
+					write("<option>",prefixopt[i],"</option>");
+					}
+					}
+					</script></select></td>
+					<td>Item<br>
+					<select name="Item" onChange="change(this.form)">
+					<script language="javascript">
+					with(document){
+					for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
+					</script></select></td>
+					<td>Suffix<br>
+					<select name="Suffi" onChange="changesuffix(this.form)">
+					<script language="javascript">
+					with(document){
+					for(i=0;i<suffix_trueLength;i++){write("<option>",suffixopt[i],"</option>");}}
+					</script></select></td>
+				</tr>
+				<tr>
+					<td>Prefix Value<BR>
+					<select name="PrefiValue" onChange="changeprefixvalue(this.form)">
+					<option>no prefix selected yet
+					<script language="javascript">
+					with(document){
+					for(i=1;i<prefixvalue_maxLength;i++){write("<option>","</option>")}}
+					</script></select></td>
+					<td>Total Cost<br><input TYPE="text" name="TotalCost" value="0"></td>
+					<td>Suffix Value<BR>
+					<select name="SuffiValue" onChange="changesuffixvalue(this.form)">
+					<option>no suffix selected yet
+					<script language="javascript">
+					with(document){
+					for(i=1;i<suffixvalue_maxLength;i++){write("<option>","</option>");}}
+					</script></select></td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td><input TYPE="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
+				</tr>
+				<tr>
+					<td><input TYPE="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
+				</tr>
+				<tr>
+					<td><input TYPE="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
+	</tr>
+<input TYPE="hidden" value="0" name="PrefiCost">
+<input TYPE="hidden" value="0" name="SuffiCost">
+<input TYPE="hidden" value="0" name="PrefiDebug">
+<input TYPE="hidden" value="0" name="SuffiDebug">
+</form>
+</table>
+<script language="javascript">
+     change();
+     }
+</script>
 </body>
 </html>
