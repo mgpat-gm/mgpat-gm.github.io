@@ -1482,11 +1482,11 @@ updated();
 			<table>
 				<tr>
 					<td>Prefix<BR>
-					<select name="Prefi" onChange="changeprefix(this.form)">
+					<select name="Prefi" onChange="changeprefi(this.form)">
 					<script language="javascript">
 					with(document){
-					for(i=0;i<prefix_trueLength;i++){
-					write("<option>",prefixopt[i],"</option>");
+					for(i=0;i<prefi_trueLength;i++){
+					write("<option>",prefiopt[i],"</option>");
 					}
 					}
 					</script></select></td>
@@ -1497,27 +1497,27 @@ updated();
 					for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
 					</script></select></td>
 					<td>Suffix<br>
-					<select name="Suffi" onChange="changesuffix(this.form)">
+					<select name="Suffi" onChange="changesuffi(this.form)">
 					<script language="javascript">
 					with(document){
-					for(i=0;i<suffix_trueLength;i++){write("<option>",suffixopt[i],"</option>");}}
+					for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
 					</script></select></td>
 				</tr>
 				<tr>
 					<td>Prefix Value<BR>
-					<select name="PrefiValue" onChange="changeprefixvalue(this.form)">
+					<select name="PrefiValue" onChange="changeprefivalue(this.form)">
 					<option>no prefix selected yet
 					<script language="javascript">
 					with(document){
-					for(i=1;i<prefixvalue_maxLength;i++){write("<option>","</option>")}}
+					for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
 					</script></select></td>
-					<td>Total Cost<br><input TYPE="text" name="TotalCost" value="0"></td>
+					<td>Total Cost<br><input type="text" name="TotalCost" value="0"></td>
 					<td>Suffix Value<BR>
-					<select name="SuffiValue" onChange="changesuffixvalue(this.form)">
+					<select name="SuffiValue" onChange="changesuffivalue(this.form)">
 					<option>no suffix selected yet
 					<script language="javascript">
 					with(document){
-					for(i=1;i<suffixvalue_maxLength;i++){write("<option>","</option>");}}
+					for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
 					</script></select></td>
 				</tr>
 			</table>
@@ -1525,28 +1525,29 @@ updated();
 		<td>
 			<table>
 				<tr>
-					<td><input TYPE="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
+					<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
 				</tr>
 				<tr>
-					<td><input TYPE="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
+					<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
 				</tr>
 				<tr>
-					<td><input TYPE="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
+					<td><input type="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
 				</tr>
 			</table></td>
 	</tr>
 	<tr>
 		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
 	</tr>
-<input TYPE="hidden" value="0" name="PrefiCost">
-<input TYPE="hidden" value="0" name="SuffiCost">
-<input TYPE="hidden" value="0" name="PrefiDebug">
-<input TYPE="hidden" value="0" name="SuffiDebug">
-</form>
-</table>
+<input type="hidden" value="0" name="PrefiCost">
+<input type="hidden" value="0" name="SuffiCost">
+<input type="hidden" value="0" name="PrefiDebug">
+<input type="hidden" value="0" name="SuffiDebug">
 <script language="javascript">
      change();
      }
 </script>
+</form>
+</table>
+
 </body>
 </html>
