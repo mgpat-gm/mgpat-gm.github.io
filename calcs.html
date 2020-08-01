@@ -163,7 +163,7 @@ table.blog {
 <form Name="SelectItm">
 <table class="blog">
 	<tr>
-		<td class="title" colspan="3"><a name="itemprice" style="color:#ffffff;">Item Price Calculator</a></td>
+		<td class="title"><a name="itemprice" style="color:#ffffff;">Item Price Calculator</a></td>
 	</tr>
 	<tr>
 		<td align="center">
@@ -195,7 +195,7 @@ table.blog {
 	reset();
 	</script>
 	<tr>
-		<td colspan="3"><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
+		<td><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
 	</tr>
 </table>
 </form>
@@ -204,70 +204,63 @@ table.blog {
 <FORM Name="SelectItem">
 <table class="blog">
 	<tr>
-		<td class="title" colspan="3"><a name="itemrarity" style="color:#ffffff;">Item Rarity Calculator</a></td>
+		<td class="title"><a name="itemrarity" style="color:#ffffff;">Item Rarity Calculator</a></td>
 	</tr>
 	<tr>
 		<input type="hidden" name="blank1">
-		<td colspan="3" style="text-align: center">Item Class:<BR>
-			<select name="Class" onChange="updateSelectMenu();">
-				<option value="unvalid" SELECTED>Select this first</option>
-				<option>Helm</option>
-				<option>Armor</option>
-				<option>Shield</option>
-				<option>Sword</option>
-				<option>Axe</option>
-				<option>Club</option>
-				<option>Bow</option>
-				<option>Staff</option>
-				<option>Jewelry</option>
-			</select>	
-			<input type="hidden" name="blank2">
+		<td colspan="3" style="text-align: center">Item Class:<br>
+		<select name="Class" onChange="updateSelectMenu();">
+		<option value="unvalid" selected>Select this first</option>
+		<option>Helm</option>
+		<option>Armor</option>
+		<option>Shield</option>
+		<option>Sword</option>
+		<option>Axe</option>
+		<option>Club</option>
+		<option>Bow</option>
+		<option>Staff</option>
+		<option>Jewelry</option>
+		</select>	
+		<input type="hidden" name="blank2">
 		</td>
 	<tr>
 		<td align="center">
 		<table>
         		<tr>
-				<td>Prefix:<BR>
-					<select name="Prefix" DISABLED onChange="validate();">
-						<option SELECTED></option>
-						<option>1234567890</option>
-					</select>
+				<td>Prefix:<br>
+				<select name="Prefix" DISABLED onChange="validate();">
+				<option selected></option>
+				<option>1234567890</option>
+				</select>
 				</td>
-				<td>Base Item:<BR>
-					<select name="Base" DISABLED>
-					<option SELECTED>Select this second</option>
-					</select>
+				<td>Base Item:<br>
+				<select name="Base" DISABLED>
+				<option selected>Select this second</option>
+				</select>
 				</td>
-				<td>Suffix:<BR>
-					<select name="Suffix" DISABLED onChange="validate();">
-						<option SELECTED></option>
-						<option>1234567890</option>
-					</select>
+				<td>Suffix:<br>
+				<select name="Suffix" DISABLED onChange="validate();">
+				<option selected></option>
+				<option>1234567890</option>
+				</select>
 				</td>
 			</tr>
-		</table>
-		</td>
+		</table></td>
 	</tr>
 	<tr>
 		<td align="center">
 		<table align="right">
 			<tr>
-				<td ID="Valid" >
-				</td>
-				<td align="right">
-					<input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED>
-				</td>
+				<td ID="Valid" ></td>
+				<td align="right"><input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED></td>
 			</tr>
-		</table>
-		</td>
+		</table></td>
 	</tr>
 	<tr>
-		<td colspan="3">Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" READONLY></textarea>
-		</td>
+		<td>Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" READONLY></textarea></td>
 	</tr>
 	<tr>
-		<td colspan="3"><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
-		</td>
+		<td><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
 	</tr>
 </table>
 </form>
@@ -522,6 +515,7 @@ table.blog {
 				<td>--</td>
 				<td class="magic">--</td>
 			</tr>
+			<tr>
 				<td>Advocate</td>
 				<td>--</td>
 				<td>--</td>
@@ -1011,82 +1005,81 @@ updated();
 <form name="myChar">
 <table class="blog">
 	<tr>
-		<td class="title" colspan="2"><a name="charstats" style="color:#ffffff;">Character Stats Calculator</td>
+		<td colspan="2" class="title"><a name="charstats" style="color:#ffffff;">Character Stats Calculator</td>
 	</tr>
 	<tr>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Base Stats</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Name</td>
-					<td><input type="text" name="mycharname" size="20" maxlength="20"></td>
-					<td>Class</td>
-					<td>
-						<select name="myclass" size="1">
-						<option selected>Warrior
-						<option>Rogue
-						<option>Sorcerer
-						</select></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Level</td>
-					<td><input type="text" name="mylevel" size="5" maxlength="2"></td>
-					<td>Exp</td>
-					<td><input type="text" name="myexp" size="15" maxlength="10"></td>
-					<td><input type="button" name="expset" value="Set Exp" onclick="myexpset(this.form)"></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Str</td>
-					<td><input type="text" name="mystrbase" size="5" maxlength="3"></td>
-					<td>Mag</td>
-					<td><input type="text" name="mymagbase" size="5" maxlength="3"></td>
-					<td>Dex</td>
-					<td><input type="text" name="mydexbase" size="5" maxlength="3"></td>
-					<td>Vit</td>
-					<td><input type="text" name="myvitbase" size="5" maxlength="3"></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="button" name="attrimax" value="Set Max" onclick="attrimaxset(this.form)"></td>
-					<td colspan="2"><input type="button" name="attriinit" value="Set Min" onclick="attriinitset(this.form)"></td>
-					<td colspan="2"><input type="reset" name="reset" value="Reset"></td>
-					<td colspan="2"><input type="button" name="calc" value="Calculate" onclick="calcall(this.form)"></td>
-				</tr>
-			</table>
-			<br>
+		<table>
+			<tr>
+				<td class="title2">Base Stats</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="mycharname" size="20" maxlength="20"></td>
+				<td>Class</td>
+				<td>
+				<select name="myclass" size="1">
+				<option selected>Warrior</option>
+				<option>Rogue</option>
+				<option>Sorcerer</option>
+				</select></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>Level</td>
+				<td><input type="text" name="mylevel" size="5" maxlength="2"></td>
+				<td>Exp</td>
+				<td><input type="text" name="myexp" size="15" maxlength="10"></td>
+				<td><input type="button" name="expset" value="Set Exp" onclick="myexpset(this.form)"></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>Str</td>
+				<td><input type="text" name="mystrbase" size="5" maxlength="3"></td>
+				<td>Mag</td>
+				<td><input type="text" name="mymagbase" size="5" maxlength="3"></td>
+				<td>Dex</td>
+				<td><input type="text" name="mydexbase" size="5" maxlength="3"></td>
+				<td>Vit</td>
+				<td><input type="text" name="myvitbase" size="5" maxlength="3"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" name="attrimax" value="Set Max" onclick="attrimaxset(this.form)"></td>
+				<td colspan="2"><input type="button" name="attriinit" value="Set Min" onclick="attriinitset(this.form)"></td>
+				<td colspan="2"><input type="reset" name="reset" value="Reset"></td>
+				<td colspan="2"><input type="button" name="calc" value="Calculate" onclick="calcall(this.form)"></td>
+			</tr>
+		</table><br>
 <input type="hidden" name="enphisicallevel" size="5" maxlength="2">
 <input type="hidden" name="enac" size="5" maxlength="3">
 <input type="hidden" name="enmagiclevel" size="5" maxlength="2">
 <input type="hidden" name="enacmax" value="Set Max" onclick="enacmaxset(this.form)">
-			<table>
-				<tr>
-					<td class="title2">Helm</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="helmac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="helmrate" size="5" maxlength="4"> + % AC<br>
-					<input type="text" name="helmall" size="5" maxlength="3"> + to All
-					<input type="button" name="helmset" value="Set" onclick="allsethelm(this.form)"><br>
-					<input type="text" name="helmstr" size="5" maxlength="3"> Str<br>
-					<input type="text" name="helmmag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="helmdex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="helmvit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="helmmana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="helmlife" size="5" maxlength="3"> Life<br>
-					<input type="text" name="helmresall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="helmresset" value="Set" onclick="resallsethelm(this.form)"><br>
-					<input type="text" name="helmresmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="helmresfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="helmreslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Helm</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="helmac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="helmrate" size="5" maxlength="4"> + % AC<br>
+				<input type="text" name="helmall" size="5" maxlength="3"> + to All
+				<input type="button" name="helmset" value="Set" onclick="allsethelm(this.form)"><br>
+				<input type="text" name="helmstr" size="5" maxlength="3"> Str<br>
+				<input type="text" name="helmmag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="helmdex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="helmvit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="helmmana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="helmlife" size="5" maxlength="3"> Life<br>
+				<input type="text" name="helmresall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="helmresset" value="Set" onclick="resallsethelm(this.form)"><br>
+				<input type="text" name="helmresmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="helmresfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="helmreslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
 		<td style="vertical-align:top;">
 		<table>
@@ -1127,7 +1120,8 @@ updated();
 				<td><input type="text" name="ac" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
-				<td>Dex</td><td><input type="text" name="dexbase" size="5" maxlength="3"></td>
+				<td>Dex</td>
+				<td><input type="text" name="dexbase" size="5" maxlength="3"></td>
 				<td><input type="text" name="dexnow" size="5" maxlength="3"></td>
 				<td>to Hit</td>
 				<td><input type="text" name="tohit" size="5" maxlength="3"></td>
@@ -1172,171 +1166,168 @@ updated();
 	</tr>
 	<tr>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Armor</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="armorac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="armorrate" size="5" maxlength="4"> + % AC<br>
-					<input type="text" name="armorall" size="5" maxlength="3"> + to All
-					<input type="button" name="armorset" value="Set" onclick="allsetarmor(this.form)"><br>
-					<input type="text" name="armorstr" size="5" maxlength="3"> Str<br>
-					<input type="text" name="armormag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="armordex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="armorvit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="armormana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="armorlife" size="5" maxlength="3"> Life<br>
-					<input type="text" name="armorresall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="armorresset" value="Set" onclick="resallsetarmor(this.form)"><br>
-					<input type="text" name="armorresmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="armorresfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="armorreslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Armor</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="armorac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="armorrate" size="5" maxlength="4"> + % AC<br>
+				<input type="text" name="armorall" size="5" maxlength="3"> + to All
+				<input type="button" name="armorset" value="Set" onclick="allsetarmor(this.form)"><br>
+				<input type="text" name="armorstr" size="5" maxlength="3"> Str<br>
+				<input type="text" name="armormag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="armordex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="armorvit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="armormana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="armorlife" size="5" maxlength="3"> Life<br>
+				<input type="text" name="armorresall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="armorresset" value="Set" onclick="resallsetarmor(this.form)"><br>
+				<input type="text" name="armorresmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="armorresfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="armorreslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Shield</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="shieldac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="shieldrate" size="5" maxlength="4"> + % AC<br>
-					<input type="text" name="shieldall" size="5" maxlength="3"> + to All
-					<input type="button" name="shieldset" value="Set" onclick="allsetshield(this.form)"><br>
-					<input type="text" name="shieldstr" size="5" maxlength="3"> Str<br>
-					<input type="text" name="shieldmag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="shielddex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="shieldvit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="shieldmana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="shieldlife" size="5" maxlength="3"> Life<br>
-					<input type="text" name="shieldresall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="shieldresset" value="Set" onclick="resallsetshield(this.form)"><br>
-					<input type="text" name="shieldresmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="shieldresfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="shieldreslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Shield</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="shieldac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="shieldrate" size="5" maxlength="4"> + % AC<br>
+				<input type="text" name="shieldall" size="5" maxlength="3"> + to All
+				<input type="button" name="shieldset" value="Set" onclick="allsetshield(this.form)"><br>
+				<input type="text" name="shieldstr" size="5" maxlength="3"> Str<br>
+				<input type="text" name="shieldmag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="shielddex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="shieldvit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="shieldmana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="shieldlife" size="5" maxlength="3"> Life<br>
+				<input type="text" name="shieldresall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="shieldresset" value="Set" onclick="resallsetshield(this.form)"><br>
+				<input type="text" name="shieldresmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="shieldresfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="shieldreslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
-	<tr>
 	</tr>
+	<tr>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Weapon</td>
-				</tr>
-				<tr>
-					<td><select name="weapontype" size="1">
-					<option selected>Bare Knuckle
-					<option>Sword
-					<option>Bow
-					<option>Mace(Hammer,Maul)
-					<option>Axe
-					<option>Staff
-					<option>Shield
-					</select> Type<br>
-					<input type="text" name="weapondammin" size="5" maxlength="2"> - <input type="text" name="weapondammax" size="5" maxlength="2"> Damage<br>
-					<input type="text" name="weaponrate" size="5" maxlength="4"> + % Damage<br>
-					<input type="text" name="weaponadd" size="5" maxlength="2"> + Damage<br>
-					<input type="text" name="weaponall" size="5" maxlength="3"> + to All
-					<input type="button" name="weaponset" value="Set" onclick="allsetweapon(this.form)"><br>
-					<input type="text" name="weaponstr" size="5" maxlength="3"> Str<br>
-					<input type="text" name="weaponmag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="weapondex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="weaponvit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="type" name="weapontohit" size="5" maxlength="3"> + % to Hit<br>
-					<input type="text" name="weaponac" size="5" maxlength="2"> AC<br>
-					<input type="text" name="weaponmana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="weaponlife" size="5" maxlength="3"> Life<br>
-					<input type="text" name="weaponresall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="weaponresset" value="Set" onclick="resallsetweapon(this.form)"><br>
-					<input type="text" name="weaponresmag" size="3" maxlength="2"> % Res Magic<br>
-					<input type="text" name="weaponresfire" size="3" maxlength="2"> % Res Fire<br>
-					<input type="text" name="weaponreslight" size="3" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Weapon</td>
+			</tr>
+			<tr>
+				<td><select name="weapontype" size="1">
+				<option selected>Bare Knuckle</option>
+				<option>Sword</option>
+				<option>Bow</option>
+				<option>Mace(Hammer,Maul)</option>
+				<option>Axe</option>
+				<option>Staff</option>
+				<option>Shield</option>
+				</select> Type<br>
+				<input type="text" name="weapondammin" size="5" maxlength="2"> - <input type="text" name="weapondammax" size="5" maxlength="2"> Damage<br>
+				<input type="text" name="weaponrate" size="5" maxlength="4"> + % Damage<br>
+				<input type="text" name="weaponadd" size="5" maxlength="2"> + Damage<br>
+				<input type="text" name="weaponall" size="5" maxlength="3"> + to All
+				<input type="button" name="weaponset" value="Set" onclick="allsetweapon(this.form)"><br>
+				<input type="text" name="weaponstr" size="5" maxlength="3"> Str<br>
+				<input type="text" name="weaponmag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="weapondex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="weaponvit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="type" name="weapontohit" size="5" maxlength="3"> + % to Hit<br>
+				<input type="text" name="weaponac" size="5" maxlength="2"> AC<br>
+				<input type="text" name="weaponmana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="weaponlife" size="5" maxlength="3"> Life<br>
+				<input type="text" name="weaponresall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="weaponresset" value="Set" onclick="resallsetweapon(this.form)"><br>
+				<input type="text" name="weaponresmag" size="3" maxlength="2"> % Res Magic<br>
+				<input type="text" name="weaponresfire" size="3" maxlength="2"> % Res Fire<br>
+				<input type="text" name="weaponreslight" size="3" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
 		<td style="vertical-align:top;">
-			<table>
-				<tr>
-					<td class="title2">Amulet</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="amuletac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="amulettohit" size="5" maxlength="4"> + % to Hit<br>
-					<input type="text" name="amuletall" size="5" maxlength="3"> + to All
-					<input type="button" name="amuletset" value="Set" onclick="allsetamulet(this.form)"><br>
-					<input type="text" name="amuletstr" size="5" maxlength="3"> Str<br>
-					<input type="text" name="amuletmag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="amuletdex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="amuletvit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="amuletmana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="amuletlife" size="5" maxlength="3"> Life<br>
-					<input type="text" name="amuletresall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="amuletresset" value="Set" onclick="resallsetamulet(this.form)"><br>
-					<input type="text" name="amuletresmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="amuletresfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="amuletreslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Amulet</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="amuletac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="amulettohit" size="5" maxlength="4"> + % to Hit<br>
+				<input type="text" name="amuletall" size="5" maxlength="3"> + to All
+				<input type="button" name="amuletset" value="Set" onclick="allsetamulet(this.form)"><br>
+				<input type="text" name="amuletstr" size="5" maxlength="3"> Str<br>
+				<input type="text" name="amuletmag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="amuletdex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="amuletvit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="amuletmana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="amuletlife" size="5" maxlength="3"> Life<br>
+				<input type="text" name="amuletresall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="amuletresset" value="Set" onclick="resallsetamulet(this.form)"><br>
+				<input type="text" name="amuletresmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="amuletresfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="amuletreslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
+	</tr>
 	<tr>
-	</tr>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Left Ring</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="ring1ac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="ring1tohit" size="5" maxlength="4"> + % to Hit<br>
-					<input type="text" name="ring1all" size="5" maxlength="3"> + to All
-					<input type="button" name="ring1set" value="Set" onclick="allsetring1(this.form)"><br>
-					<input type="text" name="ring1str" size="5" maxlength="3"> Str<br>
-					<input type="text" name="ring1mag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="ring1dex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="ring1vit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="ring1mana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="ring1life" size="5" maxlength="3"> Life<br>
-					<input type="text" name="ring1resall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="ring1resset" value="Set" onclick="resallsetring1(this.form)"><br>
-					<input type="text" name="ring1resmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="ring1resfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="ring1reslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Left Ring</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="ring1ac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="ring1tohit" size="5" maxlength="4"> + % to Hit<br>
+				<input type="text" name="ring1all" size="5" maxlength="3"> + to All
+				<input type="button" name="ring1set" value="Set" onclick="allsetring1(this.form)"><br>
+				<input type="text" name="ring1str" size="5" maxlength="3"> Str<br>
+				<input type="text" name="ring1mag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="ring1dex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="ring1vit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="ring1mana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="ring1life" size="5" maxlength="3"> Life<br>
+				<input type="text" name="ring1resall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="ring1resset" value="Set" onclick="resallsetring1(this.form)"><br>
+				<input type="text" name="ring1resmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="ring1resfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="ring1reslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
 		<td>
-			<table>
-				<tr>
-					<td class="title2">Right Ring</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="ring2ac" size="5" maxlength="3"> AC<br>
-					<input type="text" name="ring2tohit" size="5" maxlength="4"> + % to Hit<br>
-					<input type="text" name="ring2all" size="5" maxlength="3"> + to All
-					<input type="button" name="ring2set" value="Set" onclick="allsetring2(this.form)"><br>
-					<input type="text" name="ring2str" size="5" maxlength="3"> Str<br>
-					<input type="text" name="ring2mag" size="5" maxlength="3"> Mag<br>
-					<input type="text" name="ring2dex" size="5" maxlength="3"> Dex<br>
-					<input type="text" name="ring2vit" size="5" maxlength="3"> Vit</td>
-					<td style="vertical-align:top;"><input type="text" name="ring2mana" size="5" maxlength="3"> Mana<br>
-					<input type="text" name="ring2life" size="5" maxlength="3"> Life<br>
-					<input type="text" name="ring2resall" size="5" maxlength="2"> + % Res All
-					<input type="button" name="ring2resset" value="Set" onclick="resallsetring2(this.form)"><br>
-					<input type="text" name="ring2resmag" size="5" maxlength="2"> % Res Magic<br>
-					<input type="text" name="ring2resfire" size="5" maxlength="2"> % Res Fire<br>
-					<input type="text" name="ring2reslight" size="5" maxlength="2"> % Res Lightning</td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td class="title2">Right Ring</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="ring2ac" size="5" maxlength="3"> AC<br>
+				<input type="text" name="ring2tohit" size="5" maxlength="4"> + % to Hit<br>
+				<input type="text" name="ring2all" size="5" maxlength="3"> + to All
+				<input type="button" name="ring2set" value="Set" onclick="allsetring2(this.form)"><br>
+				<input type="text" name="ring2str" size="5" maxlength="3"> Str<br>
+				<input type="text" name="ring2mag" size="5" maxlength="3"> Mag<br>
+				<input type="text" name="ring2dex" size="5" maxlength="3"> Dex<br>
+				<input type="text" name="ring2vit" size="5" maxlength="3"> Vit</td>
+				<td style="vertical-align:top;"><input type="text" name="ring2mana" size="5" maxlength="3"> Mana<br>
+				<input type="text" name="ring2life" size="5" maxlength="3"> Life<br>
+				<input type="text" name="ring2resall" size="5" maxlength="2"> + % Res All
+				<input type="button" name="ring2resset" value="Set" onclick="resallsetring2(this.form)"><br>
+				<input type="text" name="ring2resmag" size="5" maxlength="2"> % Res Magic<br>
+				<input type="text" name="ring2resfire" size="5" maxlength="2"> % Res Fire<br>
+				<input type="text" name="ring2reslight" size="5" maxlength="2"> % Res Lightning</td>
+			</tr>
+		</table>
 		</td>
 	</tr>
-</td>
-</tr>
 	<tr>
 		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20120125084741/http://www.red-wolf.sakura.ne.jp/dia/statuschk.html">King aka Red-Wolf</i></a></td>
-		</td>
 	</tr>
 </table>
 </form>
@@ -1344,46 +1335,44 @@ updated();
 <br>
 <form name="DamCheck">
 <table class="blog">
-<tr>
-<td>
-	<table>
 	<tr>
-		<td class="title" colspan="8"><a name="weapdam" style="color:#ffffff;">Weapon Damage Calculator</a></td>
+		<td class="title"><a name="weapdam" style="color:#ffffff;">Weapon Damage Calculator</a></td>
 	</tr>
 	<tr>
-		<td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
-		<script language="JavaScript">
-			with(document){
- 			for(i=0 ;i<=basmax;i++){
- 			write("<option>",base[i].name,"</option>");
-			}
-			}
-		</script></select></td>
-		<td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
-		<td>+</td>
-		<td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
-		<td>+</td>
-		<td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
-		<td>=</td>
-		<td>Damage Range<br><input type="text" name="min" size="3" maxlength="3"> - <input type="text" name="max" size="3" maxlength="3"></td>
-	</tr>
-	<tr>
-		<td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
-	</tr>
-	</table>
-	<br>
-	<table>
-	<tr>
-		<td colspan=8>Results:<br>
-		<textarea name="display" COLS="77" ROWS="5" WRAP="virtual">Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
-	</tr>
-	<tr>
-		<td colspan="8"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+		<td>
+		<table>
+			<tr>
+				<td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
+				<script language="JavaScript">
+					with(document){
+		 			for(i=0 ;i<=basmax;i++){
+		 			write("<option>",base[i].name,"</option>");
+					}
+					}
+				</script></select></td>
+				<td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
+				<td>+</td>
+				<td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
+				<td>+</td>
+				<td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
+				<td>=</td>
+				<td>Damage Range<br><input type="text" name="min" size="3" maxlength="3"> - <input type="text" name="max" size="3" maxlength="3"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
+			</tr>
+		</table><br>
+		<table>
+			<tr>
+				<td>Results:<br>
+				<textarea name="display" cols="77" rows="5" wrap="virtual">Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
+			</tr>
+		</table>
 		</td>
 	</tr>
-	</table>
-	</td>
-</tr>
+	<tr>
+		<td><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+	</tr>
 </table>
 </form>
 <!-- //////// Armor Calculator //////// -->
@@ -1405,11 +1394,10 @@ updated();
 		<td>%</td>
 		<td>=</td>
 		<td><input type="text" name="ac" size="4" maxlength="3"></td>
-
 		<td><input type="button" name="calc" value="Calc" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
 	</tr>
-		<td colspan=7><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
-		</td>
+	<tr>
+		<td colspan="7"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
 	</tr>
 </table>
 </form>
@@ -1418,55 +1406,50 @@ updated();
 <form id="calc">
 <table class="blog">
 	<tr>
+		<td class="title"><a name="shopqlvl" style="color:#ffffff;">Shop qlvl Calculator</a></td>
+	</tr>
+	<tr>
 		<td>
-			<table>
-				<tr>
-					<td colspan=2 class="title"><a name="shopqlvl" style="color:#ffffff;">Shop qlvl Calculator</a></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label>
-					<td><button type="submit">Calculate</button></td>
-
-				</tr>
-			</table><br>
-			<table>
-				<tr class="gris">
-					<td colspan="2">Griswold</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2"><textarea id="grisresult" COLS="40" ROWS="14" WRAP="virtual"></textarea></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2">Wirt:</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2"><textarea id="wirtresult" COLS="32" ROWS="2" WRAP="virtual"></textarea></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2">Adria(MP):</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2"><textarea id="adriaresult" COLS="64" ROWS="3" WRAP="virtual"></textarea></td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td colspan="2"><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">Royal</i></a></td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
+				<td><button type="submit">Calculate</button></td>
+			</tr>
+		</table><br>
+		<table>
+			<tr class="gris">
+				<td colspan="2">Griswold</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td colspan="2"><textarea id="grisresult" COLS="40" ROWS="14" WRAP="virtual"></textarea></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td colspan="2">Wirt:</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td colspan="2"><textarea id="wirtresult" COLS="32" ROWS="2" WRAP="virtual"></textarea></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td colspan="2">Adria(MP):</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td colspan="2"><textarea id="adriaresult" COLS="64" ROWS="3" WRAP="virtual"></textarea></td>
+			</tr>
+		</table>
 		</td>
+	</tr>
+	<tr>
+		<td><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">Royal</i></a></td>
 	</tr>
 </table>
 </form>
@@ -1475,65 +1458,65 @@ updated();
 <form name="SelectMenu">
 <table class="blog">
 	<tr>
-		<td colspan=2 class="title"><a name="orkin" style="color:#ffffff;">Orkin Price Calculator</a></td>
+		<td colspan="2" class="title"><a name="orkin" style="color:#ffffff;">Orkin Price Calculator</a></td>
 	</tr>
 	<tr>
 		<td>
-			<table>
-				<tr>
-					<td>Prefix<BR>
-					<select name="Prefi" onChange="changeprefi(this.form)">
-					<script language="javascript">
-					with(document){
-					for(i=0;i<prefi_trueLength;i++){
-					write("<option>",prefiopt[i],"</option>");
-					}
-					}
-					</script></select></td>
-					<td>Item<br>
-					<select name="Item" onChange="change(this.form)">
-					<script language="javascript">
-					with(document){
-					for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
-					</script></select></td>
-					<td>Suffix<br>
-					<select name="Suffi" onChange="changesuffi(this.form)">
-					<script language="javascript">
-					with(document){
-					for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
-					</script></select></td>
-				</tr>
-				<tr>
-					<td>Prefix Value<BR>
-					<select name="PrefiValue" onChange="changeprefivalue(this.form)">
-					<option>no prefix selected yet
-					<script language="javascript">
-					with(document){
-					for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
-					</script></select></td>
-					<td>Total Cost<br><input type="text" name="TotalCost" value="0"></td>
-					<td>Suffix Value<BR>
-					<select name="SuffiValue" onChange="changesuffivalue(this.form)">
-					<option>no suffix selected yet
-					<script language="javascript">
-					with(document){
-					for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
-					</script></select></td>
-				</tr>
-			</table>
+		<table>
+			<tr>
+				<td>Prefix<br>
+				<select name="Prefi" onChange="changeprefi(this.form)">
+				<script language="javascript">
+				with(document){
+				for(i=0;i<prefi_trueLength;i++){
+				write("<option>",prefiopt[i],"</option>");
+				}
+				}
+				</script></select></td>
+				<td>Item<br>
+				<select name="Item" onChange="change(this.form)">
+				<script language="javascript">
+				with(document){
+				for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
+				</script></select></td>
+				<td>Suffix<br>
+				<select name="Suffi" onChange="changesuffi(this.form)">
+				<script language="javascript">
+				with(document){
+				for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
+				</script></select></td>
+			</tr>
+			<tr>
+				<td>Prefix Value<br>
+				<select name="PrefiValue" onChange="changeprefivalue(this.form)">
+				<option>no prefix selected yet</option>
+				<script language="javascript">
+				with(document){
+				for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
+				</script></select></td>
+				<td>Total Cost<br><input type="text" name="TotalCost" value="0"></td>
+				<td>Suffix Value<br>
+				<select name="SuffiValue" onChange="changesuffivalue(this.form)">
+				<option>no suffix selected yet</option>
+				<script language="javascript">
+				with(document){
+				for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
+				</script></select></td>
+			</tr>
+		</table>
 		</td>
 		<td>
-			<table>
-				<tr>
-					<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
-				</tr>
-				<tr>
-					<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
-				</tr>
-				<tr>
-					<td><input type="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
-				</tr>
-			</table></td>
+		<table>
+			<tr>
+				<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
+			</tr>
+		</table></td>
 	</tr>
 	<tr>
 		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
