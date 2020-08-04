@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Calculators</title>
 <meta name="description" content="Ghast's Grotto is my personal site about Diablo.">
@@ -167,17 +167,17 @@ table.blog {
 				<td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
 			</tr>
 			<tr>
-				<td>Prefix:<br><select name="Prefx" DISABLED onChange="updatePrefx();calcPrice();"></select></td>
-				<td>Base Item:<br><select name="Bse" DISABLED onChange="updateSource();calcPrice();"></select></td>
-				<td>Suffix:<br><select name="Suffx" DISABLED onChange="updateSuffx();calcPrice();"></select></td>
+				<td>Prefix:<br><select name="Prefx" disabled onChange="updatePrefx();calcPrice();"></select></td>
+				<td>Base Item:<br><select name="Bse" disabled onChange="updateSource();calcPrice();"></select></td>
+				<td>Suffix:<br><select name="Suffx" disabled onChange="updateSuffx();calcPrice();"></select></td>
 			</tr>
 			<tr>
-				<td>Value:<br><select name="Pvalue" DISABLED onChange="calcPrice();"></select></td>
+				<td>Value:<br><select name="Pvalue" disabled onChange="calcPrice();"></select></td>
 				<td>
 					<input name="Source" type="radio" value="Gris" onClick="calcPrice();" CHECKED><a ID="Gris">Griswold<br>
 					<input name="Source" type="radio" value="Wirt" onClick="calcPrice();"><a ID="Wirt">Wirt<br>
 					<input name="Source" type="radio" value="Sale" onClick="calcPrice();"><a ID="Sale">Resale</td>
-				<td>Value:<br><select name="Svalue" DISABLED onChange="calcPrice();"></select></td>
+				<td>Value:<br><select name="Svalue" disabled onChange="calcPrice();"></select></td>
 			</tr>
 		</table></td>
 	<tr>
@@ -196,7 +196,7 @@ table.blog {
 </form>
 <br>
 <!-- //////// Item Rarity Calculator //////// -->
-<FORM Name="SelectItem">
+<form Name="SelectItem">
 <table class="blog">
 	<tr>
 		<td class="title"><a name="itemrarity" style="color:#ffffff;">Item Rarity Calculator</a></td>
@@ -223,18 +223,18 @@ table.blog {
 		<table>
         		<tr>
 				<td>Prefix:<br>
-				<select name="Prefix" DISABLED onChange="validate();">
+				<select name="Prefix" disabled onChange="validate();">
 				<option selected></option>
 				<option>1234567890</option>
 				</select>
 				</td>
 				<td>Base Item:<br>
-				<select name="Base" DISABLED>
+				<select name="Base" disabled>
 				<option selected>Select this second</option>
 				</select>
 				</td>
 				<td>Suffix:<br>
-				<select name="Suffix" DISABLED onChange="validate();">
+				<select name="Suffix" disabled onChange="validate();">
 				<option selected></option>
 				<option>1234567890</option>
 				</select>
@@ -247,7 +247,7 @@ table.blog {
 		<table align="right">
 			<tr>
 				<td ID="Valid" ></td>
-				<td align="right"><input name="Calculate" type="button" value="Calculate" onClick="main();" DISABLED></td>
+				<td align="right"><input name="Calculate" type="button" value="Calculate" onClick="main();" disabled></td>
 			</tr>
 		</table></td>
 	</tr>
