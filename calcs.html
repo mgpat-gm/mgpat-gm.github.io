@@ -38,6 +38,9 @@ table.blog {
 	padding: .3em;
 	color: #AFA06E;
 }
+.magic {
+	color: #A0A5C8
+}
 .title {
 	font-size: 1.5em;
 	text-align: left;
@@ -46,8 +49,9 @@ table.blog {
 	color: #A0A5C8;
 	font-size: 1.2em;
 }
-.magic {
-	color: #A0A5C8
+.warn {
+	color: #AFA06E;
+;
 }
 .banner {
 	margin: 0;
@@ -349,13 +353,13 @@ table.blog {
 			</tr>
 		</table>
 		<br>
-		<table>
+		<table width="100%">
 			<tr>
 				<td>Max useful to-hit per enemy type:</td>
 			</tr>
 		</table>
 		<br>
-		<table id="EnemyCS">
+		<table id="EnemyCS" width="100%">
 			<tr>
 				<td style="text-align: center">Clvl:</td>
 				<td style="text-align: center">30</td>
@@ -1453,7 +1457,10 @@ updated();
 <form name="SelectMenu">
 <table class="blog">
 	<tr>
-		<td colspan="2" class="title"><a name="orkin" style="color:#ffffff;">Orkin Price Calculator</a></td>
+		<td class="title" colspan="2"><a name="orkin" style="color:#ffffff;">Orkin Price Calculator</a></td>		
+	</tr>
+	<tr>
+		<td class="warn" colspan="2">** Price is inaccurate, but close, when choosing affix values other than the min/max **</td>
 	</tr>
 	<tr>
 		<td>
@@ -1503,7 +1510,7 @@ updated();
 		<td>
 		<table>
 			<tr>
-				<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" CHECKED> Griswald's/Adria's Price</td>
+				<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" checked> Griswald's/Adria's Price</td>
 			</tr>
 			<tr>
 				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
