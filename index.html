@@ -26,6 +26,7 @@ table.blog {
 	background-color: #111111;
 	padding: .3em;
 	color: #AFA06E;
+	table-layout: fixed;
 }
 .magic {
 	color: #A0A5C8;
@@ -120,97 +121,77 @@ table.blog {
 <!-- //////// Shop Notes //////// -->
 <table class="blog" width="80%">
 	<tr>
-		<td>
-		<table width="100%">
-			<tr>
-				<td class="title"><a name="shopnotes" style="color:#FFFFFF;">Some Notes on Shopping for Items:</a></td>
-				<td class="date">June 28, 2020</td>
-			</tr>
-		</table></td>
+		<td class="title"><a name="shopnotes" style="color:#FFFFFF;">Some Notes on Shopping for Items:</a></td>
+		<td class="date">June 28, 2020</td>
 	</tr>
 	<tr>
-		<td>
-		<table width="100%">
-			<tr>
-				<td>
-			<p>I have calculated some commonly sought after items that can be shopped in town. I do not know the probabilities of shopping items in town. Therefore, some of these might be easier to find in the dungeon. Others can only be found in shops. Some of these represent the assumed ideal level and others the lowest possible level. With Gris I am aiming for the maximum amount of slot availability at the lowest character level, and the minimum clvl at Wirt or Adria. These may or may not be the most probable character 	level to find the items.</p><p>Most other sought after items not on this list are found in d15. This list is not exhaustive(yet!).</p></td>
-			</tr>
-		</table></td>
+		<td colspan="2">
+		<p>I have calculated some commonly sought after items that can be shopped in town. I do not know the probabilities of shopping items in town. Therefore, some of these might be easier to find in the dungeon. Others can only be found in shops. Some of these represent the assumed ideal level and others the lowest possible level. With Gris I am aiming for the maximum amount of slot availability at the lowest character level, and the minimum clvl at Wirt or Adria. These may or may not be the most probable character 	level to find the items.</p><p>Most other sought after items not on this list are found in d15. This list is not exhaustive(yet!).</p></td>
 	</tr>
 	<tr>
-		<td>
-		<table width="100%">
-			<tr>
-				<td style="vertical-align:top; text-align: left;">
-<p><span class="magic">Bountiful Staff of Resurrect</span>
-<br> - clvl 1-9 (Adria)
-<br><span class="magic">Bountiful Staff of Town Portal</span>
-<br> - clvl 1-9 (Adria)
-<br><span class="magic">Crimson Buckler of Blocking</span>
-<br> - clvl 5 (Wirt)
-<br><span class="magic">Flaming Dagger of Swiftness</span>
-<br> - clvl 7 (Wirt)
-<br><span class="magic">Arch Angel's Staff of Wizardry</span>
-<br> - clvl 22 (Adria)
-<br><span class="magic">Bountiful Staff of Apocalypse</span>
-<br> - clvl 12 (Adria)
-<br><span class="magic">Emerald Shield of the Tiger</span>
-<br> - clvl 20 (Wirt) <i>(up to 44/Tower/50 - $$$)</i>
-<br><span class="magic">Obsidian Chain Mail of the Mammoth</span>
-<br> - clvl 18 (Wirt)
-<br><span class="magic">Champion's Bastard Sword of Haste</span>
-<br> - clvl 20 (Wirt)
-<br><span class="magic">Obsidian Great Helm of the Mammoth</span>
-<br> - clvl 20 (Wirt)
-<br><span class="magic">Holy Tower Shield of the Tiger</span>
-<br> - clvl 21(Wirt)
-<br><span class="magic">Lightning Sword of Speed</span>
-<br> - clvl 20 (Gris)
-<br><span class="magic">Massive LWB of Swiftness</span>
-<br> - clvl 21 (Gris)
-<br><span class="magic">Obsidian Helm/Armor of the Stars</span>
-<br> - clvl 25 (Gris)
-<br><span class="magic">Obsidian Bow of the Heavens</span>
-<br> - clvl 27 (Gris)
-<br><span class="magic">Lightning Bastard sword of Haste</span>
-<br> - clvl 28 (Gris)
-<br><span class="magic">Kings Bastard Sword of Haste</span>
-<br> - clvl 29 (Gris)
-<br><span class="magic">Merciless LWB of Thunder</span>
-<br> - clvl 30 (Wirt)
-<br><span class="magic">Merciless LWB of Burning</span>
-<br> - clvl 30 (Wirt)
-<br><span class="magic">Godly Chain Mail of the Whale</span>
-<br> - clvl 30 (Wirt)</td>
-				<td style="vertical-align:top; text-align: left;">
-<br>Some dungeon drop probabilities(using <a href=calcs.html>Calculators</a>):
-<br>
-<br><span class="magic">Flaming Dagger of Swiftness</span>
-<br> - n7 (weapon rack/brokenhead bangshield)
-<br><span class="magic">Gold jewel of Heavens</span>
-<br> - n11 (Fangspier)<i>(some monsters can drop in hell levels)</i>
-<br><span class="magic">Garnet Buckler of Brilliance</span>
-<br> - n11 <i>(large shield shopped at clvl 20-21)</i>
-<br><span class="magic">Massive LWB of Swiftness</span>
-<br> - n11
-<br><span class="magic">Savage LWB of the Heavens</span>
-<br> - n15
-<br><span class="magic">Emerald LWB of the Heavens</span>
-<br> - n15
-<br><span class="magic">Spiders Ring of Balance</span>
-<br> - N1
-<br><span class="magic">Crimson Buckler of Blocking</span>
-<br> - N5 (brokenhead bangshield)</p></td>
-			</tr>
-		</table></td>
+		<td style="vertical-align:top; text-align: left;">
+		<p><span class="magic">Bountiful Staff of Resurrect</span>
+		<br> - clvl 1-9 (Adria)
+		<br><span class="magic">Bountiful Staff of Town Portal</span>
+		<br> - clvl 1-9 (Adria)
+		<br><span class="magic">Crimson Buckler of Blocking</span>
+		<br> - clvl 5 (Wirt)
+		<br><span class="magic">Flaming Dagger of Swiftness</span>
+		<br> - clvl 7 (Wirt)
+		<br><span class="magic">Arch Angel's Staff of Wizardry</span>
+		<br> - clvl 22 (Adria)
+		<br><span class="magic">Bountiful Staff of Apocalypse</span>
+		<br> - clvl 12 (Adria)
+		<br><span class="magic">Emerald Shield of the Tiger</span>
+		<br> - clvl 20 (Wirt) <i>(up to 44/Tower/50 - $$$)</i>
+		<br><span class="magic">Obsidian Chain Mail of the Mammoth</span>
+		<br> - clvl 18 (Wirt)
+		<br><span class="magic">Champion's Bastard Sword of Haste</span>
+		<br> - clvl 20 (Wirt)
+		<br><span class="magic">Obsidian Great Helm of the Mammoth</span>
+		<br> - clvl 20 (Wirt)
+		<br><span class="magic">Holy Tower Shield of the Tiger</span>
+		<br> - clvl 21(Wirt)
+		<br><span class="magic">Lightning Sword of Speed</span>
+		<br> - clvl 20 (Gris)
+		<br><span class="magic">Massive LWB of Swiftness</span>
+		<br> - clvl 21 (Gris)
+		<br><span class="magic">Obsidian Helm/Armor of the Stars</span>
+		<br> - clvl 25 (Gris)
+		<br><span class="magic">Obsidian Bow of the Heavens</span>
+		<br> - clvl 27 (Gris)
+		<br><span class="magic">Lightning Bastard sword of Haste</span>
+		<br> - clvl 28 (Gris)
+		<br><span class="magic">Kings Bastard Sword of Haste</span>
+		<br> - clvl 29 (Gris)
+		<br><span class="magic">Merciless LWB of Thunder</span>
+		<br> - clvl 30 (Wirt)
+		<br><span class="magic">Merciless LWB of Burning</span>
+		<br> - clvl 30 (Wirt)
+		<br><span class="magic">Godly Chain Mail of the Whale</span>
+		<br> - clvl 30 (Wirt)</td>
+		<td style="vertical-align:top; text-align: left;">
+		<br>Some dungeon drop probabilities(using <a href=calcs.html>Calculators</a>):
+		<br>
+		<br><span class="magic">Flaming Dagger of Swiftness</span>
+		<br> - n7 (weapon rack/brokenhead bangshield)
+		<br><span class="magic">Gold jewel of Heavens</span>
+		<br> - n11 (Fangspier)<i>(some monsters can drop in hell levels)</i>
+		<br><span class="magic">Garnet Buckler of Brilliance</span>
+		<br> - n11 <i>(large shield shopped at clvl 20-21)</i>
+		<br><span class="magic">Massive LWB of Swiftness</span>
+		<br> - n11
+		<br><span class="magic">Savage LWB of the Heavens</span>
+		<br> - n15
+		<br><span class="magic">Emerald LWB of the Heavens</span>
+		<br> - n15
+		<br><span class="magic">Spiders Ring of Balance</span>
+		<br> - N1
+		<br><span class="magic">Crimson Buckler of Blocking</span>
+		<br> - N5 (brokenhead bangshield)</p></td>
 	</tr>
 	<tr>
-		<td>
-		<table width="100%">
-			<tr>
-				<td>- Ghast</td>
-			</tr>
-		</table></td>
+		<td>- Ghast</td>
 	</tr>
 </table>
 <br>
