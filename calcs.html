@@ -15,12 +15,30 @@
 <script language="Javascript" src="js/price.js"></script>
 <script language="javascript" src="js/qlvl.js"></script>
 <script language="Javascript" src="js/rare.js"></script>
+<script language="Javascript" src="js/tibbs.js"></script>
 <script language="Javascript" src="js/weapdam.js"></script>
 <link rel="shortcut icon" type="image/ico" href="favicon.jpg">
 <style>
-TEXTAREA	{background-color: #111111; border-color: #5F5F5F; color: #A0A5C8; border: none; overflow: auto; resize: none; }
-INPUT	{background-color: #111111; color: #ffffff}
-SELECT	{background-color: #111111; color: #A0A5C8}
+textarea {
+	background-color: #111111;
+	border-color: #5F5F5F;
+	color: #A0A5C8;
+	border: none;
+	overflow: auto;
+	resize: none;
+}
+input {
+	background-color: #111111;
+	color: #ffffff
+}
+select {
+	background-color: #111111;
+	color: #A0A5C8
+}
+button {
+	background-color: #111111;
+	color: #ffffff
+}
 a:link {
 	text-decoration: none;
 	color: #ffffff
@@ -158,6 +176,12 @@ table.blog {
 	<br>
         <a title="Another price Calculator with no price limit" href="#orkin">Orkin Price</a>
     </p>
+<br>
+    <p> Virgil Tibbs:
+	<br>
+	<br>
+        <a title="Calculate what your Life/Mana should be" href="#lifemana">Life/Mana</a>
+    </p>
 </div>
 <center>
 <!-- //////// Item Price Calculator //////// -->
@@ -258,7 +282,7 @@ table.blog {
 		</table></td>
 	</tr>
 	<tr>
-		<td>Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" READONLY></textarea></td>
+		<td>Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" readonly></textarea></td>
 	</tr>
 	<tr>
 		<td><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
@@ -1088,51 +1112,51 @@ updated();
 				<td colspan="5" class="title2">Character</td>
 			</tr>
 			<tr>
-				<td colspan="3"><input type="text" name="charname" size="20" maxlength="20"></td>
+				<td colspan="3"><input class="magic" type="text" name="charname" size="20" maxlength="20"></td>
 				<td colspan="1">Class</td>
-				<td colspan="1"><input type="text" name="myclass2" size="10"></td>
+				<td colspan="1"><input class="magic" type="text" name="myclass2" size="10"></td>
 			</tr>
 			<tr>
 				<td>Level</td>
-				<td><input type="text" name="level" size="5" maxlength="2"></td>
+				<td><input class="magic" type="text" name="level" size="5" maxlength="2"></td>
 				<td colspan="1"><br></td>
 				<td>Exp</td>
-				<td colspan="1"><input type="text" name="exp" size="10" maxlength="10"></td>
+				<td colspan="1"><input class="magic" type="text" name="exp" size="10" maxlength="10"></td>
 			</tr>
 			<tr>
 				<td colspan="1"><br></td>
 				<td>Base</td>
 				<td>Now</td>
 				<td>Next</td>
-				<td colspan="1"><input type="text" name="nextexp" size="10" maxlength="10"></td>
+				<td colspan="1"><input class="magic" type="text" name="nextexp" size="10" maxlength="10"></td>
 			</tr>
 			<tr>
 				<td>Str</td>
-				<td><input type="text" name="strbase" size="5" maxlength="3"></td>
-				<td><input type="text" name="strnow" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="strbase" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="strnow" size="5" maxlength="3"></td>
 				<td>to Next Lvl</td>
-				<td colspan="1"><input type="text" name="tonextlv" size="10" maxlength="10"></td>
+				<td colspan="1"><input class="magic" type="text" name="tonextlv" size="10" maxlength="10"></td>
 			</tr>
 			<tr>
 				<td>Mag</td>
-				<td><input type="text" name="magbase" size="5" maxlength="3"></td>
-				<td><input type="text" name="magnow" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="magbase" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="magnow" size="5" maxlength="3"></td>
 				<td>Armor Class</td>
-				<td><input type="text" name="ac" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="ac" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
 				<td>Dex</td>
-				<td><input type="text" name="dexbase" size="5" maxlength="3"></td>
-				<td><input type="text" name="dexnow" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="dexbase" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="dexnow" size="5" maxlength="3"></td>
 				<td>to Hit</td>
-				<td><input type="text" name="tohit" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="tohit" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
 				<td>Vit</td>
-				<td><input type="text" name="vitbase" size="5" maxlength="3"></td>
-				<td><input type="text" name="vitnow" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="vitbase" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="vitnow" size="5" maxlength="3"></td>
 				<td>Damage</td>
-				<td><input type="text" name="dammin" size="5" maxlength="3"><input type="text" name="dammax" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="dammin" size="5" maxlength="3"><input class="magic" type="text" name="dammax" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
 				<td colspan="5"><br></td>
@@ -1140,21 +1164,21 @@ updated();
 			<tr>
 				<td colspan="3"><br></td>
 				<td colspan="1">Res Magic</td>
-				<td><input type="text" name="resmag" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="resmag" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
 				<td>Life</td>
-				<td><input type="text" name="lifebase" size="5" maxlength="4"></td>
-				<td><input type="text" name="lifenow" size="5" maxlength="4"></td>
+				<td><input class="magic" type="text" name="lifebase" size="5" maxlength="4"></td>
+				<td><input class="magic" type="text" name="lifenow" size="5" maxlength="4"></td>
 				<td colspan="1">Res Fire</td>
-				<td><input type="text" name="resfire" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="resfire" size="5" maxlength="3"></td>
 			</tr>
 			<tr>
 				<td>Mana</td>
-				<td><input type="text" name="manabase" size="5" maxlength="4"></td>
-				<td><input type="text" name="mananow" size="5" maxlength="4"></td>
+				<td><input class="magic" type="text" name="manabase" size="5" maxlength="4"></td>
+				<td><input class="magic" type="text" name="mananow" size="5" maxlength="4"></td>
 				<td colspan="1">Res Lightning</td>
-				<td><input type="text" name="reslight" size="5" maxlength="3"></td>
+				<td><input class="magic" type="text" name="reslight" size="5" maxlength="3"></td>
 			</tr>
 <input type="hidden" name="enphslevel2" size="5" maxlength="2">
 <input type="hidden" name="block" size="5" maxlength="4">
@@ -1366,7 +1390,7 @@ updated();
 		<table>
 			<tr>
 				<td>Results:<br>
-				<textarea name="display" cols="77" rows="5" wrap="virtual">Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
+				<textarea name="display" cols="77" rows="5" wrap="virtual" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
 			</tr>
 		</table>
 		</td>
@@ -1498,7 +1522,7 @@ updated();
 				with(document){
 				for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
 				</script></select></td>
-				<td>Total Cost<br><input type="text" name="TotalCost" value="0"></td>
+				<td>Price<br><input type="text" name="TotalCost" value="0"></td>
 				<td>Suffix Value<br>
 				<select name="SuffiValue" onChange="changesuffivalue(this.form)">
 				<option>no suffix selected yet</option>
@@ -1535,6 +1559,61 @@ updated();
 </script>
 </form>
 </table>
-
+<br>
+<form name="LifeManaForm">
+<table class="blog" border="0">
+	<tr>
+		<td class="title" colspan="2"><a name="lifemana" style="color:#ffffff;">Life/Mana Calculator</a></td>		
+	</tr>
+	<tr>
+		<td>Character Class:</td>
+		<td>
+		<select name="CharClass">
+		<option value="Warrior">Warrior
+		<option value="Rogue">Rogue
+		<option value="Sorcerer">Sorcerer
+		<option value="Monk">Monk
+		<option value="Bard">Bard
+		<option value="Barbarian">Barbarian
+		</select></td>
+		<td>Character Level:</td>
+		<td>
+		<input type="text" name="CharLevel" size="3" maxlength="2"></td>
+	</tr>
+	<tr>
+		<td>Base Magic:</td>
+		<td><input type="text" name="BaseMagic" size="3" maxlength="3"></td>
+		<td>Final Magic:</td>
+		<td><input type="text" name="FinalMagic" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+		<td>Mana Modifiers:</td>
+		<td colspan="3"><input type="text" name="ManaMods" size="42"></td>
+	</tr>
+	<tr>
+		<td>Base Vitality:</td>
+		<td><input type="text" name="BaseVitality" size="3" maxlength="3"></td>
+		<td>Final Vitality:</td>
+		<td><input type="text" name="FinalVitality" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+		<td>Life Modifiers:</td>
+		<td colspan="3"><input type="text" name="LifeMods" size="42"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="3">
+		<input type="button" value="    Min    " onclick="ResetForm(CharClass)">
+		<input type="button" value="    Max    " onclick="MaxForm(CharClass)">
+		<input type="button" value="             Go              " onclick="GoButton()"></td>
+	</tr>
+	<tr>
+		<td colspan="4">Results:<br><textarea name="alert" id="alert" rows=2 cols=39 wrap="soft" readonly>Modifiers are added as such: +1-2+3-4</textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20050216223839/http://www.stormpages.com/jc316/diablo/vtlifemana.html">Virgil Tibbs</i></a></td>
+	</tr>
+</table>
+</form>
 </body>
 </html>
