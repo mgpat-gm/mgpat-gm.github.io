@@ -66,7 +66,7 @@ function calcall(theForm){
  var weaponDamMin= theForm.weapondammin.value*1;
  var weaponDamMax= theForm.weapondammax.value*1;
  var weaponRate	= 1 + theForm.weaponrate.value * 0.01;
- var weaponAdd	= theForm.weaponrate.value*1;
+ var weaponAdd	= theForm.weaponadd.value*1;
  var weaponToHit= theForm.weapontohit.value*1;
  var weaponStr	= theForm.weaponstr.value*1;
  var weaponMag	= theForm.weaponmag.value*1;
@@ -153,8 +153,8 @@ function calcall(theForm){
   myDamMinEqp= 1;
   myDamMaxEqp= 3;
  }else{
-  myDamMinEqp= Math.floor(weaponDamMin * weaponRate);
-  myDamMaxEqp= Math.floor(weaponDamMax * weaponRate);
+  myDamMinEqp= Math.floor(weaponDamMin * weaponRate + weaponAdd);
+  myDamMaxEqp= Math.floor(weaponDamMax * weaponRate + weaponAdd);
  }
 
  //-- Level 50 Check ---------------------
@@ -176,12 +176,10 @@ function calcall(theForm){
   theForm.mananow.value		= myMagEqp + myMagBase + myLv2 +myManaEqp;
 
   if(myWepType != 2){
-   theForm.dammin.value		= Math.floor(myStrNow * myLv * 0.01) +myDamMinEqp;
-   theForm.dammax.value		= Math.floor(myStrNow * myLv * 0.01) +myDamMaxEqp;
+   theForm.dammin.value		= (Math.floor(myStrNow * myLv * 0.01) +myDamMinEqp) +"-" +(Math.floor(myStrNow * myLv * 0.01) +myDamMaxEqp);
    theForm.atkhit.value		= myLv + Math.floor(myDexNow * 0.5) +50 - enAc +20 +myToHitEqp;
   }else{
-   theForm.dammin.value		= Math.floor(myStrNow * myLv * 0.005) +myDamMinEqp;
-   theForm.dammax.value		= Math.floor(myStrNow * myLv * 0.005) +myDamMaxEqp;
+   theForm.dammin.value		= (Math.floor(myStrNow * myLv * 0.005) +myDamMinEqp) +"-" +(Math.floor(myStrNow * myLv * 0.005) +myDamMaxEqp);
    theForm.atkhit.value		= myLv + myDexNow +50 - enAc +10 +myToHitEqp;
   }
 
@@ -196,8 +194,7 @@ function calcall(theForm){
    theForm.manabase.value	= myMagBase + myLv2*2 +7;
    theForm.mananow.value	= Math.floor(myMagEqp *1.5) + myMagBase + myLv2*2 +7 +myManaEqp;
 
-   theForm.dammin.value		= Math.floor((myStrNow + myDexNow) * myLv * 0.005) +myDamMinEqp;
-   theForm.dammax.value		= Math.floor((myStrNow + myDexNow) * myLv * 0.005) +myDamMaxEqp;
+   theForm.dammin.value		= (Math.floor((myStrNow + myDexNow) * myLv * 0.005) +myDamMinEqp) +"-" +(Math.floor((myStrNow + myDexNow) * myLv * 0.005) +myDamMaxEqp);
 
    if(myWepType != 2){
     theForm.atkhit.value	= myLv + Math.floor(myDexNow * 0.5) +50 - enAc +myToHitEqp;
@@ -217,12 +214,10 @@ function calcall(theForm){
    theForm.mananow.value	= myMagEqp *2 + myMagBase *2 + myLv2*2 +myManaEqp;
 
    if(myWepType != 2){
-    theForm.dammin.value	= Math.floor(myStrNow * myLv * 0.01) +myDamMinEqp;
-    theForm.dammax.value	= Math.floor(myStrNow * myLv * 0.01) +myDamMaxEqp;
+    theForm.dammin.value	= (Math.floor(myStrNow * myLv * 0.01) +myDamMinEqp) +"-" +( Math.floor(myStrNow * myLv * 0.01) +myDamMaxEqp);
     theForm.atkhit.value	= myLv + Math.floor(myDexNow * 0.5) +50 - enAc +myToHitEqp;
    }else{
-    theForm.dammin.value	= Math.floor(myStrNow * myLv * 0.005) +myDamMinEqp;
-    theForm.dammax.value	= Math.floor(myStrNow * myLv * 0.005) +myDamMaxEqp;
+    theForm.dammin.value	= (Math.floor(myStrNow * myLv * 0.005) +myDamMinEqp) +"-" +(Math.floor(myStrNow * myLv * 0.005) +myDamMaxEqp);
     theForm.atkhit.value	= myLv + myDexNow +50 - enAc +myToHitEqp;
    }
    theForm.maghit.value		= (25 - enMagLv)*2 +myMagNow +20;
