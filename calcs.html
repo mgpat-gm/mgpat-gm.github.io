@@ -1531,7 +1531,7 @@ updated();
 				with(document){
 				for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
 				</script></select></td>
-				<td>Price<br><input type="text" name="TotalCost" value="0"></td>
+				<td>Price<br><input type="text" name="TotalCost" value="0" readonly></td>
 				<td>Suffix Value<br>
 				<select name="SuffiValue" onChange="changesuffivalue(this.form)">
 				<option>no suffix selected yet</option>
@@ -1548,7 +1548,7 @@ updated();
 				<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" checked> Griswald's/Adria's Price</td>
 			</tr>
 			<tr>
-				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()" readonly> Wirt's Price</td>
+				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
 			</tr>
 			<tr>
 				<td><input type="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
