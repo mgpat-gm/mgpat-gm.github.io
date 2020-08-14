@@ -290,739 +290,747 @@ table.blog {
 </table>
 </form>
 <br>
-<!-- //////// Chance to Hit Calculator //////// -->
-<form name="SelectStats">
-<table class="blog">
-	<tr>
-		<td class="title"><a name="cth" style="color:#ffffff;">Chance to Hit Calculator</a></td>
-	</tr>
+<table>
 	<tr>
 		<td>
-		<table>
-			<tr>
-				<td>Difficulty:<br><select name="Diff" onchange="update();">
-				<option value="0">Normal</option>
-				<option value="50">Nightmare</option>
-				<option value="80" selected>Hell</option>
-				</select></td>
-				<td>Final to-Hit:<br><select name="Percent" onchange="update();">
-				<option value="95" selected>auto-miss</option>
-				<option value="75">75%</option>
-				<option value="66">66%</option>
-				<option value="50">50%</option>
-				<option value="33">33%</option>
-				<option value="25">25%</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Class:<br><select name="cClass" onchange="update();">
-				<option value="60">Warrior</option>
-				<option value="250">Rogue</option>
-				<option value="85">Sorcerer</option>
-				</select></td>
-				<td>Attack:<br><select name="Attack" onchange="update();">
-				<option value="melee">melee</option>
-				<option value="arrow">arrow</option></select></td>
-			</tr>
-		</table>
-		<br>
-		<table id="MaxCS">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td align="center">
-				<select name="Clvl" onchange="update();">
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-				<option value="26">26</option>
-				<option value="27">27</option>
-				<option value="28">28</option>
-				<option value="29">29</option>
-				<option value="30">30</option>
-				<option value="31">31</option>
-				<option value="32">32</option>
-				<option value="33">33</option>
-				<option value="34">34</option>
-				<option value="35">35</option>
-				<option value="36">36</option>
-				<option value="37">37</option>
-				<option value="38">38</option>
-				<option value="39">39</option>
-				<option value="40">40</option>
-				<option value="41">41</option>
-				<option value="42">42</option>
-				<option value="43">43</option>
-				<option value="44">44</option>
-				<option value="45" selected>45</option>
-				<option value="46">46</option>
-				<option value="47">47</option>
-				<option value="48">48</option>
-				<option value="49">49</option>
-				<option value="50">50</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Max useful<br>to-hit (BK's):</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
-		<br>
-		<table width="100%">
-			<tr>
-				<td>Max useful to-hit per enemy type:</td>
-			</tr>
-		</table>
-		<br>
-		<table id="EnemyCS" width="100%">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td style="text-align: center">Your<br>clvl:</td>
-			</tr>
-			<tr>
-				<td>Lava Maw</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Storm Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Maelstorm</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Guardian</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Vortex Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Balrog</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Cave Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Fire Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Gold Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Azure Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Succubus</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Snow Witch</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Hell Spawn</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Soul Burner</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Black Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Doom Guard</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Steel Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Blood Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Counselor</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Magistrate</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Cabalist</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Advocate</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Average<br>Useful to-hit:</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120530084958/http://www.dpsyche.com/cth.html">Eso aka the_Langolier</i></a></td>
-	</tr>
-<script language="Javascript" type="text/javascript">
-update();
-</script>
-</table>
-</form>
-<br>
 <!-- //////// AC Calculator //////// -->
-<table class="blog">
-	<tr>
-		<td class="title"><a name="ac" style="color:#ffffff;">Armor Class Calulator</a></td>
-	</tr>
-	<tr>
-		<td>
-		<form name="SelectStat">
-		<table>
+		<table class="blog">
 			<tr>
-				<td>Difficulty:</td>
-				<td>Get-Hit %:</td>
+				<td class="title"><a name="ac" style="color:#ffffff;">Armor Class Calculator</a></td>
 			</tr>
 			<tr>
 				<td>
-				<select name="Dif" onchange="updat();">
-				<option value="0">Normal</option>
-				<option value="85">Nightmare</option>
-				<option value="120" selected>Hell</option>
-				</select></td>
-				<td>
-				<select name="Percen" onchange="updat();">
-				<option value="1" selected>auto-hit</option>
-				<option value="25">25%</option>
-				<option value="33">33%</option>
-				<option value="50">50%</option>
-				<option value="66">66%</option>
-				<option value="75">75%</option>
-				</select></td>
+<form name="SelectStat">
+				<table>
+					<tr>
+						<td>Difficulty:</td>
+						<td>Get-Hit %:</td>
+					</tr>
+					<tr>
+						<td>
+						<select name="Dif" onchange="updat();">
+						<option value="0">Normal</option>
+						<option value="85">Nightmare</option>
+						<option value="120" selected>Hell</option>
+						</select></td>
+						<td>
+						<select name="Percen" onchange="updat();">
+						<option value="1" selected>auto-hit</option>
+						<option value="25">25%</option>
+						<option value="33">33%</option>
+						<option value="50">50%</option>
+						<option value="66">66%</option>
+						<option value="75">75%</option>
+						</select></td>
+					</tr>
+				</table>
+				<br>
+				<table id="MaxAC" width="100%">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td align="center">
+							<select name="Cclvl" onchange="updat();">
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+							<option value="32">32</option>
+							<option value="33">33</option>
+							<option value="34">34</option>
+							<option value="35">35</option>
+							<option value="36">36</option>
+							<option value="37">37</option>
+							<option value="38">38</option>
+							<option value="39">39</option>
+							<option value="40">40</option>
+							<option value="41">41</option>
+							<option value="42">42</option>
+							<option value="43">43</option>
+							<option value="44">44</option>
+							<option value="45" selected>45</option>
+							<option value="46">46</option>
+							<option value="47">47</option>
+							<option value="48">48</option>
+							<option value="49">49</option>
+							<option value="50">50</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>Max useful AC<br>(BK's on 16):</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Max useful AC<br>(BK's on 13):</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
+				<br>
+				<table >
+					<tr>
+						<td>Maximum useful AC per enemy type:</td>
+					</tr>
+				</table>
+				<br>
+				<table id="EnemyAC" width="100%">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td style="text-align: center">Your<br>clvl:</td>
+					</tr>
+					<tr>
+						<td>Lava Maw</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Storm Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Maelstorm</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Guardian</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Vortex Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Balrog</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Cave Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Fire Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Gold Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Azure Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Black Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Doom Guard</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Steel Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Blood Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+					</tr>
+					<tr>
+						<td>Average<br>Useful AC:</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
+				</td>
 			</tr>
-		</table>
-		<br>
-		<table id="MaxAC" width="100%">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td align="center">
-					<select name="Cclvl" onchange="updat();">
-					<option value="17">17</option>
-					<option value="18">18</option>
-					<option value="19">19</option>
-					<option value="20">20</option>
-					<option value="21">21</option>
-					<option value="22">22</option>
-					<option value="23">23</option>
-					<option value="24">24</option>
-					<option value="25">25</option>
-					<option value="26">26</option>
-					<option value="27">27</option>
-					<option value="28">28</option>
-					<option value="29">29</option>
-					<option value="30">30</option>
-					<option value="31">31</option>
-					<option value="32">32</option>
-					<option value="33">33</option>
-					<option value="34">34</option>
-					<option value="35">35</option>
-					<option value="36">36</option>
-					<option value="37">37</option>
-					<option value="38">38</option>
-					<option value="39">39</option>
-					<option value="40">40</option>
-					<option value="41">41</option>
-					<option value="42">42</option>
-					<option value="43">43</option>
-					<option value="44">44</option>
-					<option value="45" selected>45</option>
-					<option value="46">46</option>
-					<option value="47">47</option>
-					<option value="48">48</option>
-					<option value="49">49</option>
-					<option value="50">50</option>
-					</select></td>
-			</tr>
-			<tr>
-				<td>Max useful AC<br>(BK's on 16):</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Max useful AC<br>(BK's on 13):</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
-		<br>
-		<table >
-			<tr>
-				<td>Maximum useful AC per enemy type:</td>
-			</tr>
-		</table>
-		<br>
-		<table id="EnemyAC" width="100%">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td style="text-align: center">Your<br>clvl:</td>
-			</tr>
-			<tr>
-				<td>Lava Maw</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Storm Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Maelstorm</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Guardian</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Vortex Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Balrog</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Cave Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Fire Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Gold Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Azure Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Black Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Doom Guard</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Steel Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Blood Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Average<br>Useful AC:</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
-		</td>
-	</tr>
 </form>
 <script language="Javascript" type="text/javascript">
 updat();
 </script>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</i></a></td>
-	</tr>
-</table>
-<br>
-<!-- //////// Block Calculator //////// -->
-<table class="blog">
-	<tr>
-		<td class="title"><a name="block" style="color:#ffffff;">Block Calulator</a></td>
-	</tr>
-	<tr>
-<form name="SelectSta">
+			<tr>
+				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</i></a></td>
+			</tr>
+		</table>
+		</td>
 		<td>
-		<table>
+<!-- //////// Chance to Hit Calculator //////// -->
+<form name="SelectStats">
+		<table class="blog">
 			<tr>
-				<td>Difficulty:</td>
-				<td>Block %:</td>
+				<td class="title"><a name="cth" style="color:#ffffff;">Chance to Hit Calculator</a></td>
 			</tr>
 			<tr>
 				<td>
-				<select name="Diph" onchange="updated();">
-				<option value="0">Normal</option>
-				<option value="85">Nightmare</option>
-				<option value="120" selected>Hell</option>
-				</select></td>
+				<table>
+					<tr>
+						<td>Difficulty:<br><select name="Diff" onchange="update();">
+						<option value="0">Normal</option>
+						<option value="50">Nightmare</option>
+						<option value="80" selected>Hell</option>
+						</select></td>
+						<td>Final to-Hit:<br><select name="Percent" onchange="update();">
+						<option value="95" selected>auto-miss</option>
+						<option value="75">75%</option>
+						<option value="66">66%</option>
+						<option value="50">50%</option>
+						<option value="33">33%</option>
+						<option value="25">25%</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Class:<br><select name="cClass" onchange="update();">
+						<option value="60">Warrior</option>
+						<option value="250">Rogue</option>
+						<option value="85">Sorcerer</option>
+						</select></td>
+						<td>Attack:<br><select name="Attack" onchange="update();">
+						<option value="melee">melee</option>
+						<option value="arrow">arrow</option></select></td>
+					</tr>
+				</table>
+				<br>
+				<table id="MaxCS">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td align="center">
+						<select name="Clvl" onchange="update();">
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45" selected>45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Max useful<br>to-hit (BK's):</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
+				<br>
+				<table width="100%">
+					<tr>
+						<td>Max useful to-hit per enemy type:</td>
+					</tr>
+				</table>
+				<br>
+				<table id="EnemyCS" width="100%">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td style="text-align: center">Your<br>clvl:</td>
+					</tr>
+					<tr>
+						<td>Lava Maw</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Storm Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Maelstorm</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Guardian</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Vortex Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Balrog</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Cave Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Fire Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Gold Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Azure Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Succubus</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Snow Witch</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Hell Spawn</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Soul Burner</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Black Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Doom Guard</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Steel Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Blood Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Counselor</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Magistrate</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Cabalist</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Advocate</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+					</tr>
+					<tr>
+						<td>Average<br>Useful to-hit:</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084958/http://www.dpsyche.com/cth.html">Eso aka the_Langolier</i></a></td>
+			</tr>
+<script language="Javascript" type="text/javascript">
+update();
+</script>
+		</table>
+</form>
+		</td>
+		<td>
+<!-- //////// Block Calculator //////// -->
+		<table class="blog">
+			<tr>
+				<td class="title"><a name="block" style="color:#ffffff;">Block Calculator</a></td>
+			</tr>
+			<tr>
+<form name="SelectSta">
 				<td>
-				<select name="Perce" onchange="updated();">
-				<option value="100" selected>perfect block</option>
-				<option value="75">75%</option>
-				<option value="66">66%</option>
-				<option value="50">50%</option>
-				<option value="33">33%</option>
-				<option value="25">25%</option>
-				</select></td>
-			</tr>
-		</table>
-		<br>
-		<table id="MaxDEX" width="100%">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td align="center">
-				<select name="Chlvl" onchange="updated();">
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-				<option value="26">26</option>
-				<option value="27">27</option>
-				<option value="28">28</option>
-				<option value="29">29</option>
-				<option value="30">30</option>
-				<option value="31">31</option>
-				<option value="32">32</option>
-				<option value="33">33</option>
-				<option value="34">34</option>
-				<option value="35">35</option>
-				<option value="36">36</option>
-				<option value="37">37</option>
-				<option value="38">38</option>
-				<option value="39">39</option>
-				<option value="40">40</option>
-				<option value="41">41</option>
-				<option value="42">42</option>
-				<option value="43">43</option>
-				<option value="44">44</option>
-				<option value="45" selected>45</option>
-				<option value="46">46</option>
-				<option value="47">47</option>
-				<option value="48">48</option>
-				<option value="49">49</option>
-				<option value="50">50</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Dexterity:</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
-		<br>
-		<table>
-			<tr>
-				<td>Dexterity needed per enemy type:</td>
-			</tr>
-		</table>
-		<br>
-		<table id="EnemyDEX" width="100%">
-			<tr>
-				<td style="text-align: center">Clvl:</td>
-				<td style="text-align: center">30</td>
-				<td style="text-align: center">40</td>
-				<td style="text-align: center">50</td>
-				<td style="text-align: center">Your<br>clvl:</td>
-			</tr>
-			<tr>
-				<td>Lava Maw</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Storm Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Maelstorm</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Guardian</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Vortex Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Balrog</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Cave Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Fire Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Gold Viper</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Azure Drake</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Black Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Doom Guard</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Steel Lord</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>Blood Knight</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-			<tr>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-			</tr>
-			<tr>
-				<td>Average<br>Dexterity:</td>
-				<td>--</td>
-				<td>--</td>
-				<td>--</td>
-				<td class="magic">--</td>
-			</tr>
-		</table>
+				<table>
+					<tr>
+						<td>Difficulty:</td>
+						<td>Block %:</td>
+					</tr>
+					<tr>
+						<td>
+						<select name="Diph" onchange="updated();">
+						<option value="0">Normal</option>
+						<option value="85">Nightmare</option>
+						<option value="120" selected>Hell</option>
+						</select></td>
+						<td>
+						<select name="Perce" onchange="updated();">
+						<option value="100" selected>perfect block</option>
+						<option value="75">75%</option>
+						<option value="66">66%</option>
+						<option value="50">50%</option>
+						<option value="33">33%</option>
+						<option value="25">25%</option>
+						</select></td>
+					</tr>
+				</table>
+				<br>
+				<table id="MaxDEX" width="100%">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td align="center">
+						<select name="Chlvl" onchange="updated();">
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+						<option value="33">33</option>
+						<option value="34">34</option>
+						<option value="35">35</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="40">40</option>
+						<option value="41">41</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+						<option value="45" selected>45</option>
+						<option value="46">46</option>
+						<option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						<option value="50">50</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Dexterity:</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
+				<br>
+				<table>
+					<tr>
+						<td>Dexterity needed per enemy type:</td>
+					</tr>
+				</table>
+				<br>
+				<table id="EnemyDEX" width="100%">
+					<tr>
+						<td style="text-align: center">Clvl:</td>
+						<td style="text-align: center">30</td>
+						<td style="text-align: center">40</td>
+						<td style="text-align: center">50</td>
+						<td style="text-align: center">Your<br>clvl:</td>
+					</tr>
+					<tr>
+						<td>Lava Maw</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Storm Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Maelstorm</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Guardian</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Vortex Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Balrog</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Cave Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Fire Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Gold Viper</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Azure Drake</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Black Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Doom Guard</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Steel Lord</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>Blood Knight</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+					<tr>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+					</tr>
+					<tr>
+						<td>Average<br>Dexterity:</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td class="magic">--</td>
+					</tr>
+				</table>
 </form>
 <script language="Javascript" type="text/javascript">
 updated();
 </script>
+				</td>
+			</tr>
+			<tr>
+				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084947/http://www.dpsyche.com/block.html">Eso aka the_Langolier</i></a></td>
+			</tr>
+		</table>
 		</td>
-	</tr>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120530084947/http://www.dpsyche.com/block.html">Eso aka the_Langolier</i></a></td>
 	</tr>
 </table>
 <!-- //////// Character Stats Calculator //////// -->
