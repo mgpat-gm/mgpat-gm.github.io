@@ -1390,7 +1390,7 @@ updated();
 				<td>+</td>
 				<td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
 				<td>=</td>
-				<td>Damage Range<br><input type="text" name="min" size="3" maxlength="3"> - <input type="text" name="max" size="3" maxlength="3"></td>
+				<td>Damage Range<br><input type="text" name="min" size="3" maxlength="3" readonly> - <input type="text" name="max" size="3" maxlength="3" readonly></td>
 			</tr>
 			<tr>
 				<td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
@@ -1427,7 +1427,7 @@ updated();
 		<td><input type="text" name="acrate" size="5" maxlength="4"></td>
 		<td>%</td>
 		<td>=</td>
-		<td><input type="text" name="ac" size="4" maxlength="3"></td>
+		<td><input type="text" name="ac" size="4" maxlength="3" readonly></td>
 		<td><input type="button" name="calc" value="Calc" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
 	</tr>
 	<tr>
@@ -1548,7 +1548,7 @@ updated();
 				<td><input type="radio" name="Location" value="Gri" OnClick="changeprice()" checked> Griswald's/Adria's Price</td>
 			</tr>
 			<tr>
-				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()"> Wirt's Price</td>
+				<td><input type="radio" name="Location" value="Wir" OnClick="changeprice()" readonly> Wirt's Price</td>
 			</tr>
 			<tr>
 				<td><input type="radio" name="Location" value="Resale" OnClick="changeprice()"> Resale Price</td>
