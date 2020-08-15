@@ -15,7 +15,7 @@ using the forum software.
 //base item declarations
 function Itm(nam,ilvvl,iClas,price)
 {
-	this.nam = nam;
+	this.name = nam;
 	this.ilvvl = ilvvl;
 	this.iClas = iClas;
 	this.price = price;
@@ -174,7 +174,7 @@ unique[74]= new Itm("Wizardspike",0,"Dagger",12920);
 //prefix declarations
 function Affx(nam,qlvvl,value,spawnn,cursd,B,range,M)
 {
-	this.nam = nam;
+	this.name = nam;
 	this.qlvvl = qlvvl;
 	this.value = value;
 	this.spawnn = spawnn;
@@ -367,7 +367,7 @@ suffx[94]= new Affx("Thorns",1,"attacker takes 1-3 damage","AS----",false,500,0,
 //spell declarations
 function Spel(nam,qlvvl,charges,spawnnStaff,P)
 {
-	this.nam = nam;
+	this.name = nam;
 	this.qlvvl = qlvvl;
 	this.charges = charges;
 	this.spawnnStaff = spawnnStaff;
@@ -441,8 +441,8 @@ function updateClas()
 	var iClas = document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text;
 	var prefxIndex=1;
 	var suffxIndex=1;
-	var previousP = ((document.SelectItm.Prefx.selectedIndex >= 0)? document.SelectItm.Prefx.options[document.SelectItm.Prefx.selectedIndex].text: 0);
-	var previousS = ((document.SelectItm.Suffx.selectedIndex >= 0)? document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].text: 0);
+	var previusP = ((document.SelectItm.Prefx.selectedIndex >= 0)? document.SelectItm.Prefx.options[document.SelectItm.Prefx.selectedIndex].text: 0);
+	var previusS = ((document.SelectItm.Suffx.selectedIndex >= 0)? document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].text: 0);
 
 	
 	//clear current entries
@@ -502,8 +502,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("A") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -513,7 +513,7 @@ function updateClas()
 		//base item
 		for (i=0; i<=5; i++)
 		{
-			document.SelectItm.Bse.options[i] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -522,8 +522,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("A") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -538,8 +538,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("A") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -550,7 +550,7 @@ function updateClas()
 		//base item
 		for (i=6; i<=22; i++)
 		{
-			document.SelectItm.Bse.options[i-6] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-6] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -559,8 +559,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("A") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -575,8 +575,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("S") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == prefx[i].nam)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == prefx[i].name)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -586,7 +586,7 @@ function updateClas()
 		//base item
 		for (i=23; i<=28; i++)
 		{
-			document.SelectItm.Bse.options[i-23] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-23] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -595,8 +595,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("S") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -611,8 +611,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -622,7 +622,7 @@ function updateClas()
 		//base item
 		for (i=29; i<=40; i++)
 		{
-			document.SelectItm.Bse.options[i-29] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-29] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -631,8 +631,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -647,8 +647,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -658,7 +658,7 @@ function updateClas()
 		//base item
 		for (i=41; i<=46; i++)
 		{
-			document.SelectItm.Bse.options[i-41] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-41] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -667,8 +667,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -683,8 +683,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -694,7 +694,7 @@ function updateClas()
 		//base item
 		for (i=47; i<=53; i++)
 		{
-			document.SelectItm.Bse.options[i-47] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-47] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -703,8 +703,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("W") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -719,8 +719,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("B") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -730,7 +730,7 @@ function updateClas()
 		//base item
 		for (i=54; i<=61; i++)
 		{
-			document.SelectItm.Bse.options[i-54] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-54] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -739,8 +739,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("B") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -755,8 +755,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("T") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -766,7 +766,7 @@ function updateClas()
 		//base item
 		for (i=62; i<=66; i++)
 		{
-			document.SelectItm.Bse.options[i-62] = new Option(bseEQ[i].nam,i);
+			document.SelectItm.Bse.options[i-62] = new Option(bseEQ[i].name,i);
 		}
 
 		//suffix
@@ -775,8 +775,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("T") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -786,7 +786,7 @@ function updateClas()
 		{
 			if (spel[i].spawnnStaff)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option(spel[i].nam,i);
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option(spel[i].name,i);
 			}
 		}
 	}
@@ -798,8 +798,8 @@ function updateClas()
 		{
 			if (prefx[i].spawnn.indexOf("J") > -1)
 			{
-				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].nam + " (c)": prefx[i].nam,i);
-				if (previousP == document.SelectItm.Prefx.options[prefxIndex-1].text)
+				document.SelectItm.Prefx.options[prefxIndex++] = new Option((prefx[i].cursd) ? prefx[i].name + " (c)": prefx[i].name,i);
+				if (previusP == document.SelectItm.Prefx.options[prefxIndex-1].text)
 				{
 					document.SelectItm.Prefx.options[prefxIndex-1].selected = true;
 				}
@@ -816,8 +816,8 @@ function updateClas()
 		{
 			if (suffx[i].spawnn.indexOf("J") > -1)
 			{
-				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].nam + " (c)": suffx[i].nam,i);
-				if (previousS == document.SelectItm.Suffx.options[suffxIndex-1].text)
+				document.SelectItm.Suffx.options[suffxIndex++] = new Option((suffx[i].cursd) ? suffx[i].name + " (c)": suffx[i].name,i);
+				if (previusS == document.SelectItm.Suffx.options[suffxIndex-1].text)
 				{
 					document.SelectItm.Suffx.options[suffxIndex-1].selected = true;
 				}
@@ -834,7 +834,7 @@ function updateClas()
 		//base item
 		for (i=0; i<unique.length; i++)
 		{
-			document.SelectItm.Bse.options[i] = new Option(unique[i].nam,unique[i].nam);
+			document.SelectItm.Bse.options[i] = new Option(unique[i].name,unique[i].name);
 		}
 
 		//suffix
@@ -950,7 +950,7 @@ function updatePrefx()
 		//rules for a staff	
 		if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Staff")
 		{
-			if (prefxS.nam == "Plentiful" || prefxS.nam == "Bountiful")
+			if (prefxS.name == "Plentiful" || prefxS.name == "Bountiful")
 			{
 				for (i=0; i<13; i++)
 				{
@@ -1006,7 +1006,7 @@ function updatePrefx()
 				//check invalid affix combinations
 				for (j=0; j<24; j++)
 				{
-					if (prefxS.nam == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].nam == invalidComb[j+24])
+					if (prefxS.name == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].name == invalidComb[j+24])
 					{
 						document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 					}
@@ -1087,7 +1087,7 @@ function updateSuffx()
 				vRange = parseInt(suffxS.value.substring(suffxS.value.indexOf("-")+1,suffxS.value.indexOf(","))) - parseInt(suffxS.value.substring(0,suffxS.value.indexOf("-")));
 				for (i=0; i<=vRange; i++)
 				{
-					if (suffxS.nam == "Osmosis")
+					if (suffxS.name == "Osmosis")
 					{
 						document.SelectItm.Svalue.options[i] = new Option("-"+(vBegin+i)+suffxS.value.substring(suffxS.value.indexOf(",")+1,suffxS.value.length),i);
 						if (previousV == document.SelectItm.Svalue.options[i].text)
@@ -1116,7 +1116,7 @@ function updateSuffx()
 			document.SelectItm.Prefx.options[0].style.color = "#4C4C4C";
 			for (i=1; i<=document.SelectItm.Prefx.options.length-1; i++)
 			{
-				if (prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
+				if (prefx[document.SelectItm.Prefx.options[i].value].name == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].name == "Plentiful")
 				{
 					document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 				}
@@ -1157,7 +1157,7 @@ function updateSuffx()
 					{
 						qlvvlMax=50;
 					}
-					if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
+					if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].name == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].name == "Plentiful")
 					{
 						document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 					}
@@ -1179,7 +1179,7 @@ function updateSuffx()
 				{
 					qlvvlMax=50;
 				}
-				if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].nam == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].nam == "Plentiful")
+				if (qlvvlMin < Math.floor(qlvvlMax/2) || prefx[document.SelectItm.Prefx.options[i].value].name == "Bountiful" || prefx[document.SelectItm.Prefx.options[i].value].name == "Plentiful")
 				{
 					document.SelectItm.Prefx.options[i].style.color = "#4C4C4C";
 				}
@@ -1191,7 +1191,7 @@ function updateSuffx()
 				//check invalid affix combinations
 				for (j=0; j<24; j++)
 				{
-					if (suffxS.nam == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].nam == invalidComb[j+24])
+					if (suffxS.name == invalidComb[j] && suffx[document.SelectItm.Suffx.options[i].value].name == invalidComb[j+24])
 					{
 						document.SelectItm.Suffx.options[i].style.color = "#4C4C4C";
 					}
@@ -1472,7 +1472,7 @@ function validat()
 		}
 		if (prefxS != "None")
 		{
-			if ((prefxS.nam == "Plentiful" || prefxS.nam == "Bountiful") && document.SelectItm.Suffx.selectedIndex < 13)
+			if ((prefxS.name == "Plentiful" || prefxS.name == "Bountiful") && document.SelectItm.Suffx.selectedIndex < 13)
 			{
 				return false;
 			}
@@ -1515,7 +1515,7 @@ function validat()
 		//check invalid affx combinations
 		for (i=0; i<24; i++)
 		{
-			if (prefxS.nam == invalidComb[i] && suffxS.nam == invalidComb[i+24])
+			if (prefxS.name == invalidComb[i] && suffxS.name == invalidComb[i+24])
 			{
 				return false;
 			}
