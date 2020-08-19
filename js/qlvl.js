@@ -24,6 +24,22 @@ var calcGriswoldsAffixQlvl = function(ilvl){
 };
 
 var calcGriswoldsMinMaxQlvls = function(clvl){
+	if(clvl>30)
+return `qlvl range for affixes for each slot:
+Slot 1:  ${calcGriswoldsAffixQlvl(30-1)}
+Slot 2:  ${calcGriswoldsAffixQlvl(30-1)}
+Slot 3:  ${calcGriswoldsAffixQlvl(clvl)}
+Slot 4:  ${calcGriswoldsAffixQlvl(clvl)}
+Slot 5:  ${calcGriswoldsAffixQlvl(clvl+1)}
+Slot 6:  ${calcGriswoldsAffixQlvl(clvl+2)}
+qlvl range for base items for each slot:
+Slot 1:  ${calcGriswoldsBaseQlvl(30-1)}
+Slot 2:  ${calcGriswoldsBaseQlvl(30-1)}
+Slot 3:  ${calcGriswoldsBaseQlvl(clvl)}
+Slot 4:  ${calcGriswoldsBaseQlvl(clvl)}
+Slot 5:  ${calcGriswoldsBaseQlvl(clvl+1)}
+Slot 6:  ${calcGriswoldsBaseQlvl(clvl+2)}`;
+	else
 return `qlvl range for affixes for each slot:
 Slot 1:  ${calcGriswoldsAffixQlvl(clvl-1)}
 Slot 2:  ${calcGriswoldsAffixQlvl(clvl-1)}
@@ -37,7 +53,7 @@ Slot 2:  ${calcGriswoldsBaseQlvl(clvl-1)}
 Slot 3:  ${calcGriswoldsBaseQlvl(clvl)}
 Slot 4:  ${calcGriswoldsBaseQlvl(clvl)}
 Slot 5:  ${calcGriswoldsBaseQlvl(clvl+1)}
-Slot 6:  ${calcGriswoldsBaseQlvl(clvl+2)}`;  
+Slot 6:  ${calcGriswoldsBaseQlvl(clvl+2)}`;
 }
 
 var calcWirtQlvls = function (clvl){

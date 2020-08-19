@@ -25,37 +25,78 @@
 <script type="text/javascript" src="js/tibbs.js"></script>
 <script type="text/javascript" src="js/weapdam.js"></script>
 <style>
-textarea {
-	background-color: #111111;
-	border-color: #5F5F5F;
-	color: #A0A5C8;
-	border: none;
-	overflow: auto;
-	resize: none;
-}
-input {
-	background-color: #111111;
-	color: #ffffff
-}
-select {
-	background-color: #111111;
-	color: #A0A5C8
-}
-button {
-	background-color: #111111;
-	color: #ffffff
-}
 a:link {
 	text-decoration: none;
-	color: #ffffff
+	color: #ffffff;
 }
 a:visited {
 	text-decoration: none;
-	color: #ffffff
+	color: #ffffff;
 }
 a:hover {
 	background: none;
-	color: #ff8000
+	color: #ff8000;
+}
+.banner {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: 0em;
+	width: 10%;
+	right: auto;
+}
+.banner p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	border: none;
+	color: #ff8000;
+}
+.banner a, div.banner em {
+	display: block; margin: 0 0.5em;
+}
+.banner a, div.banner em {
+	border-top: 0px groove #CCC;
+}
+.banner a:first-child {
+	border-top: none;
+}
+.banner em {
+	color: #CFC;
+}
+.banner2 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: none;
+	line-height: 1.1;
+	text-align: left;
+	position: fixed;
+	top: 2em;
+	left: auto;
+	width: 10%;
+	right: 0em;
+}
+.banner2 p {
+	margin: 0; 
+	padding: 0.3em 0.4em;
+	border: none;
+	color: #ff8000;
+}
+.banner2 a, div.banner em {
+	display: block;
+	margin: 0 0.5em;
+}
+.banner2 a, div.banner em {
+	border-top: 0px groove #CCC;
+}
+.banner2 a:first-child {
+	border-top: none;
+}
+.banner2 em {
+	color: #CFC;
 }
 table.blog {
 	background-color: #111111;
@@ -78,55 +119,28 @@ table.blog {
 	font-size: .8em;
 	font-style: italic;
 	color: #AFA06E;
-;
 }
-.banner {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: 0em;
-	width: 10%;
-	right: auto;}
 
-.banner p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
+textarea {
+	background-color: #111111;
+	border-color: #5F5F5F;
+	color: #A0A5C8;
 	border: none;
-	color: #ff8000;}
-
-.banner a, div.banner em { display: block; margin: 0 0.5em }
-.banner a, div.banner em { border-top: 0px groove #CCC }
-.banner a:first-child { border-top: none }
-.banner em { color: #CFC }
-
-.banner2 {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: auto;
-	width: 10%;
-	right: 0em;
+	overflow: auto;
+	resize: none;
 }
-
-.banner2 p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	border: none;
-	color: #ff8000;
+input {
+	background-color: #111111;
+	color: #ffffff;
 }
-
-.banner2 a, div.banner em { display: block; margin: 0 0.5em }
-.banner2 a, div.banner em { border-top: 0px groove #CCC }
-.banner2 a:first-child { border-top: none }
-.banner2 em { color: #CFC }
+select {
+	background-color: #111111;
+	color: #A0A5C8;
+}
+button {
+	background-color: #111111;
+	color: #ffffff;
+}
 </style>
 </head>
 <body bgcolor="#2d2d2d">
@@ -143,6 +157,8 @@ table.blog {
 	<a title="A list of all the uniques I have collected so far" href="uniques.html">Uniques</a>
 	<br>
 	<a title="Self explanatory" href="shrinelist.html">Shrines</a>
+	<br>
+	<a title="Zoomable map of Tristram" href="tristram.html">Tristram</a>
 	<br>
 	<a title="A list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
 	</p>
