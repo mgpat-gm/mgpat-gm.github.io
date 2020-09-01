@@ -40,38 +40,41 @@ table.blog {
 	background-color: #111111;
 	padding: .3em;
 	color: #AFA06E;
-	table-layout: fixed;
-}
-table.old {
-	width: 100%;
-	table-layout: fixed;
-}
-table.old tr:hover {
-	background-image: none;
-	background-color: #282828;
-	transform: scale(1.2);
-	transform-origin: 0% 50%;
+	width: 80%;
 }
 table.new {
+	border-collapse: collapse;
 	width: 100%;
-	table-layout: fixed;
+}
+table.new td {
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+	border-spacing: 0px;
 }
 table.new tr:hover {
+
 	background-image: none;
-	background-color: #282828;
-	transform: scale(1.2);
-	transform-origin: 100% 50%;
+}
+table.new tr:hover .zoom {
+	transform: scale(2);
+	transform-origin: 0% 50%;
 }
 .hunt {
 	background-image: url('pictures/block.gif');
 }
 .norm {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 .title {
 	font-size: 1.5em;
 	text-align: left;
 	color: #ffffff;
+}
+.title2 {
+	color: #A0A5C8;
+	font-size: 1.2em;
 }
 .banner {
 	margin: 0;
@@ -172,535 +175,507 @@ table.new tr:hover {
     </p>
 </div>
 <center>
-<table class="blog" width="80%">
+<table class="blog">
 	<tr>
-		<td class="title" colspan="2"><a name="armors"></a>Armors</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
+<td>
+<table class="new">
 			<tr>
-				<td align="center"><img src="pictures\items\fullplatemail.gif"><br>Demonspike Coat<br>(Full Plate Mail)</td>
-				<td align="center">Armor Class: 100<br>-6 Damage From Enemies<br>+10 To Strength<br>Indestructible<br>Resist Fire: +50%</td>
-				<td align="center">Armor: 100<br>Dur: Indestructible<br>Required: 90 Str</td>
+				<td class="title" colspan="4" style="text-align:left;border-width:0px;border-style:none;">Uniques</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\studdedleatherarmor.gif"><br>The Gladiator's Bane<br>(Studded Leather Armor)</td>
-				<td align="center">Armor Class: 25<br>-2 Damage From Enemies<br>High Durability<br>-3 To All Attributes</td>
-				<td align="center">Armor: 25<br>Dur: 135<br>Required: 20 Str</td>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="armors"></a>Armors</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\leatherarmor.gif"><br>Leather of Aut<br>(Leather Armor)</td>
-				<td align="center">Armor Class: 15<br>+5 To Strenth<br>-5 To Magic<br>+5 To Dexterity<br>Indestructible</td>
-				<td align="center">Armor: 15<br>Dur: Indestructible</td>
+				<td class="zoom"><img src="pictures\items\fullplatemail.gif"></td>
+				<td>Demonspike Coat<br>(Full Plate Mail)</td>
+				<td>Armor Class: 100<br>-6 Damage From Enemies<br>+10 To Strength<br>Indestructible<br>Resist Fire: +50%</td>
+				<td>Armor: 100<br>Dur: Indestructible<br>Required: 90 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\studdedleatherarmor.gif"></td>
+				<td>The Gladiator's Bane<br>(Studded Leather Armor)</td>
+				<td>Armor Class: 25<br>-2 Damage From Enemies<br>High Durability<br>-3 To All Attributes</td>
+				<td>Armor: 25<br>Dur: 135<br>Required: 20 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\leatherarmor.gif"></td>
+				<td>Leather of Aut<br>(Leather Armor)</td>
+				<td>Armor Class: 15<br>+5 To Strenth<br>-5 To Magic<br>+5 To Dexterity<br>Indestructible</td>
+				<td>Armor: 15<br>Dur: Indestructible</td>
 			</tr>
 			<tr class="tooltip" title="AC variations:<br> 50, 45">
-				<td align="center"><img src="pictures\items\najslightplate.gif"><br>Naj's Light Plate<br>(Plate Mail)</td>
-				<td align="center">No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level</td>
-				<td align="center">Armor: <span style="color:#E16C6C;">(42-50)</span><br>Dur: 75</td>
+				<td class="zoom"><img src="pictures\items\najslightplate.gif"></td>
+				<td>Naj's Light Plate<br>(Plate Mail)</td>
+				<td>No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level</td>
+				<td>Armor: <span style="color:#E16C6C;">(42-50)</span><br>Dur: 75</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\nightscape.gif"><br>Nightscape<br>(Cape)</td>
-				<td align="center">Faster Hit Recovery<br>-40% Light Radius<br>Armor Class: 15<br>+3 To Dexterity<br>Resist All: +20%</td>
-				<td align="center">Armor: 15<br>Dur: 12</td>
+				<td class="zoom"><img src="pictures\items\nightscape.gif"></td>
+				<td>Nightscape<br>(Cape)</td>
+				<td>Faster Hit Recovery<br>-40% Light Radius<br>Armor Class: 15<br>+3 To Dexterity<br>Resist All: +20%</td>
+				<td>Armor: 15<br>Dur: 12</td>
 			</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
 			<tr>
-				<td align="center"><img src="pictures\items\nightscape.gif"><br>The Rainbow Cloak<br>(Cloak)</td>
-				<td align="center">Armor Class: 10<br>+1 To All Attributes<br>Resist All: +10%<br>Hit Points: +5<br> High Durability</td>
-				<td align="center">Armor: 10<br>Dur: 27</td>
+				<td class="zoom"><img src="pictures\items\nightscape.gif">
+				<td>The Rainbow Cloak<br>(Cloak)</td>
+				<td>Armor Class: 10<br>+1 To All Attributes<br>Resist All: +10%<br>Hit Points: +5<br> High Durability</td>
+				<td>Armor: 10<br>Dur: 27</td>
 			</tr>
 			<tr class="tooltip" title="AC variations:<br> -10, -8">
-				<td align="center"><img src="pictures\items\breastplate.gif"><br>Scavenger Carapace<br>(Breast Plate)</td>
-				<td align="center">-15 Damage From Enemies<br>Armor Class: <span style="color:#E16C6C;">(-6 - -10)</span><br>+5 To Dexterity<br>Resist Lightning: +40%</td>
-				<td align="center">Armor: <span style="color:#E16C6C;">(-6 - -10)</span><br>Dur: 80<br>Required: 40 Str</td>
+				<td class="zoom"><img src="pictures\items\breastplate.gif"></td>
+				<td>Scavenger Carapace<br>(Breast Plate)</td>
+				<td>-15 Damage From Enemies<br>Armor Class: <span style="color:#E16C6C;">(-6 - -10)</span><br>+5 To Dexterity<br>Resist Lightning: +40%</td>
+				<td>Armor: <span style="color:#E16C6C;">(-6 - -10)</span><br>Dur: 80<br>Required: 40 Str</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\chainmail.gif"><br>Sparkling Mail<br>(Chain Mail)</td>
-				<td align="center">Armor Class: 30<br>Lightning Hit Damage: 1-10</td>
-				<td align="center">Armor: 30<br>Dur: 55<br>Required: 30 Str</td>
+				<td class="zoom"><img src="pictures\items\chainmail.gif"></td>
+				<td>Sparkling Mail<br>(Chain Mail)</td>
+				<td>Armor Class: 30<br>Lightning Hit Damage: 1-10</td>
+				<td>Armor: 30<br>Dur: 55<br>Required: 30 Str</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\tornfleshofsouls.gif"><br>Torn Flesh of Souls<br>(Rags)</td>
-				<td align="center">Armor Class: 8<br>+10 To Vitality<br>-1 Damage From Enemies<br>Indestructible</td>
-				<td align="center">Armor: 8<br>Dur: Indestructible</td>
+				<td class="zoom"><img src="pictures\items\tornfleshofsouls.gif"></td>
+				<td>Torn Flesh of Souls<br>(Rags)</td>
+				<td>Armor Class: 8<br>+10 To Vitality<br>-1 Damage From Enemies<br>Indestructible</td>
+				<td>Armor: 8<br>Dur: Indestructible</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\nightscape.gif"><br>Wisdom's Wrap<br>(Robe)</td>
-				<td align="center">+5 To Magic<br>Mana: +10<br>Resist lightning: +25%<br>Armor Class: 15<br>-1 Damage From Enemies</td>
-				<td align="center">Armor: 15<br>Dur: 24</td>
+				<td class="zoom"><img src="pictures\items\nightscape.gif"></td>
+				<td>Wisdom's Wrap<br>(Robe)</td>
+				<td>+5 To Magic<br>Mana: +10<br>Resist lightning: +25%<br>Armor Class: 15<br>-1 Damage From Enemies</td>
+				<td>Armor: 15<br>Dur: 24</td>
 			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
 <!-- ///// Axes \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="axes"></a>Axes</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
 			<tr>
-				<td align="center"><img src="pictures\items\smallaxe.gif"><br>Aguinara's Hatchet<br>(Small Axe)</td>
-				<td align="center">Spells Are Increased By One Level<br>+10 To Magic<br>Resist Magic: +75%</td>
-				<td align="center">Damage: 2-10<br>Dur: 24</td>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="axes"></a>Axes</td>
+			</tr>
+
+			<tr>
+				<td class="zoom"><img src="pictures\items\smallaxe.gif"></td>
+				<td>Aguinara's Hatchet<br>(Small Axe)</td>
+				<td>Spells Are Increased By One Level<br>+10 To Magic<br>Resist Magic: +75%</td>
+				<td>Damage: 2-10<br>Dur: 24</td>
 			</tr>
 			<tr class="tooltip hunt" title="Still Hunting">
-				<td align="center"><img src="pictures\items\broadaxe.gif"><br>Bloodslayer<br>(Broad Axe)</td>
-				<td align="center">+100% Damage<br>+200% Damage vs. Demons<br>-5 to all Attribute</td>
-				<td align="center">Damage: 8-20<br>Dur: 50<br>Required: 50 Str</td>
+				<td class="zoom"><img src="pictures\items\broadaxe.gif"></td>
+				<td>Bloodslayer<br>(Broad Axe)</td>
+				<td>+100% Damage<br>+200% Damage vs. Demons<br>-5 to all Attribute</td>
+				<td>Damage: 8-20<br>Dur: 50<br>Required: 50 Str</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\battleaxe.gif"><br>The Celestial Axe<br>(Battle Axe)</td>
-				<td align="center">No Strength Requirement<br>Chance To Hit: +15%<br>Hit Points: +15<br>-15 To Strength</td>
-				<td align="center">Damage: 10-25<br>Dur: 60</td>
+				<td class="zoom"><img src="pictures\items\battleaxe.gif"></td>
+				<td>The Celestial Axe<br>(Battle Axe)</td>
+				<td>No Strength Requirement<br>Chance To Hit: +15%<br>Hit Points: +15<br>-15 To Strength</td>
+				<td>Damage: 10-25<br>Dur: 60</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\battleaxe.gif"><br>Hellslayer<br>(Battle Axe)</td>
-				<td align="center">+8 To Strength<br>+8 To Vitality<br>+100% Damage<br>Hit Points: +25<br>Mana: -25</td>
-				<td align="center">Damage: 10-25<br>Dur: 60<br>Required: 65 Str</td>
+				<td class="zoom"><img src="pictures\items\battleaxe.gif"></td>
+				<td>Hellslayer<br>(Battle Axe)</td>
+				<td>+8 To Strength<br>+8 To Vitality<br>+100% Damage<br>Hit Points: +25<br>Mana: -25</td>
+				<td>Damage: 10-25<br>Dur: 60<br>Required: 65 Str</td>
 			</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
 			<tr>
-				<td align="center"><img src="pictures\items\messerschmidtsreaver.gif"><br>Messerschmidt's Reaver<br>(Great Axe)</td>
-				<td align="center">+200% Damage<br>Adds 15 Points To Damage<br>+5 To All Attributes<br>Hit Points: -50<br>Fire Hit Damage 2-12</td>
-				<td align="center">Damage: 12-30<br>Dur: 75<br>Required: 80 Str</td>
+				<td class="zoom"><img src="pictures\items\messerschmidtsreaver.gif"></td>
+				<td>Messerschmidt's Reaver<br>(Great Axe)</td>
+				<td>+200% Damage<br>Adds 15 Points To Damage<br>+5 To All Attributes<br>Hit Points: -50<br>Fire Hit Damage 2-12</td>
+				<td>Damage: 12-30<br>Dur: 75<br>Required: 80 Str</td>
 			</tr>
 			<tr class="tooltip hunt" title="Still Hunting">
-				<td align="center"><img src="pictures\items\greataxe.gif"><br>Sharp Beak<br>(Great Axe)</td>
-				<td align="center">-10 Magic<br>+20 Life<br>-10 Mana</td>
-				<td align="center">Damage: 6-16<br>Dur: 30<br>Required: 25 Str</td>
+				<td class="zoom"><img src="pictures\items\greataxe.gif"></td>
+				<td>Sharp Beak<br>(Great Axe)</td>
+				<td>-10 Magic<br>+20 Life<br>-10 Mana</td>
+				<td>Damage: 6-16<br>Dur: 30<br>Required: 25 Str</td>
 			</tr>
 			<tr>
-				<td align="center"><img src="pictures\items\stonecleaver.gif"><br>Stonecleaver<br>(Broad Axe)</td>
-				<td align="center">Hit Points: +30<br>Chance To Hit: +20%<br>+50% Damage<br>Resist lightning: +40%</td>
-				<td align="center">Damage: 8-20<br>Dur: 50<br>Required: 50 Str</td>
+				<td class="zoom"><img src="pictures\items\stonecleaver.gif"></td>
+				<td>Stonecleaver<br>(Broad Axe)</td>
+				<td>Hit Points: +30<br>Chance To Hit: +20%<br>+50% Damage<br>Resist lightning: +40%</td>
+				<td>Damage: 8-20<br>Dur: 50<br>Required: 50 Str</td>
 			</tr>
 			<tr class="tooltip" title="DFE variations:<br> -6, -5, -3, -1">
-				<td align="center"><img src="pictures\items\greataxe.gif"><br>Wicked Axe<br>(Large Axe)</td>
-				<td align="center">Chance To Hit: +30%<br>+10 To Dexterity<br>-10 To Vitality<br><span style="color:#E16C6C;">(-1 - -6)</span> Dmg From Enemies<br>Indestructible</td>
-				<td align="center">Damage: 6-16<br>Dur: Indestructible<br>Required: 30 Str</td>
+				<td class="zoom"><img src="pictures\items\greataxe.gif"></td>
+				<td>Wicked Axe<br>(Large Axe)</td>
+				<td>Chance To Hit: +30%<br>+10 To Dexterity<br>-10 To Vitality<br><span style="color:#E16C6C;">(-1 - -6)</span> Dmg From Enemies<br>Indestructible</td>
+				<td>Damage: 6-16<br>Dur: Indestructible<br>Required: 30 Str</td>
 			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
 <!-- ///// Bows \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="bows"></a>Bows</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr>
-		<td align="center"><img src="pictures\items\huntersbow.gif"><br>The Blackoak Bow<br>(Long Bow)</td>
-		<td align="center">+10 To Dexterity<br>-10 To Vitality<br>+50% Damage<br>-10% Light Radius</td>
-		<td align="center">Damage: 1-6<br>Dur: 40<br>Required: 25 Str, 30 dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\bowofthedead.gif"><br>Bow of the Dead<br>(Composite Bow)</td>
-		<td align="center">Chance To Hit: +10%<br>+4 To Dexterity<br>-3 To Vitality<br>-20% Light Radius<br>Altered Durability</td>
-		<td align="center">Damage: 3-6<br>Dur: 30<br>Required: 25 Str, 40 dex</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\compositebow.gif"><br>The Celestial Bow<br>(Composite Bow)</td>
-		<td align="center">+2 Damage<br>Armor Class: +5<br>No Strength Requirement</td>
-		<td align="center">Damage: 1-6<br>Dur: 35<br>Required: 30 dex</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\bowofthedead.gif"><br>Deadly Hunter<br>(Composite Bow)</td>
-		<td align="center">-5 Magic<br>+20% to Hit<br>+200% Damage vs. demons</td>
-		<td align="center">Damage: 3-6<br>Dur: 45<br>Required: 25 Str, 40 dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\bowofthedead.gif"><br>Eaglehorn<br>(Long Battle Bow)</td>
-		<td align="center">+20 To Dexterity<br>Chance To Hit: +50%<br>+100% To Damage<br>Indestructible</td>
-		<td align="center">Damage: 1-10<br>Dur: Indestructible<br>Required: 30 Str, 60 dex</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\huntersbow.gif"><br>Flamedart<br>(Hunter's Bow)</td>
-		<td align="center">Fire Arrows Damage: 1-6<br>Fire Hit Damage: 1-6<a href="#end">*</a><br>Chance To Hit: +20%<br>Resist Fire: +40%</td>
-		<td align="center">Damage: 2-5<br>Dur: 40<br>Required: 20 Str, 35 dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\huntersbow.gif"><br>Fleshstinger<br>(Long Bow)</td>
-		<td align="center">+15 To Dexterity<br>Chance To Hit: +40%<br>+80% To Damage<br>High Durability</td>
-		<td align="center">Damage: 1-6<br>Dur: 37<br>Required: 25 Str, 30 dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\needler.gif"><br>The Needler<br>(Short Bow)</td>
-		<td align="center">Chance To Hit: +50%<br>Unusual Item Damage<br>Fast Attack</td>
-		<td align="center">Damage: 1-3<br>Dur: 30</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\shortbow.gif"><br>The Rift Bow<br>(Short Bow)</td>
-		<td align="center">Fires Random Speed Arrows<br>-3 to Dexterity<br>+2 Damage to each Hit</td>
-		<td align="center">Damage: 1-4<br>Dur: 30</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\windforce.gif"><br>Windforce<br>(Long War Bow)</td>
-		<td align="center">+5 To Strength<br>+200% To Damage<br>Knocks Target Back</td>
-		<td align="center">Damage: 1-14<br>Dur: 60<br>Required: 45 Str, 80 dex</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="bows"></a>Bows</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\huntersbow.gif"></td>
+				<td>The Blackoak Bow<br>(Long Bow)</td>
+				<td>+10 To Dexterity<br>-10 To Vitality<br>+50% Damage<br>-10% Light Radius</td>
+				<td>Damage: 1-6<br>Dur: 40<br>Required: 25 Str, 30 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\bowofthedead.gif"></td>
+				<td>Bow of the Dead<br>(Composite Bow)</td>
+				<td>Chance To Hit: +10%<br>+4 To Dexterity<br>-3 To Vitality<br>-20% Light Radius<br>Altered Durability</td>
+				<td>Damage: 3-6<br>Dur: 30<br>Required: 25 Str, 40 dex</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\compositebow.gif"></td>
+				<td>The Celestial Bow<br>(Composite Bow)</td>
+				<td>+2 Damage<br>Armor Class: +5<br>No Strength Requirement</td>
+				<td>Damage: 1-6<br>Dur: 35<br>Required: 30 dex</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\bowofthedead.gif"></td>
+				<td>Deadly Hunter<br>(Composite Bow)</td>
+				<td>-5 Magic<br>+20% to Hit<br>+200% Damage vs. demons</td>
+				<td>Damage: 3-6<br>Dur: 45<br>Required: 25 Str, 40 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\bowofthedead.gif"></td>
+				<td>Eaglehorn<br>(Long Battle Bow)</td>
+				<td>+20 To Dexterity<br>Chance To Hit: +50%<br>+100% To Damage<br>Indestructible</td>
+				<td>Damage: 1-10<br>Dur: Indestructible<br>Required: 30 Str, 60 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\huntersbow.gif"></td>
+				<td>Flamedart<br>(Hunter's Bow)</td>
+				<td>Fire Arrows Damage: 1-6<br>Fire Hit Damage: 1-6<a href="#end">*</a><br>Chance To Hit: +20%<br>Resist Fire: +40%</td>
+				<td>Damage: 2-5<br>Dur: 40<br>Required: 20 Str, 35 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\huntersbow.gif"></td>
+				<td>Fleshstinger<br>(Long Bow)</td>
+				<td>+15 To Dexterity<br>Chance To Hit: +40%<br>+80% To Damage<br>High Durability</td>
+				<td>Damage: 1-6<br>Dur: 37<br>Required: 25 Str, 30 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\needler.gif"></td>
+				<td>The Needler<br>(Short Bow)</td>
+				<td>Chance To Hit: +50%<br>Unusual Item Damage<br>Fast Attack</td>
+				<td>Damage: 1-3<br>Dur: 30</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\shortbow.gif"></td>
+				<td>The Rift Bow<br>(Short Bow)</td>
+				<td>Fires Random Speed Arrows<br>-3 to Dexterity<br>+2 Damage to each Hit</td>
+				<td>Damage: 1-4<br>Dur: 30</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\windforce.gif"></td>
+				<td>Windforce<br>(Long War Bow)</td>
+				<td>+5 To Strength<br>+200% To Damage<br>Knocks Target Back</td>
+				<td>Damage: 1-14<br>Dur: 60<br>Required: 45 Str, 80 dex</td>
+			</tr>
 <!-- ///// Clubs \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="clubs"></a>Clubs</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr>
-		<td align="center"><img src="pictures\items\morningstar.gif"><br>Baranar's Star<br>(Morning Star)</td>
-		<td align="center">Chance To Hit: +12%<br>+80% Damage<br>Quick Attack<br>+4 To Vitality<br>-4 To Dexterity<br>Altered Durability</td>
-		<td align="center">Damage: 1-10<br>Dur: 60<br>Required: 26 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\flail.gif"><br>The Celestial Star<br>(Flail)</td>
-		<td align="center">No Strength Requiremnet<br>+20% Light Radius<br>Adds 10 Points To Damage<br>Armor Class: -8</td>
-		<td align="center">Armor Class: -8<br>Damage: 2-12<br>Dur: 36</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\mace.gif"><br>Civerb's Cudgel<br>(Mace)</td>
-		<td align="center">+200% Damage vs. Demons<br>-5 To Dexterity<br>-2 To Magic</td>
-		<td align="center">Damage: 1-8<br>Dur: 32<br>Required: 16 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\maul.gif"><br>The Cranium Basher<br>(Maul)</td>
-		<td align="center">Adds 20 Pints To Damage<br>+15 To Strength<br>Indestructible<br>Mana: -150<br>Resist All: +5%</td>
-		<td align="center">Damage: 6-20<br>Dur: Indestructible<br>Required: 55 Str</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\mace.gif"><br>Dreamflange<br>(Mace)</td>
-		<td align="center">+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level</td>
-		<td align="center">Damage: 1-8<br>Dur: 32<br>Required: 16 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\club.gif"><img src="pictures\items\spikedclub.gif"><br>Gnarled Root<br><span style="color:#E16C6C;">(Club/Spiked Club)</span></td>
-		<td align="center">Chance To Hit: +20%<br>+300% Damage<br>+10 To Dexterity<br>+5 To Magic<br>Resist All: +10%<br>Armor Class: -10</td>
-		<td align="center">Armor Class: -10<br>Damage: <span style="color:#E16C6C;">(1-6/3-6)</span><br>Dur: 20<br>Required: <span style="color:#E16C6C;">(0/18)</span> Str</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\maul.gif"><br>Hammer of Jholm<br>(Maul)</td>
-		<td align="center">+10% Damage<br>+15% To Hit<br>+3 Strength</td>
-		<td align="center">Damage: 6-20<br>Dur: Indestructible<br>Required: 55 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\warhammer.gif"><br>Schaefer's Hammer<br>(War Hammer)</td>
-		<td align="center">-100% Damage<br>Lightning Hit Damage: 1-50<br>Hit Points: +50<br>Chance To Hit: +30%<br>Resist Lightning: 75% max<br>+10% Light Radius</td>
-		<td align="center">Damage: 5-9<br>Dur: 50<br>Required: 40 Str</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="clubs"></a>Clubs</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\morningstar.gif"></td>
+				<td>Baranar's Star<br>(Morning Star)</td>
+				<td>Chance To Hit: +12%<br>+80% Damage<br>Quick Attack<br>+4 To Vitality<br>-4 To Dexterity<br>Altered Durability</td>
+				<td>Damage: 1-10<br>Dur: 60<br>Required: 26 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\flail.gif"></td>
+				<td>The Celestial Star<br>(Flail)</td>
+				<td>No Strength Requiremnet<br>+20% Light Radius<br>Adds 10 Points To Damage<br>Armor Class: -8</td>
+				<td>Armor Class: -8<br>Damage: 2-12<br>Dur: 36</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\mace.gif"></td>
+				<td>Civerb's Cudgel<br>(Mace)</td>
+				<td>+200% Damage vs. Demons<br>-5 To Dexterity<br>-2 To Magic</td>
+				<td>Damage: 1-8<br>Dur: 32<br>Required: 16 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\maul.gif"></td>
+				<td>The Cranium Basher<br>(Maul)</td>
+				<td>Adds 20 Pints To Damage<br>+15 To Strength<br>Indestructible<br>Mana: -150<br>Resist All: +5%</td>
+				<td>Damage: 6-20<br>Dur: Indestructible<br>Required: 55 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\mace.gif"></td>
+				<td>Dreamflange<br>(Mace)</td>
+				<td>+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level</td>
+				<td>Damage: 1-8<br>Dur: 32<br>Required: 16 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\club.gif"><img src="pictures\items\spikedclub.gif"></td>
+				<td>Gnarled Root<br><span style="color:#E16C6C;">(Club/Spiked Club)</span></td>
+				<td>Chance To Hit: +20%<br>+300% Damage<br>+10 To Dexterity<br>+5 To Magic<br>Resist All: +10%<br>Armor Class: -10</td>
+				<td>Armor Class: -10<br>Damage: <span style="color:#E16C6C;">(1-6/3-6)</span><br>Dur: 20<br>Required: <span style="color:#E16C6C;">(0/18)</span> Str</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\maul.gif"></td>
+				<td>Hammer of Jholm<br>(Maul)</td>
+				<td>+10% Damage<br>+15% To Hit<br>+3 Strength</td>
+				<td>Damage: 6-20<br>Dur: Indestructible<br>Required: 55 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\warhammer.gif"></td>
+				<td>Schaefer's Hammer<br>(War Hammer)</td>
+				<td>-100% Damage<br>Lightning Hit Damage: 1-50<br>Hit Points: +50<br>Chance To Hit: +30%<br>Resist Lightning: 75% max<br>+10% Light Radius</td>
+				<td>Damage: 5-9<br>Dur: 50<br>Required: 40 Str</td>
+			</tr>
 <!-- ///// Helms \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="helmets"</a>Helms</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr class="tooltip" title="AC/DFE variations:<br> 5/6, 5/5, 5/4, 4/4, 4/2">
-		<td align="center"><img src="pictures\items\foolscrest.gif"><br>Fool's Crest<br>(Helm)</td>
-		<td align="center">-4 To All Attributes<br>Hit Points: +100<br><span style="color:#E16C6C;">(+1-+6)</span> Damage From Enemies<br>Attacker Takes 1-3 Damage</td>
-		<td align="center">Armor: <span style="color:#E16C6C;">(4-6)</span><br>Dur: 30<br>Required: 25 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\gotterdamerung.gif"><br>Gotterdamerung<br>(Helm)</td>
-		<td align="center">+20 To All Attributes<br>-4 Damage From Enemies<br>All Resistance Equals 0<br>-40% Light Radius</td>
-		<td align="center">Armor: 60<br>Dur: 30<br>Required: 50 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\helmofsprits.gif"><br>Helm of Sprits<br>(Helm)</td>
-		<td align="center">Hit Steals 5% Life</td>
-		<td align="center">Armor: 6<br>Dur: 30<br>Required: 25 Str</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\overlordshelm.gif"><br>Overlord's Helm<br>(Helm)</td>
-		<td align="center">+20 To Strength<br>+15 To Dexterity<br>+5 To Vitality<br>-20 To Magic<br>Altered Durability</td>
-		<td align="center">Armor: 5<br>Dur: 15<br>Required: 25 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\royalcirclet.gif"><br>Royal Circlet<br>(Crown)</td>
-		<td align="center">+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius</td>
-		<td align="center">Armor: 40<br>Dur: 40</td>
-	</tr>
-	<tr class="tooltip" title="AC variations:<br> 4">
-		<td align="center"><img src="pictures\items\thinkingcap.gif"><br>Thinking Cap<br>(Skull Cap)</td>
-		<td align="center">Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
-		<td align="center">Armor: <span style="color:#E16C6C;">(2-4)</span><br>Dur: 1</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="helmets"</a>Helms</td>
+			</tr>
+			<tr class="tooltip" title="AC/DFE variations:<br> 5/6, 5/5, 5/4, 4/4, 4/2">
+				<td class="zoom"><img src="pictures\items\foolscrest.gif"></td>
+				<td>Fool's Crest<br>(Helm)</td>
+				<td>-4 To All Attributes<br>Hit Points: +100<br><span style="color:#E16C6C;">(+1-+6)</span> Damage From Enemies<br>Attacker Takes 1-3 Damage</td>
+				<td>Armor: <span style="color:#E16C6C;">(4-6)</span><br>Dur: 30<br>Required: 25 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\gotterdamerung.gif"></td>
+				<td>Gotterdamerung<br>(Helm)</td>
+				<td>+20 To All Attributes<br>-4 Damage From Enemies<br>All Resistance Equals 0<br>-40% Light Radius</td>
+				<td>Armor: 60<br>Dur: 30<br>Required: 50 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\helmofsprits.gif"></td>
+				<td>Helm of Sprits<br>(Helm)</td>
+				<td>Hit Steals 5% Life</td>
+				<td>Armor: 6<br>Dur: 30<br>Required: 25 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\overlordshelm.gif"></td>
+				<td>Overlord's Helm<br>(Helm)</td>
+				<td>+20 To Strength<br>+15 To Dexterity<br>+5 To Vitality<br>-20 To Magic<br>Altered Durability</td>
+				<td>Armor: 5<br>Dur: 15<br>Required: 25 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\royalcirclet.gif"></td>
+				<td>Royal Circlet<br>(Crown)</td>
+				<td>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius</td>
+				<td>Armor: 40<br>Dur: 40</td>
+			</tr>
+			<tr class="tooltip" title="AC variations:<br> 4">
+				<td class="zoom"><img src="pictures\items\thinkingcap.gif"></td>
+				<td>Thinking Cap<br>(Skull Cap)</td>
+				<td>Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
+				<td>Armor: <span style="color:#E16C6C;">(2-4)</span><br>Dur: 1</td>
+			</tr>
 <!-- ///// Jewelry \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="jewelry"></a>Jewelry</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\bleeder.gif"><br>The Bleeder<br>(Ring)</td>
-		<td align="center">Resist Magic: +20%<br>+30 Mana<br>-10 Hitpoints</td>
-		<td align="center">Dur: Indestructible</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\constrictingring.gif"><br>Constricting Ring<br>(Ring)</td>
-		<td align="center">+75% Resist All<br>You constantly lose hitpoints</td>
-		<td align="center">Dur: Indestructible</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\ringofengagement.gif"><br>Ring of Engagement<br>(Ring)</td>
-		<td align="center"><span style="color:#E16C6C;">(-1 - -2)</span><a href="#end">**</a> -2 Damage From Enemies<br>Attacker Takes 1-3 Damage<br>Armor Class: 5<br>Damages Targets Armor</td>
-		<td align="center">Armor: 5<br>Dur: Indestructible</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\ringofregha.gif"><br>Ring of Regha<br>(Ring)</td>
-		<td align="center">+10 to Magic<br>Resist Magic: +10%<br>+10% Light Radius<br>-3 Strength<br>-3 Dexterity</td>
-		<td align="center">Dur: Indestructible</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="jewelry"></a>Jewelry</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\bleeder.gif"></td>
+				<td>The Bleeder<br>(Ring)</td>
+				<td>Resist Magic: +20%<br>+30 Mana<br>-10 Hitpoints</td>
+				<td>Dur: Indestructible</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\constrictingring.gif"></td>
+				<td>Constricting Ring<br>(Ring)</td>
+				<td>+75% Resist All<br>You constantly lose hitpoints</td>
+				<td>Dur: Indestructible</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\ringofengagement.gif"></td>
+				<td>Ring of Engagement<br>(Ring)</td>
+				<td><span style="color:#E16C6C;">(-1 - -2)</span><a href="#end">**</a> -2 Damage From Enemies<br>Attacker Takes 1-3 Damage<br>Armor Class: 5<br>Damages Targets Armor</td>
+				<td>Armor: 5<br>Dur: Indestructible</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\ringofregha.gif"></td>
+				<td>Ring of Regha<br>(Ring)</td>
+				<td>+10 to Magic<br>Resist Magic: +10%<br>+10% Light Radius<br>-3 Strength<br>-3 Dexterity</td>
+				<td>Dur: Indestructible</td>
+			</tr>
 <!-- ///// Shields \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="shields"></a>Shields</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr>
-		<td align="center"><img src="pictures\items\blackoakshield.gif"><br>Blackoak Shield<br>(Small Shield)</td>
-		<td align="center">+10 To Dexterity<br>-10 To Vitality<br>Armor Class: 18<br>-10% Light Radius<br>High Durability</td>
-		<td align="center">Armor: 18<br>Dur: 60<br>Required: 25 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\dragonsbreach.gif"><br>Dragon's Breach<br>(Kite Shield)</td>
-		<td align="center">Resist Fire: +25%<br>+5 To Strength<br>Armor Class: 20<br>-5 To Magic<br>Indestructible</td>
-		<td align="center">Armor: 20<br>Dur: Indestructible<br>Required: 50 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\blackoakshield.gif"><br>Holy Defender<br>(Large Shield)</td>
-		<td align="center">Armor Class: 15<br>-2 Damage From Enemies<br>Resist Fire: +20%<br>High Durability<br>Fast Block</td>
-		<td align="center">Armor: 15<br>Dur: 96<br>Required: 40 Str</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\splitskullshield.gif"><br>Split Skull Shield<br>(Buckler)</td>
-		<td align="center">Armor Class: 10<br>Hit Points: +10<br>+2 To Strength<br>-10% Light Radius<br>Altered Durability</td>
-		<td align="center">Armor: 10<br>Dur: 15</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\gothicshield.gif"><br>Stormshield<br><span style="color:#E16C6C;">(Tower Shield/Gothic Shield)</span></td>
-		<td align="center">Armor Class: 40<br>+4 Damage From Enemies<br>+10 To Strength<br>Indestructible<br>Fast Block</td>
-		<td align="center">Armor: 40<br>Dur: Indestructible<br>Required: <span style="color:#E16C6C;">(60,80)</span> Str</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="shields"></a>Shields</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\blackoakshield.gif"></td>
+				<td>Blackoak Shield<br>(Small Shield)</td>
+				<td>+10 To Dexterity<br>-10 To Vitality<br>Armor Class: 18<br>-10% Light Radius<br>High Durability</td>
+				<td>Armor: 18<br>Dur: 60<br>Required: 25 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\dragonsbreach.gif"></td>
+				<td>Dragon's Breach<br>(Kite Shield)</td>
+				<td>Resist Fire: +25%<br>+5 To Strength<br>Armor Class: 20<br>-5 To Magic<br>Indestructible</td>
+				<td>Armor: 20<br>Dur: Indestructible<br>Required: 50 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\blackoakshield.gif"></td>
+				<td>Holy Defender<br>(Large Shield)</td>
+				<td>Armor Class: 15<br>-2 Damage From Enemies<br>Resist Fire: +20%<br>High Durability<br>Fast Block</td>
+				<td>Armor: 15<br>Dur: 96<br>Required: 40 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\splitskullshield.gif"></td>
+				<td>Split Skull Shield<br>(Buckler)</td>
+				<td>Armor Class: 10<br>Hit Points: +10<br>+2 To Strength<br>-10% Light Radius<br>Altered Durability</td>
+				<td>Armor: 10<br>Dur: 15</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\gothicshield.gif"></td>
+				<td>Stormshield<br><span style="color:#E16C6C;">(Tower Shield/Gothic Shield)</span></td>
+				<td>Armor Class: 40<br>+4 Damage From Enemies<br>+10 To Strength<br>Indestructible<br>Fast Block</td>
+				<td>Armor: 40<br>Dur: Indestructible<br>Required: <span style="color:#E16C6C;">(60,80)</span> Str</td>
+			</tr>
 <!-- ///// Staves \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="staves"></a>Staves</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr>
-		<td align="center"><img src="pictures\items\shortstaff.gif"><br>Gleamsong<br>(Short Staff)</td>
-		<td align="center">Mana: +25<br>-3 To Strength<br>-3 To Vitality<br>76 Phasing Charges</td>
-		<td align="center">Damage: 2-4<br>Dur: 25<br>Charges: 76</td>
-	</tr>
-		<tr>
-		<td align="center"><img src="pictures\items\longstaff.gif"><br>Immolator<br>(Long Staff)</td>
-		<td align="center">Resist Fire: 20%<br>Fire Hit Damage: 4-4<br>Mana: +10%<br>-5 To Vitality</td>
-		<td align="center">Damage: 4-8<br>Dur: 35</td>
-	</tr>	
-	<tr>
-		<td align="center"><img src="pictures\items\shortstaff.gif"><br>Mindcry<br>(Quarter Staff)</td>
-		<td align="center">+15 To Magic<br>69 Guardian Charges<br>Resist All: +15%<br>Spells Are Increased 1 Level</td>
-		<td align="center">Damage: 6-12<br>Dur: 55<br>Charges: 69<br>Required: 20 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\longstaff.gif"><br>Naj's Puzzler<br>(Long Staff)</td>
-		<td align="center">+20 To Magic<br>+10 To Dexterity<br>Resist All: +20%<br>57 Teleport Charges<br>Hit Points: -25</td>
-		<td align="center">Damage: 4-8<br>Dur: 35<br>Charges: 57</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\protector.gif"><br>The Protector<br>(Short Staff)</td>
-		<td align="center">+5 To Vitality<br>-5 Damage From Enemies<br>Armor Class: 40<br>86 Healing Charges<br>Attacker Takes 1-3 Damage</td>
-		<td align="center">Armor Class: 40<br>Damage: 2-4<br>Dur: 25<br>Charges: 86</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\warstaff.gif"><br>Rod of Onan<br>(War Staff)</td>
-		<td align="center">50 Golem Charges<br>+100% Damage<br>+5 To All Attributes</td>
-		<td align="center">Damage: 8-16<br>Dur: 75<br>Charges: 50<br>Required: 30 Str</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\longstaff.gif"><br>Staff of Shadows<br>(Long Staff)</td>
-		<td align="center">Quick Attack<br>+10% Chance to Hit<br>+60% Damage<br>-10 Magic<br>-20% Light Radius</td>
-		<td align="center">Damage: 4-8<br>Dur: 35</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\warstaff.gif"><br>Storm Spire<br>(War Staff)</td>
-		<td align="center">+50% Resist Lightning<br>Lightning Hit Damage 2-8<br>+10 Strength<br>-10 Magic</td>
-		<td align="center">Damage: 8-16<br>Dur: 75<br>Required: 30 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\compositestaff.gif"><br>Thundercall<br>(Composite Staff)</td>
-		<td align="center">Chance To Hit: +35%<br>Lightning Hit Damage: 1-10<br>76 Lightning Charges<br>Resist Lightning: +30%<br>+20% Light Radius</td>
-		<td align="center">Damage: 5-10<br>Dur: 45<br>Charges: 76</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-</table>
-<br>
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="staves"></a>Staves</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\shortstaff.gif"></td>
+				<td>Gleamsong<br>(Short Staff)</td>
+				<td>Mana: +25<br>-3 To Strength<br>-3 To Vitality<br>76 Phasing Charges</td>
+				<td>Damage: 2-4<br>Dur: 25<br>Charges: 76</td>
+			</tr>
+				<tr>
+				<td class="zoom"><img src="pictures\items\longstaff.gif"></td>
+				<td>Immolator<br>(Long Staff)</td>
+				<td>Resist Fire: 20%<br>Fire Hit Damage: 4-4<br>Mana: +10%<br>-5 To Vitality</td>
+				<td>Damage: 4-8<br>Dur: 35</td>
+			</tr>	
+			<tr>
+				<td class="zoom"><img src="pictures\items\shortstaff.gif"></td>
+				<td>Mindcry<br>(Quarter Staff)</td>
+				<td>+15 To Magic<br>69 Guardian Charges<br>Resist All: +15%<br>Spells Are Increased 1 Level</td>
+				<td>Damage: 6-12<br>Dur: 55<br>Charges: 69<br>Required: 20 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\longstaff.gif"></td>
+				<td>Naj's Puzzler<br>(Long Staff)</td>
+				<td>+20 To Magic<br>+10 To Dexterity<br>Resist All: +20%<br>57 Teleport Charges<br>Hit Points: -25</td>
+				<td>Damage: 4-8<br>Dur: 35<br>Charges: 57</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\protector.gif"></td>
+				<td>The Protector<br>(Short Staff)</td>
+				<td>+5 To Vitality<br>-5 Damage From Enemies<br>Armor Class: 40<br>86 Healing Charges<br>Attacker Takes 1-3 Damage</td>
+				<td>Armor Class: 40<br>Damage: 2-4<br>Dur: 25<br>Charges: 86</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\warstaff.gif"></td>
+				<td>Rod of Onan<br>(War Staff)</td>
+				<td>50 Golem Charges<br>+100% Damage<br>+5 To All Attributes</td>
+				<td>Damage: 8-16<br>Dur: 75<br>Charges: 50<br>Required: 30 Str</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\longstaff.gif"></td>
+				<td>Staff of Shadows<br>(Long Staff)</td>
+				<td>Quick Attack<br>+10% Chance to Hit<br>+60% Damage<br>-10 Magic<br>-20% Light Radius</td>
+				<td>Damage: 4-8<br>Dur: 35</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\warstaff.gif"></td>
+				<td>Storm Spire<br>(War Staff)</td>
+				<td>+50% Resist Lightning<br>Lightning Hit Damage 2-8<br>+10 Strength<br>-10 Magic</td>
+				<td>Damage: 8-16<br>Dur: 75<br>Required: 30 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\compositestaff.gif"></td>
+				<td>Thundercall<br>(Composite Staff)</td>
+				<td>Chance To Hit: +35%<br>Lightning Hit Damage: 1-10<br>76 Lightning Charges<br>Resist Lightning: +30%<br>+20% Light Radius</td>
+				<td>Damage: 5-10<br>Dur: 45<br>Charges: 76</td>
+			</tr>
 <!-- ///// Swords \\\\\ -->
-<table class="blog" width="80%">
-	<tr>
-		<td class="title" colspan="2"><a name="swords"></a>Swords</td>
-	</tr>
-	<tr>
-		<td>
-		<table class="old">
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\blackrazor.gif"><br>Black Razor<br>(Dagger)</td>
-		<td align="center">+150% Damage<br>+2 Vitality<br>Altered Durability</td>
-		<td align="center">Damage: 1-4<br>Dur: 5</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\claymore.gif"><br>The Bonesaw<br>(Claymore)</td>
-		<td align="center">Adds 10 Points To Damage<br>+10 To Strength<br>-5 To Magic<br>-5 To Dexterity<br>Hit Points: +10<br>Mana: -10</td>
-		<td align="center">Damage: 1-12<br>Dur: 36<br>Required: 35 Str</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\sabre.gif"><br>The Defender<br>(Sabre)</td>
-		<td align="center">Armor Class: 5<br>+5 Vitality<br>-5% To Hit</td>
-		<td align="center">Damage: 1-8<br>Dur: 45<br>Required: 17 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\bastardsword.gif"><br>Doombringer<br>(Bastard Sword)</td>
-		<td align="center">Chance To Hit: +25%<br>+250% Damage<br>-5 To All Attributes<br>Hit Points: -25<br>-20 Light Radius</td>
-		<td align="center">Damage: 6-15<br>Dur: 60<br>Required: 50 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\executionersblade.gif"><br>The Executioner's Blade<br>(Falcion)</td>
-		<td align="center">+150% Damage<br>Hit Points: -10<br>-10 Light Radius<br>High Durability</td>
-		<td align="center">Damage: 4-8<br>Dur: 60<br>Required: 30 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\falconstalon.gif"><br>The Falcon's Talon<br>(Scimitar)</td>
-		<td align="center">Fastest Attack<br>Chance To Hit: +20%<br>-33% Damage<br>+10 To Dexterity</td>
-		<td align="center">Damage: 3-7<br>Dur: 28<br>Required: 23 Str, 23 dex</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\broadsword.gif"><br>Gibbous Moon<br>(Broad Sword)</td>
-		<td align="center">+2 to all Attributes<br>+25% Damage<br>+15 Mana<br>-30% Light Radius</td>
-		<td align="center">Damage: 4-12<br>Dur: 50<br>Required: 40 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\grandfather.gif"><br>The Grandfather<br>(Great Sword)</td>
-		<td align="center">One Handed Sword<br>+5 To All Attributes<br>Chance To Hit: +20%<br>+70% Damage<br>Hit Points: +20</td>
-		<td align="center">Damage: 10-20<br>Dur: 100<br>Required: 75 Str</td>
-	</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class="new">
-	<tr>
-		<td align="center"><img src="pictures\items\grizzly.gif"><br>The Grizzly<br>(Two-handed Sword)</td>
-		<td align="center">+20 To Strength<br>-5 To Vitality<br>+200% Damage<br>Knocks Target Back<br>High Durability</td>
-		<td align="center">Damage: 8-16<br>Dur: 150<br>Required: 65 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\falconstalon.gif"><br>Gryphons Claw<br>(Falchion)</td>
-		<td align="center">+100% Damage<br>-2 To Magic<br>-5 To Dexterity</td>
-		<td align="center">Damage: 4-8<br>Dur: 20<br>Required: 30 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\longsword.gif"><br>Ice Shank<br>(Long Sword)</td>
-		<td align="center">Resist Fire: +40%<br>Altered Durability<br>+10 To Strength</td>
-		<td align="center">Damage: 2-10<br>Dur: 15<br>Required: 30 Str, 30 dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\longsword.gif"><br>Inferno<br>(Long Sword)</td>
-		<td align="center">Fire Hit Damage: 1-10<br>+30% Light Radius<br>Mana: +20<br>Resist Fire: 75% max</td>
-		<td align="center">Damage: 2-10<br>Dur: 40<br>Required: 30 Str, 30 dex</td>
-	</tr>
-	<tr class="tooltip hunt" title="Still Hunting">
-		<td align="center"><img src="pictures\items\sabre.gif"><br>Lightsabre<br>(Sabre)</td>
-		<td align="center">+20% Light Radius<br>1-10 Lightning Hit Damage<br>+20% Chance to Hit<br>+50% Resist Lightning</td>
-		<td align="center">Damage: 1-8<br>Dur: 45<br>Required: 17 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\broadsword.gif"><br>Shadowhawk<br>(Broad Sword)</td>
-		<td align="center">-20% Light Radius<br>Hit Steals 5% Life<br>Chance To Hit: +15%<br>Resist All: 5%</td>
-		<td align="center">Damage: 4-12<br>Dur: 50<br>Required: 40 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\wizardspike.gif"><br>Wizardspike<br>(Dagger)</td>
-		<td align="center">+15 To Magic<br>Mana: +35<br>Chance To Hit: +25%<br>Resist All: 15%</td>
-		<td align="center">Damage: 1-4<br>Dur: 16</td>
-	</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><span class="norm">*</span> Listed twice, applied once.
-		<br><a name="end"></a><span class="norm">**</span> Does not appear to player.
-	</tr>
+
+			<tr>
+				<td class="title2" colspan="4" style="border-width:0px;border-style:none;"><a name="swords"></a>Swords</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\blackrazor.gif"></td>
+				<td>Black Razor<br>(Dagger)</td>
+				<td>+150% Damage<br>+2 Vitality<br>Altered Durability</td>
+				<td>Damage: 1-4<br>Dur: 5</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\claymore.gif"></td>
+				<td>The Bonesaw<br>(Claymore)</td>
+				<td>Adds 10 Points To Damage<br>+10 To Strength<br>-5 To Magic<br>-5 To Dexterity<br>Hit Points: +10<br>Mana: -10</td>
+				<td>Damage: 1-12<br>Dur: 36<br>Required: 35 Str</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\sabre.gif"></td>
+				<td>The Defender<br>(Sabre)</td>
+				<td>Armor Class: 5<br>+5 Vitality<br>-5% To Hit</td>
+				<td>Damage: 1-8<br>Dur: 45<br>Required: 17 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\bastardsword.gif"></td>
+				<td>Doombringer<br>(Bastard Sword)</td>
+				<td>Chance To Hit: +25%<br>+250% Damage<br>-5 To All Attributes<br>Hit Points: -25<br>-20 Light Radius</td>
+				<td>Damage: 6-15<br>Dur: 60<br>Required: 50 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\executionersblade.gif"></td>
+				<td>The Executioner's Blade<br>(Falcion)</td>
+				<td>+150% Damage<br>Hit Points: -10<br>-10 Light Radius<br>High Durability</td>
+				<td>Damage: 4-8<br>Dur: 60<br>Required: 30 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\falconstalon.gif"></td>
+				<td>The Falcon's Talon<br>(Scimitar)</td>
+				<td>Fastest Attack<br>Chance To Hit: +20%<br>-33% Damage<br>+10 To Dexterity</td>
+				<td>Damage: 3-7<br>Dur: 28<br>Required: 23 Str, 23 dex</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\broadsword.gif"></td>
+				<td>Gibbous Moon<br>(Broad Sword)</td>
+				<td>+2 to all Attributes<br>+25% Damage<br>+15 Mana<br>-30% Light Radius</td>
+				<td>Damage: 4-12<br>Dur: 50<br>Required: 40 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\grandfather.gif"></td>
+				<td>The Grandfather<br>(Great Sword)</td>
+				<td>One Handed Sword<br>+5 To All Attributes<br>Chance To Hit: +20%<br>+70% Damage<br>Hit Points: +20</td>
+				<td>Damage: 10-20<br>Dur: 100<br>Required: 75 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\grizzly.gif"></td>
+				<td>The Grizzly<br>(Two-handed Sword)</td>
+				<td>+20 To Strength<br>-5 To Vitality<br>+200% Damage<br>Knocks Target Back<br>High Durability</td>
+				<td>Damage: 8-16<br>Dur: 150<br>Required: 65 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\falconstalon.gif"></td>
+				<td>Gryphons Claw<br>(Falchion)</td>
+				<td>+100% Damage<br>-2 To Magic<br>-5 To Dexterity</td>
+				<td>Damage: 4-8<br>Dur: 20<br>Required: 30 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\longsword.gif"></td>
+				<td>Ice Shank<br>(Long Sword)</td>
+				<td>Resist Fire: +40%<br>Altered Durability<br>+10 To Strength</td>
+				<td>Damage: 2-10<br>Dur: 15<br>Required: 30 Str, 30 dex</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\longsword.gif"></td>
+				<td>Inferno<br>(Long Sword)</td>
+				<td>Fire Hit Damage: 1-10<br>+30% Light Radius<br>Mana: +20<br>Resist Fire: 75% max</td>
+				<td>Damage: 2-10<br>Dur: 40<br>Required: 30 Str, 30 dex</td>
+			</tr>
+			<tr class="tooltip hunt" title="Still Hunting">
+				<td class="zoom"><img src="pictures\items\sabre.gif"></td>
+				<td>Lightsabre<br>(Sabre)</td>
+				<td>+20% Light Radius<br>1-10 Lightning Hit Damage<br>+20% Chance to Hit<br>+50% Resist Lightning</td>
+				<td>Damage: 1-8<br>Dur: 45<br>Required: 17 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\broadsword.gif"></td>
+				<td>Shadowhawk<br>(Broad Sword)</td>
+				<td>-20% Light Radius<br>Hit Steals 5% Life<br>Chance To Hit: +15%<br>Resist All: 5%</td>
+				<td>Damage: 4-12<br>Dur: 50<br>Required: 40 Str</td>
+			</tr>
+			<tr>
+				<td class="zoom"><img src="pictures\items\wizardspike.gif"></td>
+				<td>Wizardspike<br>(Dagger)</td>
+				<td>+15 To Magic<br>Mana: +35<br>Chance To Hit: +25%<br>Resist All: 15%</td>
+				<td>Damage: 1-4<br>Dur: 16</td>
+			</tr>
+			<tr>
+				<td colspan="4"style="border-width:0px;border-style:none;"><span class="norm">*</span> Listed twice, applied once.
+				<br><a name="end"></a><span class="norm">**</span> Does not appear to player.
+			</tr>
+</table>
+</td>
+</tr>
 </table>
 <br>
 <table width="80%">
