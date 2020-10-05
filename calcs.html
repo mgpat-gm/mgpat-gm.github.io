@@ -109,6 +109,9 @@ table.blog {
 .norm {
 	color: #FFFFFF;
 }
+.fire {
+	color: #e16c6c;
+}
 .title {
 	font-size: 1.5em;
 	text-align: left;
@@ -552,7 +555,7 @@ button {
 updat();
 </script>
 			<tr>
-				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</i></a></td>
+				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</a></i></td>
 			</tr>
 		</table>
 		</td>
@@ -1141,9 +1144,9 @@ updated();
 				<input type="text" name="helmlife" size="5" maxlength="3"> Life<br>
 				<input type="text" name="helmresall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="helmresset" value="Set" onclick="resallsethelm(this.form)"><br>
-				<input type="text" name="helmresmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="helmresfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="helmreslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="helmresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="helmresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="helmreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1204,21 +1207,21 @@ updated();
 			</tr>
 			<tr>
 				<td colspan="3"><br></td>
-				<td colspan="1">Res Magic</td>
+				<td colspan="1">Res <span class="magic">Magic</td>
 				<td><input class="magic" type="text" name="resmag" size="5" maxlength="3" readonly></td>
 			</tr>
 			<tr>
 				<td>Life</td>
 				<td><input class="magic" type="text" name="lifebase" size="5" maxlength="4" readonly></td>
 				<td><input class="magic" type="text" name="lifenow" size="5" maxlength="4" readonly></td>
-				<td colspan="1">Res Fire</td>
+				<td colspan="1">Res <span class="fire">Fire</td>
 				<td><input class="magic" type="text" name="resfire" size="5" maxlength="3" readonly></td>
 			</tr>
 			<tr>
 				<td>Mana</td>
 				<td><input class="magic" type="text" name="manabase" size="5" maxlength="4" readonly></td>
 				<td><input class="magic" type="text" name="mananow" size="5" maxlength="4" readonly></td>
-				<td colspan="1">Res Lightning</td>
+				<td colspan="1">Res <span class="norm">Lightning</span></td>
 				<td><input class="magic" type="text" name="reslight" size="5" maxlength="3" readonly></td>
 			</tr>
 <input type="hidden" name="enphslevel2" size="5" maxlength="2">
@@ -1249,9 +1252,9 @@ updated();
 				<input type="text" name="armorlife" size="5" maxlength="3"> Life<br>
 				<input type="text" name="armorresall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="armorresset" value="Set" onclick="resallsetarmor(this.form)"><br>
-				<input type="text" name="armorresmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="armorresfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="armorreslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="armorresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="armorresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="armorreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1273,9 +1276,9 @@ updated();
 				<input type="text" name="shieldlife" size="5" maxlength="3"> Life<br>
 				<input type="text" name="shieldresall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="shieldresset" value="Set" onclick="resallsetshield(this.form)"><br>
-				<input type="text" name="shieldresmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="shieldresfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="shieldreslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="shieldresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="shieldresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="shieldreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1311,9 +1314,9 @@ updated();
 				<input type="text" name="weaponlife" size="5" maxlength="3"> Life<br>
 				<input type="text" name="weaponresall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="weaponresset" value="Set" onclick="resallsetweapon(this.form)"><br>
-				<input type="text" name="weaponresmag" size="3" maxlength="2"> % Res Magic<br>
-				<input type="text" name="weaponresfire" size="3" maxlength="2"> % Res Fire<br>
-				<input type="text" name="weaponreslight" size="3" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="weaponresmag" size="3" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="weaponresfire" size="3" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="weaponreslight" size="3" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1335,9 +1338,9 @@ updated();
 				<input type="text" name="amuletlife" size="5" maxlength="3"> Life<br>
 				<input type="text" name="amuletresall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="amuletresset" value="Set" onclick="resallsetamulet(this.form)"><br>
-				<input type="text" name="amuletresmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="amuletresfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="amuletreslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="amuletresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="amuletresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="amuletreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1361,9 +1364,9 @@ updated();
 				<input type="text" name="ring1life" size="5" maxlength="3"> Life<br>
 				<input type="text" name="ring1resall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="ring1resset" value="Set" onclick="resallsetring1(this.form)"><br>
-				<input type="text" name="ring1resmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="ring1resfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="ring1reslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="ring1resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="ring1resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="ring1reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
@@ -1385,9 +1388,9 @@ updated();
 				<input type="text" name="ring2life" size="5" maxlength="3"> Life<br>
 				<input type="text" name="ring2resall" size="5" maxlength="2"> + % Res All
 				<input type="button" name="ring2resset" value="Set" onclick="resallsetring2(this.form)"><br>
-				<input type="text" name="ring2resmag" size="5" maxlength="2"> % Res Magic<br>
-				<input type="text" name="ring2resfire" size="5" maxlength="2"> % Res Fire<br>
-				<input type="text" name="ring2reslight" size="5" maxlength="2"> % Res Lightning</td>
+				<input type="text" name="ring2resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+				<input type="text" name="ring2resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+				<input type="text" name="ring2reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
 			</tr>
 		</table>
 		</td>
