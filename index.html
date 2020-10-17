@@ -34,6 +34,12 @@ table.blog {
 	color: #AFA06E;
 	table-layout: fixed;
 }
+table.bount tr:hover{
+	background-color: #282828;
+}
+table.bount tr:hover .most {
+	background-color: #111111;
+}
 .magic {
 	color: #A0A5C8;
 }
@@ -135,19 +141,15 @@ table.blog {
 <!-- //////// Shop Notes //////// -->
 <table class="blog" width="80%">
 	<tr>
-		<td class="title"><a name="shopnotes" style="color:#FFFFFF;">Some Notes on Shopping for Items:</a></td>
+		<td colspan="2" class="title"><a name="shopnotes" style="color:#FFFFFF;">Some Notes on Shopping for Items:</a></td>
 		<td class="date">June 28, 2020</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="3">
 		<p>I have calculated some commonly sought after items that can be shopped in town. I do not know the probabilities of shopping items in town. Therefore, some of these might be easier to find in the dungeon. Others can only be found in shops. Some of these represent the assumed ideal level and others the lowest possible level. With Gris I am aiming for the maximum amount of slot availability at the lowest character level, and the minimum clvl at Wirt or Adria. These may or may not be the most probable character 	level to find the items.</p><p>Most other sought after items not on this list are found in d15. This list is not exhaustive(yet!).</p></td>
 	</tr>
 	<tr>
 		<td style="vertical-align:top; text-align: left;">
-		<p><span class="magic">Bountiful Staff of Resurrect</span>
-		<br> - clvl 1 (Adria)
-		<br><span class="magic">Bountiful Staff of Town Portal</span>
-		<br> - clvl 1 (Adria)
 		<br><span class="magic">Crimson Buckler of Blocking</span>
 		<br> - clvl 5 (Wirt)
 		<br><span class="magic">Flaming Dagger of Swiftness</span>
@@ -170,8 +172,6 @@ table.blog {
 		<br> - clvl 22 (Adria)
 		<br><span class="magic">Obsidian Helm/Armor of the Stars</span>
 		<br> - clvl 25 (Gris)
-		<br><span class="magic">Bountiful Staff of Apocalypse</span>
-		<br> - clvl 26 (Adria)
 		<br><span class="magic">Obsidian Bow of the Heavens</span>
 		<br> - clvl 27 (Gris)
 		<br><span class="magic">Lightning Bastard sword of Haste</span>
@@ -205,9 +205,148 @@ table.blog {
 		<br> - N1
 		<br><span class="magic">Crimson Buckler of Blocking</span>
 		<br> - N5 (brokenhead bangshield)</p></td>
+		<td>Ideal character levels for <span class="magic">Bountiful</span> staff shopping.<br><br>
+		<table class="bount">
+			<tr>
+				<td class="most">Spell</td>
+				<td class="most">Max Charges</td>
+				<td class="most" align="right">Clvl</td>
+			</tr>
+			<tr>
+				<td class="magic">Charged Bolt</td>
+				<td>240</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Elemental</td>
+				<td>180</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Fire Wall</td>
+				<td>48</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Firebolt</td>
+				<td>240</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Flash</td>
+				<td>120</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Heal Other</td>
+				<td>120</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Healing</td>
+				<td>120</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Holy Bolt</td>
+				<td>240</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Inferno</td>
+				<td>120</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Lightning</td>
+				<td>180</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Mana Shield</td>
+				<td>30</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Phasing</td>
+				<td>240</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Resurrect</td>
+				<td>30</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Stone Curse</td>
+				<td>48</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Telekinesis</td>
+				<td>120</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Town Portal</td>
+				<td>36</td>
+				<td>1-9 (8)</td>
+			</tr>
+			<tr>
+				<td class="magic">Bone Spirit</td>
+				<td>180</td>
+				<td>10-11</td>
+			</tr>
+			<tr>
+				<td class="magic">Chain Lightning</td>
+				<td>180</td>
+				<td>10-11</td>
+			</tr>
+			<tr>
+				<td class="magic">Fireball</td>
+				<td>240</td>
+				<td>10-11</td>
+			</tr>
+			<tr>
+				<td class="magic">Flame Wave</td>
+				<td>120</td>
+				<td>12-13</td>
+			</tr>
+			<tr>
+				<td class="magic">Guardian</td>
+				<td>96</td>
+				<td>12-13</td>
+			</tr>
+			<tr>
+				<td class="magic">Golem</td>
+				<td>96</td>
+				<td>14-15</td>
+			</tr>
+			<tr>
+				<td class="magic">Nova</td>
+				<td>96</td>
+				<td>16-17</td>
+			</tr>
+			<tr>
+				<td class="magic">Teleport</td>
+				<td>96</td>
+				<td>20-21</td>
+			</tr>
+			<tr>
+				<td class="magic">Blood Star</td>
+				<td>180</td>
+				<td>22-23</td>
+			</tr>
+			<tr>
+				<td class="magic">Apocalypse</td>
+				<td>36</td>
+				<td>26-50</td>
+			</tr>
+		</table>
+		</td>
 	</tr>
 	<tr>
-		<td>- Ghast</td>
+		<td><br>- Ghast</td>
 	</tr>
 </table>
 <br>
