@@ -4,16 +4,17 @@
 <title>Ghast's Grotto - Characters</title>
 <meta name="description" content="Ghast's Grotto is my personal site about Diablo multiplayer.">
 <meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list, multiplayer">
-<link rel="shortcut icon" type="image/ico" href="favicon.jpg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-<link rel="stylesheet" type="text/css" href="layout.css">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" type="text/css" href="layout.css">
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/unitip.js" type="text/javascript"></script>
+<script src="js/magitip.js" type="text/javascript"></script>
+<script src="js/whitip.js" type="text/javascript"></script>
 <style>
 a:link {
 	text-decoration: none;
@@ -27,84 +28,74 @@ a:hover {
 	background: none;
 	color: #ff8000
 }
+#unitip {
+	position:absolute;
+	display:none;
+	background:#111111;
+	border-width: 2px;
+	padding: 3px;
+	border-style: groove;
+	border-color: grey;
+ 	color: #AFA06E;
+}
+#magitip {
+	position:absolute;
+	display:none;
+	background:#111111;
+	border-width: 2px;
+	padding: 3px;
+	border-style: groove;
+	border-color: grey;
+ 	color: #A0A5C8;
+}
+#whitip {
+	position:absolute;
+	display:none;
+	background:#111111;
+	border-width: 2px;
+	padding: 3px;
+	border-style: groove;
+	border-color: grey;
+ 	color: #ffffff;
+}
+table.blog {
+	background-color: #111111;
+	padding: .3em;
+	color: #ffffff;
+}
+table.char {
+	border-collapse: collapse;
+}
+.occu img:hover { 
+	outline: 1px solid #AFA06E;
+} 
 .title {
 	font-size: 1.5em;
 	text-align: left;
+	color: #ffffff;
+}
+.title2 {
+	color: #a0a5c8;
+	font-size: 1.2em;
 }
 img {
 	image-rendering: pixelated;
 }
-table.char {
-	border-width: 2px;
-	border-spacing: 0px;
-	border-style: ridge;
-	border-color: gray;
-	border-collapse: separate;
-	background: url('pictures/center.gif');
-	background-attachment: fixed;
-	background-position: top;
-	background-size: 80%;
-	table-layout: fixed;
-}
-table.char th {
-	border-width: 1px;
-	padding: 2px;
-	border-style: groove;
-	border-color: gray;
-}
-table.char td {
-  text-align: center;
-	border-width: 1px;
-	padding: 2px;
-	border-style: none;
-	border-color: gray;
-	-moz-border-radius: ;
-}
-
-table.stats {
-	border-width: 0px;
-	border-spacing: 0px;
-	border-style: none;
-	border-color: gray;
-	border-collapse: separate;
-	table-layout: fixed;
-}
-table.stats th {
-	border-width: 0px;
-	padding: 0px;
-	border-style: none;
-	border-color: gray;
-}
-table.stats td {
-  text-align: center;
-	border-width: 0px;
-	padding: 0px;
-	border-style: none;
-	border-color: gray;
-}
-
-table.item {
-	border-width: 2px;
-	border-spacing: 0px;
-	border-style: ridge;
-	border-top-style: none;
-	border-color: gray;
-	border-collapse: separate;
-	table-layout: fixed;
-}
-table.item th {
-	border-width: 1px;
-	padding: 0px;
-	border-style: groove;
-	border-color: gray;
-}
-table.item td {
-  text-align: center;
-	border-width: 1px;
-	padding: 2px;
-	border-style: groove;
-	border-color: gray;
+input {
 	background-color: #111111;
+	color: #ffffff;
+}
+.fire {
+	color: #e16c6c;
+}
+.magic {
+	color: #A0A5C8;
+}
+.norm {
+	color: #ffffff;
+}
+.unique {
+	color: #AFA06E;
 }
 .banner {
 	margin: 0;
@@ -116,20 +107,26 @@ table.item td {
 	top: 2em;
 	left: 0em;
 	width: 10%;
-	right: auto;}
-
+	right: auto;
+}
 .banner p {
 	margin: 0; 
 	padding: 0.3em 0.4em;
-	background: #2d2d2d;
 	border: none;
-	color: #ff8000;}
-
-.banner a, div.banner em { display: block; margin: 0 0.5em }
-.banner a, div.banner em { border-top: 0px groove #CCC }
-.banner a:first-child { border-top: none }
-.banner em { color: #CFC }
-
+	color: #ff8000;
+}
+.banner a, div.banner em {
+	display: block; margin: 0 0.5em;
+}
+.banner a, div.banner em {
+	border-top: 0px groove #CCC;
+}
+.banner a:first-child {
+	border-top: none;
+}
+.banner em {
+	color: #CFC;
+}
 .banner2 {
 	margin: 0;
 	font-size: 1em;
@@ -142,19 +139,25 @@ table.item td {
 	width: 10%;
 	right: 0em;
 }
-
 .banner2 p {
 	margin: 0; 
 	padding: 0.3em 0.4em;
-	background: #2d2d2d;
 	border: none;
 	color: #ff8000;
 }
-
-.banner2 a, div.banner em { display: block; margin: 0 0.5em }
-.banner2 a, div.banner em { border-top: 0px groove #CCC }
-.banner2 a:first-child { border-top: none }
-.banner2 em { color: #CFC }
+.banner2 a, div.banner em {
+	display: block;
+	margin: 0 0.5em;
+}
+.banner2 a, div.banner em {
+	border-top: 0px groove #CCC;
+}
+.banner2 a:first-child {
+	border-top: none;
+}
+.banner2 em {
+	color: #CFC;
+}
 </style>
 </head>
 <body bgcolor="#2d2d2d">
@@ -187,206 +190,501 @@ table.item td {
     <p> Browse Page:
 	<br>
 	<br>
-        <a href="#Ghast">GhastMaster</a>
+        <a href="#ghast">GhastMaster</a>
 	<br>
-        <a href="#Sym">Symrustar</a>
+        <a href="#gil">Gildon</a>
+	<br>
+        <a href="#sym">Symrustar</a>
     </p>
 </div>
 <center>
-<table class="char" width="80%">
+<table class="blog">
 	<tr>
-		<td colspan="4">
-   		<span class="title"><a style="color:#FFFFFF;" name="Ghast">GhastMaster</a><br><img src="pictures\characters\sorcerer.jpg"></span>
-			<table class="stat" width="100%">
-				<tr>
-					<td colspan="4" style="text-align: left"><span class="cell2">Statistics:</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Level:<span class="norm">  43</span></td>
-					<td class="cell">Armor Class:<span class="norm">  82</span></td>
-					<td class="cell">Experience:<span class="norm">  365834753</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Strength:<span class="magic">  63</span></td>
-					<td class="cell">To Hit:<span class="norm">  101%</span></td>
-					<td class="cell">Next Level:<span class="norm">  399335440</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Magic:<span class="magic">  345</span></td>
-					<td class="cell">Damage:<span class="norm">  28-35</span></td>
-					<td class="cell">Resist Magic:<span class="unique">  MAX</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Dexterity:<span class="magic">  103</span></td>
-					<td class="cell">Life:<span class="magic">  150</span></td>
-					<td class="cell">Resist Fire:<span class="unique">  MAX</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Vitality:<span class="magic">  98</span></td>
-					<td class="cell">Mana:<span class="magic">  990</span></td>
-					<td class="cell">Resist Lightning:<span class="magic">  40%</span></td>
-				</tr>
-			</table>
-			<br>
-		</td>
-	</tr>
-</table>
-<table class="item" width="80%">
-   <tr>
-        	<td class="is" colspan="2">Item</td>
-        	<td class="is" colspan="2">Statistics</td>
+		<td class="title"><a name="ghast"></a>GhastMaster</td>
 	</tr>
 	<tr>
-		<td align="center"><img src="pictures\items\thinkingcap.gif"></td>
-		<td class="cellu">Thinking Cap<br>(Skull Cap)</td>
-		<td class="cellu">Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability</td>
-		<td class="cellu">Armor: 4<br>Dur: 41</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\najslightplate.gif"></td>
-		<td class="cellu">Naj's Light Plate<br>(Plate Mail)</td>
-		<td class="cellu">No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level</td>
-		<td class="cellu">Armor: 50<br>Dur: 145</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\mace.gif"></td>
-		<td class="cellu">Dreamflange<br>(Mace)</td>
-		<td class="cellu">+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level</td>
-		<td class="cellu">Damage: 1-8<br>Dur: 192<br>Required: 16 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\towershield.gif"></td>
-		<td class="cellm">Valiant Shield of Brilliance<br>(Tower Shield)</td>
-		<td class="cellm">+64% Armor<br>+12 To Magic</td>
-		<td class="cellm">Armor: 16<br>Dur: 100<br>Required: 60 Str</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\amulet.gif"></td>
-		<td class="cellm">Dragon's Amulet</td>
-		<td class="cellm">Mana: +56</td>
-		<td class="cellm"></td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\ring.gif"></td>
-		<td class="cellm">Dragon's Ring Of The Zodiac</td>
-		<td class="cellm">Mana: +60</td>
-		<td class="cellm">+18 To All Attributes</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\ring.gif"></td>
-		<td class="cellm">Ring Of Wizardry</td>
-		<td></td>
-		<td class="cellm">+30 To Magic</td>
-	</tr>
-	<tr>
-		<td class="is" colspan="4">Inventory</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\largegold.gif"></td>
-		<td class="cell">Gold Pieces</td>
-		<td class="cell">15,000</td>
-		<td class="cellm"></td>
-	</tr>
-</table>
-<br>
-<table class="char"width="80%">
-	<tr>
-		<td colspan="4">
-		<span class="title"><a  style="color:#FFFFFF;" name="Sym">Symrustar</a><br>
-		<img src="pictures\characters\rogue.jpg"></span>
-			<table class="stat" width="100%">
-				<tr>
-					<td colspan="4" style="text-align: left"><span class="cell2">Statistics:</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Level:<span class="norm">  23</span></td>
-					<td class="cell">Armor Class:<span class="magic">  228</span></td>
-					<td class="cell">Experience:<span class="norm">  2742923</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Strength:<span class="magic">  132</span></td>
-					<td class="cell">To Hit:<span class="magic">  136%</span></td>
-					<td class="cell">Next Level:<span class="norm">  3168651</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Magic:<span class="magic">  128</span></td>
-					<td class="cell">Damage:<span class="magic">  33-46</span></td>
-					<td class="cell">Resist Magic:<span class="magic">  28%</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Dexterity:<span class="magic">  154</span></td>
-					<td class="cell">Life:<span class="magic">  208</span></td>
-					<td class="cell">Resist Fire:<span class="magic">  28%</span></td>
-				</tr>
-				<tr>
-					<td class="cell">Vitality:<span class="magic">  101</span></td>
-					<td class="cell">Mana:<span class="magic">  257</span></td>
-					<td class="cell">Resist Lightning:<span class="magic">  28%</span></td>
-				</tr>
-			</table>
-			<br>
+		<td>
+		<table class="char">
+			<tr>
+				<td colspan="5"><img src="pictures/characters/sorcerer.jpg"></td>
+			</tr>
+			<tr>
+				<td class="title2" colspan="5">Stats</td></tr><tr>
+			</tr>
+			<tr>
+				<td colspan="1">Class</td>
+				<td colspan="4"><input value="Sorcerer" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Level</td>
+				<td><input value="43" type="text" size="5" maxlength="2" readonly></td>
+				<td colspan="1"><br></td>
+				<td>Exp</td>
+				<td colspan="1"><input value="366299153" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="1"><br></td>
+				<td>Base</td>
+				<td>Now</td>
+				<td>Next</td>
+				<td colspan="1"><input value="399335440" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Str</td>
+				<td><input class="unique" value="45" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="83" type="text" size="5" maxlength="3" readonly></td>
+				<td>Gold</td>
+				<td colspan="1"><input value="35000" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Mag</td>
+				<td><input class="unique" value="250" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="335" type="text" size="5" maxlength="3" readonly></td>
+				<td>Armor Class</td>
+				<td><input value="86" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Dex</td>
+				<td><input class="unique" value="85" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="123" type="text" size="5" maxlength="3" readonly></td>
+				<td>to Hit</td>
+				<td><input value="111%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Vit</td>
+				<td><input class="unique" value="80" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="118" type="text" size="5" maxlength="3" readonly></td>
+				<td>Damage</td>
+				<td><input value="36-43" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="5"><br></td>
+			</tr>
+			<tr>
+				<td colspan="3"><br></td>
+				<td colspan="1">Res <span class="magic">Magic</td>
+				<td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Life</td>
+				<td><input class="magic" value="170" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="170" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res <span class="fire">Fire</td>
+				<td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Mana</td>
+				<td><input class="magic" value="1022" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="1022" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res Lightning</td>
+				<td><input class="magic" value="40%"type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+		</table>
+		<br>
 		</td>
 	</tr>
 	<tr>
-</table>
-<table class="item" width="80%">
-        	<td class="is" colspan="2">Item</td>
-        	<td class="is" colspan="2">Statistics</td>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="3">Equipped Items</td></tr><tr>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="unitip occu" title="Thinking Cap<br>(Helm)<br><br>Armor: 4 Dur: 41<br><br>Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability"><img src="pictures\items\thinkingcap.gif"></td>
+				<td class="magitip occu" title="Dragon's Amulet<br>(Amulet)<br><br>Mana: +56"><img src="pictures\items\amulet.gif"></td>
+			</tr>
+			<tr>
+				<td class="unitip occu" title="Dreamflange<br>(Mace)<br><br>Damage: 1-8 Dur: 192<br><br>+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level"><img src="pictures\items\mace.gif"></td>
+				<td class="unitip occu" title="Naj's Light Plate<br>(Plate Mail)<br><br>Armor: 50 Dur: 165<br><br>No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level"><img src="pictures\items\najslightplate.gif"></td>
+				<td class="magitip occu" title="Garnet Shield Of Brilliance<br>(Large Shield)<br><br>Armor: 8 Dur: 42<br><br>Resist Fire: +48%<br>+12 To Magic<br>Required: 40 STR"><img src="pictures\items\largeshield.gif"></td>
+			</tr>
+			<tr>
+				<td class="magitip occu" title="Dragon's Ring Of The Zodiac<br>(Ring)<br><br>Mana: +52<br>+20 To All Attributes"><img src="pictures\items\ring.gif"></td>
+				<td></td>
+				<td class="magitip occu" title="Dragon's Ring Of The Zodiac<br>(Ring)<br><br>Mana: +60<br>+18 To All Attributes"><img src="pictures\items\ring.gif"></td>
+			</tr>
+		</table>
+		<br>
+		</td>
 	</tr>
 	<tr>
-		<td align="center"><img src="pictures\items\royalcirclet.gif"></td>
-		<td class="cellu">Royal Circlet<br>(Crown)</td>
-		<td class="cellu">+10 To All Attributes<br>Mana: +40<br>Armor: 40<br>+10% Light Radius</td>
-		<td class="cellu">Armor: 40<br>Dur: 30</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\fullplatemail.gif"></td>
-		<td class="cellm">Saintly Plate Of The Stars<br>(Full Plate Mail)</td>
-		<td class="cellm">+120% Armor<br>+10 To All Attributes</td>
-		<td class="cellm">Armor: 72<br>Dur: 100<br>Required: 90 Str</span></td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\longbattlebow.gif"></td>
-		<td class="cellm">Fine Bow Of Swiftness<br>(Long Battle Bow)</td>
-		<td class="cellm">To Hit: +9%, +47% Damage<br>Fast Attack</td>
-		<td class="cellm">Damage: 1-10<br>Dur: 50<br>Required: 30 Str 60 Dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\amulet.gif"></td>
-		<td class="cellm">Amulet Of The Zodiac</td>
-		<td class="cellm"></td>
-		<td class="cellm">+20 To All Attributes</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\ring.gif"></td>
-		<td class="cellm">Jade Ring Of The Zodiac</td>
-		<td class="cellm">Resist All: +28%</td>
-		<td class="cellm">+20 To All Attributes</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\ring.gif"></td>
-		<td class="cellm">Ring Of The Zodiac</td>
-		<td class="cellm"></td>
-		<td class="cellm">+17 To All Attributes</td>
-	</tr>
-	<tr>
-		<td class="is" colspan="4">Inventory</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\longbattlebow.gif"></td>
-		<td class="cellm">Merciless Bow Of Thunder<br>(Long War Bow)</td>
-		<td class="cellm">+156% To Damage<br>Lightning Arrows Damage 1-20</td>
-		<td class="cellm">Damage: 1-14<br>Dur: 60<br>Required: 45 Str 80 Dex</td>
-	</tr>
-	<tr>
-		<td align="center"><img src="pictures\items\amulet.gif"></td>
-		<td class="cellm">Obsidian Amulet Of Sorcery</td>
-		<td class="cellm">Resist All: 35%</td>
-		<td class="cellm">+19 To Magic</td>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="10">Inventory</td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+			</tr>
+		</table>
+		</td>
 	</tr>
 </table>
 <br>
-<span class="norm">Updated: 2019-10-26</span>
+<table class="blog">
+	<tr>
+		<td class="title"><a name="gil"></a>Gildon</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td colspan="5"><img src="pictures/characters/warrior.jpg"></td>
+			</tr>
+			<tr>
+				<td class="title2" colspan="5">Stats</td></tr><tr>
+			</tr>
+			<tr>
+				<td colspan="1">Class</td>
+				<td colspan="4"><input value="Warrior" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Level</td>
+				<td><input value="25" type="text" size="5" maxlength="2" readonly></td>
+				<td colspan="1"><br></td>
+				<td>Exp</td>
+				<td colspan="1"><input value="4290218" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="1"><br></td>
+				<td>Base</td>
+				<td>Now</td>
+				<td>Next</td>
+				<td colspan="1"><input value="5459523" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Str</td>
+				<td><input class="norm" value="92" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="160" type="text" size="5" maxlength="3" readonly></td>
+				<td>Gold</td>
+				<td colspan="1"><input value="12713" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Mag</td>
+				<td><input class="unique" value="13" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="81" type="text" size="5" maxlength="3" readonly></td>
+				<td>Armor Class</td>
+				<td><input class="magic" value="270" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Dex</td>
+				<td><input class="unique" value="60" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="128" type="text" size="5" maxlength="3" readonly></td>
+				<td>to Hit</td>
+				<td><input value="197%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Vit</td>
+				<td><input class="norm" value="46" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="114" type="text" size="5" maxlength="3" readonly></td>
+				<td>Damage</td>
+				<td><input value="55-79" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="5"><br></td>
+			</tr>
+			<tr>
+				<td colspan="3"><br></td>
+				<td colspan="1">Res <span class="magic">Magic</td>
+				<td><input class="norm" value="0%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Life</td>
+				<td><input class="magic" value="397" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="397" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res <span class="fire">Fire</td>
+				<td><input class="norm" value="0%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Mana</td>
+				<td><input class="magic" value="145" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="145" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res Lightning</td>
+				<td><input class="norm" value="0%"type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+		</table>
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="3">Equipped Items</td></tr><tr>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="unitip occu" title="Royal Circlet<br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="pictures\items\royalcirclet.gif"></td>
+				<td class="magitip occu" title="Amulet Of The Zodiac<br>(Amulet)<br><br>+20 To All Attributes"><img src="pictures\items\amulet.gif"></td>
+			</tr>
+			<tr>
+				<td class="magitip occu" title="King's Sword Of Vampires<br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +83%, +161% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="pictures\items\bastardsword.gif"></td>
+				<td class="magitip occu" title="Saintly Plate Of The Lion<br>(Full Plate Mail)<br><br>Armor: 73 Dur: 90<br><br>+122% Armor<br>Hit Points: +58<br>Required: 90 STR"><img src="pictures\items\fullplatemail.gif"></td>
+				<td class="magitip occu" title="Awesome Shield Of The Tiger<br>(Tower Shield)<br><br>Armor: 18 Dur: 50<br><br>+142% Armor<br>Hit Points: +43<br>Required: 60 STR"><img src="pictures\items\towershield.gif"></td>
+			</tr>
+			<tr>
+				<td class="magitip occu" title="Ring Of The Zodiac<br>(Ring)<br><br>+18 To All Attributes"><img src="pictures\items\ring.gif"></td>
+				<td></td>
+				<td class="magitip occu" title="Ring Of The Zodiac<br>(Ring)<br><br>+20 To All Attributes"><img src="pictures\items\ring.gif"></td>
+			</tr>
+		</table>
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="10">Inventory</td>
+			</tr>
+			<tr>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td class="magitip occu" rowspan="3" title="Savage Sword Of Speed<br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>+116% Damage<br>Faster Attack<br>Required: 50 STR"><img src="pictures\items\bastardsword.gif"></td>
+				<td class="magitip occu" colspan="2" rowspan="3" title="Obsidian Shield Of The Tiger<br>(Tower Shield)<br><br>Armor: 18 Dur: 50<br><br>Resist All: +34%<br>Hit Points: +45<br>Required: 60 STR"><img src="pictures\items\towershield.gif"></td>
+				<td class="magitip occu" colspan="2" rowspan="3" title="Obsidian Mail Of The Stars<br>(Scale Mail)<br><br>Armor: 23 Dur: 60<br><br>Resist All: +40%<br>+10 To All Attributes<br>Required: 35 STR"><img src="pictures\items\scalemail.gif"></td>
+				<td class="unitip occu" colspan="2" rowspan="2" title="Helm Of Sprits<br>(Helm)<br><br>Armor: 6 Dur: 30<br><br>Hit Steals 5% Life<br>Required: 25 STR"><img src="pictures\items\helmofsprits.gif"></td>
+			</tr>
+			<tr>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td class="magitip occu" colspan="2" rowspan="2" title="Obsidian Helm Of The Stars<br>(Great Helm)<br><br>Armor: 14 Dur: 60<br><br>Resist All: 35%<br>+11 To All Attributes<br>Required: 50 STR"><img src="pictures\items\greathelm.gif"></td>
+			</tr>
+			<tr>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td class="whitip occu" title="2713"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="whitip occu" title="5000"><img src="pictures\items\largegold.gif"></td>
+				<td class="magitip occu" title="Obsidian Ring Of The Heavens<br>(Ring)<br><br>Resist All: +35%<br>+20 To All Attributes"><img src="pictures\items\ring.gif"></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<br>
+<table class="blog">
+	<tr>
+		<td class="title"><a name="sym"></a>Symrustar</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td colspan="5"><img src="pictures/characters/rogue.jpg"></td>
+			</tr>
+			<tr>
+				<td class="title2" colspan="5">Stats</td></tr><tr>
+			</tr>
+			<tr>
+				<td colspan="1">Class</td>
+				<td colspan="4"><input value="Rogue" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Level</td>
+				<td><input value="32" type="text" size="5" maxlength="2" readonly></td>
+				<td colspan="1"><br></td>
+				<td>Exp</td>
+				<td colspan="1"><input value="29784331" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="1"><br></td>
+				<td>Base</td>
+				<td>Now</td>
+				<td>Next</td>
+				<td colspan="1"><input value="32994399" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Str</td>
+				<td><input class="unique" value="55" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="114" type="text" size="5" maxlength="3" readonly></td>
+				<td>Gold</td>
+				<td colspan="1"><input value="6" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Mag</td>
+				<td><input class="unique" value="70" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="148" type="text" size="5" maxlength="3" readonly></td>
+				<td>Armor Class</td>
+				<td><input class="magic" value="237" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Dex</td>
+				<td><input class="norm" value="136" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="195" type="text" size="5" maxlength="3" readonly></td>
+				<td>to Hit</td>
+				<td><input value="147%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Vit</td>
+				<td><input class="norm" value="44" type="text" size="5" maxlength="3" readonly></td>
+				<td><input class="magic" value="103" type="text" size="5" maxlength="3" readonly></td>
+				<td>Damage</td>
+				<td><input class="magic" value="54-62" type="text" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td colspan="5"><br></td>
+			</tr>
+			<tr>
+				<td colspan="3"><br></td>
+				<td colspan="1">Res <span class="magic">Magic</td>
+				<td><input class="magic" value="63%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Life</td>
+				<td><input class="magic" value="219" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="219" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res <span class="fire">Fire</td>
+				<td><input class="magic" value="63%" type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+			<tr>
+				<td>Mana</td>
+				<td><input class="magic" value="296" type="text" size="5" maxlength="4" readonly></td>
+				<td><input class="magic" value="296" type="text" size="5" maxlength="4" readonly></td>
+				<td colspan="1">Res Lightning</td>
+				<td><input class="magic" value="63%"type="text" size="5" maxlength="3" readonly></td>
+			</tr>
+		</table>
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="3">Equipped Items</td></tr><tr>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="unitip occu" title="Royal Circlet<br>(Crown)<br><br>Armor: 40 Dur: 50<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="pictures\items\royalcirclet.gif"></td>
+				<td class="magitip occu" title="Obsidian Amulet Of The Sorcery<br>(Amulet)<br><br>Resist All: +35%<br>+19 To Magic"><img src="pictures\items\amulet.gif"></td>
+			</tr>
+			<tr>
+				<td class="magitip occu" title="Brutal Bow Of Swiftness<br>(Short Battle Bow)<br><br>Damage: 3-7 Dur: 35<br><br>+92% Damage<br>Fast Attack<br>Required: 30 STR 50 DEX"><img src="pictures\items\shortbattlebow.gif"></td>
+				<td class="magitip occu" colspan="2" title="Saintly Plate Of The Stars<br>(Full Plate Mail)<br><br>Armor: 72 Dur: 110<br><br>+120% Armor<br>+10 To All Attributes<br>Required: 90 STR"><img src="pictures\items\fullplatemail.gif"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="magitip occu" title="Jade Ring Of The Zodiac<br>(Ring)<br><br>Resist All: +28%<br>+20 To All Attributes"><img src="pictures\items\ring.gif"></td>
+				<td></td>
+				<td class="magitip occu" title="Ring Of The Zodiac<br>(Ring)<br><br>+19 To All Attributes"><img src="pictures\items\ring.gif"></td>
+			</tr>
+		</table>
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<table class="char">
+			<tr>
+				<td class="title2" colspan="10">Inventory</td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td class="magitip occu" colspan="2" rowspan="3" title="Merciless Bow Of Thunder<br>(Long War Bow)<br><br>Damage: 1-14 Dur: 60<br><br>+156% Damage<br>Lightning Arrows Damage 1-20<br>Required: 45 STR 80 DEX"><img src="pictures\items\longbattlebow.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+				<td><img src="pictures\items\filler.gif"></td>
+			</tr>
+			<tr>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="Potion Of Full Mana<br>Fully Recover Mana<br>Right Click To Use"><img src="pictures\items\fullmana.gif"></td>
+				<td class="whitip occu" title="6"><img src="pictures\items\smallgold.gif"></td>
+				<td class="magitip occu" title="Ring Of Wizardry<br>(Ring)<br><br>+26 To Magic"><img src="pictures\items\ring.gif"></td>
+				<td class="magitip occu" title="Amulet Of The Zodiac<br>(Amulet)<br><br>+20 To All Attributes"><img src="pictures\items\amulet.gif"></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<br>
+<span class="norm">Updated: 2020-11-01</span>
 <br><br>
 <table width="80%">
 	<tr>
