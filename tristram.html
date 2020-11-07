@@ -99,6 +99,9 @@ a:hover {
 img {
 	image-rendering: pixelated;
 }
+.pixel {
+	image-rendering: auto;
+}
 .toggle {
 	text-decoration: none;
 	color: #ffffff
@@ -130,6 +133,10 @@ var img = document.getElementById("image");
 img.src="pictures/town.gif";
 return false;
 }
+function rendering() {
+   var element = document.getElementById("image");
+   element.classList.toggle("pixel");
+}
 </script>
 </head>
 <body bgcolor="#2d2d2d">
@@ -159,10 +166,17 @@ return false;
 	</p>
 </div>
 <div class="banner2">
-    <p> Reset Image:
+    <p> Image:
 	<br>
 	<br>
-        <span class="toggle" onclick="changeImage();">Tristram</span>
+        <span class="toggle" onclick="changeImage();">Reset</span>
+	<br>
+	<br>
+    </p>
+    <p> Rendering:
+	<br>
+	<br>
+        <span class="toggle" onclick="rendering();">Toggle</span>
     </p>
 </div>
 <center>
