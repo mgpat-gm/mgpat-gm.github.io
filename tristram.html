@@ -102,15 +102,6 @@ img {
 .pixel {
 	image-rendering: auto;
 }
-.toggle {
-	text-decoration: none;
-	color: #ffffff
-}
-.toggle:hover {
-	cursor:pointer;
-	background: none;
-	color: #ff8000
-}
 table.blog {
 	background-color: #111111;
 	padding: .3em;
@@ -169,14 +160,14 @@ function rendering() {
     <p> Image:
 	<br>
 	<br>
-        <span class="toggle" onclick="changeImage();">Reset</span>
+        <button onclick="changeImage();">Reset</button>
 	<br>
 	<br>
     </p>
     <p> Rendering:
 	<br>
 	<br>
-        <span class="toggle" onclick="rendering();">Toggle</span>
+        <button onclick="rendering();">Toggle</button>
     </p>
 </div>
 <center>
