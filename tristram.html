@@ -13,6 +13,32 @@
 <meta name="theme-color" content="#ffffff">
 <script src="js/wheelzoom.js"></script>
 <style>
+img {
+	image-rendering: pixelated;
+}
+.norm {
+	color: #ffffff;
+}
+.cpixel {
+	image-rendering: auto;
+}
+.fpixel {
+	image-rendering: crisp-edges;
+}
+table.blog {
+	background-color: #111111;
+	padding: .3em;
+	color: #afa06e;
+}
+.title {
+	font-size: 1.5em;
+	text-align: left;
+	color: #ffffff;
+}
+.date {
+	text-align: right;
+	color: #afa06e;
+}
 a:link {
 	text-decoration: none;
 	color: #ffffff
@@ -93,29 +119,6 @@ a:hover {
 .banner2 span {
 	margin: 0 0.5em;
 }
-.norm {
-	color: #FFFFFF;
-}
-img {
-	image-rendering: pixelated;
-}
-.pixel {
-	image-rendering: auto;
-}
-table.blog {
-	background-color: #111111;
-	padding: .3em;
-	color: #AFA06E;
-}
-.title {
-	font-size: 1.5em;
-	text-align: left;
-	color: #ffffff;
-}
-.date {
-	text-align: right;
-	color: #AFA06E;
-}
 </style>
 <script> 
 function changeImage()
@@ -124,9 +127,13 @@ var img = document.getElementById("image");
 img.src="pictures/town.gif";
 return false;
 }
-function rendering() {
+function cpixel() {
    var element = document.getElementById("image");
-   element.classList.toggle("pixel");
+   element.classList.toggle("cpixel");
+}
+function fpixel() {
+   var element = document.getElementById("image");
+   element.classList.toggle("fpixel");
 }
 </script>
 </head>
@@ -164,10 +171,13 @@ function rendering() {
 	<br>
 	<br>
     </p>
-    <p> Rendering:
+    <p> Toggle<br>Renderer:
 	<br>
 	<br>
-        <button onclick="rendering();">Toggle</button>
+        <button onclick="cpixel();">Chrome</button>
+	<br>
+	<br>
+        <button onclick="fpixel();">Firefox</button>
     </p>
 </div>
 <center>
