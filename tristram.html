@@ -16,6 +16,14 @@
 img {
 	image-rendering: pixelated;
 }
+.hand {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.hand2 {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
 .norm {
 	color: #ffffff;
 }
@@ -122,17 +130,27 @@ a:hover {
 </style>
 <script> 
 function changeImage() {
-	var img = document.getElementById("image");
-	img.src="pictures/town.gif";
+	var img = document.getElementById('image');
+	img.src='pictures/town.gif';
 	return false;
 }
 function cpixel() {
-	var element = document.getElementById("image");
-	element.classList.toggle("cpixel");
+	var element = document.getElementById('image');
+	element.classList.toggle('cpixel');
 }
 function fpixel() {
-	var element = document.getElementById("image");
-	element.classList.toggle("fpixel");
+	var element = document.getElementById('image');
+	element.classList.toggle('fpixel');
+}
+function cursor() {
+    var div = document.getElementById('image');
+    div.classList.remove('hand');
+    div.classList.add('hand2');
+}
+function cursor2() {
+    var div = document.getElementById('image');
+    div.classList.remove('hand2');
+    div.classList.add('hand');
 }
 </script>
 </head>
@@ -186,7 +204,7 @@ function fpixel() {
 		<td class="date">Zoom & Pan</td>
 	</tr>
 	<tr>
-		<td colspan="2"><img id="image" class="town" src='pictures/town.gif' width="100%" /></td>
+		<td colspan="2"><img id="image" class="town hand" src='pictures/town.gif' width="100%" onmousedown="cursor()" onmouseup='cursor2()'/></td>
 	</tr>
 	<tr>
 		<td><i><br>Download Image: <a href="pictures/town.gif">7.1MB (6144x3071)</a></i></td>
