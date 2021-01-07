@@ -863,7 +863,7 @@ function updateClas()
 		document.SelectItm.Source[0].disabled = true;
 		document.getElementById("Wirt").style.color = "#4C4C4C";
 		document.SelectItm.Source[1].disabled = true;
-		document.getElementById("Sale").style.color = "#AFA06E";
+		document.getElementById("Sale").style.color = "#bca86c";
 		document.SelectItm.Source[2].disabled = false;
 		return;
 	}
@@ -877,7 +877,7 @@ function updateClas()
 	{
 		document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	}
-	document.getElementById("Sale").style.color = "#AFA06E";
+	document.getElementById("Sale").style.color = "#bca86c";
 	document.SelectItm.Source[2].disabled = false;
 	updatePrefx();
 	updateSuffx();
@@ -1231,9 +1231,9 @@ function updateSource()
 	{
 		var suffxS = ((document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value=="None")? "None": suffx[document.SelectItm.Suffx.options[document.SelectItm.Suffx.selectedIndex].value]);
 	}
-	document.getElementById("Gris").style.color = "#AFA06E";
+	document.getElementById("Gris").style.color = "#bca86c";
 	document.getElementById("Gris").style.fontStyle = "normal";
-	document.getElementById("Wirt").style.color = "#AFA06E";
+	document.getElementById("Wirt").style.color = "#bca86c";
 	document.getElementById("Wirt").style.fontStyle = "normal";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[1].disabled = false;
@@ -1422,12 +1422,12 @@ function reset()
 	document.SelectItm.Svalue.options[1] = new Option("12345"," ");
 	document.SelectItm.Svalue.disabled = true;
 
-	document.getElementById("Gris").style.color = "#AFA06E";
+	document.getElementById("Gris").style.color = "#bca86c";
 	document.SelectItm.Source[0].disabled = false;
 	document.SelectItm.Source[0].checked = true;
-	document.getElementById("Wirt").style.color = "#AFA06E";
+	document.getElementById("Wirt").style.color = "#bca86c";
 	document.SelectItm.Source[1].disabled = false;
-	document.getElementById("Sale").style.color = "#AFA06E";
+	document.getElementById("Sale").style.color = "#bca86c";
 	document.SelectItm.Source[2].disabled = false;
 	document.getElementById("Gris").firstChild.nodeValue = "Griswold";
 	document.getElementById("Price").firstChild.nodeValue = "0";
