@@ -16,9 +16,13 @@
 <script type="text/javascript" src="js/block.js"></script>
 <script type="text/javascript" src="js/char.js"></script>
 <script type="text/javascript" src="js/cth.js"></script>
+<script type="text/javascript" src="js/internals.js"></script>
 <!-- Must have jquery before qlvl.js -->
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/monster_data.js"></script>
+<script type="text/javascript" src="js/morcalc.js"></script>
 <script type="text/javascript" src="js/orkin.js"></script>
+<script type="text/javascript" src="js/parse_funcs.js"></script>
 <script type="text/javascript" src="js/price.js"></script>
 <script type="text/javascript" src="js/qlvl.js"></script>
 <script type="text/javascript" src="js/rare.js"></script>
@@ -26,199 +30,208 @@
 <script type="text/javascript" src="js/weapdam.js"></script>
 <style>
 a:link {
-	text-decoration: none;
-	color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 a:visited {
-	text-decoration: none;
-	color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 a:hover {
-	background: none;
-	color: #ff8000;
+    background: none;
+    color: #ff8000;
 }
 .banner {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: 0em;
-	width: 10%;
-	right: auto;
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: 0em;
+    width: 10%;
+    right: auto;
 }
 .banner p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	border: none;
-	color: #ff8000;
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
 }
 .banner a, div.banner em {
-	display: block; margin: 0 0.5em;
+    display: block; margin: 0 0.5em;
 }
 .banner a, div.banner em {
-	border-top: 0px groove #CCC;
+    border-top: 0px groove #CCC;
 }
 .banner a:first-child {
-	border-top: none;
+    border-top: none;
 }
 .banner em {
-	color: #CFC;
+    color: #CFC;
 }
 .banner2 {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: auto;
-	width: 10%;
-	right: 0em;
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: auto;
+    width: 10%;
+    right: 0em;
 }
 .banner2 p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	border: none;
-	color: #ff8000;
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
 }
 .banner2 a, div.banner em {
-	display: block;
-	margin: 0 0.5em;
+    display: block;
+    margin: 0 0.5em;
 }
 .banner2 a, div.banner em {
-	border-top: 0px groove #CCC;
+    border-top: 0px groove #CCC;
 }
 .banner2 a:first-child {
-	border-top: none;
+    border-top: none;
 }
 .banner2 em {
-	color: #CFC;
+    color: #CFC;
 }
 table.blog {
-	background-color: #111111;
-	padding: .3em;
-	color: #bca86c;
+    background-color: #111111;
+    padding: .3em;
+    color: #bca86c;
 }
 table.char {
     background-image: url('pictures/block.gif');
 }
+table.hidden {
+    display: none;
+}
 .magic {
-	color: #A0A5C8
+    color: #A0A5C8
 }
 .norm {
-	color: #FFFFFF;
+    color: #FFFFFF;
 }
 .fire {
-	color: #e16c6c;
+    color: #e16c6c;
 }
 .title {
-	font-size: 1.5em;
-	text-align: left;
-	color: #ffffff;
+    font-size: 1.5em;
+    text-align: left;
+    color: #ffffff;
 }
 .title2 {
-	color: #A0A5C8;
-	font-size: 1.2em;
+    color: #A0A5C8;
+    font-size: 1.2em;
 }
 .warn {
-	font-size: .8em;
-	font-style: italic;
-	color: #bca86c;
+    font-size: .8em;
+    font-style: italic;
+    color: #bca86c;
 }
 
 textarea {
-	background-color: #111111;
-	border-color: #5F5F5F;
-	color: #A0A5C8;
-	border: none;
-	overflow: auto;
-	resize: none;
+    background-color: #111111;
+    border-color: #5F5F5F;
+    color: #A0A5C8;
+    border: none;
+    overflow: auto;
+    resize: none;
 }
 input {
-	background-color: #111111;
-	color: #ffffff;
+    background-color: #111111;
+    color: #ffffff;
 }
 select {
-	background-color: #111111;
-	color: #A0A5C8;
+    background-color: #111111;
+    color: #A0A5C8;
 }
 button {
-	background-color: #111111;
-	color: #ffffff;
+    background-color: #111111;
+    color: #ffffff;
 }
 </style>
 </head>
 <center>
 <body bgcolor="#2d2d2d">
 <div class="banner">
-	<p>Ghast's Grotto:
-	<br>
-	<br>
-	<a title="Tips, tricks, news, and more!" href="index.html">Home</a>
-	<br>
-	<a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
-	<br>
-	<a title="Self explanatory" href="shrinelist.html">Shrines</a>
-	<br>
-	<a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
-	<br>
-	<a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
-	<br>
-	</p>
-	<p>My:
-	<br>
-	<br>
-	<a title="My characters and their items" href="characters.html">Characters</a>
-	<br>
-	<a title="A list of all the uniques. With notes of what I have collected so far" href="uniques.html">Uniques</a>
-	<br>
-	<a title="A list of all the monsters. With tally of what I have killed so far" href="monsters.html">Monsters</a>
-	</p>
+    <p>Ghast's Grotto:
+    <br>
+    <br>
+    <a title="Tips, tricks, news, and more!" href="index.html">Home</a>
+    <br>
+    <a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
+    <br>
+    <a title="Self explanatory" href="shrinelist.html">Shrines</a>
+    <br>
+    <a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
+    <br>
+    <a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
+    <br>
+    </p>
+    <p>My:
+    <br>
+    <br>
+    <a title="My characters and their items" href="characters.html">Characters</a>
+    <br>
+    <a title="A list of all the uniques. With notes of what I have collected so far" href="uniques.html">Uniques</a>
+    <br>
+    <a title="A list of all the monsters. With tally of what I have killed so far" href="monsters.html">Monsters</a>
+    </p>
 </div>
 <div class="banner2">
     <p> the_Langolier:
-	<br>
-	<br>
+    <br>
+    <br>
         <a title="Calculate the price of any item." href="#itemprice">Price</a>
-	<br>
+    <br>
         <a title="Calculate the rarity of any item." href="#itemrarity">Rarity</a>
-	<br>
+    <br>
         <a title="Calculate chance to hit." href="#cthacblock">CTH</a>
-	<br>
+    <br>
         <a title="Calculate chance to hit." href="#cthacblock">AC</a>
-	<br>
+    <br>
         <a title="Calculate chance to block" href="#cthacblock">Block</a>
     </p>
 <br>
+    <p> Moriah:
+    <br>
+    <br>
+        <a title="Diablo Combat Calculator" href="#combatcalc">AC & To Hit</a>
+    </p>
+<br>
     <p> Red-Wolf:
-	<br>
-	<br>
+    <br>
+    <br>
         <a title="Select item stats and character skills to calculate character stats." href="#charstats">Char Stats</a>
-	<br>
+    <br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#weapdam">Weapon</a>
-	<br>
+    <br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#armor">Armor</a>
     </p>
 <br>
     <p> Royal:
-	<br>
-	<br>
+    <br>
+    <br>
         <a title="See what qlvl items you'll find at the vendors." href="#shopqlvl">Shop qlvl</a>
     </p>
 <br>
     <p> OrkinMan:
-	<br>
-	<br>
+    <br>
+    <br>
         <a title="Another price Calculator with no price limit" href="#orkin">Orkin Price</a>
     </p>
 <br>
     <p> Virgil Tibbs:
-	<br>
-	<br>
+    <br>
+    <br>
         <a title="Calculate what your Life/Mana should be" href="#lifemana">Life/Mana</a>
     </p>
 </div>
@@ -226,1383 +239,1737 @@ button {
 <!-- //////// Item Price Calculator //////// -->
 <form Name="SelectItm">
 <table class="blog">
-	<tr>
-		<td class="title"><a name="itemprice"></a>Item Price Calculator</td>
-	</tr>
-	<tr>
-		<td align="center">
-		<table>
-			<tr>
-				<td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
-			</tr>
-			<tr>
-				<td>Prefix:<br><select name="Prefx" disabled onChange="updatePrefx();calcPrice();"></select></td>
-				<td>Base Item:<br><select name="Bse" disabled onChange="updateSource();calcPrice();"></select></td>
-				<td>Suffix:<br><select name="Suffx" disabled onChange="updateSuffx();calcPrice();"></select></td>
-			</tr>
-			<tr>
-				<td>Value:<br><select name="Pvalue" disabled onChange="calcPrice();"></select></td>
-				<td>
-					<input name="Source" type="radio" value="Gris" onclick="calcPrice();" checked><a id="Gris">Griswold<br>
-					<input name="Source" type="radio" value="Wirt" onclick="calcPrice();"><a id="Wirt">Wirt<br>
-					<input name="Source" type="radio" value="Sale" onclick="calcPrice();"><a id="Sale">Resale</td>
-				<td>Value:<br><select name="Svalue" disabled onChange="calcPrice();"></select></td>
-			</tr>
-		</table></td>
-	<tr>
-		<td>Price:</td>
-	</tr>
-	<tr class="magic">
-		<td name="Price" id="Price">0</td>
-	</tr>
-	<script type="text/javascript">
-	reset();
-	</script>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
-	</tr>
+    <tr>
+        <td class="title"><a name="itemprice"></a>Item Price Calculator</td>
+    </tr>
+    <tr>
+        <td align="center">
+        <table>
+            <tr>
+                <td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
+            </tr>
+            <tr>
+                <td>Prefix:<br><select name="Prefx" disabled onChange="updatePrefx();calcPrice();"></select></td>
+                <td>Base Item:<br><select name="Bse" disabled onChange="updateSource();calcPrice();"></select></td>
+                <td>Suffix:<br><select name="Suffx" disabled onChange="updateSuffx();calcPrice();"></select></td>
+            </tr>
+            <tr>
+                <td>Value:<br><select name="Pvalue" disabled onChange="calcPrice();"></select></td>
+                <td>
+                    <input name="Source" type="radio" value="Gris" onclick="calcPrice();" checked><a id="Gris">Griswold<br>
+                    <input name="Source" type="radio" value="Wirt" onclick="calcPrice();"><a id="Wirt">Wirt<br>
+                    <input name="Source" type="radio" value="Sale" onclick="calcPrice();"><a id="Sale">Resale</td>
+                <td>Value:<br><select name="Svalue" disabled onChange="calcPrice();"></select></td>
+            </tr>
+        </table></td>
+    <tr>
+        <td>Price:</td>
+    </tr>
+    <tr class="magic">
+        <td name="Price" id="Price">0</td>
+    </tr>
+    <script type="text/javascript">
+    reset();
+    </script>
+    <tr>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
+    </tr>
 </table>
 </form>
 <br>
 <!-- //////// Item Rarity Calculator //////// -->
 <form Name="SelectItem">
 <table class="blog">
-	<tr>
-		<td class="title"><a name="itemrarity"></a>Item Rarity Calculator</td>
-	</tr>
-	<tr>
-		<input type="hidden" name="blank1">
-		<td colspan="3" style="text-align: center">Item Class:<br>
-		<select name="Class" onChange="updateSelectMenu();">
-		<option value="unvalid" selected>Select this first</option>
-		<option>Helm</option>
-		<option>Armor</option>
-		<option>Shield</option>
-		<option>Sword</option>
-		<option>Axe</option>
-		<option>Club</option>
-		<option>Bow</option>
-		<option>Staff</option>
-		<option>Jewelry</option>
-		</select>	
-		<input type="hidden" name="blank2">
-		</td>
-	<tr>
-		<td align="center">
-		<table>
-        		<tr>
-				<td>Prefix:<br>
-				<select name="Prefix" disabled onChange="validate();">
-				<option selected></option>
-				<option>1234567890</option>
-				</select>
-				</td>
-				<td>Base Item:<br>
-				<select name="Base" disabled>
-				<option selected>Select this second</option>
-				</select>
-				</td>
-				<td>Suffix:<br>
-				<select name="Suffix" disabled onChange="validate();">
-				<option selected></option>
-				<option>1234567890</option>
-				</select>
-				</td>
-			</tr>
-		</table></td>
-	</tr>
-	<tr>
-		<td align="center">
-		<table align="right">
-			<tr>
-				<td id="Valid" ></td>
-				<td align="right"><input name="Calculate" type="button" value="Calculate" onclick="main();" disabled></td>
-			</tr>
-		</table></td>
-	</tr>
-	<tr>
-		<td>Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" readonly></textarea></td>
-	</tr>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
-	</tr>
+    <tr>
+        <td class="title"><a name="itemrarity"></a>Item Rarity Calculator</td>
+    </tr>
+    <tr>
+        <input type="hidden" name="blank1">
+        <td colspan="3" style="text-align: center">Item Class:<br>
+        <select name="Class" onChange="updateSelectMenu();">
+        <option value="unvalid" selected>Select this first</option>
+        <option>Helm</option>
+        <option>Armor</option>
+        <option>Shield</option>
+        <option>Sword</option>
+        <option>Axe</option>
+        <option>Club</option>
+        <option>Bow</option>
+        <option>Staff</option>
+        <option>Jewelry</option>
+        </select>	
+        <input type="hidden" name="blank2">
+        </td>
+    <tr>
+        <td align="center">
+        <table>
+                <tr>
+                <td>Prefix:<br>
+                <select name="Prefix" disabled onChange="validate();">
+                <option selected></option>
+                <option>1234567890</option>
+                </select>
+                </td>
+                <td>Base Item:<br>
+                <select name="Base" disabled>
+                <option selected>Select this second</option>
+                </select>
+                </td>
+                <td>Suffix:<br>
+                <select name="Suffix" disabled onChange="validate();">
+                <option selected></option>
+                <option>1234567890</option>
+                </select>
+                </td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td align="center">
+        <table align="right">
+            <tr>
+                <td id="Valid" ></td>
+                <td align="right"><input name="Calculate" type="button" value="Calculate" onclick="main();" disabled></td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td>Results:<br><textarea name="Results" rows=26 cols=54 wrap="soft" readonly></textarea></td>
+    </tr>
+    <tr>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
+    </tr>
 </table>
 </form>
 <br>
 <table>
-	<tr>
-		<td>
+    <tr>
+        <td>
 <!-- //////// AC Calculator //////// -->
-		<table class="blog">
-			<tr>
-				<td class="title">Armor Class Calculator</td>
-			</tr>
-			<tr>
-				<td>
+        <table class="blog">
+            <tr>
+                <td class="title">Armor Class Calculator</td>
+            </tr>
+            <tr>
+                <td>
 <form name="SelectStat">
-				<table>
-					<tr>
-						<td>Difficulty:</td>
-						<td>Get-Hit %:</td>
-					</tr>
-					<tr>
-						<td>
-						<select name="Dif" onchange="updat();">
-						<option value="0">Normal</option>
-						<option value="85">Nightmare</option>
-						<option value="120" selected>Hell</option>
-						</select></td>
-						<td>
-						<select name="Percen" onchange="updat();">
-						<option value="1" selected>auto-hit</option>
-						<option value="25">25%</option>
-						<option value="33">33%</option>
-						<option value="50">50%</option>
-						<option value="66">66%</option>
-						<option value="75">75%</option>
-						</select></td>
-					</tr>
-				</table>
-				<br>
-				<table id="MaxAC" width="100%">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td align="center">
-							<select name="Cclvl" onchange="updat();">
-							<option value="17">17</option>
-							<option value="18">18</option>
-							<option value="19">19</option>
-							<option value="20">20</option>
-							<option value="21">21</option>
-							<option value="22">22</option>
-							<option value="23">23</option>
-							<option value="24">24</option>
-							<option value="25">25</option>
-							<option value="26">26</option>
-							<option value="27">27</option>
-							<option value="28">28</option>
-							<option value="29">29</option>
-							<option value="30">30</option>
-							<option value="31">31</option>
-							<option value="32">32</option>
-							<option value="33">33</option>
-							<option value="34">34</option>
-							<option value="35">35</option>
-							<option value="36">36</option>
-							<option value="37">37</option>
-							<option value="38">38</option>
-							<option value="39">39</option>
-							<option value="40">40</option>
-							<option value="41">41</option>
-							<option value="42">42</option>
-							<option value="43">43</option>
-							<option value="44">44</option>
-							<option value="45" selected>45</option>
-							<option value="46">46</option>
-							<option value="47">47</option>
-							<option value="48">48</option>
-							<option value="49">49</option>
-							<option value="50">50</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td>Max useful AC<br>(BK's on 16):</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Max useful AC<br>(BK's on 13):</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
-				<br>
-				<table >
-					<tr>
-						<td>Maximum useful AC per enemy type:</td>
-					</tr>
-				</table>
-				<br>
-				<table id="EnemyAC" width="100%">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td style="text-align: center">Your<br>clvl:</td>
-					</tr>
-					<tr>
-						<td>Lava Maw</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Storm Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Maelstorm</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Guardian</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Vortex Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Balrog</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Cave Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Fire Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Gold Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Azure Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Black Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Doom Guard</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Steel Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Blood Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>Average<br>Useful AC:</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
-				</td>
-			</tr>
+                <table>
+                    <tr>
+                        <td>Difficulty:</td>
+                        <td>Get-Hit %:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <select name="Dif" onchange="updat();">
+                        <option value="0">Normal</option>
+                        <option value="85">Nightmare</option>
+                        <option value="120" selected>Hell</option>
+                        </select></td>
+                        <td>
+                        <select name="Percen" onchange="updat();">
+                        <option value="1" selected>auto-hit</option>
+                        <option value="25">25%</option>
+                        <option value="33">33%</option>
+                        <option value="50">50%</option>
+                        <option value="66">66%</option>
+                        <option value="75">75%</option>
+                        </select></td>
+                    </tr>
+                </table>
+                <br>
+                <table id="MaxAC" width="100%">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td align="center">
+                            <select name="Cclvl" onchange="updat();">
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45" selected>45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Max useful AC<br>(BK's on 16):</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Max useful AC<br>(BK's on 13):</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
+                <br>
+                <table >
+                    <tr>
+                        <td>Maximum useful AC per enemy type:</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="EnemyAC" width="100%">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td style="text-align: center">Your<br>clvl:</td>
+                    </tr>
+                    <tr>
+                        <td>Lava Maw</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Storm Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Maelstorm</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Guardian</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Vortex Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Balrog</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Cave Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Fire Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Gold Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Azure Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Black Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Doom Guard</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Steel Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Blood Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Average<br>Useful AC:</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
 </form>
 <script type="text/javascript">
 updat();
 </script>
-			<tr>
-				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</a></i></td>
-			</tr>
-		</table>
-		</td>
-		<td>
+            <tr>
+                <td><i><br>Source: <a href="https://web.archive.org/web/20120530084932/http://www.dpsyche.com/AC.html">Eso aka the_Langolier</a></i></td>
+            </tr>
+        </table>
+        </td>
+        <td>
 <!-- //////// Chance to Hit Calculator //////// -->
 <form name="SelectStats">
-		<table class="blog">
-			<tr>
-				<td class="title"><a name="cthacblock"></a>Chance to Hit Calculator</td>
-			</tr>
-			<tr>
-				<td>
-				<table>
-					<tr>
-						<td>Difficulty:<br><select name="Diff" onchange="update();">
-						<option value="0">Normal</option>
-						<option value="50">Nightmare</option>
-						<option value="80" selected>Hell</option>
-						</select></td>
-						<td>Final to-Hit:<br><select name="Percent" onchange="update();">
-						<option value="95" selected>auto-miss</option>
-						<option value="75">75%</option>
-						<option value="66">66%</option>
-						<option value="50">50%</option>
-						<option value="33">33%</option>
-						<option value="25">25%</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td>Class:<br><select name="cClass" onchange="update();">
-						<option value="60">Warrior</option>
-						<option value="250">Rogue</option>
-						<option value="85">Sorcerer</option>
-						</select></td>
-						<td>Attack:<br><select name="Attack" onchange="update();">
-						<option value="melee">melee</option>
-						<option value="arrow">arrow</option></select></td>
-					</tr>
-				</table>
-				<br>
-				<table id="MaxCS">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td align="center">
-						<select name="Clvl" onchange="update();">
-						<option value="17">17</option>
-						<option value="18">18</option>
-						<option value="19">19</option>
-						<option value="20">20</option>
-						<option value="21">21</option>
-						<option value="22">22</option>
-						<option value="23">23</option>
-						<option value="24">24</option>
-						<option value="25">25</option>
-						<option value="26">26</option>
-						<option value="27">27</option>
-						<option value="28">28</option>
-						<option value="29">29</option>
-						<option value="30">30</option>
-						<option value="31">31</option>
-						<option value="32">32</option>
-						<option value="33">33</option>
-						<option value="34">34</option>
-						<option value="35">35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-						<option value="44">44</option>
-						<option value="45" selected>45</option>
-						<option value="46">46</option>
-						<option value="47">47</option>
-						<option value="48">48</option>
-						<option value="49">49</option>
-						<option value="50">50</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td>Max useful<br>to-hit (BK's):</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
-				<br>
-				<table width="100%">
-					<tr>
-						<td>Max useful to-hit per enemy type:</td>
-					</tr>
-				</table>
-				<br>
-				<table id="EnemyCS" width="100%">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td style="text-align: center">Your<br>clvl:</td>
-					</tr>
-					<tr>
-						<td>Lava Maw</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Storm Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Maelstorm</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Guardian</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Vortex Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Balrog</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Cave Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Fire Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Gold Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Azure Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Succubus</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Snow Witch</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Hell Spawn</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Soul Burner</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Black Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Doom Guard</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Steel Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Blood Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Counselor</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Magistrate</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Cabalist</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Advocate</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>Average<br>Useful to-hit:</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
-				</td>
-			</tr>
-			<tr>
-				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084958/http://www.dpsyche.com/cth.html">Eso aka the_Langolier</i></a></td>
-			</tr>
+        <table class="blog">
+            <tr>
+                <td class="title"><a name="cthacblock"></a>Chance to Hit Calculator</td>
+            </tr>
+            <tr>
+                <td>
+                <table>
+                    <tr>
+                        <td>Difficulty:<br><select name="Diff" onchange="update();">
+                        <option value="0">Normal</option>
+                        <option value="50">Nightmare</option>
+                        <option value="80" selected>Hell</option>
+                        </select></td>
+                        <td>Final to-Hit:<br><select name="Percent" onchange="update();">
+                        <option value="95" selected>auto-miss</option>
+                        <option value="75">75%</option>
+                        <option value="66">66%</option>
+                        <option value="50">50%</option>
+                        <option value="33">33%</option>
+                        <option value="25">25%</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Class:<br><select name="cClass" onchange="update();">
+                        <option value="60">Warrior</option>
+                        <option value="250">Rogue</option>
+                        <option value="85">Sorcerer</option>
+                        </select></td>
+                        <td>Attack:<br><select name="Attack" onchange="update();">
+                        <option value="melee">melee</option>
+                        <option value="arrow">arrow</option></select></td>
+                    </tr>
+                </table>
+                <br>
+                <table id="MaxCS">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td align="center">
+                        <select name="Clvl" onchange="update();">
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45" selected>45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Max useful<br>to-hit (BK's):</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
+                <br>
+                <table width="100%">
+                    <tr>
+                        <td>Max useful to-hit per enemy type:</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="EnemyCS" width="100%">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td style="text-align: center">Your<br>clvl:</td>
+                    </tr>
+                    <tr>
+                        <td>Lava Maw</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Storm Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Maelstorm</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Guardian</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Vortex Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Balrog</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Cave Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Fire Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Gold Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Azure Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Succubus</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Snow Witch</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Hell Spawn</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Soul Burner</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Black Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Doom Guard</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Steel Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Blood Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Counselor</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Magistrate</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Cabalist</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Advocate</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Average<br>Useful to-hit:</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td><i><br>Source: <a href="https://web.archive.org/web/20120530084958/http://www.dpsyche.com/cth.html">Eso aka the_Langolier</i></a></td>
+            </tr>
 <script type="text/javascript">
 update();
 </script>
-		</table>
+        </table>
 </form>
-		</td>
-		<td>
+        </td>
+        <td>
 <!-- //////// Block Calculator //////// -->
-		<table class="blog">
-			<tr>
-				<td class="title">Block Calculator</td>
-			</tr>
-			<tr>
+        <table class="blog">
+            <tr>
+                <td class="title">Block Calculator</td>
+            </tr>
+            <tr>
 <form name="SelectSta">
-				<td>
-				<table>
-					<tr>
-						<td>Difficulty:</td>
-						<td>Block %:</td>
-					</tr>
-					<tr>
-						<td>
-						<select name="Diph" onchange="updated();">
-						<option value="0">Normal</option>
-						<option value="85">Nightmare</option>
-						<option value="120" selected>Hell</option>
-						</select></td>
-						<td>
-						<select name="Perce" onchange="updated();">
-						<option value="100" selected>perfect block</option>
-						<option value="75">75%</option>
-						<option value="66">66%</option>
-						<option value="50">50%</option>
-						<option value="33">33%</option>
-						<option value="25">25%</option>
-						</select></td>
-					</tr>
-				</table>
-				<br>
-				<table id="MaxDEX" width="100%">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td align="center">
-						<select name="Chlvl" onchange="updated();">
-						<option value="17">17</option>
-						<option value="18">18</option>
-						<option value="19">19</option>
-						<option value="20">20</option>
-						<option value="21">21</option>
-						<option value="22">22</option>
-						<option value="23">23</option>
-						<option value="24">24</option>
-						<option value="25">25</option>
-						<option value="26">26</option>
-						<option value="27">27</option>
-						<option value="28">28</option>
-						<option value="29">29</option>
-						<option value="30">30</option>
-						<option value="31">31</option>
-						<option value="32">32</option>
-						<option value="33">33</option>
-						<option value="34">34</option>
-						<option value="35">35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-						<option value="44">44</option>
-						<option value="45" selected>45</option>
-						<option value="46">46</option>
-						<option value="47">47</option>
-						<option value="48">48</option>
-						<option value="49">49</option>
-						<option value="50">50</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td>Dexterity:</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
-				<br>
-				<table>
-					<tr>
-						<td>Dexterity needed per enemy type:</td>
-					</tr>
-				</table>
-				<br>
-				<table id="EnemyDEX" width="100%">
-					<tr>
-						<td style="text-align: center">Clvl:</td>
-						<td style="text-align: center">30</td>
-						<td style="text-align: center">40</td>
-						<td style="text-align: center">50</td>
-						<td style="text-align: center">Your<br>clvl:</td>
-					</tr>
-					<tr>
-						<td>Lava Maw</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Storm Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Maelstorm</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Guardian</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Vortex Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Balrog</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Cave Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Fire Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Gold Viper</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Azure Drake</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Black Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Doom Guard</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Steel Lord</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>Blood Knight</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>Average<br>Dexterity:</td>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-						<td class="magic">--</td>
-					</tr>
-				</table>
+                <td>
+                <table>
+                    <tr>
+                        <td>Difficulty:</td>
+                        <td>Block %:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <select name="Diph" onchange="updated();">
+                        <option value="0">Normal</option>
+                        <option value="85">Nightmare</option>
+                        <option value="120" selected>Hell</option>
+                        </select></td>
+                        <td>
+                        <select name="Perce" onchange="updated();">
+                        <option value="100" selected>perfect block</option>
+                        <option value="75">75%</option>
+                        <option value="66">66%</option>
+                        <option value="50">50%</option>
+                        <option value="33">33%</option>
+                        <option value="25">25%</option>
+                        </select></td>
+                    </tr>
+                </table>
+                <br>
+                <table id="MaxDEX" width="100%">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td align="center">
+                        <select name="Chlvl" onchange="updated();">
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45" selected>45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity:</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <td>Dexterity needed per enemy type:</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="EnemyDEX" width="100%">
+                    <tr>
+                        <td style="text-align: center">Clvl:</td>
+                        <td style="text-align: center">30</td>
+                        <td style="text-align: center">40</td>
+                        <td style="text-align: center">50</td>
+                        <td style="text-align: center">Your<br>clvl:</td>
+                    </tr>
+                    <tr>
+                        <td>Lava Maw</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Storm Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Maelstorm</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Guardian</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Vortex Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Balrog</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Cave Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Fire Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Gold Viper</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Azure Drake</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Black Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Doom Guard</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Steel Lord</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>Blood Knight</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                    <tr>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Average<br>Dexterity:</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="magic">--</td>
+                    </tr>
+                </table>
 </form>
 <script type="text/javascript">
 updated();
 </script>
-				</td>
-			</tr>
-			<tr>
-				<td><i><br>Source: <a href="https://web.archive.org/web/20120530084947/http://www.dpsyche.com/block.html">Eso aka the_Langolier</i></a></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
+                </td>
+            </tr>
+            <tr>
+                <td><i><br>Source: <a href="https://web.archive.org/web/20120530084947/http://www.dpsyche.com/block.html">Eso aka the_Langolier</i></a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
 </table>
+<br>
+<!-- //////// Combat Calculator //////// -->
+<form name="combat">
+<table class="blog">
+    <tr>
+        <td class="title"><a name="combatcalc"></a>AC & To Hit Calc</td>
+    </tr>
+        <td>
+        <table>
+            <tr>
+                <td>
+                <table>
+                    <tr>
+                        <td>Class: 
+                            <select name="player" onchange="parsePlayer()">
+                            <option value="Warrior">Warrior
+                            </option><option value="Rogue">Rogue
+                            </option><option value="Sorceror">Sorceror
+                            </option><option value="Monk">Monk
+                            </option><option value="Bard">Bard
+                            </option><option value="Barbarian">Barbarian
+                            </option></select></td>
+                        <td>Monster: 
+                            <select name="extra" onchange="parseExtra()">
+                            <option value="Zombie">Zombie
+                            </option><option value="Ghoul">Ghoul
+                            </option><option value="Rotting" carcass="">Rotting Carcass
+                            </option><option value="Black" death="">Black Death
+                            </option><option value="Fallen" one="" (spear)="">Fallen One (spear)
+                            </option><option value="Carver" (spear)="">Carver (spear)
+                            </option><option value="Devil" kin="" (spear)="">Devil Kin (spear)
+                            </option><option value="Dark" one="" (spear)="">Dark One (spear)
+                            </option><option value="Fallen" one="" (sword)="">Fallen One (sword)
+                            </option><option value="Carver" (sword)="">Carver (sword)
+                            </option><option value="Devil" kin="" (sword)="">Devil Kin (sword)
+                            </option><option value="Dark" one="" (sword)="">Dark One (sword)
+                            </option><option value="Skeleton">Skeleton
+                            </option><option value="Corpse" axe="">Corpse Axe
+                            </option><option value="Burning" dead="">Burning Dead
+                            </option><option value="Horror">Horror
+                            </option><option value="Skeleton" archer="">Skeleton Archer
+                            </option><option value="Corpse" bow="">Corpse Bow
+                            </option><option value="Burning" dead="" archer="">Burning Dead Archer
+                            </option><option value="Horror" archer="">Horror Archer
+                            </option><option value="Skeleton" captain="">Skeleton Captain
+                            </option><option value="Corpse" captain="">Corpse Captain
+                            </option><option value="Burning" dead="" captain="">Burning Dead Captain
+                            </option><option value="Horror" captain="">Horror Captain
+                            </option><option value="Scavenger">Scavenger
+                            </option><option value="Plague" eater="">Plague Eater
+                            </option><option value="Shadow" beast="">Shadow Beast
+                            </option><option value="Bone" gasher="">Bone Gasher
+                            </option><option value="Fiend">Fiend
+                            </option><option value="Blink">Blink
+                            </option><option value="Gloom">Gloom
+                            </option><option value="Familiar">Familiar
+                            </option><option value="Hidden">Hidden
+                            </option><option value="Stalker">Stalker
+                            </option><option value="Unseen">Unseen
+                            </option><option value="Illusion" weaver="">Illusion Weaver
+                            </option><option value="Flesh" clan="">Flesh Clan
+                            </option><option value="Stone" clan="">Stone Clan
+                            </option><option value="Fire" clan="">Fire Clan
+                            </option><option value="Night" clan="">Night Clan
+                            </option><option value="Flesh" clan="" archer="">Flesh Clan Archer
+                            </option><option value="Stone" clan="" archer="">Stone Clan Archer
+                            </option><option value="Fire" clan="" archer="">Fire Clan Archer
+                            </option><option value="Night" clan="" archer="">Night Clan Archer
+                            </option><option value="Overlord">Overlord
+                            </option><option value="Mud" man="">Mud Man
+                            </option><option value="Toad" demon="">Toad Demon
+                            </option><option value="Flayed" one="">Flayed One
+                            </option><option value="Winged-Demon">Winged-Demon
+                            </option><option value="Gargoyle">Gargoyle
+                            </option><option value="Blood" claw="">Blood Claw
+                            </option><option value="Death" wing="">Death Wing
+                            </option><option value="Magma" demon="">Magma Demon
+                            </option><option value="Blood" stone="">Blood Stone
+                            </option><option value="Hell" stone="">Hell Stone
+                            </option><option value="Lava" lord="">Lava Lord
+                            </option><option value="Horned" demon="">Horned Demon
+                            </option><option value="Mud" runner="">Mud Runner
+                            </option><option value="Frost" charger="">Frost Charger
+                            </option><option value="Obsidian" lord="">Obsidian Lord
+                            </option><option value="Acid" beast="">Acid Beast
+                            </option><option value="Poison" spitter="">Poison Spitter
+                            </option><option value="Pit" beast="">Pit Beast
+                            </option><option value="Lava" maw="">Lava Maw
+                            </option><option value="Red" storm="">Red Storm
+                            </option><option value="Storm" rider="">Storm Rider
+                            </option><option value="Storm" lord="">Storm Lord
+                            </option><option value="Maelstrom">Maelstrom
+                            </option><option value="Slayer">Slayer
+                            </option><option value="Guardian">Guardian
+                            </option><option value="Vortex" lord="">Vortex Lord
+                            </option><option value="Balrog">Balrog
+                            </option><option value="Cave" viper="">Cave Viper
+                            </option><option value="Fire" drake="">Fire Drake
+                            </option><option value="Gold" viper="">Gold Viper
+                            </option><option value="Azure" drake="">Azure Drake
+                            </option><option value="Succubus">Succubus
+                            </option><option value="Snow" witch="">Snow Witch
+                            </option><option value="Hell" spawn="">Hell Spawn
+                            </option><option value="Soul" burner="">Soul Burner
+                            </option><option value="Black" knight="">Black Knight
+                            </option><option value="Doom" guard="">Doom Guard
+                            </option><option value="Steel" lord="">Steel Lord
+                            </option><option value="Blood" knight="">Blood Knight
+                            </option><option value="Counselor">Counselor
+                            </option><option value="Magistrate">Magistrate
+                            </option><option value="Cabalist">Cabalist
+                            </option><option value="Advocate">Advocate
+                            </option></select></td>
+                        <td>To-Hit%: <input name="tohit_fld" value="" size="6" maxsize="6" onchange="parseTohit()" type="text"></td>
+                    </tr>
+                    <td>Clvl: 
+                            <select name="clvl" onchange="parseClvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option><option value="21">21
+                            </option><option value="22">22
+                            </option><option value="23">23
+                            </option><option value="24">24
+                            </option><option value="25">25
+                            </option><option value="26">26
+                            </option><option value="27">27
+                            </option><option value="28">28
+                            </option><option value="29">29
+                            </option><option value="30">30
+                            </option><option value="31">31
+                            </option><option value="32">32
+                            </option><option value="33">33
+                            </option><option value="34">34
+                            </option><option value="35">35
+                            </option><option value="36">36
+                            </option><option value="37">37
+                            </option><option value="38">38
+                            </option><option value="39">39
+                            </option><option value="40">40
+                            </option><option value="41">41
+                            </option><option value="42">42
+                            </option><option value="43">43
+                            </option><option value="44">44
+                            </option><option value="45">45
+                            </option><option value="46">46
+                            </option><option value="47">47
+                            </option><option value="48">48
+                            </option><option value="49">49
+                            </option><option value="50">50
+                            </option></select></td>
+                        <td>Difficulty: 
+                            <select name="difficulty" onchange="parseDifficulty()">
+                            <option value="Normal">Normal
+                            </option><option value="Nightmare">Nightmare
+                            </option><option value="Hell">Hell
+                            </option></select></td>
+                        <td>Dex: <input name="dex_fld" value="" size="6" maxsize="6" onchange="parseDexterity()" type="text"></td>
+                    <tr>
+                            <td>Game: 
+                            <select name="game" onchange="parseGame()">
+                            <option value="MP" diablo="">MP Diablo
+                            </option><option value="SP" diablo="">SP Diablo
+                            </option><option value="MP" hellfire="">MP Hellfire
+                            </option><option value="SP" hellfire="">SP Hellfire
+                            </option></select></td>
+                        <td>Dlvl: 
+                            <select name="dlvl" onchange="parseDlvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="Hive" 1="">Hive 1
+                            </option><option value="Hive" 2="">Hive 2
+                            </option><option value="Hive" 3="">Hive 3
+                            </option><option value="Hive" 4="">Hive 4
+                            </option><option value="Crypt" 1="">Crypt 1
+                            </option><option value="Crypt" 2="">Crypt 2
+                            </option><option value="Crypt" 3="">Crypt 3
+                            </option><option value="Crypt" 4="">Crypt 4
+                            </option></select></td>
+                        <td>AC: <input name="armor_fld" value="" size="6" maxsize="6" onchange="parseArmor()" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left"><input value="Calculate" onclick="bothatonce()" type="button"></td>
+                        <td align="right"><input value="RESET" onclick="reset_form()" type="button"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><textarea name="results" rows="12" cols="67"></textarea>
+                        <br>
+                        <textarea name="results2" rows="4" cols="67"></textarea></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <table class="hidden">
+                    <tr>
+                        <td>
+                            <select name="weapon" onchange="parseWeapon()">
+                            <option value="Bare">Bare
+                            </option><option value="Axe">Axe
+                            </option><option value="Bow">Bow
+                            </option><option value="Club">Club
+                            </option><option value="Shield">Shield
+                            </option><option value="Staff">Staff
+                            </option><option value="Sword">Sword
+                            </option></select></td>
+                        <td>
+                            <select name="slvl" onchange="parseSlvl()">
+                            <option value="0">0
+                            </option><option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option></select></td>
+                        <td><input name="str_fld" value="" size="6" maxsize="6" onchange="parseStrength()" type="text"></td>
+                        <td><input name="mag_fld" value="" size="6" maxsize="6" onchange="parseMagic()" type="text"></td>
+                        <td><input name="vit_fld" value="" size="6" maxsize="6" onchange="parseVitality()" type="text"></td>
+                        <td><input name="resmagic_fld" value="" size="6" maxsize="6" onchange="parseResMagic()" type="text"></td>
+                        <td><input name="resfire_fld" value="" size="6" maxsize="6" onchange="parseResFire()" type="text"></td>
+                        <td><input name="reslightning_fld" value="" size="6" maxsize="6" onchange="parseResLightning()" type="text"></td>
+                        <td><input value="Help" onclick="helpPlayer()" type="button"></td>
+                        <td><input value="Help" onclick="helpGame()" type="button"></td>
+                        <td>
+                            <select name="special" onchange="parseSpecial()">
+                            <option value="Plain" monsters="">Plain Monsters
+                            </option><option value="Boss" monsters="">Boss Monsters
+                            </option><option value="Special" monsters="">Special Monsters
+                            </option><option value="Player" vs="" player="">Player vs Player
+                            </option><option value="Golem" vs="" monster="">Golem vs Monster
+                            </option><option value="Trap" encounters="">Trap Encounters
+                            </option><option value="Item" drops="">Item Drops
+                            </option><option value="Assorted" stats="">Assorted Stats
+                            </option></select></td>
+                        <td>
+                            <select name="duelclvl" onchange="parseDuelClvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option><option value="21">21
+                            </option><option value="22">22
+                            </option><option value="23">23
+                            </option><option value="24">24
+                            </option><option value="25">25
+                            </option><option value="26">26
+                            </option><option value="27">27
+                            </option><option value="28">28
+                            </option><option value="29">29
+                            </option><option value="30">30
+                            </option><option value="31">31
+                            </option><option value="32">32
+                            </option><option value="33">33
+                            </option><option value="34">34
+                            </option><option value="35">35
+                            </option><option value="36">36
+                            </option><option value="37">37
+                            </option><option value="38">38
+                            </option><option value="39">39
+                            </option><option value="40">40
+                            </option><option value="41">41
+                            </option><option value="42">42
+                            </option><option value="43">43
+                            </option><option value="44">44
+                            </option><option value="45">45
+                            </option><option value="46">46
+                            </option><option value="47">47
+                            </option><option value="48">48
+                            </option><option value="49">49
+                            </option><option value="50">50
+                            </option></select></td>
+                        <td><input value="Help" onclick="helpSpecial()" type="button"></td>
+                        <td><input name="duelstr_fld" value="" size="6" maxsize="6" onchange="parseDuelStrength()" type="text"></td>
+                        <td><input name="duelmag_fld" value="" size="6" maxsize="6" onchange="parseDuelMagic()" type="text"></td>
+                        <td><input name="dueldex_fld" value="" size="6" maxsize="6" onchange="parseDuelDexterity()" type="text"></td>
+                        <td><input name="duelarmor_fld" value="" size="6" maxsize="6" onchange="parseDuelArmor()" type="text"></td>
+                        <td><input name="dueltohit_fld" value="" size="6" maxsize="6" onchange="parseDuelTohit()" type="text"></td>
+                        <td><input name="duelres_fld" value="" size="6" maxsize="6" onchange="parseResDuel()" type="text"></td>
+                        <td><input name="damlow_fld" value="" size="6" maxsize="6" onchange="parseDamageLow()" type="text"></td>
+                        <td><input name="damhigh_fld" value="" size="6" maxsize="6" onchange="parseDamageHigh()" type="text"></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td><i><br>Source: <a href="https://web.archive.org/web/20091024004748/http://geocities.com/TimesSquare/Maze/4747/maxmelee12.html">Arnold van Wakeren aka Moriah</i></a></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</form>
 <!-- //////// Character Stats Calculator //////// -->
 <br>
 <form name="myChar">
 <table class="blog">
-	<tr>
-		<td colspan="2" class="title"><a name="charstats"></a>Character Stats Calculator</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Base Stats</td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td>Name</td>
-				<td><input type="text" name="mycharname" size="20" maxlength="20"></td>
-				<td>Class</td>
-				<td>
-				<select name="myclass" size="1">
-				<option selected>Warrior</option>
-				<option>Rogue</option>
-				<option>Sorcerer</option>
-				</select></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td>Level</td>
-				<td><input type="text" name="mylevel" size="5" maxlength="2"></td>
-				<td>Exp</td>
-				<td><input type="text" name="myexp" size="15" maxlength="10"></td>
-				<td><input type="button" name="expset" value="Set Exp" onclick="myexpset(this.form)"></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td>Str</td>
-				<td><input type="text" name="mystrbase" size="5" maxlength="3"></td>
-				<td>Mag</td>
-				<td><input type="text" name="mymagbase" size="5" maxlength="3"></td>
-				<td>Dex</td>
-				<td><input type="text" name="mydexbase" size="5" maxlength="3"></td>
-				<td>Vit</td>
-				<td><input type="text" name="myvitbase" size="5" maxlength="3"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="button" name="attriinit" value="Set Min" onclick="attriinitset(this.form)"></td>
-				<td colspan="2"><input type="button" name="attrimax" value="Set Max" onclick="attrimaxset(this.form)"></td>
-				<td colspan="2"><input type="reset" name="reset" value="Reset"></td>
-				<td colspan="2"><input type="button" name="calc" value="Calculate" onclick="calcall(this.form)"></td>
-			</tr>
-		</table><br>
+    <tr>
+        <td colspan="2" class="title"><a name="charstats"></a>Character Stats Calculator</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Base Stats</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="mycharname" size="20" maxlength="20"></td>
+                <td>Class</td>
+                <td>
+                <select name="myclass" size="1">
+                <option selected>Warrior</option>
+                <option>Rogue</option>
+                <option>Sorcerer</option>
+                </select></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Level</td>
+                <td><input type="text" name="mylevel" size="5" maxlength="2"></td>
+                <td>Exp</td>
+                <td><input type="text" name="myexp" size="15" maxlength="10"></td>
+                <td><input type="button" name="expset" value="Set Exp" onclick="myexpset(this.form)"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Str</td>
+                <td><input type="text" name="mystrbase" size="5" maxlength="3"></td>
+                <td>Mag</td>
+                <td><input type="text" name="mymagbase" size="5" maxlength="3"></td>
+                <td>Dex</td>
+                <td><input type="text" name="mydexbase" size="5" maxlength="3"></td>
+                <td>Vit</td>
+                <td><input type="text" name="myvitbase" size="5" maxlength="3"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="attriinit" value="Set Min" onclick="attriinitset(this.form)"></td>
+                <td colspan="2"><input type="button" name="attrimax" value="Set Max" onclick="attrimaxset(this.form)"></td>
+                <td colspan="2"><input type="reset" name="reset" value="Reset"></td>
+                <td colspan="2"><input type="button" name="calc" value="Calculate" onclick="calcall(this.form)"></td>
+            </tr>
+        </table><br>
 <input type="hidden" name="enphisicallevel" size="5" maxlength="2">
 <input type="hidden" name="enac" size="5" maxlength="3">
 <input type="hidden" name="enmagiclevel" size="5" maxlength="2">
 <input type="hidden" name="enacmax" value="Set Max" onclick="enacmaxset(this.form)">
-		<table>
-			<tr>
-				<td class="title2">Helm</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="helmac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="helmrate" size="5" maxlength="4"> + % AC<br>
-				<input type="text" name="helmall" size="5" maxlength="3"> + to All
-				<input type="button" name="helmset" value="Set" onclick="allsethelm(this.form)"><br>
-				<input type="text" name="helmstr" size="5" maxlength="3"> Str<br>
-				<input type="text" name="helmmag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="helmdex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="helmvit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="helmmana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="helmlife" size="5" maxlength="3"> Life<br>
-				<input type="text" name="helmresall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="helmresset" value="Set" onclick="resallsethelm(this.form)"><br>
-				<input type="text" name="helmresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="helmresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="helmreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table class='char'>
-			<tr>
-				<td colspan="5" class="title2">Character</td>
-			</tr>
-			<tr>
-				<td colspan="3"><input class="magic" type="text" name="charname" size="20" readonly></td>
-				<td colspan="1">Class</td>
-				<td colspan="1"><input class="magic" type="text" name="myclass2" size="10" readonly></td>
-			</tr>
-			<tr>
-				<td>Level</td>
-				<td><input class="magic" type="text" name="level" size="5" maxlength="2" readonly></td>
-				<td colspan="1"><br></td>
-				<td>Exp</td>
-				<td colspan="1"><input class="magic" type="text" name="exp" size="10" readonly></td>
-			</tr>
-			<tr>
-				<td colspan="1"><br></td>
-				<td>Base</td>
-				<td>Now</td>
-				<td>Next</td>
-				<td colspan="1"><input class="magic" type="text" name="nextexp" size="10" readonly></td>
-			</tr>
-			<tr>
-				<td>Str</td>
-				<td><input class="magic" type="text" name="strbase" size="5" maxlength="3" readonly></td>
-				<td><input class="magic" type="text" name="strnow" size="5" maxlength="3" readonly></td>
-				<td>to Next Lvl</td>
-				<td colspan="1"><input class="magic" type="text" name="tonextlv" size="10" readonly></td>
-			</tr>
-			<tr>
-				<td>Mag</td>
-				<td><input class="magic" type="text" name="magbase" size="5" maxlength="3" readonly></td>
-				<td><input class="magic" type="text" name="magnow" size="5" maxlength="3" readonly></td>
-				<td>Armor Class</td>
-				<td><input class="magic" type="text" name="ac" size="5" maxlength="3" readonly></td>
-			</tr>
-			<tr>
-				<td>Dex</td>
-				<td><input class="magic" type="text" name="dexbase" size="5" maxlength="3" readonly></td>
-				<td><input class="magic" type="text" name="dexnow" size="5" maxlength="3" readonly></td>
-				<td>to Hit</td>
-				<td><input class="magic" type="text" name="tohit" size="5" maxlength="3" readonly></td>
-			</tr>
-			<tr>
-				<td>Vit</td>
-				<td><input class="magic" type="text" name="vitbase" size="5" maxlength="3" readonly></td>
-				<td><input class="magic" type="text" name="vitnow" size="5" maxlength="3" readonly></td>
-				<td>Damage</td>
-				<td><input class="magic" type="text" name="dammin" size="10" readonly></td>
-			</tr>
-			<tr>
-				<td colspan="5"><br></td>
-			</tr>
-			<tr>
-				<td colspan="3"><br></td>
-				<td colspan="1">Res <span class="magic">Magic</td>
-				<td><input class="magic" type="text" name="resmag" size="5" maxlength="3" readonly></td>
-			</tr>
-			<tr>
-				<td>Life</td>
-				<td><input class="magic" type="text" name="lifebase" size="5" maxlength="4" readonly></td>
-				<td><input class="magic" type="text" name="lifenow" size="5" maxlength="4" readonly></td>
-				<td colspan="1">Res <span class="fire">Fire</td>
-				<td><input class="magic" type="text" name="resfire" size="5" maxlength="3" readonly></td>
-			</tr>
-			<tr>
-				<td>Mana</td>
-				<td><input class="magic" type="text" name="manabase" size="5" maxlength="4" readonly></td>
-				<td><input class="magic" type="text" name="mananow" size="5" maxlength="4" readonly></td>
-				<td colspan="1">Res <span class="norm">Lightning</span></td>
-				<td><input class="magic" type="text" name="reslight" size="5" maxlength="3" readonly></td>
-			</tr>
+        <table>
+            <tr>
+                <td class="title2">Helm</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="helmac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="helmrate" size="5" maxlength="4"> + % AC<br>
+                <input type="text" name="helmall" size="5" maxlength="3"> + to All
+                <input type="button" name="helmset" value="Set" onclick="allsethelm(this.form)"><br>
+                <input type="text" name="helmstr" size="5" maxlength="3"> Str<br>
+                <input type="text" name="helmmag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="helmdex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="helmvit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="helmmana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="helmlife" size="5" maxlength="3"> Life<br>
+                <input type="text" name="helmresall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="helmresset" value="Set" onclick="resallsethelm(this.form)"><br>
+                <input type="text" name="helmresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="helmresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="helmreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+        <td style="vertical-align:top;">
+        <table class='char'>
+            <tr>
+                <td colspan="5" class="title2">Character</td>
+            </tr>
+            <tr>
+                <td colspan="3"><input class="magic" type="text" name="charname" size="20" readonly></td>
+                <td colspan="1">Class</td>
+                <td colspan="1"><input class="magic" type="text" name="myclass2" size="10" readonly></td>
+            </tr>
+            <tr>
+                <td>Level</td>
+                <td><input class="magic" type="text" name="level" size="5" maxlength="2" readonly></td>
+                <td colspan="1"><br></td>
+                <td>Exp</td>
+                <td colspan="1"><input class="magic" type="text" name="exp" size="10" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="1"><br></td>
+                <td>Base</td>
+                <td>Now</td>
+                <td>Next</td>
+                <td colspan="1"><input class="magic" type="text" name="nextexp" size="10" readonly></td>
+            </tr>
+            <tr>
+                <td>Str</td>
+                <td><input class="magic" type="text" name="strbase" size="5" maxlength="3" readonly></td>
+                <td><input class="magic" type="text" name="strnow" size="5" maxlength="3" readonly></td>
+                <td>to Next Lvl</td>
+                <td colspan="1"><input class="magic" type="text" name="tonextlv" size="10" readonly></td>
+            </tr>
+            <tr>
+                <td>Mag</td>
+                <td><input class="magic" type="text" name="magbase" size="5" maxlength="3" readonly></td>
+                <td><input class="magic" type="text" name="magnow" size="5" maxlength="3" readonly></td>
+                <td>Armor Class</td>
+                <td><input class="magic" type="text" name="ac" size="5" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td>Dex</td>
+                <td><input class="magic" type="text" name="dexbase" size="5" maxlength="3" readonly></td>
+                <td><input class="magic" type="text" name="dexnow" size="5" maxlength="3" readonly></td>
+                <td>to Hit</td>
+                <td><input class="magic" type="text" name="tohit" size="5" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td>Vit</td>
+                <td><input class="magic" type="text" name="vitbase" size="5" maxlength="3" readonly></td>
+                <td><input class="magic" type="text" name="vitnow" size="5" maxlength="3" readonly></td>
+                <td>Damage</td>
+                <td><input class="magic" type="text" name="dammin" size="10" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="5"><br></td>
+            </tr>
+            <tr>
+                <td colspan="3"><br></td>
+                <td colspan="1">Res <span class="magic">Magic</td>
+                <td><input class="magic" type="text" name="resmag" size="5" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td>Life</td>
+                <td><input class="magic" type="text" name="lifebase" size="5" maxlength="4" readonly></td>
+                <td><input class="magic" type="text" name="lifenow" size="5" maxlength="4" readonly></td>
+                <td colspan="1">Res <span class="fire">Fire</td>
+                <td><input class="magic" type="text" name="resfire" size="5" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td>Mana</td>
+                <td><input class="magic" type="text" name="manabase" size="5" maxlength="4" readonly></td>
+                <td><input class="magic" type="text" name="mananow" size="5" maxlength="4" readonly></td>
+                <td colspan="1">Res <span class="norm">Lightning</span></td>
+                <td><input class="magic" type="text" name="reslight" size="5" maxlength="3" readonly></td>
+            </tr>
 <input type="hidden" name="enphslevel2" size="5" maxlength="2">
 <input type="hidden" name="block" size="5" maxlength="4">
 <input type="hidden" name="enmaglevel2" size="5" maxlength="2">
 <input type="hidden" name="maghit" size="5" maxlength="4">
 <input type="hidden" name="enac2" size="5" maxlength="3">
 <input type="hidden" name="atkhit" size="5" maxlength="4">
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Armor</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="armorac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="armorrate" size="5" maxlength="4"> + % AC<br>
-				<input type="text" name="armorall" size="5" maxlength="3"> + to All
-				<input type="button" name="armorset" value="Set" onclick="allsetarmor(this.form)"><br>
-				<input type="text" name="armorstr" size="5" maxlength="3"> Str<br>
-				<input type="text" name="armormag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="armordex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="armorvit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="armormana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="armorlife" size="5" maxlength="3"> Life<br>
-				<input type="text" name="armorresall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="armorresset" value="Set" onclick="resallsetarmor(this.form)"><br>
-				<input type="text" name="armorresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="armorresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="armorreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Shield</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="shieldac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="shieldrate" size="5" maxlength="4"> + % AC<br>
-				<input type="text" name="shieldall" size="5" maxlength="3"> + to All
-				<input type="button" name="shieldset" value="Set" onclick="allsetshield(this.form)"><br>
-				<input type="text" name="shieldstr" size="5" maxlength="3"> Str<br>
-				<input type="text" name="shieldmag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="shielddex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="shieldvit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="shieldmana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="shieldlife" size="5" maxlength="3"> Life<br>
-				<input type="text" name="shieldresall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="shieldresset" value="Set" onclick="resallsetshield(this.form)"><br>
-				<input type="text" name="shieldresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="shieldresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="shieldreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Weapon</td>
-			</tr>
-			<tr>
-				<td><select name="weapontype" size="1">
-				<option selected>Bare Knuckle</option>
-				<option>Sword</option>
-				<option>Bow</option>
-				<option>Mace(Hammer,Maul)</option>
-				<option>Axe</option>
-				<option>Staff</option>
-				<option>Shield</option>
-				</select> Type<br>
-				<input type="text" name="weapondammin" size="5" maxlength="2"> - <input type="text" name="weapondammax" size="5" maxlength="2"> Damage<br>
-				<input type="text" name="weaponrate" size="5" maxlength="4"> + % Damage<br>
-				<input type="text" name="weaponadd" size="5" maxlength="2"> + Damage<br>
-				<input type="text" name="weaponall" size="5" maxlength="3"> + to All
-				<input type="button" name="weaponset" value="Set" onclick="allsetweapon(this.form)"><br>
-				<input type="text" name="weaponstr" size="5" maxlength="3"> Str<br>
-				<input type="text" name="weaponmag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="weapondex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="weaponvit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="type" name="weapontohit" size="5" maxlength="3"> + % to Hit<br>
-				<input type="text" name="weaponac" size="5" maxlength="2"> AC<br>
-				<input type="text" name="weaponmana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="weaponlife" size="5" maxlength="3"> Life<br>
-				<input type="text" name="weaponresall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="weaponresset" value="Set" onclick="resallsetweapon(this.form)"><br>
-				<input type="text" name="weaponresmag" size="3" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="weaponresfire" size="3" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="weaponreslight" size="3" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-		<td style="vertical-align:top;">
-		<table>
-			<tr>
-				<td class="title2">Amulet</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="amuletac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="amulettohit" size="5" maxlength="4"> + % to Hit<br>
-				<input type="text" name="amuletall" size="5" maxlength="3"> + to All
-				<input type="button" name="amuletset" value="Set" onclick="allsetamulet(this.form)"><br>
-				<input type="text" name="amuletstr" size="5" maxlength="3"> Str<br>
-				<input type="text" name="amuletmag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="amuletdex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="amuletvit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="amuletmana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="amuletlife" size="5" maxlength="3"> Life<br>
-				<input type="text" name="amuletresall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="amuletresset" value="Set" onclick="resallsetamulet(this.form)"><br>
-				<input type="text" name="amuletresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="amuletresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="amuletreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Left Ring</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="ring1ac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="ring1tohit" size="5" maxlength="4"> + % to Hit<br>
-				<input type="text" name="ring1all" size="5" maxlength="3"> + to All
-				<input type="button" name="ring1set" value="Set" onclick="allsetring1(this.form)"><br>
-				<input type="text" name="ring1str" size="5" maxlength="3"> Str<br>
-				<input type="text" name="ring1mag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="ring1dex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="ring1vit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="ring1mana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="ring1life" size="5" maxlength="3"> Life<br>
-				<input type="text" name="ring1resall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="ring1resset" value="Set" onclick="resallsetring1(this.form)"><br>
-				<input type="text" name="ring1resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="ring1resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="ring1reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-		<td>
-		<table>
-			<tr>
-				<td class="title2">Right Ring</td>
-			</tr>
-			<tr>
-				<td><input type="text" name="ring2ac" size="5" maxlength="3"> AC<br>
-				<input type="text" name="ring2tohit" size="5" maxlength="4"> + % to Hit<br>
-				<input type="text" name="ring2all" size="5" maxlength="3"> + to All
-				<input type="button" name="ring2set" value="Set" onclick="allsetring2(this.form)"><br>
-				<input type="text" name="ring2str" size="5" maxlength="3"> Str<br>
-				<input type="text" name="ring2mag" size="5" maxlength="3"> Mag<br>
-				<input type="text" name="ring2dex" size="5" maxlength="3"> Dex<br>
-				<input type="text" name="ring2vit" size="5" maxlength="3"> Vit</td>
-				<td style="vertical-align:top;"><input type="text" name="ring2mana" size="5" maxlength="3"> Mana<br>
-				<input type="text" name="ring2life" size="5" maxlength="3"> Life<br>
-				<input type="text" name="ring2resall" size="5" maxlength="2"> + % Res All
-				<input type="button" name="ring2resset" value="Set" onclick="resallsetring2(this.form)"><br>
-				<input type="text" name="ring2resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
-				<input type="text" name="ring2resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
-				<input type="text" name="ring2reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20120125084741/http://www.red-wolf.sakura.ne.jp/dia/statuschk.html">King aka Red-Wolf</i></a></td>
-	</tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Armor</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="armorac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="armorrate" size="5" maxlength="4"> + % AC<br>
+                <input type="text" name="armorall" size="5" maxlength="3"> + to All
+                <input type="button" name="armorset" value="Set" onclick="allsetarmor(this.form)"><br>
+                <input type="text" name="armorstr" size="5" maxlength="3"> Str<br>
+                <input type="text" name="armormag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="armordex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="armorvit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="armormana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="armorlife" size="5" maxlength="3"> Life<br>
+                <input type="text" name="armorresall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="armorresset" value="Set" onclick="resallsetarmor(this.form)"><br>
+                <input type="text" name="armorresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="armorresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="armorreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Shield</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="shieldac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="shieldrate" size="5" maxlength="4"> + % AC<br>
+                <input type="text" name="shieldall" size="5" maxlength="3"> + to All
+                <input type="button" name="shieldset" value="Set" onclick="allsetshield(this.form)"><br>
+                <input type="text" name="shieldstr" size="5" maxlength="3"> Str<br>
+                <input type="text" name="shieldmag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="shielddex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="shieldvit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="shieldmana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="shieldlife" size="5" maxlength="3"> Life<br>
+                <input type="text" name="shieldresall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="shieldresset" value="Set" onclick="resallsetshield(this.form)"><br>
+                <input type="text" name="shieldresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="shieldresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="shieldreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Weapon</td>
+            </tr>
+            <tr>
+                <td><select name="weapontype" size="1">
+                <option selected>Bare Knuckle</option>
+                <option>Sword</option>
+                <option>Bow</option>
+                <option>Mace(Hammer,Maul)</option>
+                <option>Axe</option>
+                <option>Staff</option>
+                <option>Shield</option>
+                </select> Type<br>
+                <input type="text" name="weapondammin" size="5" maxlength="2"> - <input type="text" name="weapondammax" size="5" maxlength="2"> Damage<br>
+                <input type="text" name="weaponrate" size="5" maxlength="4"> + % Damage<br>
+                <input type="text" name="weaponadd" size="5" maxlength="2"> + Damage<br>
+                <input type="text" name="weaponall" size="5" maxlength="3"> + to All
+                <input type="button" name="weaponset" value="Set" onclick="allsetweapon(this.form)"><br>
+                <input type="text" name="weaponstr" size="5" maxlength="3"> Str<br>
+                <input type="text" name="weaponmag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="weapondex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="weaponvit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="type" name="weapontohit" size="5" maxlength="3"> + % to Hit<br>
+                <input type="text" name="weaponac" size="5" maxlength="2"> AC<br>
+                <input type="text" name="weaponmana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="weaponlife" size="5" maxlength="3"> Life<br>
+                <input type="text" name="weaponresall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="weaponresset" value="Set" onclick="resallsetweapon(this.form)"><br>
+                <input type="text" name="weaponresmag" size="3" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="weaponresfire" size="3" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="weaponreslight" size="3" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+        <td style="vertical-align:top;">
+        <table>
+            <tr>
+                <td class="title2">Amulet</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="amuletac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="amulettohit" size="5" maxlength="4"> + % to Hit<br>
+                <input type="text" name="amuletall" size="5" maxlength="3"> + to All
+                <input type="button" name="amuletset" value="Set" onclick="allsetamulet(this.form)"><br>
+                <input type="text" name="amuletstr" size="5" maxlength="3"> Str<br>
+                <input type="text" name="amuletmag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="amuletdex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="amuletvit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="amuletmana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="amuletlife" size="5" maxlength="3"> Life<br>
+                <input type="text" name="amuletresall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="amuletresset" value="Set" onclick="resallsetamulet(this.form)"><br>
+                <input type="text" name="amuletresmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="amuletresfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="amuletreslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Left Ring</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ring1ac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="ring1tohit" size="5" maxlength="4"> + % to Hit<br>
+                <input type="text" name="ring1all" size="5" maxlength="3"> + to All
+                <input type="button" name="ring1set" value="Set" onclick="allsetring1(this.form)"><br>
+                <input type="text" name="ring1str" size="5" maxlength="3"> Str<br>
+                <input type="text" name="ring1mag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="ring1dex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="ring1vit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="ring1mana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="ring1life" size="5" maxlength="3"> Life<br>
+                <input type="text" name="ring1resall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="ring1resset" value="Set" onclick="resallsetring1(this.form)"><br>
+                <input type="text" name="ring1resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="ring1resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="ring1reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table>
+            <tr>
+                <td class="title2">Right Ring</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ring2ac" size="5" maxlength="3"> AC<br>
+                <input type="text" name="ring2tohit" size="5" maxlength="4"> + % to Hit<br>
+                <input type="text" name="ring2all" size="5" maxlength="3"> + to All
+                <input type="button" name="ring2set" value="Set" onclick="allsetring2(this.form)"><br>
+                <input type="text" name="ring2str" size="5" maxlength="3"> Str<br>
+                <input type="text" name="ring2mag" size="5" maxlength="3"> Mag<br>
+                <input type="text" name="ring2dex" size="5" maxlength="3"> Dex<br>
+                <input type="text" name="ring2vit" size="5" maxlength="3"> Vit</td>
+                <td style="vertical-align:top;"><input type="text" name="ring2mana" size="5" maxlength="3"> Mana<br>
+                <input type="text" name="ring2life" size="5" maxlength="3"> Life<br>
+                <input type="text" name="ring2resall" size="5" maxlength="2"> + % Res All
+                <input type="button" name="ring2resset" value="Set" onclick="resallsetring2(this.form)"><br>
+                <input type="text" name="ring2resmag" size="5" maxlength="2"> % Res <span class="magic">Magic</span><br>
+                <input type="text" name="ring2resfire" size="5" maxlength="2"> % Res <span class="fire">Fire</span><br>
+                <input type="text" name="ring2reslight" size="5" maxlength="2"> % Res <span class="norm">Lightning</span></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20120125084741/http://www.red-wolf.sakura.ne.jp/dia/statuschk.html">King aka Red-Wolf</i></a></td>
+    </tr>
 </table>
 </form>
 <!-- //////// Weapon Damage Calculator //////// -->
 <br>
 <form name="DamCheck">
 <table class="blog">
-	<tr>
-		<td class="title"><a name="weapdam"></a>Weapon Damage Calculator</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
-				<script type="text/javascript">
-					with(document){
-		 			for(i=0 ;i<=basmax;i++){
-		 			write("<option>",base[i].name,"</option>");
-					}
-					}
-				</script></select></td>
-				<td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
-				<td>+</td>
-				<td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
-				<td>+</td>
-				<td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
-				<td>=</td>
-				<td>Damage Range<br><input type="text" name="min" size="3" maxlength="3" readonly> - <input type="text" name="max" size="3" maxlength="3" readonly></td>
-			</tr>
-			<tr>
-				<td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
-			</tr>
-		</table><br>
-		<table>
-			<tr>
-				<td>Results:<br>
-				<textarea name="display" cols="77" rows="5" wrap="virtual" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
-	</tr>
+    <tr>
+        <td class="title"><a name="weapdam"></a>Weapon Damage Calculator</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
+                <script type="text/javascript">
+                    with(document){
+                    for(i=0 ;i<=basmax;i++){
+                    write("<option>",base[i].name,"</option>");
+                    }
+                    }
+                </script></select></td>
+                <td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
+                <td>+</td>
+                <td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
+                <td>+</td>
+                <td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
+                <td>=</td>
+                <td>Damage Range<br><input type="text" name="min" size="3" maxlength="3" readonly> - <input type="text" name="max" size="3" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
+            </tr>
+        </table><br>
+        <table>
+            <tr>
+                <td>Results:<br>
+                <textarea name="display" cols="77" rows="5" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+    </tr>
 </table>
 </form>
 <!-- //////// Armor Calculator //////// -->
 <br>
 <form name="AcCheck">
 <table class="blog">
-	<tr>
-		<td class="title" colspan="7"><a name="armor"></a>Armor Calculator</td>
-	</tr>
-	<tr>
-		<td>Armor</td>
-		<td colspan="3">+% Armor</td>
-		<td colspan="2">Result</td>
-	</tr>
-	<tr>
-		<td><input type="text" name="base" size="3" maxlength="2"></td>
-		<td>+</td>
-		<td><input type="text" name="acrate" size="5" maxlength="4"></td>
-		<td>%</td>
-		<td>=</td>
-		<td><input type="text" name="ac" size="4" maxlength="3" readonly></td>
-		<td><input type="button" name="calc" value="Calc" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
-	</tr>
-	<tr>
-		<td colspan="7"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
-	</tr>
+    <tr>
+        <td class="title" colspan="7"><a name="armor"></a>Armor Calculator</td>
+    </tr>
+    <tr>
+        <td>Armor</td>
+        <td colspan="3">+% Armor</td>
+        <td colspan="2">Result</td>
+    </tr>
+    <tr>
+        <td><input type="text" name="base" size="3" maxlength="2"></td>
+        <td>+</td>
+        <td><input type="text" name="acrate" size="5" maxlength="4"></td>
+        <td>%</td>
+        <td>=</td>
+        <td><input type="text" name="ac" size="4" maxlength="3" readonly></td>
+        <td><input type="button" name="calc" value="Calculate" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
+    </tr>
+    <tr>
+        <td colspan="7"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+    </tr>
 </table>
 </form>
 <!-- //////// Shop qlvl Calculator //////// -->
 <br>
 <form id="calc">
 <table class="blog">
-	<tr>
-		<td class="title"><a name="shopqlvl"></a>Shop qlvl Calculator</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
-				<td><button type="submit">Calculate</button></td>
-			</tr>
-		</table><br>
-		<table>
-			<tr class="gris">
-				<td colspan="2">Griswold</td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td colspan="2"><textarea id="grisresult" cols="24" rows="8" wrap="virtual" readonly></textarea></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td colspan="2">Wirt:</td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td colspan="2"><textarea id="wirtresult" cols="18" rows="2" wrap="virtual" readonly></textarea></td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td colspan="2">Adria(MP):</td>
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<td colspan="2"><textarea id="adriaresult" cols="49" rows="3" wrap="virtual" readonly></textarea></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	<tr>
-		<td><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">@Royal#4121</i></a></td>
-	</tr>
+    <tr>
+        <td class="title"><a name="shopqlvl"></a>Shop qlvl Calculator</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
+                <td><button type="submit">Calculate</button></td>
+            </tr>
+        </table><br>
+        <table>
+            <tr class="gris">
+                <td colspan="2">Griswold</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="grisresult" cols="24" rows="8" readonly></textarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2">Wirt:</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="wirtresult" cols="18" rows="2" readonly></textarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2">Adria(MP):</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="adriaresult" cols="49" rows="3" readonly></textarea></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">@Royal#4121</i></a></td>
+    </tr>
 </table>
 </form>
 <br>
 <!-- //////// Orkin Price Calculator //////// -->
 <form name="SelectMenu">
 <table class="blog">
-	<tr>
-		<td class="title" colspan="2"><a name="orkin"></a>Orkin Price Calculator</td>		
-	</tr>
-	<tr>
-		<td class="warn" colspan="2">Warning: For some affixes price is inaccurate, but close, when values other than the min/max are selected.</td>
-	</tr>
-	<tr>
-		<td>
-		<table>
-			<tr>
-				<td>Prefix<br>
-				<select name="Prefi" onChange="changeprefi(this.form)">
-				<script type="text/javascript">
-				with(document){
-				for(i=0;i<prefi_trueLength;i++){
-				write("<option>",prefiopt[i],"</option>");
-				}
-				}
-				</script></select></td>
-				<td>Item<br>
-				<select name="Item" onChange="change(this.form)">
-				<script type="text/javascript">
-				with(document){
-				for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
-				</script></select></td>
-				<td>Suffix<br>
-				<select name="Suffi" onChange="changesuffi(this.form)">
-				<script type="text/javascript">
-				with(document){
-				for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
-				</script></select></td>
-			</tr>
-			<tr>
-				<td>Prefix Value<br>
-				<select name="PrefiValue" onChange="changeprefivalue(this.form)">
-				<option>no prefix selected yet</option>
-				<script type="text/javascript">
-				with(document){
-				for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
-				</script></select></td>
-				<td>Price<br><input type="text" name="TotalCost" value="0" readonly></td>
-				<td>Suffix Value<br>
-				<select name="SuffiValue" onChange="changesuffivalue(this.form)">
-				<option>no suffix selected yet</option>
-				<script type="text/javascript">
-				with(document){
-				for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
-				</script></select></td>
-			</tr>
-		</table>
-		</td>
-		<td>
-		<table>
-			<tr>
-				<td><input type="radio" name="Location" value="Gri" onclick="changeprice()" checked> Griswald's/Adria's Price</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="Location" value="Wir" onclick="changeprice()"> Wirt's Price</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="Location" value="Resale" onclick="changeprice()"> Resale Price</td>
-			</tr>
-		</table></td>
-	</tr>
-	<tr>
-		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
-	</tr>
+    <tr>
+        <td class="title" colspan="2"><a name="orkin"></a>Orkin Price Calculator</td>		
+    </tr>
+    <tr>
+        <td class="warn" colspan="2">Warning: For some affixes price is inaccurate, but close, when values other than the min/max are selected.</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Prefix<br>
+                <select name="Prefi" onChange="changeprefi(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<prefi_trueLength;i++){
+                write("<option>",prefiopt[i],"</option>");
+                }
+                }
+                </script></select></td>
+                <td>Item<br>
+                <select name="Item" onChange="change(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
+                </script></select></td>
+                <td>Suffix<br>
+                <select name="Suffi" onChange="changesuffi(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
+                </script></select></td>
+            </tr>
+            <tr>
+                <td>Prefix Value<br>
+                <select name="PrefiValue" onChange="changeprefivalue(this.form)">
+                <option>no prefix selected yet</option>
+                <script type="text/javascript">
+                with(document){
+                for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
+                </script></select></td>
+                <td>Price<br><input type="text" name="TotalCost" value="0" readonly></td>
+                <td>Suffix Value<br>
+                <select name="SuffiValue" onChange="changesuffivalue(this.form)">
+                <option>no suffix selected yet</option>
+                <script type="text/javascript">
+                with(document){
+                for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
+                </script></select></td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table>
+            <tr>
+                <td><input type="radio" name="Location" value="Gri" onclick="changeprice()" checked> Griswald's/Adria's Price</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Location" value="Wir" onclick="changeprice()"> Wirt's Price</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Location" value="Resale" onclick="changeprice()"> Resale Price</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
+    </tr>
 <input type="hidden" value="0" name="PrefiCost">
 <input type="hidden" value="0" name="SuffiCost">
 <input type="hidden" value="0" name="PrefiDebug">
 <input type="hidden" value="0" name="SuffiDebug">
 <script type="text/javascript">
-     change();
-     }
+    change();
+    }
 </script>
 </form>
 </table>
@@ -1610,66 +1977,65 @@ updated();
 <!-- //////// Life/Mana Calculator //////// -->
 <form name="LifeManaForm">
 <table class="blog" border="0">
-	<tr>
-		<td class="title" colspan="2"><a name="lifemana"></a>Life/Mana Calculator</td>		
-	</tr>
-	<tr>
-		<td>Character Class:</td>
-		<td>
-		<select name="CharClass">
-		<option value="Warrior">Warrior
-		<option value="Rogue">Rogue
-		<option value="Sorcerer">Sorcerer
-		<option value="Monk">Monk
-		<option value="Bard">Bard
-		<option value="Barbarian">Barbarian
-		</select></td>
-		<td style="text-align: right;">Character Level:</td>
-		<td>
-		<input type="text" name="CharLevel" size="3" maxlength="2"></td>
-	</tr>
-	<tr>
-		<td>Base Magic:</td>
-		<td><input type="text" name="BaseMagic" size="3" maxlength="3"></td>
-		<td style="text-align: right;">Final Magic:</td>
-		<td><input type="text" name="FinalMagic" size="3" maxlength="3"></td>
-	</tr>
-	<tr>
-		<td>Mana Modifiers:</td>
-		<td colspan="3"><input type="text" name="ManaMods" size="32"></td>
-	</tr>
-	<tr>
-		<td>Base Vitality:</td>
-		<td><input type="text" name="BaseVitality" size="3" maxlength="3"></td>
-		<td style="text-align: right;">Final Vitality:</td>
-		<td><input type="text" name="FinalVitality" size="3" maxlength="3"></td>
-	</tr>
-	<tr>
-		<td>Life Modifiers:</td>
-		<td colspan="3"><input type="text" name="LifeMods" size="32"></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td colspan="3">
-		<input type="button" value="Set Min" onclick="ResetForm(CharClass)">
-		<input type="button" value="Set Max" onclick="MaxForm(CharClass)">
-		<input type="reset" name="reset" value="Reset">
-		<input type="button" value="Calculate" onclick="GoButton()"></td>
-	</tr>
-	<tr>
-		<td colspan="4">Results:<br><textarea name="alert" id="alert" rows=2 cols=39 wrap="soft" readonly>Modifiers are added as such: +1-2+3-4</textarea></td>
-	</tr>
-	<tr>
-		<td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20050216223839/http://www.stormpages.com/jc316/diablo/vtlifemana.html">Virgil Tibbs</i></a></td>
-	</tr>
+    <tr>
+        <td class="title" colspan="2"><a name="lifemana"></a>Life/Mana Calculator</td>		
+    </tr>
+    <tr>
+        <td>Character Class:</td>
+        <td>
+            <select name="CharClass">
+            <option value="Warrior">Warrior
+            <option value="Rogue">Rogue
+            <option value="Sorcerer">Sorcerer
+            <option value="Monk">Monk
+            <option value="Bard">Bard
+            <option value="Barbarian">Barbarian
+        </select></td>
+        <td style="text-align: right;">Character Level:</td>
+        <td><input type="text" name="CharLevel" size="3" maxlength="2"></td>
+    </tr>
+    <tr>
+        <td>Base Magic:</td>
+        <td><input type="text" name="BaseMagic" size="3" maxlength="3"></td>
+        <td style="text-align: right;">Final Magic:</td>
+        <td><input type="text" name="FinalMagic" size="3" maxlength="3"></td>
+    </tr>
+    <tr>
+        <td>Mana Modifiers:</td>
+        <td colspan="3"><input type="text" name="ManaMods" size="32"></td>
+    </tr>
+    <tr>
+        <td>Base Vitality:</td>
+        <td><input type="text" name="BaseVitality" size="3" maxlength="3"></td>
+        <td style="text-align: right;">Final Vitality:</td>
+        <td><input type="text" name="FinalVitality" size="3" maxlength="3"></td>
+    </tr>
+    <tr>
+        <td>Life Modifiers:</td>
+        <td colspan="3"><input type="text" name="LifeMods" size="32"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="3">
+        <input type="button" value="Set Min" onclick="ResetForm(CharClass)">
+        <input type="button" value="Set Max" onclick="MaxForm(CharClass)">
+        <input type="reset" name="reset" value="Reset">
+        <input type="button" value="Calculate" onclick="GoButton()"></td>
+    </tr>
+    <tr>
+        <td colspan="4">Results:<br><textarea name="lifmantxt" id="lifmantxt" rows=2 cols=39 wrap="soft" readonly>Modifiers are added as such: +1-2+3-4</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20050216223839/http://www.stormpages.com/jc316/diablo/vtlifemana.html">Virgil Tibbs</i></a></td>
+    </tr>
 </table>
 </form>
 <br>
 <table width="80%">
-	<tr>
-		<td style="text-align: center;">
-		<span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
-	</tr>
+    <tr>
+        <td style="text-align: center;">
+        <span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
+    </tr>
 </table>
 </center>
 </body>

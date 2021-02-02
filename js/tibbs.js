@@ -240,50 +240,50 @@ function GoButton()
 
 	if(!Rexp.test(LifeManaForm.CharLevel.value))
 	{
-		var charl = document.getElementById('alert');
+		var charl = document.getElementById('lifmantxt');
 		charl.value = "Character Level must be a whole number.";
 		return
 	}
 
 	if(!Rexp.test(LifeManaForm.BaseMagic.value))
 	{
-		var bmag = document.getElementById('alert');
+		var bmag = document.getElementById('lifmantxt');
 		bmag.value = "Base Magic must be a whole number.";
 		return
 	}
 
 	if(!Rexp.test(LifeManaForm.FinalMagic.value))
 	{
-		var fmag = document.getElementById('alert');
+		var fmag = document.getElementById('lifmantxt');
 		fmag.value = "Final Magic must be a whole number.";
 		return
 	}
 
 	if(!Rexp.test(LifeManaForm.BaseVitality.value))
 	{
-		var bvit = document.getElementById('alert');
+		var bvit = document.getElementById('lifmantxt');
 		bvit.value = "Base Vitality must be a whole number.";
 		return
 	}
 
 	if(!Rexp.test(LifeManaForm.FinalVitality.value))
 	{
-		var fvit = document.getElementById('alert');
+		var fvit = document.getElementById('lifmantxt');
 		fvit.value = "Final Vitality must be a whole number.";
 		return
 	}
 
 	if(!Rexp3.test(LifeManaForm.LifeMods.value))
 	{
-		var lifem = document.getElementById('alert');
-		lifem.value = "Incorrect formatting of Life Modifiers.";
+		var lifem = document.getElementById('lifmantxt');
+		lifem.value = "Incorrect formatting of Life Modifiers.\nModifiers are added as such: +1-2+3-4";
 		return
 	}
 
 	if(!Rexp3.test(LifeManaForm.ManaMods.value))
 	{
-		var manam = document.getElementById('alert');
-		manam.value = "Incorrect formatting of Mana Modifiers.";
+		var manam = document.getElementById('lifmantxt');
+		manam.value = "Incorrect formatting of Mana Modifiers.\nModifiers are added as such: +1-2+3-4";
 		return
 	}
 
@@ -413,7 +413,7 @@ function GoButton()
 
 	else
 	{
-		var lifex = document.getElementById('alert');
+		var lifex = document.getElementById('lifmantxt');
 		lifex.value = "You may only have up to 7 life modifiers.";
 		return
 	}
@@ -482,14 +482,14 @@ function GoButton()
 
 	else
 	{
-		var manax = document.getElementById('alert');
+		var manax = document.getElementById('lifmantxt');
 		manax.value = "You may only have up to 7 mana modifiers.";
 		return
 	}
 
 	// Display Output
 
-	var OutString = document.getElementById('alert');
+	var OutString = document.getElementById('lifmantxt');
 	OutString.value = "Your total Life should be: " + Life + "\nYour total Mana should be: " + Mana;
 }
 
