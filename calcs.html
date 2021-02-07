@@ -1098,14 +1098,12 @@ updated();
                 <td>
                 <table>
                     <tr>
-                        <td>Class: 
-                            <select name="player" onchange="parsePlayer()">
-                            <option value="Warrior">Warrior
-                            </option><option value="Rogue">Rogue
-                            </option><option value="Sorceror">Sorceror
-                            </option><option value="Monk">Monk
-                            </option><option value="Bard">Bard
-                            </option><option value="Barbarian">Barbarian
+                        <td>Game: 
+                            <select name="game" onchange="parseGame()">
+                            <option value="MP" diablo="">MP Diablo
+                            </option><option value="SP" diablo="">SP Diablo
+                            </option><option value="MP" hellfire="">MP Hellfire
+                            </option><option value="SP" hellfire="">SP Hellfire
                             </option></select></td>
                         <td>Monster: 
                             <select name="extra" onchange="parseExtra()">
@@ -1200,7 +1198,24 @@ updated();
                             </option></select></td>
                         <td>To-Hit%: <input name="tohit_fld" value="" size="6" maxsize="6" onchange="parseTohit()" type="text"></td>
                     </tr>
-                    <td>Clvl: 
+                        <td>Class: 
+                            <select name="player" onchange="parsePlayer()">
+                            <option value="Warrior">Warrior
+                            </option><option value="Rogue">Rogue
+                            </option><option value="Sorceror">Sorceror
+                            </option><option value="Monk">Monk
+                            </option><option value="Bard">Bard
+                            </option><option value="Barbarian">Barbarian
+                            </option></select></td>
+                        <td>Difficulty: 
+                            <select name="difficulty" onchange="parseDifficulty()">
+                            <option value="Normal">Normal
+                            </option><option value="Nightmare">Nightmare
+                            </option><option value="Hell">Hell
+                            </option></select></td>
+                        <td>Dex: <input name="dex_fld" value="" size="6" maxsize="6" onchange="parseDexterity()" type="text"></td>
+                    <tr>
+                        <td>Clvl: 
                             <select name="clvl" onchange="parseClvl()">
                             <option value="1">1
                             </option><option value="2">2
@@ -1253,21 +1268,6 @@ updated();
                             </option><option value="49">49
                             </option><option value="50">50
                             </option></select></td>
-                        <td>Difficulty: 
-                            <select name="difficulty" onchange="parseDifficulty()">
-                            <option value="Normal">Normal
-                            </option><option value="Nightmare">Nightmare
-                            </option><option value="Hell">Hell
-                            </option></select></td>
-                        <td>Dex: <input name="dex_fld" value="" size="6" maxsize="6" onchange="parseDexterity()" type="text"></td>
-                    <tr>
-                            <td>Game: 
-                            <select name="game" onchange="parseGame()">
-                            <option value="MP" diablo="">MP Diablo
-                            </option><option value="SP" diablo="">SP Diablo
-                            </option><option value="MP" hellfire="">MP Hellfire
-                            </option><option value="SP" hellfire="">SP Hellfire
-                            </option></select></td>
                         <td>Dlvl: 
                             <select name="dlvl" onchange="parseDlvl()">
                             <option value="1">1
@@ -1299,7 +1299,7 @@ updated();
                     </tr>
                     <tr>
                         <td colspan="2" align="left"><input value="Calculate" onclick="bothatonce()" type="button"></td>
-                        <td align="right"><input value="RESET" onclick="reset_form()" type="button"></td>
+                        <td align="right"><input value="Reset" onclick="reset_form()" type="button"></td>
                     </tr>
                     <tr>
                         <td colspan="3"><textarea name="results" rows="12" cols="67"></textarea>
