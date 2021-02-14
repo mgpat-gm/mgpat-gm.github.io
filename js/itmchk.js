@@ -32,7 +32,7 @@ function MakeBasee( name , kind , level , price , effect ){
 
 //-- Unique Item Data Object ºîÀ® -------------------------
 
-function MakeUniq( base , minlvl , maxlvl , effect ){
+function MakeUniq( basee , minlvl , maxlvl , effect ){
  this.basee =	basee;
  this.minlvl =	minlvl;
  this.maxlvl =  maxlvl;
