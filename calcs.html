@@ -17,6 +17,7 @@
 <script type="text/javascript" src="js/char.js"></script>
 <script type="text/javascript" src="js/cth.js"></script>
 <script type="text/javascript" src="js/internals.js"></script>
+<script type="text/javascript" src="js/itmchk.js"></script>
 <!-- Must have jquery before qlvl.js -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/monster_data.js"></script>
@@ -187,92 +188,97 @@ button {
     </p>
 </div>
 <div class="banner2">
-    <p> the_Langolier:
+    <p> Item:
     <br>
     <br>
-        <a title="Calculate the price of any item." href="#itemprice">Price</a>
+        <a title="This shows qlvls, stats, levels, and prices of items" href="#prem">Premium</a>
     <br>
         <a title="Calculate the rarity of any item." href="#itemrarity">Rarity</a>
     <br>
-        <a title="Calculate chance to hit." href="#cthacblock">CTH</a>
+        <a title="Calculate the price of any item." href="#itemprice">Price</a>
     <br>
-        <a title="Calculate chance to hit." href="#cthacblock">AC</a>
+        <a title="See what qlvl items you'll find at the vendors." href="#shopqlvl">Shop qlvl</a>
     <br>
-        <a title="Calculate chance to block" href="#cthacblock">Block</a>
-    </p>
-<br>
-    <p> Moriah:
-    <br>
-    <br>
-        <a title="Diablo Combat Calculator" href="#combatcalc">AC & To Hit</a>
-    </p>
-<br>
-    <p> Red-Wolf:
-    <br>
-    <br>
-        <a title="Select item stats and character skills to calculate character stats." href="#charstats">Char Stats</a>
+        <a title="Another price Calculator with no price limit" href="#orkin">Orkin Price</a>
     <br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#weapdam">Weapon</a>
     <br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#armor">Armor</a>
     </p>
 <br>
-    <p> Royal:
+    <p> Combat:
     <br>
     <br>
-        <a title="See what qlvl items you'll find at the vendors." href="#shopqlvl">Shop qlvl</a>
+        <a title="Diablo Combat Calculator" href="#combatcalc">AC & To Hit</a>
+    <br>
+        <a title="Calculate chance to hit." href="#cthacblock">AC</a>
+    <br>
+        <a title="Calculate chance to block" href="#cthacblock">Block</a>
+    <br>
+        <a title="Calculate chance to hit." href="#cthacblock">CTH</a>
     </p>
 <br>
-    <p> OrkinMan:
+    <p> Character:
     <br>
     <br>
-        <a title="Another price Calculator with no price limit" href="#orkin">Orkin Price</a>
-    </p>
-<br>
-    <p> Virgil Tibbs:
-    <br>
+        <a title="Select item stats and character skills to calculate character stats." href="#charstats">Char Stats</a>
     <br>
         <a title="Calculate what your Life/Mana should be" href="#lifemana">Life/Mana</a>
     </p>
 </div>
 <center>
-<!-- //////// Item Price Calculator //////// -->
-<form Name="SelectItm">
+<br>
+<!-- //////// Premium Item Checker //////// -->
+<form name="premium">
 <table class="blog">
     <tr>
-        <td class="title"><a name="itemprice"></a>Item Price Calculator</td>
+        <td class="title"><a name="prem"></a>Premium Item Checker</td>
     </tr>
     <tr>
-        <td align="center">
+        <td>
         <table>
             <tr>
-                <td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
+                <td>Prefix:</td>
+                <td>Base Item:</td>
+                <td>Suffix:</td>
+                <td>Price</td>
+                <td>Reset</td>
             </tr>
             <tr>
-                <td>Prefix:<br><select name="Prefx" disabled onChange="updatePrefx();calcPrice();"></select></td>
-                <td>Base Item:<br><select name="Bse" disabled onChange="updateSource();calcPrice();"></select></td>
-                <td>Suffix:<br><select name="Suffx" disabled onChange="updateSuffx();calcPrice();"></select></td>
-            </tr>
-            <tr>
-                <td>Value:<br><select name="Pvalue" disabled onChange="calcPrice();"></select></td>
                 <td>
-                    <input name="Source" type="radio" value="Gris" onclick="calcPrice();" checked><a id="Gris">Griswold<br>
-                    <input name="Source" type="radio" value="Wirt" onclick="calcPrice();"><a id="Wirt">Wirt<br>
-                    <input name="Source" type="radio" value="Sale" onclick="calcPrice();"><a id="Sale">Resale</td>
-                <td>Value:<br><select name="Svalue" disabled onChange="calcPrice();"></select></td>
+                    <select name="prefixx" size="1" onChange="ChgPrefix(this.form)">
+                    <script type="text/javascript">
+                    with(document){
+                    for(i=0 ;i<=premax;i++){
+                    write("<option>",prefixx[prelst[i]].name,"</option>");}}</script></select></td>
+                <td>
+                    <select name="basee" size="1" onChange="ChgBasee(this.form)">
+                    <script type="text/javascript">
+                    with(document){
+                    for(i=0 ;i<=basmaxx;i++){
+                    write("<option>",basee[baslst[i]].name,"</option>");}}</script></select></td>
+                <td>
+                    <select name="suffixx" size="1" onChange="ChgSuffix(this.form)">
+                    <script type="text/javascript">
+                    with(document){
+                    for(i=0 ;i<=sufmax;i++){
+                    write("<option>",suffixx[suflst[i]].name,"</option>");}}</script></select></td>
+                <td>
+                    <select name="calcprice" size="1" onChange="ChgMode(this.form)">
+                    <option selected>Off</option>
+                    <option>On</option>
+                    </select></td>
+                <td><input type="reset" value="Reset" onClick="Init(this.form)"></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                <textarea name="display1" cols=80 rows=11>G/A Price = Cost to purchase from Griswold or Adria&#13;&#10;"Source Level" includes the +4 bonus unique monsters have.</textarea><br>
+                <textarea name="display2" cols=80 rows=10>Item types key:&#13;&#10;W = Weapons (Axes, Clubs and Swords)&#13;&#10;B = Bows&#13;&#10;T = Staves&#13;&#10;A = Armor and Helms&#13;&#10;S = Shields&#13;&#10;J = Jewelry</textarea><br>
+                <textarea name="display3" cols=80 rows=11>Turn price on to see detailed breakdown of G/A prices.&#13;&#10;For Wirt and resale prices, scroll down to Item Price Calculator.</textarea></td>
             </tr>
         </table></td>
     <tr>
-        <td>Price:</td>
-    </tr>
-    <tr class="magic">
-        <td name="Price" id="Price">0</td>
-    </tr>
-    <script type="text/javascript">
-    reset();
-    </script>
-    <tr>
-        <td><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120125114431/http://www.red-wolf.sakura.ne.jp/dia/premiumchk.html">King aka Red-Wolf</i></a></td>
     </tr>
 </table>
 </form>
@@ -338,6 +344,604 @@ button {
     </tr>
     <tr>
         <td><i><br>Source: <a href="https://web.archive.org/web/20120530085029/http://www.dpsyche.com/rarity.html">Eso aka the_Langolier</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
+<!-- //////// Item Price Calculator //////// -->
+<form Name="SelectItm">
+<table class="blog">
+    <tr>
+        <td class="title"><a name="itemprice"></a>Item Price Calculator</td>
+    </tr>
+    <tr>
+        <td align="center">
+        <table>
+            <tr>
+                <td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
+            </tr>
+            <tr>
+                <td>Prefix:<br><select name="Prefx" disabled onChange="updatePrefx();calcPrice();"></select></td>
+                <td>Base Item:<br><select name="Bse" disabled onChange="updateSource();calcPrice();"></select></td>
+                <td>Suffix:<br><select name="Suffx" disabled onChange="updateSuffx();calcPrice();"></select></td>
+            </tr>
+            <tr>
+                <td>Value:<br><select name="Pvalue" disabled onChange="calcPrice();"></select></td>
+                <td>
+                    <input name="Source" type="radio" value="Gris" onclick="calcPrice();" checked><a id="Gris">Griswold<br>
+                    <input name="Source" type="radio" value="Wirt" onclick="calcPrice();"><a id="Wirt">Wirt<br>
+                    <input name="Source" type="radio" value="Sale" onclick="calcPrice();"><a id="Sale">Resale</td>
+                <td>Value:<br><select name="Svalue" disabled onChange="calcPrice();"></select></td>
+            </tr>
+        </table></td>
+    <tr>
+        <td>Price:</td>
+    </tr>
+    <tr class="magic">
+        <td name="Price" id="Price">0</td>
+    </tr>
+    <script type="text/javascript">
+    reset();
+    </script>
+    <tr>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120530085023/http://www.dpsyche.com/price.html">Eso aka the_Langolier</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
+<!-- //////// Shop qlvl Calculator //////// -->
+<form id="calc">
+<table class="blog">
+    <tr>
+        <td class="title"><a name="shopqlvl"></a>Shop qlvl Calculator</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
+                <td><button type="submit">Calculate</button></td>
+            </tr>
+        </table><br>
+        <table>
+            <tr class="gris">
+                <td colspan="2">Griswold</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="grisresult" cols="24" rows="8" readonly></textarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2">Wirt:</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="wirtresult" cols="18" rows="2" readonly></textarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2">Adria(MP):</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="2"><textarea id="adriaresult" cols="49" rows="3" readonly></textarea></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">@Royal#4121</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
+<!-- //////// Orkin Price Calculator //////// -->
+<form name="SelectMenu">
+<table class="blog">
+    <tr>
+        <td class="title" colspan="2"><a name="orkin"></a>Orkin Price Calculator</td>		
+    </tr>
+    <tr>
+        <td class="warn" colspan="2">Warning: For some affixes price is inaccurate, but close, when values other than the min/max are selected.</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Prefix<br>
+                <select name="Prefi" onChange="changeprefi(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<prefi_trueLength;i++){
+                write("<option>",prefiopt[i],"</option>");
+                }
+                }
+                </script></select></td>
+                <td>Item<br>
+                <select name="Item" onChange="change(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
+                </script></select></td>
+                <td>Suffix<br>
+                <select name="Suffi" onChange="changesuffi(this.form)">
+                <script type="text/javascript">
+                with(document){
+                for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
+                </script></select></td>
+            </tr>
+            <tr>
+                <td>Prefix Value<br>
+                <select name="PrefiValue" onChange="changeprefivalue(this.form)">
+                <option>no prefix selected yet</option>
+                <script type="text/javascript">
+                with(document){
+                for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
+                </script></select></td>
+                <td>Price<br><input type="text" name="TotalCost" value="0" readonly></td>
+                <td>Suffix Value<br>
+                <select name="SuffiValue" onChange="changesuffivalue(this.form)">
+                <option>no suffix selected yet</option>
+                <script type="text/javascript">
+                with(document){
+                for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
+                </script></select></td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table>
+            <tr>
+                <td><input type="radio" name="Location" value="Gri" onclick="changeprice()" checked> Griswold's/Adria's Price</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Location" value="Wir" onclick="changeprice()"> Wirt's Price</td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Location" value="Resale" onclick="changeprice()"> Resale Price</td>
+            </tr>
+        </table></td>
+    </tr>
+    <tr>
+        <td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
+    </tr>
+<input type="hidden" value="0" name="PrefiCost">
+<input type="hidden" value="0" name="SuffiCost">
+<input type="hidden" value="0" name="PrefiDebug">
+<input type="hidden" value="0" name="SuffiDebug">
+<script type="text/javascript">
+    change();
+    }
+</script>
+</form>
+</table>
+<br>
+<!-- //////// Weapon Damage Calculator //////// -->
+<form name="DamCheck">
+<table class="blog">
+    <tr>
+        <td class="title"><a name="weapdam"></a>Weapon Damage Calculator</td>
+    </tr>
+    <tr>
+        <td>
+        <table>
+            <tr>
+                <td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
+                <script type="text/javascript">
+                    with(document){
+                    for(i=0 ;i<=basmax;i++){
+                    write("<option>",base[i].name,"</option>");
+                    }
+                    }
+                </script></select></td>
+                <td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
+                <td>+</td>
+                <td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
+                <td>+</td>
+                <td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
+                <td>=</td>
+                <td>Damage Range<br><input type="text" name="min" size="3" maxlength="3" readonly> - <input type="text" name="max" size="3" maxlength="3" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
+            </tr>
+        </table><br>
+        <table>
+            <tr>
+                <td>Results:<br>
+                <textarea name="display" cols="77" rows="5" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
+<!-- //////// Armor Calculator //////// -->
+<form name="AcCheck">
+<table class="blog">
+    <tr>
+        <td class="title" colspan="7"><a name="armor"></a>Armor Calculator</td>
+    </tr>
+    <tr>
+        <td>Armor</td>
+        <td colspan="3">+% Armor</td>
+        <td colspan="2">Result</td>
+    </tr>
+    <tr>
+        <td><input type="text" name="base" size="3" maxlength="2"></td>
+        <td>+</td>
+        <td><input type="text" name="acrate" size="5" maxlength="4"></td>
+        <td>%</td>
+        <td>=</td>
+        <td><input type="text" name="ac" size="4" maxlength="3" readonly></td>
+        <td><input type="button" name="calc" value="Calculate" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
+    </tr>
+    <tr>
+        <td colspan="7"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
+<!-- //////// Combat Calculator //////// -->
+<form name="combat">
+<table class="blog">
+    <tr>
+        <td class="title"><a name="combatcalc"></a>AC & To Hit Calculator</td>
+    </tr>
+        <td>
+        <table>
+            <tr>
+                <td>
+                <table>
+                    <tr>
+                        <td>Game: 
+                            <select name="game" onchange="parseGame()">
+                            <option value="MP" diablo="">MP Diablo
+                            </option><option value="SP" diablo="">SP Diablo
+                            </option><option value="MP" hellfire="">MP Hellfire
+                            </option><option value="SP" hellfire="">SP Hellfire
+                            </option></select></td>
+                        <td>Monster: 
+                            <select name="extra" onchange="parseExtra()">
+                            <option value="Zombie">Zombie
+                            </option><option value="Ghoul">Ghoul
+                            </option><option value="Rotting" carcass="">Rotting Carcass
+                            </option><option value="Black" death="">Black Death
+                            </option><option value="Fallen" one="" (spear)="">Fallen One (spear)
+                            </option><option value="Carver" (spear)="">Carver (spear)
+                            </option><option value="Devil" kin="" (spear)="">Devil Kin (spear)
+                            </option><option value="Dark" one="" (spear)="">Dark One (spear)
+                            </option><option value="Fallen" one="" (sword)="">Fallen One (sword)
+                            </option><option value="Carver" (sword)="">Carver (sword)
+                            </option><option value="Devil" kin="" (sword)="">Devil Kin (sword)
+                            </option><option value="Dark" one="" (sword)="">Dark One (sword)
+                            </option><option value="Skeleton">Skeleton
+                            </option><option value="Corpse" axe="">Corpse Axe
+                            </option><option value="Burning" dead="">Burning Dead
+                            </option><option value="Horror">Horror
+                            </option><option value="Skeleton" archer="">Skeleton Archer
+                            </option><option value="Corpse" bow="">Corpse Bow
+                            </option><option value="Burning" dead="" archer="">Burning Dead Archer
+                            </option><option value="Horror" archer="">Horror Archer
+                            </option><option value="Skeleton" captain="">Skeleton Captain
+                            </option><option value="Corpse" captain="">Corpse Captain
+                            </option><option value="Burning" dead="" captain="">Burning Dead Captain
+                            </option><option value="Horror" captain="">Horror Captain
+                            </option><option value="Scavenger">Scavenger
+                            </option><option value="Plague" eater="">Plague Eater
+                            </option><option value="Shadow" beast="">Shadow Beast
+                            </option><option value="Bone" gasher="">Bone Gasher
+                            </option><option value="Fiend">Fiend
+                            </option><option value="Blink">Blink
+                            </option><option value="Gloom">Gloom
+                            </option><option value="Familiar">Familiar
+                            </option><option value="Hidden">Hidden
+                            </option><option value="Stalker">Stalker
+                            </option><option value="Unseen">Unseen
+                            </option><option value="Illusion" weaver="">Illusion Weaver
+                            </option><option value="Flesh" clan="">Flesh Clan
+                            </option><option value="Stone" clan="">Stone Clan
+                            </option><option value="Fire" clan="">Fire Clan
+                            </option><option value="Night" clan="">Night Clan
+                            </option><option value="Flesh" clan="" archer="">Flesh Clan Archer
+                            </option><option value="Stone" clan="" archer="">Stone Clan Archer
+                            </option><option value="Fire" clan="" archer="">Fire Clan Archer
+                            </option><option value="Night" clan="" archer="">Night Clan Archer
+                            </option><option value="Overlord">Overlord
+                            </option><option value="Mud" man="">Mud Man
+                            </option><option value="Toad" demon="">Toad Demon
+                            </option><option value="Flayed" one="">Flayed One
+                            </option><option value="Winged-Demon">Winged-Demon
+                            </option><option value="Gargoyle">Gargoyle
+                            </option><option value="Blood" claw="">Blood Claw
+                            </option><option value="Death" wing="">Death Wing
+                            </option><option value="Magma" demon="">Magma Demon
+                            </option><option value="Blood" stone="">Blood Stone
+                            </option><option value="Hell" stone="">Hell Stone
+                            </option><option value="Lava" lord="">Lava Lord
+                            </option><option value="Horned" demon="">Horned Demon
+                            </option><option value="Mud" runner="">Mud Runner
+                            </option><option value="Frost" charger="">Frost Charger
+                            </option><option value="Obsidian" lord="">Obsidian Lord
+                            </option><option value="Acid" beast="">Acid Beast
+                            </option><option value="Poison" spitter="">Poison Spitter
+                            </option><option value="Pit" beast="">Pit Beast
+                            </option><option value="Lava" maw="">Lava Maw
+                            </option><option value="Red" storm="">Red Storm
+                            </option><option value="Storm" rider="">Storm Rider
+                            </option><option value="Storm" lord="">Storm Lord
+                            </option><option value="Maelstrom">Maelstrom
+                            </option><option value="Slayer">Slayer
+                            </option><option value="Guardian">Guardian
+                            </option><option value="Vortex" lord="">Vortex Lord
+                            </option><option value="Balrog">Balrog
+                            </option><option value="Cave" viper="">Cave Viper
+                            </option><option value="Fire" drake="">Fire Drake
+                            </option><option value="Gold" viper="">Gold Viper
+                            </option><option value="Azure" drake="">Azure Drake
+                            </option><option value="Succubus">Succubus
+                            </option><option value="Snow" witch="">Snow Witch
+                            </option><option value="Hell" spawn="">Hell Spawn
+                            </option><option value="Soul" burner="">Soul Burner
+                            </option><option value="Black" knight="">Black Knight
+                            </option><option value="Doom" guard="">Doom Guard
+                            </option><option value="Steel" lord="">Steel Lord
+                            </option><option value="Blood" knight="">Blood Knight
+                            </option><option value="Counselor">Counselor
+                            </option><option value="Magistrate">Magistrate
+                            </option><option value="Cabalist">Cabalist
+                            </option><option value="Advocate">Advocate
+                            </option></select></td>
+                        <td>To-Hit%: <input name="tohit_fld" value="" size="6" maxsize="6" onchange="parseTohit()" type="text"></td>
+                    </tr>
+                        <td>Class: 
+                            <select name="player" onchange="parsePlayer()">
+                            <option value="Warrior">Warrior
+                            </option><option value="Rogue">Rogue
+                            </option><option value="Sorceror">Sorceror
+                            </option><option value="Monk">Monk
+                            </option><option value="Bard">Bard
+                            </option><option value="Barbarian">Barbarian
+                            </option></select></td>
+                        <td>Difficulty: 
+                            <select name="difficulty" onchange="parseDifficulty()">
+                            <option value="Normal">Normal
+                            </option><option value="Nightmare">Nightmare
+                            </option><option value="Hell">Hell
+                            </option></select></td>
+                        <td>Dex: <input name="dex_fld" value="" size="6" maxsize="6" onchange="parseDexterity()" type="text"></td>
+                    <tr>
+                        <td>Clvl: 
+                            <select name="clvl" onchange="parseClvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option><option value="21">21
+                            </option><option value="22">22
+                            </option><option value="23">23
+                            </option><option value="24">24
+                            </option><option value="25">25
+                            </option><option value="26">26
+                            </option><option value="27">27
+                            </option><option value="28">28
+                            </option><option value="29">29
+                            </option><option value="30">30
+                            </option><option value="31">31
+                            </option><option value="32">32
+                            </option><option value="33">33
+                            </option><option value="34">34
+                            </option><option value="35">35
+                            </option><option value="36">36
+                            </option><option value="37">37
+                            </option><option value="38">38
+                            </option><option value="39">39
+                            </option><option value="40">40
+                            </option><option value="41">41
+                            </option><option value="42">42
+                            </option><option value="43">43
+                            </option><option value="44">44
+                            </option><option value="45">45
+                            </option><option value="46">46
+                            </option><option value="47">47
+                            </option><option value="48">48
+                            </option><option value="49">49
+                            </option><option value="50">50
+                            </option></select></td>
+                        <td>Dlvl: 
+                            <select name="dlvl" onchange="parseDlvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="Hive" 1="">Hive 1
+                            </option><option value="Hive" 2="">Hive 2
+                            </option><option value="Hive" 3="">Hive 3
+                            </option><option value="Hive" 4="">Hive 4
+                            </option><option value="Crypt" 1="">Crypt 1
+                            </option><option value="Crypt" 2="">Crypt 2
+                            </option><option value="Crypt" 3="">Crypt 3
+                            </option><option value="Crypt" 4="">Crypt 4
+                            </option></select></td>
+                        <td>AC: <input name="armor_fld" value="" size="6" maxsize="6" onchange="parseArmor()" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left"><input value="Calculate" onclick="bothatonce()" type="button"></td>
+                        <td align="right"><input value="Reset" onclick="reset_form()" type="button"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><textarea name="results" rows="12" cols="67"></textarea>
+                        <br>
+                        <textarea name="results2" rows="4" cols="67"></textarea></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <table class="hidden">
+                    <tr>
+                        <td>
+                            <select name="weapon" onchange="parseWeapon()">
+                            <option value="Bare">Bare
+                            </option><option value="Axe">Axe
+                            </option><option value="Bow">Bow
+                            </option><option value="Club">Club
+                            </option><option value="Shield">Shield
+                            </option><option value="Staff">Staff
+                            </option><option value="Sword">Sword
+                            </option></select></td>
+                        <td>
+                            <select name="slvl" onchange="parseSlvl()">
+                            <option value="0">0
+                            </option><option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option></select></td>
+                        <td><input name="str_fld" value="" size="6" maxsize="6" onchange="parseStrength()" type="text"></td>
+                        <td><input name="mag_fld" value="" size="6" maxsize="6" onchange="parseMagic()" type="text"></td>
+                        <td><input name="vit_fld" value="" size="6" maxsize="6" onchange="parseVitality()" type="text"></td>
+                        <td><input name="resmagic_fld" value="" size="6" maxsize="6" onchange="parseResMagic()" type="text"></td>
+                        <td><input name="resfire_fld" value="" size="6" maxsize="6" onchange="parseResFire()" type="text"></td>
+                        <td><input name="reslightning_fld" value="" size="6" maxsize="6" onchange="parseResLightning()" type="text"></td>
+                        <td><input value="Help" onclick="helpPlayer()" type="button"></td>
+                        <td><input value="Help" onclick="helpGame()" type="button"></td>
+                        <td>
+                            <select name="special" onchange="parseSpecial()">
+                            <option value="Plain" monsters="">Plain Monsters
+                            </option><option value="Boss" monsters="">Boss Monsters
+                            </option><option value="Special" monsters="">Special Monsters
+                            </option><option value="Player" vs="" player="">Player vs Player
+                            </option><option value="Golem" vs="" monster="">Golem vs Monster
+                            </option><option value="Trap" encounters="">Trap Encounters
+                            </option><option value="Item" drops="">Item Drops
+                            </option><option value="Assorted" stats="">Assorted Stats
+                            </option></select></td>
+                        <td>
+                            <select name="duelclvl" onchange="parseDuelClvl()">
+                            <option value="1">1
+                            </option><option value="2">2
+                            </option><option value="3">3
+                            </option><option value="4">4
+                            </option><option value="5">5
+                            </option><option value="6">6
+                            </option><option value="7">7
+                            </option><option value="8">8
+                            </option><option value="9">9
+                            </option><option value="10">10
+                            </option><option value="11">11
+                            </option><option value="12">12
+                            </option><option value="13">13
+                            </option><option value="14">14
+                            </option><option value="15">15
+                            </option><option value="16">16
+                            </option><option value="17">17
+                            </option><option value="18">18
+                            </option><option value="19">19
+                            </option><option value="20">20
+                            </option><option value="21">21
+                            </option><option value="22">22
+                            </option><option value="23">23
+                            </option><option value="24">24
+                            </option><option value="25">25
+                            </option><option value="26">26
+                            </option><option value="27">27
+                            </option><option value="28">28
+                            </option><option value="29">29
+                            </option><option value="30">30
+                            </option><option value="31">31
+                            </option><option value="32">32
+                            </option><option value="33">33
+                            </option><option value="34">34
+                            </option><option value="35">35
+                            </option><option value="36">36
+                            </option><option value="37">37
+                            </option><option value="38">38
+                            </option><option value="39">39
+                            </option><option value="40">40
+                            </option><option value="41">41
+                            </option><option value="42">42
+                            </option><option value="43">43
+                            </option><option value="44">44
+                            </option><option value="45">45
+                            </option><option value="46">46
+                            </option><option value="47">47
+                            </option><option value="48">48
+                            </option><option value="49">49
+                            </option><option value="50">50
+                            </option></select></td>
+                        <td><input value="Help" onclick="helpSpecial()" type="button"></td>
+                        <td><input name="duelstr_fld" value="" size="6" maxsize="6" onchange="parseDuelStrength()" type="text"></td>
+                        <td><input name="duelmag_fld" value="" size="6" maxsize="6" onchange="parseDuelMagic()" type="text"></td>
+                        <td><input name="dueldex_fld" value="" size="6" maxsize="6" onchange="parseDuelDexterity()" type="text"></td>
+                        <td><input name="duelarmor_fld" value="" size="6" maxsize="6" onchange="parseDuelArmor()" type="text"></td>
+                        <td><input name="dueltohit_fld" value="" size="6" maxsize="6" onchange="parseDuelTohit()" type="text"></td>
+                        <td><input name="duelres_fld" value="" size="6" maxsize="6" onchange="parseResDuel()" type="text"></td>
+                        <td><input name="damlow_fld" value="" size="6" maxsize="6" onchange="parseDamageLow()" type="text"></td>
+                        <td><input name="damhigh_fld" value="" size="6" maxsize="6" onchange="parseDamageHigh()" type="text"></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td><i><br>Source: <a href="https://web.archive.org/web/20091024004748/http://geocities.com/TimesSquare/Maze/4747/maxmelee12.html">Arnold van Wakeren aka Moriah</i></a></td>
+            </tr>
+        </table>
+        </td>
     </tr>
 </table>
 </form>
@@ -1086,361 +1690,7 @@ updated();
     </tr>
 </table>
 <br>
-<!-- //////// Combat Calculator //////// -->
-<form name="combat">
-<table class="blog">
-    <tr>
-        <td class="title"><a name="combatcalc"></a>AC & To Hit Calc</td>
-    </tr>
-        <td>
-        <table>
-            <tr>
-                <td>
-                <table>
-                    <tr>
-                        <td>Game: 
-                            <select name="game" onchange="parseGame()">
-                            <option value="MP" diablo="">MP Diablo
-                            </option><option value="SP" diablo="">SP Diablo
-                            </option><option value="MP" hellfire="">MP Hellfire
-                            </option><option value="SP" hellfire="">SP Hellfire
-                            </option></select></td>
-                        <td>Monster: 
-                            <select name="extra" onchange="parseExtra()">
-                            <option value="Zombie">Zombie
-                            </option><option value="Ghoul">Ghoul
-                            </option><option value="Rotting" carcass="">Rotting Carcass
-                            </option><option value="Black" death="">Black Death
-                            </option><option value="Fallen" one="" (spear)="">Fallen One (spear)
-                            </option><option value="Carver" (spear)="">Carver (spear)
-                            </option><option value="Devil" kin="" (spear)="">Devil Kin (spear)
-                            </option><option value="Dark" one="" (spear)="">Dark One (spear)
-                            </option><option value="Fallen" one="" (sword)="">Fallen One (sword)
-                            </option><option value="Carver" (sword)="">Carver (sword)
-                            </option><option value="Devil" kin="" (sword)="">Devil Kin (sword)
-                            </option><option value="Dark" one="" (sword)="">Dark One (sword)
-                            </option><option value="Skeleton">Skeleton
-                            </option><option value="Corpse" axe="">Corpse Axe
-                            </option><option value="Burning" dead="">Burning Dead
-                            </option><option value="Horror">Horror
-                            </option><option value="Skeleton" archer="">Skeleton Archer
-                            </option><option value="Corpse" bow="">Corpse Bow
-                            </option><option value="Burning" dead="" archer="">Burning Dead Archer
-                            </option><option value="Horror" archer="">Horror Archer
-                            </option><option value="Skeleton" captain="">Skeleton Captain
-                            </option><option value="Corpse" captain="">Corpse Captain
-                            </option><option value="Burning" dead="" captain="">Burning Dead Captain
-                            </option><option value="Horror" captain="">Horror Captain
-                            </option><option value="Scavenger">Scavenger
-                            </option><option value="Plague" eater="">Plague Eater
-                            </option><option value="Shadow" beast="">Shadow Beast
-                            </option><option value="Bone" gasher="">Bone Gasher
-                            </option><option value="Fiend">Fiend
-                            </option><option value="Blink">Blink
-                            </option><option value="Gloom">Gloom
-                            </option><option value="Familiar">Familiar
-                            </option><option value="Hidden">Hidden
-                            </option><option value="Stalker">Stalker
-                            </option><option value="Unseen">Unseen
-                            </option><option value="Illusion" weaver="">Illusion Weaver
-                            </option><option value="Flesh" clan="">Flesh Clan
-                            </option><option value="Stone" clan="">Stone Clan
-                            </option><option value="Fire" clan="">Fire Clan
-                            </option><option value="Night" clan="">Night Clan
-                            </option><option value="Flesh" clan="" archer="">Flesh Clan Archer
-                            </option><option value="Stone" clan="" archer="">Stone Clan Archer
-                            </option><option value="Fire" clan="" archer="">Fire Clan Archer
-                            </option><option value="Night" clan="" archer="">Night Clan Archer
-                            </option><option value="Overlord">Overlord
-                            </option><option value="Mud" man="">Mud Man
-                            </option><option value="Toad" demon="">Toad Demon
-                            </option><option value="Flayed" one="">Flayed One
-                            </option><option value="Winged-Demon">Winged-Demon
-                            </option><option value="Gargoyle">Gargoyle
-                            </option><option value="Blood" claw="">Blood Claw
-                            </option><option value="Death" wing="">Death Wing
-                            </option><option value="Magma" demon="">Magma Demon
-                            </option><option value="Blood" stone="">Blood Stone
-                            </option><option value="Hell" stone="">Hell Stone
-                            </option><option value="Lava" lord="">Lava Lord
-                            </option><option value="Horned" demon="">Horned Demon
-                            </option><option value="Mud" runner="">Mud Runner
-                            </option><option value="Frost" charger="">Frost Charger
-                            </option><option value="Obsidian" lord="">Obsidian Lord
-                            </option><option value="Acid" beast="">Acid Beast
-                            </option><option value="Poison" spitter="">Poison Spitter
-                            </option><option value="Pit" beast="">Pit Beast
-                            </option><option value="Lava" maw="">Lava Maw
-                            </option><option value="Red" storm="">Red Storm
-                            </option><option value="Storm" rider="">Storm Rider
-                            </option><option value="Storm" lord="">Storm Lord
-                            </option><option value="Maelstrom">Maelstrom
-                            </option><option value="Slayer">Slayer
-                            </option><option value="Guardian">Guardian
-                            </option><option value="Vortex" lord="">Vortex Lord
-                            </option><option value="Balrog">Balrog
-                            </option><option value="Cave" viper="">Cave Viper
-                            </option><option value="Fire" drake="">Fire Drake
-                            </option><option value="Gold" viper="">Gold Viper
-                            </option><option value="Azure" drake="">Azure Drake
-                            </option><option value="Succubus">Succubus
-                            </option><option value="Snow" witch="">Snow Witch
-                            </option><option value="Hell" spawn="">Hell Spawn
-                            </option><option value="Soul" burner="">Soul Burner
-                            </option><option value="Black" knight="">Black Knight
-                            </option><option value="Doom" guard="">Doom Guard
-                            </option><option value="Steel" lord="">Steel Lord
-                            </option><option value="Blood" knight="">Blood Knight
-                            </option><option value="Counselor">Counselor
-                            </option><option value="Magistrate">Magistrate
-                            </option><option value="Cabalist">Cabalist
-                            </option><option value="Advocate">Advocate
-                            </option></select></td>
-                        <td>To-Hit%: <input name="tohit_fld" value="" size="6" maxsize="6" onchange="parseTohit()" type="text"></td>
-                    </tr>
-                        <td>Class: 
-                            <select name="player" onchange="parsePlayer()">
-                            <option value="Warrior">Warrior
-                            </option><option value="Rogue">Rogue
-                            </option><option value="Sorceror">Sorceror
-                            </option><option value="Monk">Monk
-                            </option><option value="Bard">Bard
-                            </option><option value="Barbarian">Barbarian
-                            </option></select></td>
-                        <td>Difficulty: 
-                            <select name="difficulty" onchange="parseDifficulty()">
-                            <option value="Normal">Normal
-                            </option><option value="Nightmare">Nightmare
-                            </option><option value="Hell">Hell
-                            </option></select></td>
-                        <td>Dex: <input name="dex_fld" value="" size="6" maxsize="6" onchange="parseDexterity()" type="text"></td>
-                    <tr>
-                        <td>Clvl: 
-                            <select name="clvl" onchange="parseClvl()">
-                            <option value="1">1
-                            </option><option value="2">2
-                            </option><option value="3">3
-                            </option><option value="4">4
-                            </option><option value="5">5
-                            </option><option value="6">6
-                            </option><option value="7">7
-                            </option><option value="8">8
-                            </option><option value="9">9
-                            </option><option value="10">10
-                            </option><option value="11">11
-                            </option><option value="12">12
-                            </option><option value="13">13
-                            </option><option value="14">14
-                            </option><option value="15">15
-                            </option><option value="16">16
-                            </option><option value="17">17
-                            </option><option value="18">18
-                            </option><option value="19">19
-                            </option><option value="20">20
-                            </option><option value="21">21
-                            </option><option value="22">22
-                            </option><option value="23">23
-                            </option><option value="24">24
-                            </option><option value="25">25
-                            </option><option value="26">26
-                            </option><option value="27">27
-                            </option><option value="28">28
-                            </option><option value="29">29
-                            </option><option value="30">30
-                            </option><option value="31">31
-                            </option><option value="32">32
-                            </option><option value="33">33
-                            </option><option value="34">34
-                            </option><option value="35">35
-                            </option><option value="36">36
-                            </option><option value="37">37
-                            </option><option value="38">38
-                            </option><option value="39">39
-                            </option><option value="40">40
-                            </option><option value="41">41
-                            </option><option value="42">42
-                            </option><option value="43">43
-                            </option><option value="44">44
-                            </option><option value="45">45
-                            </option><option value="46">46
-                            </option><option value="47">47
-                            </option><option value="48">48
-                            </option><option value="49">49
-                            </option><option value="50">50
-                            </option></select></td>
-                        <td>Dlvl: 
-                            <select name="dlvl" onchange="parseDlvl()">
-                            <option value="1">1
-                            </option><option value="2">2
-                            </option><option value="3">3
-                            </option><option value="4">4
-                            </option><option value="5">5
-                            </option><option value="6">6
-                            </option><option value="7">7
-                            </option><option value="8">8
-                            </option><option value="9">9
-                            </option><option value="10">10
-                            </option><option value="11">11
-                            </option><option value="12">12
-                            </option><option value="13">13
-                            </option><option value="14">14
-                            </option><option value="15">15
-                            </option><option value="16">16
-                            </option><option value="Hive" 1="">Hive 1
-                            </option><option value="Hive" 2="">Hive 2
-                            </option><option value="Hive" 3="">Hive 3
-                            </option><option value="Hive" 4="">Hive 4
-                            </option><option value="Crypt" 1="">Crypt 1
-                            </option><option value="Crypt" 2="">Crypt 2
-                            </option><option value="Crypt" 3="">Crypt 3
-                            </option><option value="Crypt" 4="">Crypt 4
-                            </option></select></td>
-                        <td>AC: <input name="armor_fld" value="" size="6" maxsize="6" onchange="parseArmor()" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="left"><input value="Calculate" onclick="bothatonce()" type="button"></td>
-                        <td align="right"><input value="Reset" onclick="reset_form()" type="button"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><textarea name="results" rows="12" cols="67"></textarea>
-                        <br>
-                        <textarea name="results2" rows="4" cols="67"></textarea></td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <tr>
-                <table class="hidden">
-                    <tr>
-                        <td>
-                            <select name="weapon" onchange="parseWeapon()">
-                            <option value="Bare">Bare
-                            </option><option value="Axe">Axe
-                            </option><option value="Bow">Bow
-                            </option><option value="Club">Club
-                            </option><option value="Shield">Shield
-                            </option><option value="Staff">Staff
-                            </option><option value="Sword">Sword
-                            </option></select></td>
-                        <td>
-                            <select name="slvl" onchange="parseSlvl()">
-                            <option value="0">0
-                            </option><option value="1">1
-                            </option><option value="2">2
-                            </option><option value="3">3
-                            </option><option value="4">4
-                            </option><option value="5">5
-                            </option><option value="6">6
-                            </option><option value="7">7
-                            </option><option value="8">8
-                            </option><option value="9">9
-                            </option><option value="10">10
-                            </option><option value="11">11
-                            </option><option value="12">12
-                            </option><option value="13">13
-                            </option><option value="14">14
-                            </option><option value="15">15
-                            </option><option value="16">16
-                            </option><option value="17">17
-                            </option><option value="18">18
-                            </option><option value="19">19
-                            </option><option value="20">20
-                            </option></select></td>
-                        <td><input name="str_fld" value="" size="6" maxsize="6" onchange="parseStrength()" type="text"></td>
-                        <td><input name="mag_fld" value="" size="6" maxsize="6" onchange="parseMagic()" type="text"></td>
-                        <td><input name="vit_fld" value="" size="6" maxsize="6" onchange="parseVitality()" type="text"></td>
-                        <td><input name="resmagic_fld" value="" size="6" maxsize="6" onchange="parseResMagic()" type="text"></td>
-                        <td><input name="resfire_fld" value="" size="6" maxsize="6" onchange="parseResFire()" type="text"></td>
-                        <td><input name="reslightning_fld" value="" size="6" maxsize="6" onchange="parseResLightning()" type="text"></td>
-                        <td><input value="Help" onclick="helpPlayer()" type="button"></td>
-                        <td><input value="Help" onclick="helpGame()" type="button"></td>
-                        <td>
-                            <select name="special" onchange="parseSpecial()">
-                            <option value="Plain" monsters="">Plain Monsters
-                            </option><option value="Boss" monsters="">Boss Monsters
-                            </option><option value="Special" monsters="">Special Monsters
-                            </option><option value="Player" vs="" player="">Player vs Player
-                            </option><option value="Golem" vs="" monster="">Golem vs Monster
-                            </option><option value="Trap" encounters="">Trap Encounters
-                            </option><option value="Item" drops="">Item Drops
-                            </option><option value="Assorted" stats="">Assorted Stats
-                            </option></select></td>
-                        <td>
-                            <select name="duelclvl" onchange="parseDuelClvl()">
-                            <option value="1">1
-                            </option><option value="2">2
-                            </option><option value="3">3
-                            </option><option value="4">4
-                            </option><option value="5">5
-                            </option><option value="6">6
-                            </option><option value="7">7
-                            </option><option value="8">8
-                            </option><option value="9">9
-                            </option><option value="10">10
-                            </option><option value="11">11
-                            </option><option value="12">12
-                            </option><option value="13">13
-                            </option><option value="14">14
-                            </option><option value="15">15
-                            </option><option value="16">16
-                            </option><option value="17">17
-                            </option><option value="18">18
-                            </option><option value="19">19
-                            </option><option value="20">20
-                            </option><option value="21">21
-                            </option><option value="22">22
-                            </option><option value="23">23
-                            </option><option value="24">24
-                            </option><option value="25">25
-                            </option><option value="26">26
-                            </option><option value="27">27
-                            </option><option value="28">28
-                            </option><option value="29">29
-                            </option><option value="30">30
-                            </option><option value="31">31
-                            </option><option value="32">32
-                            </option><option value="33">33
-                            </option><option value="34">34
-                            </option><option value="35">35
-                            </option><option value="36">36
-                            </option><option value="37">37
-                            </option><option value="38">38
-                            </option><option value="39">39
-                            </option><option value="40">40
-                            </option><option value="41">41
-                            </option><option value="42">42
-                            </option><option value="43">43
-                            </option><option value="44">44
-                            </option><option value="45">45
-                            </option><option value="46">46
-                            </option><option value="47">47
-                            </option><option value="48">48
-                            </option><option value="49">49
-                            </option><option value="50">50
-                            </option></select></td>
-                        <td><input value="Help" onclick="helpSpecial()" type="button"></td>
-                        <td><input name="duelstr_fld" value="" size="6" maxsize="6" onchange="parseDuelStrength()" type="text"></td>
-                        <td><input name="duelmag_fld" value="" size="6" maxsize="6" onchange="parseDuelMagic()" type="text"></td>
-                        <td><input name="dueldex_fld" value="" size="6" maxsize="6" onchange="parseDuelDexterity()" type="text"></td>
-                        <td><input name="duelarmor_fld" value="" size="6" maxsize="6" onchange="parseDuelArmor()" type="text"></td>
-                        <td><input name="dueltohit_fld" value="" size="6" maxsize="6" onchange="parseDuelTohit()" type="text"></td>
-                        <td><input name="duelres_fld" value="" size="6" maxsize="6" onchange="parseResDuel()" type="text"></td>
-                        <td><input name="damlow_fld" value="" size="6" maxsize="6" onchange="parseDamageLow()" type="text"></td>
-                        <td><input name="damhigh_fld" value="" size="6" maxsize="6" onchange="parseDamageHigh()" type="text"></td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <tr>
-                <td><i><br>Source: <a href="https://web.archive.org/web/20091024004748/http://geocities.com/TimesSquare/Maze/4747/maxmelee12.html">Arnold van Wakeren aka Moriah</i></a></td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-</table>
-</form>
 <!-- //////// Character Stats Calculator //////// -->
-<br>
 <form name="myChar">
 <table class="blog">
     <tr>
@@ -1770,209 +2020,6 @@ updated();
     </tr>
 </table>
 </form>
-<!-- //////// Weapon Damage Calculator //////// -->
-<br>
-<form name="DamCheck">
-<table class="blog">
-    <tr>
-        <td class="title"><a name="weapdam"></a>Weapon Damage Calculator</td>
-    </tr>
-    <tr>
-        <td>
-        <table>
-            <tr>
-                <td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
-                <script type="text/javascript">
-                    with(document){
-                    for(i=0 ;i<=basmax;i++){
-                    write("<option>",base[i].name,"</option>");
-                    }
-                    }
-                </script></select></td>
-                <td>Base Damage<br><input type="text" name="basemin" size="4" maxlength="3"> - <input type="text" name="basemax" size="4" maxlength="3"></td>
-                <td>+</td>
-                <td>% Suffix<br><input type="text" name="damrate" size="5" maxlength="4">%</td>
-                <td>+</td>
-                <td>Damage Suffix<br><input type="text" name="damadd" size="5" maxlength="3"></td>
-                <td>=</td>
-                <td>Damage Range<br><input type="text" name="min" size="3" maxlength="3" readonly> - <input type="text" name="max" size="3" maxlength="3" readonly></td>
-            </tr>
-            <tr>
-                <td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
-            </tr>
-        </table><br>
-        <table>
-            <tr>
-                <td>Results:<br>
-                <textarea name="display" cols="77" rows="5" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-    <tr>
-        <td><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
-    </tr>
-</table>
-</form>
-<!-- //////// Armor Calculator //////// -->
-<br>
-<form name="AcCheck">
-<table class="blog">
-    <tr>
-        <td class="title" colspan="7"><a name="armor"></a>Armor Calculator</td>
-    </tr>
-    <tr>
-        <td>Armor</td>
-        <td colspan="3">+% Armor</td>
-        <td colspan="2">Result</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="base" size="3" maxlength="2"></td>
-        <td>+</td>
-        <td><input type="text" name="acrate" size="5" maxlength="4"></td>
-        <td>%</td>
-        <td>=</td>
-        <td><input type="text" name="ac" size="4" maxlength="3" readonly></td>
-        <td><input type="button" name="calc" value="Calculate" onclick="AcCalc(this.form)"><input type="reset" name="reset" value="Reset"></td>
-    </tr>
-    <tr>
-        <td colspan="7"><i><br>Source: <a href="https://web.archive.org/web/20120125124710/http://www.red-wolf.sakura.ne.jp/dia/eqcalc.html">King aka Red-Wolf</i></a></td>
-    </tr>
-</table>
-</form>
-<!-- //////// Shop qlvl Calculator //////// -->
-<br>
-<form id="calc">
-<table class="blog">
-    <tr>
-        <td class="title"><a name="shopqlvl"></a>Shop qlvl Calculator</td>
-    </tr>
-    <tr>
-        <td>
-        <table>
-            <tr>
-                <td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
-                <td><button type="submit">Calculate</button></td>
-            </tr>
-        </table><br>
-        <table>
-            <tr class="gris">
-                <td colspan="2">Griswold</td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td colspan="2"><textarea id="grisresult" cols="24" rows="8" readonly></textarea></td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td colspan="2">Wirt:</td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td colspan="2"><textarea id="wirtresult" cols="18" rows="2" readonly></textarea></td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td colspan="2">Adria(MP):</td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td colspan="2"><textarea id="adriaresult" cols="49" rows="3" readonly></textarea></td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-    <tr>
-        <td><i><br>Source: <a href="https://jsfiddle.net/23nzfd4p/show">@Royal#4121</i></a></td>
-    </tr>
-</table>
-</form>
-<br>
-<!-- //////// Orkin Price Calculator //////// -->
-<form name="SelectMenu">
-<table class="blog">
-    <tr>
-        <td class="title" colspan="2"><a name="orkin"></a>Orkin Price Calculator</td>		
-    </tr>
-    <tr>
-        <td class="warn" colspan="2">Warning: For some affixes price is inaccurate, but close, when values other than the min/max are selected.</td>
-    </tr>
-    <tr>
-        <td>
-        <table>
-            <tr>
-                <td>Prefix<br>
-                <select name="Prefi" onChange="changeprefi(this.form)">
-                <script type="text/javascript">
-                with(document){
-                for(i=0;i<prefi_trueLength;i++){
-                write("<option>",prefiopt[i],"</option>");
-                }
-                }
-                </script></select></td>
-                <td>Item<br>
-                <select name="Item" onChange="change(this.form)">
-                <script type="text/javascript">
-                with(document){
-                for(i=0;i<item_trueLength;i++){write("<option>",itemopt[i],"</option>");}}
-                </script></select></td>
-                <td>Suffix<br>
-                <select name="Suffi" onChange="changesuffi(this.form)">
-                <script type="text/javascript">
-                with(document){
-                for(i=0;i<suffi_trueLength;i++){write("<option>",suffiopt[i],"</option>");}}
-                </script></select></td>
-            </tr>
-            <tr>
-                <td>Prefix Value<br>
-                <select name="PrefiValue" onChange="changeprefivalue(this.form)">
-                <option>no prefix selected yet</option>
-                <script type="text/javascript">
-                with(document){
-                for(i=1;i<prefivalue_maxLength;i++){write("<option>","</option>")}}
-                </script></select></td>
-                <td>Price<br><input type="text" name="TotalCost" value="0" readonly></td>
-                <td>Suffix Value<br>
-                <select name="SuffiValue" onChange="changesuffivalue(this.form)">
-                <option>no suffix selected yet</option>
-                <script type="text/javascript">
-                with(document){
-                for(i=1;i<suffivalue_maxLength;i++){write("<option>","</option>");}}
-                </script></select></td>
-            </tr>
-        </table>
-        </td>
-        <td>
-        <table>
-            <tr>
-                <td><input type="radio" name="Location" value="Gri" onclick="changeprice()" checked> Griswald's/Adria's Price</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="Location" value="Wir" onclick="changeprice()"> Wirt's Price</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="Location" value="Resale" onclick="changeprice()"> Resale Price</td>
-            </tr>
-        </table></td>
-    </tr>
-    <tr>
-        <td colspan="2"><i><br>Source: <a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">OrkinMan</i></a></td>
-    </tr>
-<input type="hidden" value="0" name="PrefiCost">
-<input type="hidden" value="0" name="SuffiCost">
-<input type="hidden" value="0" name="PrefiDebug">
-<input type="hidden" value="0" name="SuffiDebug">
-<script type="text/javascript">
-    change();
-    }
-</script>
-</form>
-</table>
 <br>
 <!-- //////// Life/Mana Calculator //////// -->
 <form name="LifeManaForm">
