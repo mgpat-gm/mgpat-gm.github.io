@@ -713,7 +713,7 @@
                { document.SelectMenu.Prefi.options[i] = null; }
                for (i = 0; i <= 14; i++)
                { document.SelectMenu.Prefi.options[i] = new Option(prefiopt[i]); }
-               for (i = 17; i <= 35; i++)
+               for (i = 15; i <= 35; i++)
                { document.SelectMenu.Prefi.options[i-2] = new Option(prefiopt[i]); }
                for (i = 72; i <= 82; i++)
                { document.SelectMenu.Prefi.options[i-38] = new Option(prefiopt[i]); }
