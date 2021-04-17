@@ -14,7 +14,7 @@
 <script src="js/wheelzoom.js"></script>
 <style>
 img {
-	image-rendering: pixelated;
+    image-rendering: pixelated;
 }
 .hand {
     cursor: -webkit-grab;
@@ -25,122 +25,122 @@ img {
     cursor: grabbing;
 }
 .norm {
-	color: #ffffff;
+    color: #ffffff;
 }
 .cpixel {
-	image-rendering: auto;
+    image-rendering: auto;
 }
 .fpixel {
-	image-rendering: crisp-edges;
+    image-rendering: crisp-edges;
 }
 table.blog {
-	background-color: #111111;
-	padding: .3em;
-	color: #bca86c;
+    background-color: #111111;
+    padding: .3em;
+    color: #bca86c;
 }
 .title {
-	font-size: 1.5em;
-	text-align: left;
-	color: #ffffff;
+    font-size: 1.5em;
+    text-align: left;
+    color: #ffffff;
 }
 .date {
-	text-align: right;
-	color: #bca86c;
+    text-align: right;
+    color: #bca86c;
 }
 a:link {
-	text-decoration: none;
-	color: #ffffff
+    text-decoration: none;
+    color: #ffffff
 }
 a:link {
-	text-decoration: none;
-	color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 a:visited {
-	text-decoration: none;
-	color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 a:hover {
-	background: none;
-	color: #ff8000;
+    background: none;
+    color: #ff8000;
 }
 .banner {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: 0em;
-	width: 10%;
-	right: auto;
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: 0em;
+    width: 10%;
+    right: auto;
 }
 .banner p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	border: none;
-	color: #ff8000;
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
 }
 .banner a, div.banner em {
-	display: block; margin: 0 0.5em;
+    display: block; margin: 0 0.5em;
 }
 .banner a, div.banner em {
-	border-top: 0px groove #CCC;
+    border-top: 0px groove #CCC;
 }
 .banner a:first-child {
-	border-top: none;
+    border-top: none;
 }
 .banner em {
-	color: #CFC;
+    color: #CFC;
 }
 .banner2 {
-	margin: 0;
-	font-size: 1em;
-	font-weight: none;
-	line-height: 1.1;
-	text-align: left;
-	position: fixed;
-	top: 2em;
-	left: auto;
-	width: 10%;
-	right: 0em;
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: auto;
+    width: 10%;
+    right: 0em;
 }
 .banner2 p {
-	margin: 0; 
-	padding: 0.3em 0.4em;
-	border: none;
-	color: #ff8000;
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
 }
 .banner2 a, div.banner em {
-	display: block;
-	margin: 0 0.5em;
+    display: block;
+    margin: 0 0.5em;
 }
 .banner2 a, div.banner em {
-	border-top: 0px groove #CCC;
+    border-top: 0px groove #CCC;
 }
 .banner2 a:first-child {
-	border-top: none;
+    border-top: none;
 }
 .banner2 em {
-	color: #CFC;
+    color: #CFC;
 }
 .banner2 span {
-	margin: 0 0.5em;
+    margin: 0 0.5em;
 }
 </style>
 <script> 
 function changeImage() {
-	var img = document.getElementById('image');
-	img.src='pictures/town.gif';
-	return false;
+    var img = document.getElementById('image');
+    img.src='pictures/town.gif';
+    return false;
 }
 function cpixel() {
-	var element = document.getElementById('image');
-	element.classList.toggle('cpixel');
+    var element = document.getElementById('image');
+    element.classList.toggle('cpixel');
 }
 function fpixel() {
-	var element = document.getElementById('image');
-	element.classList.toggle('fpixel');
+    var element = document.getElementById('image');
+    element.classList.toggle('fpixel');
 }
 function cursor() {
     var div = document.getElementById('image');
@@ -156,69 +156,71 @@ function cursor2() {
 </head>
 <body bgcolor="#2d2d2d">
 <div class="banner">
-	<p>Ghast's Grotto:
-	<br>
-	<br>
-	<a title="Tips, tricks, news, and more!" href="index.html">Home</a>
-	<br>
-	<a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
-	<br>
-	<a title="Self explanatory" href="shrinelist.html">Shrines</a>
-	<br>
-	<a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
-	<br>
-	<a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
-	<br>
-	</p>
-	<p>My:
-	<br>
-	<br>
-	<a title="My characters and their items" href="characters.html">Characters</a>
-	<br>
-	<a title="A list of all the uniques. With notes of what I have collected so far" href="uniques.html">Uniques</a>
-	<br>
-	<a title="A list of all the monsters. With tally of what I have killed so far" href="monsters.html">Monsters</a>
-	</p>
+    <p>Ghast's Grotto:
+    <br>
+    <br>
+    <a title="Tips, tricks, news, and more!" href="index.html">Home</a>
+    <br>
+    <a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
+    <br>
+    <a title="A list of all the monsters. With tally of what I have killed so far" href="monsters.html">Monsters</a>
+    <br>
+    <a title="Self explanatory" href="shrinelist.html">Shrines</a>
+    <br>
+    <a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
+    <br>
+    <a title="A list of all the uniques. With notes of what I have collected so far" href="uniques.html">Uniques</a>
+    <br>
+    <a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
+    <br>
+    </p>
+    <p>My:
+    <br>
+    <br>
+    <a title="My characters and their items" href="characters.html">Characters</a>
+    <br>
+    <a title="My collection of items." href="items.html">Items</a>
+    </p>
 </div>
 <div class="banner2">
     <p> Image:
-	<br>
-	<br>
+    <br>
+    <br>
         <button onclick="changeImage();">Reset</button>
-	<br>
-	<br>
+    <br>
+    <br>
     </p>
     <p> Toggle<br>Renderer:
-	<br>
-	<br>
+    <br>
+    <br>
         <button onclick="cpixel();">Chrome</button>
-	<br>
-	<br>
+    <br>
+    <br>
         <button onclick="fpixel();">Firefox</button>
     </p>
 </div>
 <center>
 <table class="blog" width="80%">
-	<tr>
-		<td class="title">Tristram</td>
-		<td class="date">Zoom & Pan</td>
-	</tr>
-	<tr>
-		<td colspan="2"><img id="image" class="town hand" src='pictures/town.gif' width="100%" onmousedown="cursor()" onmouseup='cursor2()'/></td>
-	</tr>
-	<tr>
-		<td><i><br>Download Image: <a href="pictures/town.gif" download="tristram">7.1MB (6144x3071)</a></i></td>
-	</tr>
+    <tr>
+        <td class="title">Tristram</td>
+        <td class="date">Zoom & Pan</td>
+    </tr>
+    <tr>
+        <td colspan="2"><img id="image" class="town hand" src='pictures/town.gif' width="100%" onmousedown="cursor()" onmouseup='cursor2()'/></td>
+    </tr>
+    <tr>
+        <td><i><br>Download Image: <a href="pictures/town.gif" download="tristram">7.1MB (6144x3071)</a></i></td>
+    </tr>
 </table>
 <script>
-	wheelzoom(document.querySelector('img.town'));
+    wheelzoom(document.querySelector('img.town'));
 </script>
 <br><br>
 <table width="80%">
-	<tr>
-		<td style="text-align: center;">
-		<span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
-	</tr>
+    <tr>
+        <td style="text-align: center;">
+        <span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
+    </tr>
 </table>
 </center>
 </body>
