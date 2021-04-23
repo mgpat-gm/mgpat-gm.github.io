@@ -33,6 +33,10 @@ img {
 .fpixel {
     image-rendering: crisp-edges;
 }
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 table.blog {
     background-color: #111111;
     padding: .3em;
@@ -129,9 +133,10 @@ a:hover {
 }
 </style>
 <script> 
-function changeImage() {
+function reset() {
     var img = document.getElementById('image');
     img.src='pictures/town.gif';
+    img.classList.remove('flip');
     return false;
 }
 function cpixel() {
@@ -151,6 +156,10 @@ function cursor2() {
     var div = document.getElementById('image');
     div.classList.remove('hand2');
     div.classList.add('hand');
+}
+function flip() {
+    var element = document.getElementById('image');
+    element.classList.toggle('flip');
 }
 </script>
 </head>
@@ -186,17 +195,20 @@ function cursor2() {
     <p> Image:
     <br>
     <br>
-        <button onclick="changeImage();">Reset</button>
+        <button onclick="reset()">Reset</button>
+        <br>
+    <br>
+        <button onclick="flip()">Flip</button>
     <br>
     <br>
     </p>
     <p> Toggle<br>Renderer:
     <br>
     <br>
-        <button onclick="cpixel();">Chrome</button>
+        <button onclick="cpixel()">Chrome</button>
     <br>
     <br>
-        <button onclick="fpixel();">Firefox</button>
+        <button onclick="fpixel()">Firefox</button>
     </p>
 </div>
 <center>
