@@ -111,6 +111,7 @@ table.blog {
 table.char {
     background: url("pictures/stone.png") repeat fixed top;
     color: #ffffff;
+    border-collapse: collapse;
 }
 table.char input {
     background-color: #111111;
@@ -119,6 +120,9 @@ table.char input {
 }
 table.hidden {
     display: none;
+}
+table.sub {
+    border-collapse: collapse;
 }
 .magic {
     color: #a0a5c8
@@ -244,7 +248,7 @@ button {
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Prefix:</td>
                 <td>Base Item:</td>
@@ -280,7 +284,7 @@ button {
             </tr>
             <tr>
                 <td colspan="5">
-                <textarea name="display1" cols=80 rows=11>G/A Price = Cost to purchase from Griswold or Adria&#13;&#10;Difficulty "Source Level" indicates the range an item can be found based on the result of formulas from Jarulf's Guide chapter 3.8.&#13;&#10;&#13;&#10;Example:&#13;&#10;Obsidian/zodiac ring has a "Source Level" of 30-34. Sir Gorash has an mlvl of 30 for items. He can drop items with affixes in the range of qlvl 17-34, so he can drop it. Black Knights have an mlvl of 24 and can drop affixes in the range of qlvl 12-24. So Black Knight cannot. Blood Knight is mlvl 30 and can drop affixes in the range of qlvl 15-30, so they can drop obs/zod.</textarea><br>
+                <textarea name="display1" cols=80 rows=11>G/A Price = Cost to purchase from Griswold or Adria&#13;&#10;Difficulty "Source Level" indicates the range an item can be found based on the result of formulas from Jarulf's Guide chapter 3.8.&#13;&#10;&#13;&#10;Example:&#13;&#10;Obsidian/zodiac ring has a "Source Level" of 30-34. Sir Gorash is mlvl 30 for items. He can drop items with affixes in the range of qlvl 17-34, so he can drop it. Black Knights are mlvl 24 and can drop affixes in the range of qlvl 12-24. So Black Knight cannot. Blood Knight is mlvl 30 and can drop affixes in the range of qlvl 15-30, so they can drop obs/zod.</textarea><br>
                 <textarea name="display2" cols=80 rows=10>Item types key:&#13;&#10;W = Weapons (Axes, Clubs and Swords)&#13;&#10;B = Bows&#13;&#10;T = Staves&#13;&#10;A = Armor and Helms&#13;&#10;S = Shields&#13;&#10;J = Jewelry</textarea><br>
                 <textarea name="display3" cols=80 rows=11>Turn price on to see detailed breakdown of G/A prices.&#13;&#10;For Wirt and resale prices, scroll down to Item Price Calculator.</textarea></td>
             </tr>
@@ -316,7 +320,7 @@ button {
         </td>
     <tr>
         <td align="center">
-        <table>
+        <table class="sub">
                 <tr>
                 <td>Prefix:<br>
                 <select name="Prefix" disabled onChange="validate();">
@@ -340,7 +344,7 @@ button {
     </tr>
     <tr>
         <td align="center">
-        <table align="right">
+        <table class="sub" align="right">
             <tr>
                 <td id="Valid" ></td>
                 <td align="right"><input name="Calculate" type="button" value="Calculate" onclick="main();" disabled></td>
@@ -364,7 +368,7 @@ button {
     </tr>
     <tr>
         <td align="center">
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="3" style="text-align: center">Item Class:<br><select name="Clas" onChange="updateClas();calcPrice();"></select></td>
             </tr>
@@ -405,38 +409,38 @@ button {
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Enter clvl: <input id="clvl" name="clvl" type="number" max="50" min="1" required placeholder="clvl" /></label></td>
                 <td><button type="submit">Calculate</button></td>
             </tr>
         </table><br>
-        <table>
+        <table class="sub">
             <tr class="gris">
                 <td colspan="2">Griswold</td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="2"><textarea id="grisresult" cols="24" rows="8" readonly></textarea></td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="2">Wirt:</td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="2"><textarea id="wirtresult" cols="18" rows="2" readonly></textarea></td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="2">Adria(MP):</td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td colspan="2"><textarea id="adriaresult" cols="49" rows="3" readonly></textarea></td>
             </tr>
@@ -460,7 +464,7 @@ button {
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Prefix<br>
                 <select name="Prefi" onChange="changeprefi(this.form)">
@@ -504,7 +508,7 @@ button {
         </table>
         </td>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td><input type="radio" name="Location" value="Gri" onclick="changeprice()" checked> Griswold's/Adria's Price</td>
             </tr>
@@ -538,7 +542,7 @@ button {
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Weapon<br><select name="base" size="1" onChange="ChgBase(this.form)">
                 <script type="text/javascript">
@@ -560,7 +564,7 @@ button {
                 <td><input type="button" name="calc" value="Calculate" onClick="ChkDam(this.form)"><input type="reset" name="reset" value="Reset"></td>
             </tr>
         </table><br>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Results:<br>
                 <textarea name="display" cols="77" rows="5" readonly>Hammer of Jholm Damage Range is 4 -10 %, Default is 10% which you can change.</textarea></td>
@@ -607,10 +611,10 @@ button {
         <td class="title"><a name="combatcalc"></a>AC & To Hit Calculator</td>
     </tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td>
-                <table>
+                <table class="sub">
                     <tr>
                         <td>Game: 
                             <select name="game" onchange="parseGame()">
@@ -954,7 +958,7 @@ button {
 </table>
 </form>
 <br>
-<table>
+<table class="sub">
     <tr>
         <td>
 <!-- //////// AC Calculator //////// -->
@@ -965,7 +969,7 @@ button {
             <tr>
                 <td>
 <form name="SelectStat">
-                <table>
+                <table class="sub">
                     <tr>
                         <td>Difficulty:</td>
                         <td>Get-Hit %:</td>
@@ -1196,7 +1200,7 @@ updat();
             </tr>
             <tr>
                 <td>
-                <table>
+                <table class="sub">
                     <tr>
                         <td>Difficulty:<br><select name="Diff" onchange="update();">
                         <option value="0">Normal</option>
@@ -1480,7 +1484,7 @@ update();
             <tr>
 <form name="SelectSta">
                 <td>
-                <table>
+                <table class="sub">
                     <tr>
                         <td>Difficulty:</td>
                         <td>Block %:</td>
@@ -1557,7 +1561,7 @@ update();
                     </tr>
                 </table>
                 <br>
-                <table>
+                <table class="sub">
                     <tr>
                         <td>Dexterity needed per enemy type:</td>
                     </tr>
@@ -1706,12 +1710,12 @@ updated();
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Base Stats</td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Name</td>
                 <td><input type="text" name="mycharname" size="20" maxlength="20"></td>
@@ -1724,7 +1728,7 @@ updated();
                 </select></td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Level</td>
                 <td><input type="text" name="mylevel" size="5" maxlength="2"></td>
@@ -1733,7 +1737,7 @@ updated();
                 <td><input type="button" name="expset" value="Set Exp" onclick="myexpset(this.form)"></td>
             </tr>
         </table>
-        <table>
+        <table class="sub">
             <tr>
                 <td>Str</td>
                 <td><input type="text" name="mystrbase" size="5" maxlength="3"></td>
@@ -1755,7 +1759,7 @@ updated();
 <input type="hidden" name="enac" size="5" maxlength="3">
 <input type="hidden" name="enmagiclevel" size="5" maxlength="2">
 <input type="hidden" name="enacmax" value="Set Max" onclick="enacmaxset(this.form)">
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Helm</td>
             </tr>
@@ -1863,7 +1867,7 @@ updated();
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Armor</td>
             </tr>
@@ -1887,7 +1891,7 @@ updated();
         </table>
         </td>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Shield</td>
             </tr>
@@ -1913,7 +1917,7 @@ updated();
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Weapon</td>
             </tr>
@@ -1949,7 +1953,7 @@ updated();
         </table>
         </td>
         <td style="vertical-align:top;">
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Amulet</td>
             </tr>
@@ -1975,7 +1979,7 @@ updated();
     </tr>
     <tr>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Left Ring</td>
             </tr>
@@ -1999,7 +2003,7 @@ updated();
         </table>
         </td>
         <td>
-        <table>
+        <table class="sub">
             <tr>
                 <td class="title2">Right Ring</td>
             </tr>
