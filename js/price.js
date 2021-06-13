@@ -1339,6 +1339,19 @@ function updateSource()
 			document.SelectItm.Source[0].disabled = true;
 		}
 	}
+	//rules if prefix is Emerald and suffix is Slaying
+    if (prefxS.qlvvl == 31)
+	{
+        if (suffxS.qlvvl == 15)
+        {
+            document.getElementById("Gris").style.color = "#4C4C4C";
+            document.getElementById("Gris").style.fontStyle = "italic";
+            document.getElementById("Wirt").style.color = "#4C4C4C";
+            document.getElementById("Wirt").style.fontStyle = "italic";
+            document.SelectItm.Source[0].disabled = true;
+            document.SelectItm.Source[1].disabled = true;
+        }
+	}
 	}
 
 	//change checked
@@ -1666,7 +1679,7 @@ function calcPrice()
 	{
 		if (price > 90000)
 		{
-			document.getElementById("Price").firstChild.nodeValue = price + " - This item is too expensive to buy";
+			document.getElementById("Price").firstChild.nodeValue = price = Math.floor(price*1.5) + " - This item is too expensive to buy";
 			return;
 		}
 		price = Math.floor(price*1.5);
