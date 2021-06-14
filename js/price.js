@@ -1339,6 +1339,19 @@ function updateSource()
 			document.SelectItm.Source[0].disabled = true;
 		}
 	}
+    if (prefxS != "None" && suffxS != "None" && (prefxS.qlvvl / suffxS.qlvvl > 2 || suffxS.qlvvl / prefxS.qlvvl > 2 ))
+        {
+            document.getElementById("Wirt").style.color = "#4C4C4C";
+            document.getElementById("Wirt").style.fontStyle = "italic";
+            document.SelectItm.Source[1].disabled = true;
+            
+            if (document.SelectItm.Clas.options[document.SelectItm.Clas.selectedIndex].text == "Staff" && document.SelectItm.Suffx.options.selectedIndex < 13)
+            {
+                document.getElementById("Gris").style.color = "#4C4C4C";
+                document.getElementById("Gris").style.fontStyle = "italic";
+                document.SelectItm.Source[0].disabled = true;
+            }
+        }
     }
 	//change checked
 	/*for (i=0; i<=2; i++)
