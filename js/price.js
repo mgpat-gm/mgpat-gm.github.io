@@ -1339,21 +1339,7 @@ function updateSource()
 			document.SelectItm.Source[0].disabled = true;
 		}
 	}
-	//rules if prefix is Emerald and suffix is Slaying
-    if (prefxS.qlvvl == 31)
-	{
-        if (suffxS.qlvvl == 15)
-        {
-            document.getElementById("Gris").style.color = "#4C4C4C";
-            document.getElementById("Gris").style.fontStyle = "italic";
-            document.getElementById("Wirt").style.color = "#4C4C4C";
-            document.getElementById("Wirt").style.fontStyle = "italic";
-            document.SelectItm.Source[0].disabled = true;
-            document.SelectItm.Source[1].disabled = true;
-        }
-	}
-	}
-
+    }
 	//change checked
 	/*for (i=0; i<=2; i++)
 	{
