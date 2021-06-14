@@ -1339,7 +1339,7 @@ function updateSource()
 			document.SelectItm.Source[0].disabled = true;
 		}
 	}
-    if (prefxS != "None" && suffxS != "None" && (prefxS.qlvvl / suffxS.qlvvl > 2 || suffxS.qlvvl / prefxS.qlvvl > 2 ))
+    if (prefxS != "None" && suffxS != "None" && prefxS <= 50 && (prefxS.qlvvl / suffxS.qlvvl > 2 || suffxS.qlvvl / prefxS.qlvvl > 2 ))
         {
             document.getElementById("Wirt").style.color = "#4C4C4C";
             document.getElementById("Wirt").style.fontStyle = "italic";
