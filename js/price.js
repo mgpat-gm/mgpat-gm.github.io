@@ -1340,7 +1340,7 @@ function updateSource()
 		}
 	}
 	//rules if prefix or suffix is more than half the lowest qlvl at Wirt or Adria(staves without spells)
-    if (prefxS != "None" && suffxS != "None" && !(prefxS.qlvvl > 50 || suffxS.qlvvl > 50) && (prefxS.qlvvl / suffxS.qlvvl > 2 || suffxS.qlvvl / prefxS.qlvvl > 2 ))
+    if (prefxS != "None" && suffxS != "None" && prefxS.qlvvl < 50 && suffxS.qlvvl < 50 && (prefxS.qlvvl / suffxS.qlvvl > 2 || suffxS.qlvvl / prefxS.qlvvl > 2 ))
         {
             document.getElementById("Wirt").style.color = "#4C4C4C";
             document.getElementById("Wirt").style.fontStyle = "italic";
