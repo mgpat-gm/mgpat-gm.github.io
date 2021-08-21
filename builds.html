@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ghast's Grotto - Sorcerer Bulids</title>
+<meta name="description" content="Sorcerer builds by FireIceTalon">
+<meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list, multiplayer">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="js/unitip.js" type="text/javascript"></script>
+<script src="js/magitip.js" type="text/javascript"></script>
+<script src="js/whitip.js" type="text/javascript"></script>
+<style>
+a:link {
+    text-decoration: none;
+    color: #ffffff
+}
+a:visited {
+    text-decoration: none;
+    color: #ffffff
+}
+a:hover {
+    background: none;
+    color: #ff8000
+}
+#unitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #bca86c;
+    color: #bca86c;
+}
+#magitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #a0a5c8;
+    color: #a0a5c8;
+}
+#whitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+table.blog {
+    width: 668px;
+    background-color: #111111;
+    padding: .3em;
+    color: #bca86c;
+}
+table.equip {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111111 url("images/stone.webp") repeat fixed top;
+}
+table.sub {
+    border-collapse: collapse;
+}
+table.equip .magitip img {
+    outline: 1px solid #bca86c;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+table.equip .unitip img {
+    outline: 1px solid #bca86c;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+table.equip .whitip img {
+    outline: 1px solid #bca86c;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+table.equip .magitip img:hover {
+    outline: 1px solid #a0a5c8;
+}
+table.equip .unitip img:hover {
+    outline: 1px solid #a0a5c8;
+}
+table.equip .whitip img:hover {
+    outline: 1px solid #bca86c;
+}
+table.inv {
+    width: 100%;
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+    background: #111111 url("images/stone.webp") repeat fixed top;
+}
+table.inv tr {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+}
+table.inv td {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    text-align: center;
+}
+table.inv td.magitip {
+    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
+}
+table.inv td.unitip {
+    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
+}
+table.inv td.whitip {
+    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
+}
+table.stats {
+    border-collapse: collapse;
+    background: #111111 url("images/stone.webp") repeat fixed top;
+    color: #ffffff;
+}
+.unitip img:hover {
+    outline: 1px solid #a0a5c8;
+}
+.magitip img:hover {
+    outline: 1px solid #a0a5c8;
+}
+.whitip img:hover {
+    outline: 1px solid #bca86c;
+}
+.second {
+    opacity: 50%;
+}
+.title {
+    font-size: 1.5em;
+    text-align: left;
+    color: #ffffff;
+}
+.title2 {
+    color: #a0a5c8;
+    font-size: 1.2em;
+}
+img {
+    image-rendering: pixelated;
+}
+input {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #bca86c;
+}
+.fire {
+    color: #e16c6c;
+}
+.magic {
+    color: #a0a5c8;
+}
+.norm {
+    color: #ffffff;
+}
+.unique {
+    color: #bca86c;
+}
+.banner {
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: 0em;
+    width: 10%;
+    right: auto;
+}
+.banner p {
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
+}
+.banner a, div.banner em {
+    display: block; margin: 0 0.5em;
+}
+.banner a, div.banner em {
+    border-top: 0px groove #CCC;
+}
+.banner a:first-child {
+    border-top: none;
+}
+.banner em {
+    color: #CFC;
+}
+.banner2 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: none;
+    line-height: 1.1;
+    text-align: left;
+    position: fixed;
+    top: 2em;
+    left: auto;
+    width: 10%;
+    right: 0em;
+}
+.banner2 p {
+    margin: 0; 
+    padding: 0.3em 0.4em;
+    border: none;
+    color: #ff8000;
+}
+.banner2 a, div.banner em {
+    display: block;
+    margin: 0 0.5em;
+}
+.banner2 a, div.banner em {
+    border-top: 0px groove #CCC;
+}
+.banner2 a:first-child {
+    border-top: none;
+}
+.banner2 em {
+    color: #CFC;
+}
+</style>
+</head>
+<body bgcolor="#2d2d2d">
+<div class="banner">
+    <p>Grotto:
+    <br>
+    <br>
+    <a title="Tips, tricks, news, and more!" href="index.html">Home</a>
+    <br>
+    <a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
+    <br>
+    <a title="Self explanatory" href="shrinelist.html">Shrines</a>
+    <br>
+    <a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
+    <br>
+    <a title="A list of all the uniques" href="uniques.html">Uniques</a>
+    <br>
+    <a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
+    <br>
+    </p>
+    <p>Monsters:
+    <br>
+    <br>
+    <a title="A list of all the normal monsters" href="monstern.html">Normal</a>
+    <br>
+    <a title="A list of all the unique monsters" href="monsteru.html">Unique</a>
+    <br>
+    </p>
+    <p>Builds:
+    <br>
+    <br>
+    <a title="FireIceTalon's Builds for Rogue" href="buildr.html">Rogue</a>
+    <br>
+    <a title="FireIceTalon's Builds for Sorcerer" href="builds.html">Sorcerer</a>
+    <br>
+    <a title="FireIceTalon's Builds for Warrior" href="buildw.html">Warrior</a>
+    <br>
+    </p>
+    <p>My:
+    <br>
+    <br>
+    <a title="My characters and their items" href="characters.html">Characters</a>
+    <br>
+    <a title="From the bean counter" href="kills.html">Kills</a>
+    <br>
+    <a title="My stash of items" href="stash.html">Stash</a>
+    <br>
+    <a title="All the items I am hunting" href="wishlist.html">Wishlist</a>
+    </p>
+</div>
+<div class="banner2">
+    <p> PvM:
+    <br>
+    <br>
+    <a href="#pvmhigh">High AC (Tank Mage)</a>
+    <br>
+    <a href="#pvmlaw">Classic Arty (Artillery)</a>
+    <br>
+    <a href="#pvmcc">Zen Mage</a>
+    <br>
+    <a href="#pvmcc">Arch-Mage</a>
+    <br>
+    </p>
+    <p> PvP:
+    <br>
+    <br>
+    <a href="#pvphpa">Classic Arty vs. Warrior</a>
+    <br>
+    <a href="#pvphphigh">Arch-Mage vs. Warrior</a>
+    <br>
+    <a href="#pvphpw">Artillery Sorcerer vs. Sorcerer</a>
+    <br>
+    <a href="#pvpmss">Battle Mage vs. Sorcerer</a>
+    <br>
+    <a href="#pvpmsw">Sorcerer vs. Rogue</a>
+    <br>
+    <a href="#pvpmshigh">Arch-Mage vs. Rogue</a>
+    <br>
+    <a href="#pvpmshigh">Bountiful Staff of Fireball build</a>
+    </p>
+</div>
+<center>
+<table class="blog">
+    <tr>
+        <td class="title">Character Builds by FireIceTalon</td>
+    </tr>
+    <tr>
+        <td><p><a href="https://www.youtube.com/user/FireIceTalon">FireIceTalon</a> has been playing since the beginning and is likely the most experienced PvP and PvM player of Diablo. This is a graphical representation with his original descriptions of the builds he has put together. Originally listed on <a href="http://thehoradrim.ddns.net/home/">The Horadrim</a> discord server. Of note: You can substitute Obsidian for Emerald in most cases.</p><td>
+    </tr>
+</table>
+<br>
+<table class="blog">
+    <tr>
+        <td colspan="2" class="title"><a name="pvmhigh"></a>Coming Soon.</td>
+    </tr>
+</table>
+</center>
+</body>
+</html>

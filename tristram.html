@@ -4,13 +4,13 @@
 <title>Ghast's Grotto - Tristram</title>
 <meta name="description" content="Zoom and scroll through a pixel perfect image of Tristram.">
 <meta name="keywords" content="Diablo, Diablo 1, Diablo One, ghast, ghastmaster, ghast's grotto, shrine list, multiplayer">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
 <script src="js/wheelzoom.js"></script>
 <style>
 img {
@@ -135,7 +135,7 @@ a:hover {
 <script> 
 function reset() {
     var img = document.getElementById('image');
-    img.src='pictures/town.webp';
+    img.src='images/town.webp';
     img.classList.remove('flip');
     return false;
 }
@@ -165,22 +165,38 @@ function flip() {
 </head>
 <body bgcolor="#2d2d2d">
 <div class="banner">
-    <p>Ghast's Grotto:
+    <p>Grotto:
     <br>
     <br>
     <a title="Tips, tricks, news, and more!" href="index.html">Home</a>
     <br>
     <a title="Various Diablo Stat Calculators" href="calcs.html">Calcs</a>
     <br>
-    <a title="A list of all the monsters. With tally of what I have killed so far" href="monsters.html">Monsters</a>
-    <br>
     <a title="Self explanatory" href="shrinelist.html">Shrines</a>
     <br>
     <a title="Zoom and scroll through a pixel perfect image of Tristram" href="tristram.html">Tristram</a>
     <br>
-    <a title="A list of all the uniques. With notes of what I have collected so far" href="uniques.html">Uniques</a>
+    <a title="A list of all the uniques" href="uniques.html">Uniques</a>
     <br>
     <a title="A huge list of oldies(but goodies) and newby Diablo related sites and forums" href="links.html">Links</a>
+    <br>
+    </p>
+    <p>Monsters:
+    <br>
+    <br>
+    <a title="A list of all the normal monsters" href="monstern.html">Normal</a>
+    <br>
+    <a title="A list of all the unique monsters" href="monsteru.html">Unique</a>
+    <br>
+    </p>
+    <p>Builds:
+    <br>
+    <br>
+    <a title="FireIceTalon's Builds for Rogue" href="buildr.html">Rogue</a>
+    <br>
+    <a title="FireIceTalon's Builds for Sorcerer" href="builds.html">Sorcerer</a>
+    <br>
+    <a title="FireIceTalon's Builds for Warrior" href="buildw.html">Warrior</a>
     <br>
     </p>
     <p>My:
@@ -188,7 +204,11 @@ function flip() {
     <br>
     <a title="My characters and their items" href="characters.html">Characters</a>
     <br>
-    <a title="My collection of items." href="items.html">Items</a>
+    <a title="From the bean counter" href="kills.html">Kills</a>
+    <br>
+    <a title="My stash of items" href="stash.html">Stash</a>
+    <br>
+    <a title="All the items I am hunting" href="wishlist.html">Wishlist</a>
     </p>
 </div>
 <div class="banner2">
@@ -218,10 +238,10 @@ function flip() {
         <td class="date">Zoom & Pan</td>
     </tr>
     <tr>
-        <td colspan="2"><img id="image" class="town hand" src='pictures/town.webp' width="100%" onmousedown="cursor()" onmouseup='cursor2()'/></td>
+        <td colspan="2"><img id="image" class="town hand" src="images/town.webp" width="100%" onmousedown="cursor()" onmouseup="cursor2()"/></td>
     </tr>
     <tr>
-        <td><i><br>Download Image: <a href="pictures/town.webp" download="tristram">2.3MB (6144x3071)</a></i></td>
+        <td><i><br>Download Image: <a href="images/town.webp" download="tristram">2.3MB (6144x3071)</a></i></td>
     </tr>
 </table>
 <script>

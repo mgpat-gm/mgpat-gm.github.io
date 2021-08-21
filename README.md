@@ -2,10 +2,4 @@ Diablo® - ©1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and B
 
 # Thank you:
 
-Blighthorn
-King aka Red-Wolf
-John Ellertson aka Eso aka The Langolier
-Royal#4121 (discord)
-OrkinMan
-Arnold van Wakeren aka Moriah
-Virgil Tibbs
+Blighthorn, King aka Red-Wolf, John Ellertson aka Eso aka The Langolier, Royal#4121 (discord), OrkinMan, Arnold van Wakeren aka Moriah, Virgil Tibbs
