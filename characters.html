@@ -31,142 +31,6 @@ a:hover {
     background: none;
     color: #ff8000
 }
-#unitip {
-    position:absolute;
-    display:none;
-    background:#111111;
-    border-width: 2px;
-    padding: 3px;
-    border-style: groove;
-    border-color: #bca86c;
-    color: #bca86c;
-}
-#magitip {
-    position:absolute;
-    display:none;
-    background:#111111;
-    border-width: 2px;
-    padding: 3px;
-    border-style: groove;
-    border-color: #a0a5c8;
-    color: #a0a5c8;
-}
-#whitip {
-    position:absolute;
-    display:none;
-    background:#111111;
-    border-width: 2px;
-    padding: 3px;
-    border-style: groove;
-    border-color: #ffffff;
-    color: #ffffff;
-}
-table.blog {
-    background-color: #111111;
-    padding: .3em;
-    color: #ffffff;
-}
-table.equip {
-    width: 100%;
-    border-collapse: collapse;
-    background: #111111 url("images/stone.webp") repeat fixed top;
-}
-table.sub {
-    border-collapse: collapse;
-}
-table.equip .magitip img {
-    outline: 1px solid #bca86c;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-table.equip .unitip img {
-    outline: 1px solid #bca86c;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-table.equip .whitip img {
-    outline: 1px solid #bca86c;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-table.equip .magitip img:hover {
-    outline: 1px solid #a0a5c8;
-}
-table.equip .unitip img:hover {
-    outline: 1px solid #a0a5c8;
-}
-table.equip .whitip img:hover {
-    outline: 1px solid #bca86c;
-}
-table.inv {
-    width: 100%;
-    border-collapse: collapse;
-    border-style: solid;
-    border-width: 1px;
-    background: #111111 url("images/stone.webp") repeat fixed top;
-}
-table.inv tr {
-    border-style: solid;
-    border-width: 1px;
-    border-color: grey;
-}
-table.inv td {
-    border-style: solid;
-    border-width: 1px;
-    border-color: grey;
-    text-align: center;
-}
-table.inv td.magitip {
-    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
-}
-table.inv td.unitip {
-    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
-}
-table.inv td.whitip {
-    box-shadow: 0px 0px 30px hsl(0, 30%, 20%) inset;
-}
-table.stats {
-    border-collapse: collapse;
-    background: #111111 url("images/stone.webp") repeat fixed top;
-}
-.unitip img:hover {
-    outline: 1px solid #a0a5c8;
-}
-.magitip img:hover {
-    outline: 1px solid #a0a5c8;
-}
-.whitip img:hover {
-    outline: 1px solid #bca86c;
-}
-.second {
-    opacity: 50%;
-}
-.title {
-    font-size: 1.5em;
-    text-align: left;
-    color: #ffffff;
-}
-.title2 {
-    color: #a0a5c8;
-    font-size: 1.2em;
-}
-img {
-    image-rendering: pixelated;
-}
-input {
-    background-color: #111111;
-    color: #ffffff;
-    border-color: #bca86c;
-}
-.fire {
-    color: #e16c6c;
-}
-.magic {
-    color: #a0a5c8;
-}
-.norm {
-    color: #ffffff;
-}
-.unique {
-    color: #bca86c;
-}
 .banner {
     margin: 0;
     font-size: 1em;
@@ -227,6 +91,487 @@ input {
 }
 .banner2 em {
     color: #CFC;
+}
+#unitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #bca86c;
+    color: #bca86c;
+}
+#magitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #a0a5c8;
+    color: #a0a5c8;
+}
+#whitip {
+    position:absolute;
+    display:none;
+    background:#111111;
+    border-width: 2px;
+    padding: 3px;
+    border-style: groove;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.unitip:hover {
+    outline: 1px solid #a0a5c8;
+    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
+}
+.magitip:hover {
+    outline: 1px solid #a0a5c8;
+    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
+}
+.whitip:hover {
+    outline: 1px solid #bca86c;
+    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
+}
+.title {
+    font-size: 1.5em;
+    text-align: left;
+    color: #ffffff;
+}
+img {
+    image-rendering: pixelated;
+}
+.fire {
+    color: #e16c6c;
+}
+.magic {
+    color: #a0a5c8;
+}
+.norm {
+    color: #ffffff;
+}
+.unique {
+    color: #bca86c;
+}
+.blog {
+    background-color: #111111;
+    color: #ffffff;
+    padding: .3em;
+    max-width: 640px;
+    display: block;
+}
+.statsimage {
+    position: relative;
+    font-size: .85em;
+}
+.name {
+    position: absolute;
+    top: 19px;
+    left: 20px;
+    height: 16px;
+    width: 136px;
+    text-align: center;
+}
+.level {
+    position: absolute;
+    top: 57px;
+    left: 78px;
+    height: 16px;
+    width: 17px;
+    text-align: center;
+}
+.strb {
+    position: absolute;
+    top: 142px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.strn {
+    position: absolute;
+    top: 142px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.magb {
+    position: absolute;
+    top: 170px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.magn {
+    position: absolute;
+    top: 170px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.dexb {
+    position: absolute;
+    top: 198px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.dexn {
+    position: absolute;
+    top: 198px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.vitb {
+    position: absolute;
+    top: 226px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.vitn {
+    position: absolute;
+    top: 226px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.lifeb {
+    position: absolute;
+    top: 291px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.lifen {
+    position: absolute;
+    top: 291px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.manab {
+    position: absolute;
+    top: 319px;
+    left: 94px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.manan {
+    position: absolute;
+    top: 319px;
+    left: 141px;
+    height: 17px;
+    width: 35px;
+    text-align: center;
+}
+.class {
+    position: absolute;
+    top: 19px;
+    left: 165px;
+    height: 16px;
+    width: 136px;
+    text-align: center;
+}
+.experience {
+    position: absolute;
+    top: 57px;
+    left: 215px;
+    height: 16px;
+    width: 89px;
+    text-align: center;
+}
+.next {
+    position: absolute;
+    top: 85px;
+    left: 215px;
+    height: 16px;
+    width: 89px;
+    text-align: center;
+}
+.ac {
+    position: absolute;
+    top: 170px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.tohit {
+    position: absolute;
+    top: 198px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.dam {
+    position: absolute;
+    top: 226px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.resmag {
+    position: absolute;
+    top: 263px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.resfire {
+    position: absolute;
+    top: 291px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.reslight {
+    position: absolute;
+    top: 319px;
+    left: 256px;
+    height: 16px;
+    width: 47px;
+    text-align: center;
+}
+.head {
+    position: absolute;
+    top: 3px;
+    left: 453px;
+    height: 56px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.armor {
+    position: absolute;
+    top: 76px;
+    left: 453px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.weapon {
+    position: absolute;
+    top: 76px;
+    left: 338px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.shield {
+    position: absolute;
+    top: 76px;
+    left: 569px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.shield2 img {
+    opacity: 50%;
+}
+.amulet {
+    position: absolute;
+    top: 33px;
+    left: 525px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.ring1 {
+    position: absolute;
+    top: 178px;
+    left: 367px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.ring2 {
+    position: absolute;
+    top: 178px;
+    left: 568px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-31 {
+    position: absolute;
+    top: 309px;
+    left: 337px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-32 {
+    position: absolute;
+    top: 309px;
+    left: 366px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-36 {
+    position: absolute;
+    top: 309px;
+    left: 482px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-37 {
+    position: absolute;
+    top: 309px;
+    left: 511px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-38 {
+    position: absolute;
+    top: 309px;
+    left: 540px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-39 {
+    position: absolute;
+    top: 309px;
+    left: 569px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x1-40 {
+    position: absolute;
+    top: 309px;
+    left: 598px;
+    height: 28px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-3 {
+    position: absolute;
+    top: 223px;
+    left: 395px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-4 {
+    position: absolute;
+    top: 223px;
+    left: 424px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-5 {
+    position: absolute;
+    top: 223px;
+    left: 453px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-6 {
+    position: absolute;
+    top: 223px;
+    left: 482px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-7 {
+    position: absolute;
+    top: 223px;
+    left: 511px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-8 {
+    position: absolute;
+    top: 223px;
+    left: 540px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-9 {
+    position: absolute;
+    top: 223px;
+    left: 569px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv1x3-10 {
+    position: absolute;
+    top: 223px;
+    left: 598px;
+    height: 84px;
+    width: 28px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv2x2-9 {
+    position: absolute;
+    top: 223px;
+    left: 570px;
+    height: 56px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv2x2-27 {
+    position: absolute;
+    top: 280px;
+    left: 570px;
+    height: 56px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv2x3-5 {
+    position: absolute;
+    top: 223px;
+    left: 454px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv2x3-7 {
+    position: absolute;
+    top: 223px;
+    left: 512px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.inv2x3-9 {
+    position: absolute;
+    top: 223px;
+    left: 570px;
+    height: 84px;
+    width: 56px;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.footer {
+    width: 80%;
+    text-align: center;
+    color: #ffffff;
 }
 </style>
 </head>
@@ -290,561 +635,132 @@ input {
     </p>
 </div>
 <center>
-<table class="blog">
-    <tr>
-        <td colspan="2" class="title"><a name="ghast"></a>GhastMaster</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="stats">
-                    <tr>
-                        <td>Class</td>
-                        <td colspan="2"><input value="Sorcerer" type="text" size="10" readonly></td>
-                        <td colspan="2">Exp <input value="366299153" type="text" size="13" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Level</td>
-                        <td><input value="43" type="text" size="5" maxlength="2" readonly></td>
-                        <td></td>
-                        <td colspan="2">Next <input value="399335440" type="text" size="12" readonly></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Base</td>
-                        <td>Now</td>
-                        <td>Gold</td>
-                        <td><input value="133433" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Str</td>
-                        <td><input class="unique" value="45" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input value="45" type="text" size="5" maxlength="3" readonly></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Mag</td>
-                        <td><input class="unique" value="250" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="381" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Armor Class</td>
-                        <td><input value="79" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Dex</td>
-                        <td><input class="unique" value="85" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input value="85" type="text" size="5" maxlength="3" readonly></td>
-                        <td>to Hit</td>
-                        <td><input value="92%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Vit</td>
-                        <td><input class="unique" value="80" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input value="80" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Damage</td>
-                        <td><input value="20-27" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"></td>
-                        <td>Res <span class="magic">Magic</td>
-                        <td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Life</td>
-                        <td><input value="132" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input value="132" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res <span class="fire">Fire</td>
-                        <td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Mana</td>
-                        <td><input class="magic" value="1117" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input class="magic" value="1117" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res Lightning</td>
-                        <td><input class="magic" value="40%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: center;"><img src="images/characters/sorcerer.webp"><br><br></td>
-            </tr>
-        </table>
-        </td>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="equip">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="unitip" colspan="2" rowspan="2" title="<b>Thinking Cap</b></b><br>(Helm)<br><br>Armor: 4 Dur: 195<br><br>Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability"><img src="images\items\thinkingcap.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Amulet Of Wizardry</b><br>(Amulet)<br><br>Mana: +52<br>+29 To Magic"><img src="images\items\amulet.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td class="unitip" colspan="2" rowspan="3" style="text-align: center;" title="<b>Dreamflange</b><br>(Mace)<br><br>Damage: 1-8 Dur: Indestructable<br><br>+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level"><img src="images\items\mace.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="unitip" colspan="2" rowspan="3" title="<b>Naj's Light Plate</b><br>(Plate Mail)<br><br>Armor: 50 Dur: Indestructable<br><br>No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level"><img src="images\items\najslightplate.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" title="<b>Garnet Shield Of Brilliance</b><br>(Large Shield)<br><br>Armor: 8 Dur: 175<br><br>Resist Fire: +48%<br>+12 To Magic<br>Required: 40 STR"><img src="images\items\largeshield.webp"></td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +59<br>+27 To Magic"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+28 To Magic"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <table class="inv">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="whitip" title="3433"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                    </tr>
-                    <tr>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-</table>
+<div class="blog"><a name="ghast"></a>
+    <div class="title">GhastMaster</div>
+    <div class="statsimage">
+        <img src="images/characters/stats.webp"><img src="images/characters/sorcinv.webp">
+        <div class="name">GhastMaster</div>
+        <div class="level">43</div>
+        <div class="strb unique">45</div>
+        <div class="strn">45</div>
+        <div class="magb unique">250</div>
+        <div class="magn magic">381</div>
+        <div class="dexb unique">85</div>
+        <div class="dexn">85</div>
+        <div class="vitb unique">80</div>
+        <div class="vitn">80</div>
+        <div class="lifeb">132</div>
+        <div class="lifen">132</div>
+        <div class="manab magic">1117</div>
+        <div class="manan magic">1117</div>
+        <div class="class">Sorcerer</div>
+        <div class="experience">366299153</div>
+        <div class="next">399335440</div>
+        <div class="ac">79</div>
+        <div class="tohit">92%</div>
+        <div class="dam">20-27</div>
+        <div class="resmag unique">MAX</div>
+        <div class="resfire unique">MAX</div>
+        <div class="reslight magic">40%</div>
+        <div class="head unitip" title="<b>Thinking Cap</b></b><br>(Helm)<br><br>Armor: 4 Dur: 195<br><br>Mana: +30<br>Resist All: +20%<br>Spells Are Increased 2 Levels<br>Altered Durability"><img src="images/items/thinkingcap.webp"></div>
+        <div class="armor unitip" title="<b>Naj's Light Plate</b><br>(Plate Mail)<br><br>Armor: 50 Dur: Indestructable<br><br>No Strength Requirement<br>+5 To Magic<br>Mana: +20<br>Resist All: +20%<br>Spells Are Increased 1 Level"><img src="images\items\najslightplate.webp"></div>
+        <div class="weapon unitip" title="<b>Dreamflange</b><br>(Mace)<br><br>Damage: 1-8 Dur: Indestructable<br><br>+30 To Magic<br>Mana: +50<br>Resist Magic: +50%<br>+20% Light Radius<br>Spells Are Increased 1 Level"><img src="images\items\mace.webp"></div>
+        <div class="shield magitip" title="<b>Garnet Shield Of Brilliance</b><br>(Large Shield)<br><br>Armor: 8 Dur: 175<br><br>Resist Fire: +48%<br>+12 To Magic<br>Required: 40 STR"><img src="images\items\largeshield.webp"></div>
+        <div class="amulet magitip" title="<b>Dragon's Amulet Of Wizardry</b><br>(Amulet)<br><br>Mana: +52<br>+29 To Magic"><img src="images\items\amulet.webp"></div>
+        <div class="ring1 magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +59<br>+27 To Magic"><img src="images\items\ring.webp"></div>
+        <div class="ring2 magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+28 To Magic"><img src="images\items\ring.webp"></div>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td colspan="2" class="title"><a name="gil"></a>Gildon</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="stats">
-                    <tr>
-                        <td>Class</td>
-                        <td colspan="2"><input value="Warrior" type="text" size="10" readonly></td>
-                        <td colspan="2">Exp <input value="4852406" type="text" size="13" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Level</td>
-                        <td><input value="25" type="text" size="5" maxlength="2" readonly></td>
-                        <td></td>
-                        <td colspan="2">Next <input value="5459523" type="text" size="12" readonly></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Base</td>
-                        <td>Now</td>
-
-                        <td>Gold</td>
-                        <td><input value="15677" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Str</td>
-                        <td><input class="norm" value="92" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="160" type="text" size="5" maxlength="3" readonly></td>
-
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Mag</td>
-                        <td><input class="norm" value="15" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="83" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Armor Class</td>
-                        <td><input class="magic" value="270" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Dex</td>
-                        <td><input class="unique" value="60" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="128" type="text" size="5" maxlength="3" readonly></td>
-                        <td>to Hit</td>
-                        <td><input class="magic" value="197%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Vit</td>
-                        <td><input class="norm" value="47" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="115" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Damage</td>
-                        <td><input class="magic" value="56-80" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"></td>
-                        <td>Res <span class="magic">Magic</td>
-                        <td><input class="magic" value="32%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Life</td>
-                        <td><input class="magic" value="399" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input class="magic" value="399" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res <span class="fire">Fire</td>
-                        <td><input class="magic" value="32%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Mana</td>
-                        <td><input class="magic" value="259" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input class="magic" value="259" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res Lightning</td>
-                        <td><input class="magic" value="32%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: center;"><img src="images/characters/warrior.webp"><br><br></td>
-            </tr>
-        </table>
-        </td>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="equip">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="unitip" colspan="2" rowspan="2" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +32%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td class="magitip" colspan="2" rowspan="3" style="text-align: center;" title="<b>King's Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 80<br><br>To Hit: +83%, +172% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td colspan="2" rowspan="3" class="magitip" title="<b>Saintly Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 73 Dur: 90<br><br>+122% Armor<br>Hit Points: +58<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" title="<b>Awesome Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 18 Dur: 50<br><br>+142% Armor<br>Hit Points: +43<br>Required: 60 STR"><img src="images\items\towershield.webp"></td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+18 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +52<br>+20 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <table class="inv">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" rowspan="3" style="text-align: center;" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +87%, +169% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></td>
-                        <td class="magitip" rowspan="3" title="<b>Strange Sword Of Haste</b><br>(Blade)<br><br>Damage: 3-8 Dur: 30<br><br>Chance To Hit: +132%<br>Fasteest Attack<br>Required: 25 STR 30 DEX"><img src="images\items\blade.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" title="<b>Emerald Shield Of The Tiger</b><br>(Large Shield)<br><br>Armor: 5 Dur: 32<br><br>Resist All: +46%<br>Hit Points: +50<br>Required: 40 STR"><img src="images\items\largeshield.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" title="<b>Obsidian Mail Of The Stars</b><br>(Scale Mail)<br><br>Armor: 23 Dur: 60<br><br>Resist All: +40%<br>+10 To All Attributes<br>Required: 35 STR"><img src="images\items\scalemail.webp"></td>
-                        <td class="unitip" colspan="2" rowspan="2" title="<b>Helm Of Sprits</b><br>(Helm)<br><br>Armor: 6 Dur: 30<br><br>Hit Steals 5% Life<br>Required: 25 STR"><img src="images\items\helmofsprits.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="2" title="<b>Obsidian Helm Of The Stars</b><br>(Great Helm)<br><br>Armor: 14 Dur: 60<br><br>Resist All: 35%<br>+11 To All Attributes<br>Required: 50 STR"><img src="images\items\greathelm.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="whitip" title="677"><img src="images\items\smallgold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="magitip" title="<b>Ruby Ring Of The Lion</b><br>(Ring)<br><br>Resist Fire: +54%<br>Hit Points: +53"><img src="images\items\ring.webp"></td>
-                        <td class="magitip" title="<b>Obsidian Ring Of The Heavens</b><br>(Ring)<br><br>Resist All: +35%<br>+14 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Amulet Of Life</b><br>(Amulet)<br><br>Mana: +58<br>+30 To Vitality"><img src="images\items\amulet.webp"></td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-</table>
+<div class="blog"><a name="gil"></a>
+    <div class="title">Gildon</div>
+    <div class="statsimage">
+        <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
+        <div class="name">Gildon</div>
+        <div class="level">25</div>
+        <div class="strb">92</div>
+        <div class="strn magic">160</div>
+        <div class="magb">15</div>
+        <div class="magn magic">83</div>
+        <div class="dexb unique">60</div>
+        <div class="dexn magic">128</div>
+        <div class="vitb">47</div>
+        <div class="vitn magic">115</div>
+        <div class="lifeb magic">399</div>
+        <div class="lifen magic">399</div>
+        <div class="manab magic">259</div>
+        <div class="manan magic">259</div>
+        <div class="class">Warrior</div>
+        <div class="experience">4852406</div>
+        <div class="next">5459523</div>
+        <div class="ac magic">270</div>
+        <div class="tohit magic">197%</div>
+        <div class="dam magic">56-80</div>
+        <div class="resmag magic">32%</div>
+        <div class="resfire magic">32%</div>
+        <div class="reslight magic">32%</div>
+        <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+        <div class="armor magitip" title="<b>Saintly Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 73 Dur: 90<br><br>+122% Armor<br>Hit Points: +58<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+        <div class="weapon magitip" title="<b>King's Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 80<br><br>To Hit: +83%, +172% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+        <div class="shield magitip" title="<b>Awesome Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 18 Dur: 50<br><br>+142% Armor<br>Hit Points: +43<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+        <div class="amulet magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +32%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+18 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +52<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="inv2x2-9 magitip" title="<b>Obsidian Helm Of The Stars</b><br>(Great Helm)<br><br>Armor: 14 Dur: 60<br><br>Resist All: 35%<br>+11 To All Attributes<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
+        <div class="inv2x2-27 unitip" title="<b>Helm Of Sprits</b><br>(Helm)<br><br>Armor: 6 Dur: 30<br><br>Hit Steals 5% Life<br>Required: 25 STR"><img src="images\items\helmofsprits.webp"></div>
+        <div class="inv2x3-5 magitip" title="<b>Obsidian Mail Of The Stars</b><br>(Scale Mail)<br><br>Armor: 23 Dur: 60<br><br>Resist All: +40%<br>+10 To All Attributes<br>Required: 35 STR"><img src="images\items\scalemail.webp"></div>
+        <div class="inv2x3-7 magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Large Shield)<br><br>Armor: 5 Dur: 32<br><br>Resist All: +46%<br>Hit Points: +50<br>Required: 40 STR"><img src="images\items\largeshield.webp"></div>
+        <div class="inv1x3-4 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +87%, +169% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+        <div class="inv1x3-3 magitip" title="<b>Strange Sword Of Haste</b><br>(Blade)<br><br>Damage: 3-8 Dur: 30<br><br>Chance To Hit: +132%<br>Fasteest Attack<br>Required: 25 STR 30 DEX"><img src="images\items\blade.webp"></div>
+        <div class="inv1x1-38 magitip" title="<b>Dragon's Amulet Of Life</b><br>(Amulet)<br><br>Mana: +58<br>+30 To Vitality"><img src="images\items\amulet.webp"></div>
+        <div class="inv1x1-37 magitip" title="<b>Obsidian Ring Of The Heavens</b><br>(Ring)<br><br>Resist All: +35%<br>+14 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="inv1x1-36 magitip" title="<b>Ruby Ring Of The Lion</b><br>(Ring)<br><br>Resist Fire: +54%<br>Hit Points: +53"><img src="images\items\ring.webp"></div>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td colspan="2" class="title"><a name="sym"></a>Symrustar</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="stats">
-                    <tr>
-                        <td>Class</td>
-                        <td colspan="2"><input value="Rogue" type="text" size="10" readonly></td>
-                        <td colspan="2">Exp <input value="46412222" type="text" size="13" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Level</td>
-                        <td><input value="34" type="text" size="5" maxlength="2" readonly></td>
-                        <td></td>
-                        <td colspan="2">Next <input value="53525811" type="text" size="12" readonly></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Base</td>
-                        <td>Now</td>
-                        <td>Gold</td>
-                        <td><input value="18560" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Str</td>
-                        <td><input class="unique" value="55" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="111" type="text" size="5" maxlength="3" readonly></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Mag</td>
-                        <td><input class="unique" value="70" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="145" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Armor Class</td>
-                        <td><input class="magic" value="265" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Dex</td>
-                        <td><input class="norm" value="139" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="215" type="text" size="5" maxlength="3" readonly></td>
-                        <td>to Hit</td>
-                        <td><input value="157%" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Vit</td>
-                        <td><input class="norm" value="57" type="text" size="5" maxlength="3" readonly></td>
-                        <td><input class="magic" value="215" type="text" size="5" maxlength="3" readonly></td>
-                        <td>Damage</td>
-                        <td><input class="norm" value="59-63" type="text" size="5" readonly></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"></td>
-                        <td>Res <span class="magic">Magic</td>
-                        <td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Life</td>
-                        <td><input class="magic" value="232" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input class="magic" value="232" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res <span class="fire">Fire</td>
-                        <td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                    <tr>
-                        <td>Mana</td>
-                        <td><input class="magic" value="354" type="text" size="5" maxlength="4" readonly></td>
-                        <td><input class="magic" value="354" type="text" size="5" maxlength="4" readonly></td>
-                        <td>Res Lightning</td>
-                        <td><input class="unique" value="MAX" type="text" size="5" maxlength="3" readonly></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: center;"><img src="images/characters/rogue.webp"><br><br></td>
-            </tr>
-        </table>
-        </td>
-        <td>
-        <table class="sub">
-            <tr>
-                <td>
-                <table class="equip">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="unitip" colspan="2" rowspan="2" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Obsidian Amulet Of Sorcery</b><br>(Amulet)<br><br>Resist All: +35%<br>+19 To Magic"><img src="images\items\amulet.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td class="magitip" colspan="2" rowspan="3" style="text-align: center;" title="<b>Obsidian Bow Of The Heavens</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>Resist All: +36%<br>+15 To All Attributes<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" title="<b>Awesome Plate Of Precision</b><br>(Full Plate Mail)<br><br>Armor: 74 Dur: 170<br><br>+146% Armor<br>+20 To Dexterity<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip second" colspan="2" rowspan="3" style="text-align: center;" title="<b>Obsidian Bow Of The Heavens</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>Resist All: +36%<br>+15 To All Attributes<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Dragon's Ring Of The Stars</b><br>(Ring)<br><br>Mana: +59<br>+11 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" title="<b>Jade Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +28%<br>+20 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                </table>
-                <br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <table class="inv">
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="magitip" colspan="2" rowspan="3" style="text-align: center;" title="<b>Warrior's Bow Of Swiftness</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>To Hit: +14%, +65% Damage<br>Fast Attack<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                    </tr>
-                    <tr>
-                        <td class="whitip" title="<b>Potion Of Full Mana</b><br>Fully Recover Mana"><img src="images\items\fullmana.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td><img src="images\filler.webp"></td>
-                        <td class="whitip" title="3560"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="whitip" title="5000"><img src="images\items\largegold.webp"></td>
-                        <td class="magitip" title="<b>Ring Of The Zodiac</b><br>(Ring)<br><br>+20 To All Attributes"><img src="images\items\ring.webp"></td>
-                        <td class="magitip" title="<b>Amulet Of The Zodiac</b><br>(Amulet)<br><br>+20 To All Attributes"><img src="images\items\amulet.webp"></td>
-                        <td class="magitip" title="<b>Ruby Amulet Of The Lion</b><br>(Amulet)<br><br>Resist Fire: +60%<br>Hit Points: +56"><img src="images\items\amulet.webp"></td>
-                    </tr>
-                </table>
-                </td>
-            </tr>
-        </table>
-        </td>
-    </tr>
-</table>
-<br>
-<span class="norm">Updated: 2021-07-01</span>
+<div class="blog"><a name="sym"></a>
+    <div class="title">Symrustar</div>
+    <div class="statsimage">
+        <img src="images/characters/stats.webp"><img src="images/characters/rogueinv.webp">
+        <div class="name">Symrustar</div>
+        <div class="level">34</div>
+        <div class="strb unique">55</div>
+        <div class="strn magic">111</div>
+        <div class="magb unique">70</div>
+        <div class="magn magic">145</div>
+        <div class="dexb">139</div>
+        <div class="dexn magic">215</div>
+        <div class="vitb">57</div>
+        <div class="vitn magic">215</div>
+        <div class="lifeb magic">232</div>
+        <div class="lifen magic">232</div>
+        <div class="manab magic">354</div>
+        <div class="manan magic">354</div>
+        <div class="class">Rogue</div>
+        <div class="experience">46412222</div>
+        <div class="next">53525811</div>
+        <div class="ac magic">265</div>
+        <div class="tohit">157%</div>
+        <div class="dam">59-63</div>
+        <div class="resmag unique">MAX</div>
+        <div class="resfire unique">MAX</div>
+        <div class="reslight unique">MAX</div>
+        <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+        <div class="armor magitip" title="<b>Awesome Plate Of Precision</b><br>(Full Plate Mail)<br><br>Armor: 74 Dur: 170<br><br>+146% Armor<br>+20 To Dexterity<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+        <div class="weapon magitip" title="<b>Obsidian Bow Of The Heavens</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>Resist All: +36%<br>+15 To All Attributes<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></div>
+        <div class="shield shield2 magitip" title="<b>Obsidian Bow Of The Heavens</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>Resist All: +36%<br>+15 To All Attributes<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></div>
+        <div class="amulet magitip" title="<b>Obsidian Amulet Of Sorcery</b><br>(Amulet)<br><br>Resist All: +35%<br>+19 To Magic"><img src="images\items\amulet.webp"></div>
+        <div class="ring1 magitip" title="<b>Dragon's Ring Of The Stars</b><br>(Ring)<br><br>Mana: +59<br>+11 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="ring2 magitip" title="<b>Jade Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +28%<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="inv2x3-9 magitip" title="<b>Warrior's Bow Of Swiftness</b><br>(Short War Bow)<br><br>Damage: 4-8 Dur: 55<br><br>To Hit: +14%, +65% Damage<br>Fast Attack<br>Required: 35 STR 70 DEX"><img src="images\items\shortwarbow.webp"></div>
+        <div class="inv1x1-38 magitip" title="<b>Ring Of The Zodiac</b><br>(Ring)<br><br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+        <div class="inv1x1-39 magitip" title="<b>Amulet Of The Zodiac</b><br>(Amulet)<br><br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="inv1x1-40 magitip" title="<b>Ruby Amulet Of The Lion</b><br>(Amulet)<br><br>Resist Fire: +60%<br>Hit Points: +56"><img src="images\items\amulet.webp"></div>
+    </div>
+</div>
 <br><br>
-<table width="80%">
-    <tr>
-        <td style="text-align: center;">
-        <span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
-    </tr>
-</table>
+<div class="footer">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+</div>
 </center>
 </body>
 </html>

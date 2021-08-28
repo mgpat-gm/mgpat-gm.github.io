@@ -12,12 +12,12 @@
 
 this.magitip = function(){	
 	/* CONFIG */		
-		xOffset = -10;
+		xOffset = 10;
 		yOffset = 20;		
 		// these 2 variable determine popup's distance from the cursor
 		// you might want to adjust to get the right result		
 	/* END CONFIG */		
-	$("td.magitip").hover(function(e){											  
+	$(".magitip").hover(function(e){											  
 		this.t = this.title;
 		this.title = "";									  
 		$("body").append("<p id='magitip'>"+ this.t +"</p>");
@@ -30,7 +30,7 @@ this.magitip = function(){
 		this.title = this.t;		
 		$("#magitip").remove();
     });	
-	$("td.magitip").mousemove(function(e){
+	$(".magitip").mousemove(function(e){
 		$("#magitip")
 			.css("top",(e.pageY - xOffset) + "px")
 			.css("left",(e.pageX + yOffset) + "px");
