@@ -122,18 +122,6 @@ a:hover {
     border-color: #ffffff;
     color: #ffffff;
 }
-.unitip:hover {
-    outline: 1px solid #a0a5c8;
-    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
-}
-.magitip:hover {
-    outline: 1px solid #a0a5c8;
-    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
-}
-.whitip:hover {
-    outline: 1px solid #bca86c;
-    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
-}
 .title {
     font-size: 1.5em;
     text-align: left;
@@ -169,225 +157,116 @@ img {
     position: relative;
     font-size: .85em;
 }
-.name {
+.items div {
     position: absolute;
+    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
+}
+.items div:hover {
+    outline: 1px solid #a0a5c8;
+    box-shadow: 0px 0px 50px hsl(240, 30%, 30%) inset;
+}
+.stats div {
+    position: absolute;
+    text-align: center;
+}
+.lefta {
+    left: 94px;
+    height: 17px;
+    width: 35px;
+}
+.leftb {
+    left: 141px;
+    height: 17px;
+    width: 35px;
+}
+.right {
+    left: 256px;
+    height: 16px;
+    width: 47px;
+}
+.name {
     top: 19px;
     left: 20px;
     height: 16px;
     width: 136px;
-    text-align: center;
 }
 .level {
-    position: absolute;
     top: 57px;
     left: 78px;
     height: 16px;
     width: 17px;
-    text-align: center;
-}
-.strb {
-    position: absolute;
-    top: 142px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.strn {
-    position: absolute;
-    top: 142px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.magb {
-    position: absolute;
-    top: 170px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.magn {
-    position: absolute;
-    top: 170px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.dexb {
-    position: absolute;
-    top: 198px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.dexn {
-    position: absolute;
-    top: 198px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.vitb {
-    position: absolute;
-    top: 226px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.vitn {
-    position: absolute;
-    top: 226px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.lifeb {
-    position: absolute;
-    top: 291px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.lifen {
-    position: absolute;
-    top: 291px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.manab {
-    position: absolute;
-    top: 319px;
-    left: 94px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
-}
-.manan {
-    position: absolute;
-    top: 319px;
-    left: 141px;
-    height: 17px;
-    width: 35px;
-    text-align: center;
 }
 .class {
-    position: absolute;
     top: 19px;
     left: 165px;
     height: 16px;
     width: 136px;
-    text-align: center;
 }
 .experience {
-    position: absolute;
     top: 57px;
     left: 215px;
     height: 16px;
     width: 89px;
-    text-align: center;
 }
 .next {
-    position: absolute;
     top: 85px;
     left: 215px;
     height: 16px;
     width: 89px;
-    text-align: center;
+}
+.str {
+    top: 142px;
+}
+.mag {
+    top: 170px;
+}
+.dex {
+    top: 198px;
+}
+.vit {
+    top: 226px;
+}
+.life {
+    top: 291px;
+}
+.mana {
+    top: 319px;
 }
 .ac {
-    position: absolute;
     top: 170px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
 }
 .tohit {
-    position: absolute;
     top: 198px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
 }
 .dam {
-    position: absolute;
     top: 226px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
 }
 .resmag {
-    position: absolute;
     top: 263px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
 }
 .resfire {
-    position: absolute;
     top: 291px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
 }
 .reslight {
-    position: absolute;
     top: 319px;
-    left: 256px;
-    height: 16px;
-    width: 47px;
-    text-align: center;
-}
-.one-one {
-    height: 28px;
-    width: 28px;
-    position: absolute;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-.one-three {
-    height: 84px;
-    width: 28px;
-    position: absolute;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-.two-two {
-    height: 56px;
-    width: 56px;
-    position: absolute;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
-}
-.two-three {
-    height: 84px;
-    width: 56px;
-    position: absolute;
-    box-shadow: 0px 0px 50px hsl(0, 30%, 20%) inset;
 }
 .head {
     top: 3px;
     left: 453px;
+    height: 56px;
+    width: 56px;
 }
 .armor {
     top: 76px;
     left: 453px;
+    height: 84px;
+    width: 56px;
 }
 .weapon {
     top: 76px;
     left: 338px;
+    height: 84px;
+    width: 56px;
 }
 .weapon2 img {
     opacity: 50%;
@@ -395,18 +274,42 @@ img {
 .shield {
     top: 76px;
     left: 569px;
+    height: 84px;
+    width: 56px;
 }
 .amulet {
     top: 33px;
     left: 525px;
+    height: 28px;
+    width: 28px;
 }
 .ring1 {
     top: 178px;
     left: 367px;
+    height: 28px;
+    width: 28px;
 }
 .ring2 {
     top: 178px;
     left: 568px;
+    height: 28px;
+    width: 28px;
+}
+.one1 {
+    height: 28px;
+    width: 28px;
+}
+.one3 {
+    height: 84px;
+    width: 28px;
+}
+.two2 {
+    height: 56px;
+    width: 56px;
+}
+.two3 {
+    height: 84px;
+    width: 56px;
 }
 .row1 {
     top: 223px;
@@ -543,41 +446,45 @@ img {
     <div class="title">PvM - High AC</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvM</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">331</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">131</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">141</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">181</div>
-        <div class="lifeb magic">528</div>
-        <div class="lifen magic">528</div>
-        <div class="manab magic">339</div>
-        <div class="manan magic">339</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac magic">275</div>
-        <div class="tohit magic">220%</div>
-        <div class="dam magic">181-206</div>
-        <div class="resmag unique">MAX</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight unique">MAX</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Awesome Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col9 magitip" title="<b>Obsidian Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="one-three row1 col6 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="two-three row1 col7 magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+        <div class="stats">
+            <div class="name">PvM</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">331</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">131</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">141</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">181</div>
+            <div class="life lefta magic">528</div>
+            <div class="life leftb magic">528</div>
+            <div class="mana lefta magic">339</div>
+            <div class="mana leftb magic">339</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right magic">275</div>
+            <div class="tohit right magic">220%</div>
+            <div class="dam right magic">181-206</div>
+            <div class="resmag right unique">MAX</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right unique">MAX</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Awesome Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col9 magitip" title="<b>Obsidian Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="one3 row1 col6 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="two3 row1 col7 magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Awesome Full Plate of the Stars</span> (Alt: <span class="magic">Awesome Full Plate of the Lion</span>)<br><b>Weapon:</b> <span class="magic">King's Bastard Sword of Haste</span>/<span class="magic">Speed</span> (Alt: <span class="magic">King's Bastard Sword of Vampires</span>)<br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span> (Alt: <span class="magic">Awesome</span>/<span class="magic">Holy Shield of the Tiger</span>)<br><b>Amulet:</b> <span class="magic">Obsidian Amulet of the Zodiac</span> (Alt: <span class="magic">Dragon's Amulet of the Zodiac</span>)<br><b>Ring 1:</b> <span class="magic">Dragon's Ring of the Zodiac</span><br><b>Ring 2:</b> <span class="magic">Dragon's Ring of the Zodiac</span> (Alt: <span class="magic">Obsidian Ring of the Zodiac</span>)<p>This build is flexible between going for a very high ac build with Awesome Shield of the Tiger (or Holy Shield of the Tiger if you are lucky enough to have one), or a somewhat lower AC build but still high enough to get maximum beneficial AC vs most monsters with Emerald Shield of the Tiger. I prefer resistances on shield since this frees up a jewel slot for more mana, but for those who dont have such items or their plate has only average stats, AC on the shield slot is a great option. You can also switch back and forth between Haste and Vampires depending on monster rolls. Vampires works great on levels with Knights, Drakes, Balrogs or Witches. For mage types, Dogs, and Storm variants, a Haste/Speed weapon is recommended.
     </div>
@@ -587,38 +494,42 @@ img {
     <div class="title">PvM - LAW (Low AC Warrior)</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvM</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">331</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">131</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">141</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">181</div>
-        <div class="lifeb magic">528</div>
-        <div class="lifen magic">528</div>
-        <div class="manab magic">399</div>
-        <div class="manan magic">399</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">123</div>
-        <div class="tohit magic">220%</div>
-        <div class="dam magic">181-206</div>
-        <div class="resmag unique">MAX</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight unique">MAX</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Obsidian Mail Of The Stars</b><br>(Splint Mail)<br><br>Armor: 35 Dur: 65<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 40 STR"><img src="images\items\splintmail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-three row1 col8 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+        <div class="stats">
+            <div class="name">PvM</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">331</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">131</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">141</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">181</div>
+            <div class="life lefta magic">528</div>
+            <div class="life leftb magic">528</div>
+            <div class="mana lefta magic">399</div>
+            <div class="mana leftb magic">399</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">123</div>
+            <div class="tohit right magic">220%</div>
+            <div class="dam right magic">181-206</div>
+            <div class="resmag right unique">MAX</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right unique">MAX</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Obsidian Mail Of The Stars</b><br>(Splint Mail)<br><br>Armor: 35 Dur: 65<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 40 STR"><img src="images\items\splintmail.webp"></div>
+            <div class="weapon magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one3 row1 col8 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Obsidian Armor/Mail/Plate of the Stars</span> (Alt: <span class="magic">Obsidian Armor of the Mammoth</span>)<br><b>Weapon:</b> <span class="magic">King's Bastard Sword of Haste</span>/<span class="magic">Speed</span> (Alt: <span class="magic">King's Bastard Sword of Vampires</span>)<br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span><br><b>Amulet:</b> <span class="magic">Dragon's Amulet of the Zodiac</span><br><b>Ring 1:</b> <span class="magic">Dragon's Ring of the Zodiac</span><br><b>Ring 2:</b> <span class="magic">Dragon's Ring of the Zodiac</span><p>LAW builds increase the challenge by opting for using low armor class, in exchange for higher mana and sometimes higher hp. LAW's rely on blocking and tactical play as opposed to just tanking damage. Nevertheless, careful play and decision making is required when opting to play this style. The challenge is especially great on levels where fast attack monsters are present, such as Maws and Storms. When playing in the catacombs or caves, this style is not recommended as it is too easy to get overwhelmed because of the terrain, and the monster types often are not low ac friendly.
     </div>
@@ -628,39 +539,43 @@ img {
     <div class="title">PvM - Civerb's Cudgel</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvM</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">305</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">103</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">110</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">155</div>
-        <div class="lifeb magic">536</div>
-        <div class="lifen magic">536</div>
-        <div class="manab magic">191</div>
-        <div class="manan magic">191</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac magic">269</div>
-        <div class="tohit magic">220%</div>
-        <div class="dam">153-160</div>
-        <div class="resmag magic">50%</div>
-        <div class="resfire magic">50%</div>
-        <div class="reslight magic">50%</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three unitip" title="<b>Civerb's Cudgel</b><br>(Mace)<br><br>Damage: 1-8 Dur: 32<br><br>+200% Damage vs. Demons<br>-5 To Dexterity<br>-2 To Magic"><img src="images\items\mace.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Gold Amulet Of The Heavens</b><br>(Amulet)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-three row1 col6 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="two-three row1 col7 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+        <div class="stats">
+            <div class="name">PvM</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">305</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">103</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">110</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">155</div>
+            <div class="life lefta magic">536</div>
+            <div class="life leftb magic">536</div>
+            <div class="mana lefta magic">191</div>
+            <div class="mana leftb magic">191</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right magic">269</div>
+            <div class="tohit right magic">220%</div>
+            <div class="dam right">153-160</div>
+            <div class="resmag right magic">50%</div>
+            <div class="resfire right magic">50%</div>
+            <div class="reslight right magic">50%</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon unitip" title="<b>Civerb's Cudgel</b><br>(Mace)<br><br>Damage: 1-8 Dur: 32<br><br>+200% Damage vs. Demons<br>-5 To Dexterity<br>-2 To Magic"><img src="images\items\mace.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Gold Amulet Of The Heavens</b><br>(Amulet)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one3 row1 col6 magitip" title="<b>King's Sword Of Vampires</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Hit Steals 5% Mana<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="two3 row1 col7 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Awesome Full Plate of the Lion</span>, <span class="magic">Obsidian Armor of the Mammoth</span> for LAW version<br><b>Weapon:</b> Civerb's Cudgel (with <span class="magic">King's Bastard Sword of Vampires</span> in inventory)<br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span> (Alt: <span class="magic"> Awesome/Holy Shield of the Tiger</span>)<br><b>Amulet:</b> <span class="magic">Gold Amulet of the Heavens</span><br><b>Ring 1:</b> <span class="magic">Gold Ring of the Heavens</span><br><b>Ring 2:</b> <span class="magic">Gold Ring of the Heavens</span><p>CC provides a thrilling experience that takes the Warrior class damage to a whole new level. 200% damage to demons is incredible, and a fully geared level 50 warrior can do critical hits in excess of 950 damage! This means most demons are 1-2 shotted even on hell difficulty. It can be played with both high and low ac, though the latter is more conducive to the build. The primary drawback of course is that 3 gold jewels are required to utilize it, and thus the mana pool is quite low. Using offensive spells is pretty limited as a result, most of your mana will be reserved for healing and teleports. It is recommended to keep a King's Sword of Vampires handy to leech back mana as needed to keep trips to town to a minimum.
     </div>
@@ -670,38 +585,42 @@ img {
     <div class="title">PvP - HP Warrior vs. Artillery or Arch Sorcerer</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn">250</div>
-        <div class="magb unique">50</div>
-        <div class="magn">50</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn">60</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn">100</div>
-        <div class="lifeb magic">746</div>
-        <div class="lifen magic">746</div>
-        <div class="manab magic">278</div>
-        <div class="manan magic">278</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">69</div>
-        <div class="tohit magic">180%</div>
-        <div class="dam magic">141-166</div>
-        <div class="resmag unique">MAX</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight magic">50%</div>
-        <div class="head two-two magitip" title="<b>Diamond Helm Of The Whale</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist Magic: +60%<br>Hit Points: +100<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
-        <div class="armor two-three magitip" title="<b>Ruby Mail Of The Whale</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist Fire: +60%<br>Hit Points: +100<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of The Lion</b><br>(Amulet)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Lion</b><br>(Ring)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Lion</b><br>(Ring)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col9 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb">250</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb">50</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb">60</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb">100</div>
+            <div class="life lefta magic">746</div>
+            <div class="life leftb magic">746</div>
+            <div class="mana lefta magic">278</div>
+            <div class="mana leftb magic">278</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">69</div>
+            <div class="tohit right magic">180%</div>
+            <div class="dam right magic">141-166</div>
+            <div class="resmag right unique">MAX</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right magic">50%</div>
+        </div>
+        <div class="items">
+            <div class="head magitip" title="<b>Diamond Helm Of The Whale</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist Magic: +60%<br>Hit Points: +100<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
+            <div class="armor magitip" title="<b>Ruby Mail Of The Whale</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist Fire: +60%<br>Hit Points: +100<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+            <div class="weapon magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of The Lion</b><br>(Amulet)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Lion</b><br>(Ring)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Lion</b><br>(Ring)<br><br>Mana: +60<br>Hit Points: +60"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col9 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> <span class="magic">Diamond Helm of the Whale</span><br><b>Armor:</b> <span class="magic">Ruby Armor</span>/<span class="magic">Mail of the Whale</span><br><b>Weapon:</b> <span class="magic">King's Bastard Sword of Haste</span>/<span class="magic">Speed</span><br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span><br><b>Amulet:</b> <span class="magic">Dragon's Amulet of Life</span>/<span class="magic">the Lion</span> (Alt: <span class="magic">Dragon's Amulet of the Zodiac</span>)<br><b>Ring 1:</b> <span class="magic">Dragon's Ring of Life</span>/<span class="magic">the Lion</span><br><b>Ring 2:</b> <span class="magic">Dragon's Ring of Life</span>/<span class="magic">the Lion</span> (Alt: <span class="magic">Dragon's Ring of the Zodiac</span>)<p>Pretty straight forward build. Warrior seeks to maximize his hp for survival. You still get a solid mana pool too. Damage is not so important here, since you still have more than enough to cause stunlock on the Sorceror. I generally prefer to play with 2 Dragon's Lion jewels, 1 Dragon's Zodiac, though 3 Dragon's Lion is especially viable for Arch-Mages.
     </div>
@@ -711,42 +630,46 @@ img {
     <div class="title">PvP - HP Warrior vs. High AC Bow Rogue or Tank Mage</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">305</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">105</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">115</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">155</div>
-        <div class="lifeb magic">576</div>
-        <div class="lifen magic">576</div>
-        <div class="manab magic">193</div>
-        <div class="manan magic">193</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">105</div>
-        <div class="tohit magic">347%</div>
-        <div class="dam">158-167</div>
-        <div class="resmag magic">50%</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight magic">50%</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Ruby Mail Of The Whale</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist Fire: +60%<br>Hit Points: +100<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Gold Amulet Of The Heavens</b><br>(Amulet)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="two-two row1 col9 magitip" title="<b>Obsidian Helm Of The Mammoth</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
-        <div class="two-three row1 col5 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
-        <div class="two-three row1 col7 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="two-two row3 col9 magitip" title="<b>Sapphire Helm Of The Whale</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist Lightning: +60%<br>Hit Points: +100<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
-        <div class="one-one row4 col1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col8 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">305</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">105</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">115</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">155</div>
+            <div class="life lefta magic">576</div>
+            <div class="life leftb magic">576</div>
+            <div class="mana lefta magic">193</div>
+            <div class="mana leftb magic">193</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">105</div>
+            <div class="tohit right magic">347%</div>
+            <div class="dam right">158-167</div>
+            <div class="resmag right magic">50%</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right magic">50%</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Ruby Mail Of The Whale</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist Fire: +60%<br>Hit Points: +100<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+            <div class="weapon magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Gold Amulet Of The Heavens</b><br>(Amulet)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="two2 row1 col9 magitip" title="<b>Obsidian Helm Of The Mammoth</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
+            <div class="two3 row1 col5 magitip" title="<b>Obsidian Mail Of The Mammoth</b><br>(Chain Mail)<br><br>Armor: 22 Dur: 55<br><br>Resist All: +40%<br>Hit Points: +80<br>Required: 30 STR"><img src="images\items\chainmail.webp"></div>
+            <div class="two3 row1 col7 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="two2 row3 col9 magitip" title="<b>Sapphire Helm Of The Whale</b><br>(Great Helm)<br><br>Armor: 15 Dur: 60<br><br>Resist Lightning: +60%<br>Hit Points: +100<br>Required: 50 STR"><img src="images\items\greathelm.webp"></div>
+            <div class="one1 row4 col1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col8 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet (Alt: <span class="magic">Obsidian Helm of the Mammoth</span> or <span class="magic">Sapphire Helm of the Whale</span>)<br><b>Armor:</b> <span class="magic">Ruby Armor of the Whale</span> (Alt: <span class="magic">Obsidian Armor of the Mammoth</span>)<br><b>Weapon:</b> <span class="magic">Strange Sword of Haste</span><br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span> (Alt: <span class="magic"> Awesome/Holy Shield of the Tiger</span>)<br><b>Amulet:</b> <span class="magic">Gold Amulet of the Heavens</span> (Alt: <span class="magic">Dragon's Amulet of the Zodiac</span>)<br><b>Ring 1:</b> <span class="magic">Gold Ring of the Heavens</span> (Alt: <span class="magic">Dragon's Ring of the Zodiac</span>)<br><b>Ring 2:</b> <span class="magic">Gold Ring of the Heavens</span><p>If the Rogue is on low AC, you can use all Zodiac jewels and King's Haste/Speed, but this is rarely the case. A Strange Sword of Haste will be required vs. any High AC Bow Rogue, and depending on the Rogue's total AC, 1-2 Gold jewelry will be necessary. I usually recommend using 2 to achieve maximum chance to hit. Max fire resistance is important as Rogue's can utilize fireball quite well. For Rogue's that have a bow with lightning damage, it will be important to max lightning resistance, and higher hp is a good idea as elemental bows can do obscene damage. Don't bother with using high AC - it is useless vs Rogues.
     </div>
@@ -756,44 +679,48 @@ img {
     <div class="title">PvP - HP Warrior vs. Warrior</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">346</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">146</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">156</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">196</div>
-        <div class="lifeb magic">558</div>
-        <div class="lifen magic">558</div>
-        <div class="manab magic">414</div>
-        <div class="manan magic">414</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac magic">278</div>
-        <div class="tohit magic">278%</div>
-        <div class="dam">179-188</div>
-        <div class="resmag magic">50%</div>
-        <div class="resfire magic">50%</div>
-        <div class="reslight magic">50%</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Awesome Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-three row1 col5 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="one-three row1 col6 magitip" title="<b>Strange Sword Of Slaughter</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Adds 20 Points To Damage<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="two-three row1 col7 magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="one-one row4 col1 magitip" title="<b>Obsidian Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col2 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col9 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col10 magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">346</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">146</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">156</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">196</div>
+            <div class="life lefta magic">558</div>
+            <div class="life leftb magic">558</div>
+            <div class="mana lefta magic">414</div>
+            <div class="mana leftb magic">414</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right magic">278</div>
+            <div class="tohit right magic">278%</div>
+            <div class="dam right">179-188</div>
+            <div class="resmag right magic">50%</div>
+            <div class="resfire right magic">50%</div>
+            <div class="reslight right magic">50%</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Awesome Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one3 row1 col5 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="one3 row1 col6 magitip" title="<b>Strange Sword Of Slaughter</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Adds 20 Points To Damage<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="two3 row1 col7 magitip" title="<b>Awesome Plate Of The Lion</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>+150% Armor<br>Hit Points: +60<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Awesome/Holy Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>+150%/+170% Armor<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="one1 row4 col1 magitip" title="<b>Obsidian Ring Of The Zodiac</b><br>(Ring)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col2 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col9 magitip" title="<b>Gold Ring Of The Heavens</b><br>(Ring)<br><br>Chance To Hit: +30%<br>+15 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col10 magitip" title="<b>Obsidian Amulet Of The Zodiac</b><br>(Amulet)<br><br>Resist All: +40%<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Awesome Full Plate of the Stars</span> (Alt: <span class="magic">Awesome Full Plate of the Lion</span>)<br><b>Weapon:</b> <span class="magic">Strange Sword of the Heavens</span> (Alt: <span class="magic">Strange Sword of Haste</span>/<span class="magic">Slaughter</span>)<br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span> (Alt: <span class="magic">Awesome</span>/<span class="magic">Holy Shield of the Tiger</span>)<br><b>Amulet:</b> <span class="magic">Dragon's Amulet of the Zodiac</span> (Alt: <span class="magic">Obsidian Amulet of the Zodiac</span>)<br><b>Ring 1:</b> <span class="magic">Dragon's Ring of the Zodiac</span> (Alt: <span class="magic">Obsidian Ring of the Zodiac</span>, <span class="magic">Gold Ring of the Heavens</span>)<br><b>Ring 2:</b> <span class="magic">Dragon's Ring of the Zodiac</span> (Alt: <span class="magic">Gold Ring of the Heavens</span>)<p>This build is pretty straight forward, you just equip based on opponents AC. Usually, if your opponent is using Emerald Shield of the Tiger than just  a Strange weapon should suffice. The minute they opt for Awesome Shield of the Tiger, 1-2 gold jewels will become necessary. This is the one duel where going high AC in PvP can be beneficial for the Warrior class, though low ac Warrior duels are also quite common as well as viable. Equipping a Heavens weapon boosts the Warrior's stats and can give them a great magic stat which allows them to use offensive spells in addition to melee in this duel. While a Haste weapon might seem more attractive at first, your opponent isn't trying to flee from you as a ranged class is so it is easy enough to create stunlock with a normal speed weapon while getting additional benefits. If your opponent is on low AC, you can opt to use a King's Sword of the Heavens for even more damage.
     </div>
@@ -803,41 +730,45 @@ img {
     <div class="title">PvP - MS (mana shield) Warrior vs. Sorceror</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">260</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">185</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">70</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">110</div>
-        <div class="lifeb">336</div>
-        <div class="lifen">336</div>
-        <div class="manab magic">453</div>
-        <div class="manan magic">453</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">149</div>
-        <div class="tohit magic">185%</div>
-        <div class="dam magic">146-171</div>
-        <div class="resmag magic">40%</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight magic">40%</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Obsidian Plate Of Sorcery</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Magic<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Garnet Shield Of Brilliance</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist Fire: +50%<br>+15 To Magic<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of Wizardry</b><br>(Amulet)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\ring.webp"></div>
-        <div class="two-three row1 col7 magitip" title="<b>Obsidian Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="one-one row4 col1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col9 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-one row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">260</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">185</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">70</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">110</div>
+            <div class="life lefta">336</div>
+            <div class="life leftb">336</div>
+            <div class="mana lefta magic">453</div>
+            <div class="mana leftb magic">453</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">149</div>
+            <div class="tohit right magic">185%</div>
+            <div class="dam right magic">146-171</div>
+            <div class="resmag right magic">40%</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right magic">40%</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Obsidian Plate Of Sorcery</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Magic<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Garnet Shield Of Brilliance</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist Fire: +50%<br>+15 To Magic<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of Wizardry</b><br>(Amulet)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of Wizardry</b><br>(Ring)<br><br>Mana: +60<br>+60 To Magic"><img src="images\items\ring.webp"></div>
+            <div class="two3 row1 col7 magitip" title="<b>Obsidian Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="one1 row4 col1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col9 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one1 row4 col10 magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Obsidian Armor</span>/<span class="magic">Mail</span>/<span class="magic">Plate of Sorcery</span> (Alt: <span class="magic">Obsidian Armor</span>/<span class="magic">Mail</span>/<span class="magic">Plate of the Stars</span>)<br><b>Weapon:</b> <span class="magic">King's Bastard Sword of Haste</span>/<span class="magic">Speed</span><br><b>Shield:</b> <span class="magic">Garnet Shield of Brilliance</span> (Alt: <span class="magic">Emerald Shield of the Tiger</span>)<br><b>Amulet:</b> <span class="magic">Dragon's Amulet of Wizardry</span> (Alt: <span class="magic">Dragon's Amulet of the Zodiac</span>)<br><b>Ring 1:</b> <span class="magic">Dragon's Ring of Wizardry</span> (Alt: <span class="magic">Dragon's Ring of the Zodiac</span>)<br><b>Ring 2:</b> <span class="magic">Dragon's Ring of Wizardry</span> (Alt: <span class="magic">Dragon's Ring of the Zodiac</span>)<p>Obviously this build seeks to maximize your mana pool instead of hp. This can be alternative method to boost your survival chances if conditions are not viable for hp builds or if this style just suits your play better. Against Fireball only mages, the Garnet Brilliance shield is fine, if they use flash too however then Emerald Tiger becomes a must. Dragon's of Wizardry vs. Dragon's Zodiac comes down to preference, but I usually prefer a higher mana pool over damage, therefore I usually opt to use 2 Dragon's Wizardry with just 1 Dragon's Zodiac though any combination of these is certainly viable.
     </div>
@@ -847,40 +778,44 @@ img {
     <div class="title">PvP - MS Warrior vs. Warrior</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">346</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">146</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">156</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">196</div>
-        <div class="lifeb magic">558</div>
-        <div class="lifen magic">558</div>
-        <div class="manab magic">414</div>
-        <div class="manan magic">414</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">91</div>
-        <div class="tohit magic">228%</div>
-        <div class="dam magic">189-214</div>
-        <div class="resmag unique">MAX</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight unique">MAX</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Obsidian Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>King's Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-three row1 col6 magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="one-three row1 col7 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="one-three row1 col8 magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="two-three row1 col9 magitip" title="<b>Obsidian Plate Of Sorcery</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Magic<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">346</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">146</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">156</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">196</div>
+            <div class="life lefta magic">558</div>
+            <div class="life leftb magic">558</div>
+            <div class="mana lefta magic">414</div>
+            <div class="mana leftb magic">414</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">91</div>
+            <div class="tohit right magic">228%</div>
+            <div class="dam right magic">189-214</div>
+            <div class="resmag right unique">MAX</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right unique">MAX</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Obsidian Plate Of The Stars</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+11 To All Attributes<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon magitip" title="<b>King's Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Emerald Shield Of The Tiger</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist All: +50%<br>Hit Points: +50<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one3 row1 col6 magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="one3 row1 col7 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="one3 row1 col8 magitip" title="<b>King's Sword Of Haste/Speed</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>To Hit: +100%, +175% Damage<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="two3 row1 col9 magitip" title="<b>Obsidian Plate Of Sorcery</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Magic<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Obsidian Armor</span>/<span class="magic">Mail</span>/<span class="magic">Plate of the Stars</span> (Alt: <span class="magic">Obsidian Armor</span>/<span class="magic">Mail</span>/<span class="magic">Plate of Sorcery</span>)<br><b>Weapon:</b> <span class="magic">King's Bastard Sword of the Heavens</span> (Alt: <span class="magic">Strange Sword of the Heavens</span>, <span class="magic">Strange Sword of Haste</span>, <span class="magic">King's Sword of Haste</span>)<br><b>Shield:</b> <span class="magic">Emerald Shield of the Tiger</span><br><b>Amulet:</b> <span class="magic">Dragon's Amulet of the Zodiac</span><br><b>Ring 1:</b> <span class="magic">Dragon's Ring of the Zodiac</span>
         <br><b>Ring 2:</b> <span class="magic">Dragon's Ring of the Zodiac</span><p>Like the HP WvW build, but this one is more low ac centric since MS Warrior builds need all mana prefix in the jewelry slots. If you are good enough in WvW mechanics though, you can defeat a high ac/hp warrior with this build with little trouble. The use of MS often outshines high ac in PvP. This is usually my build of preference in WvW.
@@ -891,37 +826,41 @@ img {
     <div class="title">PvP - MS Warrior vs. High AC Bow Rogue</div>
     <div class="statsimage">
         <img src="images/characters/stats.webp"><img src="images/characters/warinv.webp">
-        <div class="name">PvP</div>
-        <div class="level">50</div>
-        <div class="strb unique">250</div>
-        <div class="strn magic">335</div>
-        <div class="magb unique">50</div>
-        <div class="magn magic">135</div>
-        <div class="dexb unique">60</div>
-        <div class="dexn magic">180</div>
-        <div class="vitb unique">100</div>
-        <div class="vitn magic">185</div>
-        <div class="lifeb">486</div>
-        <div class="lifen">486</div>
-        <div class="manab magic">403</div>
-        <div class="manan magic">403</div>
-        <div class="class">Warrior</div>
-        <div class="experience">1583495809</div>
-        <div class="next">NONE</div>
-        <div class="ac">171</div>
-        <div class="tohit magic">290%</div>
-        <div class="dam">173-182</div>
-        <div class="resmag magic">40%</div>
-        <div class="resfire unique">MAX</div>
-        <div class="reslight magic">40%</div>
-        <div class="head two-two unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
-        <div class="armor two-three magitip" title="<b>Obsidian Plate Of Precision</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Dexterity<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
-        <div class="weapon two-three magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
-        <div class="shield two-three magitip" title="<b>Garnet Shield Of Accuracy</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist Fire: +50%<br>+15 To Dexterity<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
-        <div class="amulet one-one magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
-        <div class="ring1 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="ring2 one-one magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
-        <div class="one-three row1 col10 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+        <div class="stats">
+            <div class="name">PvP</div>
+            <div class="level">50</div>
+            <div class="str lefta unique">250</div>
+            <div class="str leftb magic">335</div>
+            <div class="mag lefta unique">50</div>
+            <div class="mag leftb magic">135</div>
+            <div class="dex lefta unique">60</div>
+            <div class="dex leftb magic">180</div>
+            <div class="vit lefta unique">100</div>
+            <div class="vit leftb magic">185</div>
+            <div class="life lefta">486</div>
+            <div class="life leftb">486</div>
+            <div class="mana lefta magic">403</div>
+            <div class="mana leftb magic">403</div>
+            <div class="class">Warrior</div>
+            <div class="experience">1583495809</div>
+            <div class="next">NONE</div>
+            <div class="ac right">171</div>
+            <div class="tohit right magic">290%</div>
+            <div class="dam right">173-182</div>
+            <div class="resmag right magic">40%</div>
+            <div class="resfire right unique">MAX</div>
+            <div class="reslight right magic">40%</div>
+        </div>
+        <div class="items">
+            <div class="head unitip" title="<b>Royal Circlet</b><br>(Crown)<br><br>Armor: 40 Dur: 40<br><br>+10 To All Attributes<br>Armor Class: 40<br>Mana: +40<br>+10% Light Radius"><img src="images\items\royalcirclet.webp"></div>
+            <div class="armor magitip" title="<b>Obsidian Plate Of Precision</b><br>(Full Plate Mail)<br><br>Armor: 75 Dur: 90<br><br>Resist All: +40%<br>+20 To Dexterity<br>Required: 90 STR"><img src="images\items\fullplatemail.webp"></div>
+            <div class="weapon magitip" title="<b>Strange Sword Of The Heavens</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>+15 To All Attributes<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+            <div class="shield magitip" title="<b>Garnet Shield Of Accuracy</b><br>(Tower Shield)<br><br>Armor: 20 Dur: 50<br><br>Resist Fire: +50%<br>+15 To Dexterity<br>Required: 60 STR"><img src="images\items\towershield.webp"></div>
+            <div class="amulet magitip" title="<b>Dragon's Amulet Of The Zodiac</b><br>(Amulet)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\amulet.webp"></div>
+            <div class="ring1 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="ring2 magitip" title="<b>Dragon's Ring Of The Zodiac</b><br>(Ring)<br><br>Mana: +60<br>+20 To All Attributes"><img src="images\items\ring.webp"></div>
+            <div class="one3 row1 col10 magitip" title="<b>Strange Sword Of Haste</b><br>(Bastard Sword)<br><br>Damage: 6-15 Dur: 60<br><br>Chance To Hit: +150%<br>Fastest Attack<br>Required: 50 STR"><img src="images\items\bastardsword.webp"></div>
+        </div>
     </div>
     <div class="descrip"><p><b>Helm:</b> Royal Circlet<br><b>Armor:</b> <span class="magic">Obsidian Armor</span>/<span class="magic">Mail</span>/<span class="magic">Plate of Precision</span><br><b>Weapon:</b> <span class="magic">Strange Sword of the Heavens</span> (Alt: <span class="magic">Strange Sword of Haste</span>)<br><b>Shield:</b> <span class="magic">Garnet Shield of Accuracy</span><br><b>Amulet:</b> <span class="magic">Dragon's Amulet of the Zodiac</span><br><b>Ring 1:</b> <span class="magic">Dragon's Ring of the Zodiac</span><br><b>Ring 2:</b> <span class="magic">Dragon's Ring of the Zodiac</span><p>This is probably the most difficult matchup for a MS Warrior. In many cases, you will have to forgo the use of a Haste weapon to get enough stats to boost your to hit while maintaining a solid mana pool. It takes great practice and experience to catch a good Bow Rogue using a non-Haste weapon.
     </div>
