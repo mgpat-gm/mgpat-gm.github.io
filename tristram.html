@@ -30,9 +30,6 @@ img {
 .cpixel {
     image-rendering: auto;
 }
-.fpixel {
-    image-rendering: crisp-edges;
-}
 .flip {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -131,6 +128,10 @@ a:hover {
 .banner2 span {
     margin: 0 0.5em;
 }
+button {
+    background-color: #111111;
+    color: #ffffff;
+}
 </style>
 <script> 
 function reset() {
@@ -142,10 +143,6 @@ function reset() {
 function cpixel() {
     var element = document.getElementById('image');
     element.classList.toggle('cpixel');
-}
-function fpixel() {
-    var element = document.getElementById('image');
-    element.classList.toggle('fpixel');
 }
 function cursor() {
     var div = document.getElementById('image');
@@ -222,14 +219,11 @@ function flip() {
     <br>
     <br>
     </p>
-    <p> Toggle<br>Renderer:
+    <p> Toggle:
     <br>
     <br>
-        <button onclick="cpixel()">Chrome</button>
+        <button onclick="cpixel()">Renderer</button>
     <br>
-    <br>
-        <button onclick="fpixel()">Firefox</button>
-    </p>
 </div>
 <center>
 <table class="blog" width="80%">
