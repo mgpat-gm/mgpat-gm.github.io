@@ -187,44 +187,37 @@ button {
 }
 </style>
 <script>
-function bigall() {
-    for (let e of document.getElementsByTagName('img')) {
-        if (e.classList.contains('static') == true) {
-        e.classList.add('none');
-        }
-        if (e.classList.contains('dynam') == true) {
-        e.classList.remove('none');
+function togimage(x) {
+    for (let e of document.getElementsByTagName('tr')) {
+        if (e.classList.contains('back') == true) {
+        e.classList.remove('back');
         }
     }
-    for (let f of document.getElementsByTagName('tr')) {
-        if (f.classList.contains('back') == true) {
-        f.classList.remove('back');
-        }
-    }
-}
-function shrinkall() {
-    for (let e of document.getElementsByTagName('img')) {
-        if (e.classList.contains('dynam') == true) {
-        e.classList.add('none');
-        }
-        if (e.classList.contains('static') == true) {
-        e.classList.remove('none');
-        }
-    }
-    for (let f of document.getElementsByTagName('tr')) {
-        if (f.classList.contains('back') == true) {
-        f.classList.remove('back');
-        }
+    if (x == 'enlarge') {
+		for (let e of document.getElementsByTagName('img')) {
+			if (e.classList.contains('static') == true) {
+			e.classList.add('none');
+			}
+			if (e.classList.contains('dynam') == true) {
+			e.classList.remove('none');
+			}
+		}
+	}
+	if (x == 'shrink') {
+		for (let e of document.getElementsByTagName('img')) {
+			if (e.classList.contains('dynam') == true) {
+			e.classList.add('none');
+			}
+			if (e.classList.contains('static') == true) {
+			e.classList.remove('none');
+			}
+		}
     }
 }
 function nono(x,y,z) {
-    var statimg = document.getElementById(x);
-    var dynamimg = document.getElementById(y);
-    var backc = document.getElementById(z);
-    
-    statimg.classList.toggle('none');
-    dynamimg.classList.toggle('none');
-    backc.classList.toggle('back');
+    document.getElementById(x).classList.toggle('none');
+    document.getElementById(y).classList.toggle('none');
+    document.getElementById(z).classList.toggle('back');
 }
 </script>
 </head>
@@ -320,10 +313,10 @@ function nono(x,y,z) {
     <p> Images:
     <br>
     <br>
-        <button onclick="shrinkall()">Shrink</button>
+        <button onclick="togimage('shrink')">Shrink</button>
     <br>
     <br>
-        <button onclick="bigall()">Enlarge</button>
+        <button onclick="togimage('enlarge')">Enlarge</button>
     <br>
 </div>
 <center>
