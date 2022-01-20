@@ -24,55 +24,6 @@ a:hover {
     background: none;
     color: #ff8000;
 }
-table.blog {
-    background-color: #111111;
-    padding: .3em;
-    color: #bca86c;
-    width: 80%;
-}
-table.new {
-    border-collapse: collapse;
-    width: 100%;
-}
-table.new td {
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: gray;
-    border-spacing: 0px;
-}
-table.new tr:hover .sure {
-    display: none;
-}
-table.new tr:hover .none {
-    transform: scale(2);
-    transform-origin: 50% 70%;
-    display: inline;
-}
-.none {
-    display: none;
-}
-.norm {
-    color: #ffffff;
-}
-.title {
-    font-size: 1.5em;
-    text-align: left;
-    color: #ffffff;
-}
-.title2 {
-    color: #a0a5c8;
-    font-size: 1.2em;
-}
-img {
-    image-rendering: pixelated;
-}
-.mag {
-    color: #a0a5c8;
-}
-.fire {
-    color:#e16c6c;
-}
 .banner {
     margin: 0;
     font-size: 1em;
@@ -134,7 +85,141 @@ img {
 .banner2 em {
     color: #CFC;
 }
+.blog {
+    background-color: #111111;
+    padding: .3em;
+    color: #bca86c;
+    width: 80%;
+}
+.mag {
+    color: #a0a5c8;
+}
+.monimg {
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    position: relative;
+}
+.fire {
+    color:#e16c6c;
+}
+.norm {
+    color: #ffffff;
+}
+.none {
+    display: none;
+}
+.dynam {
+    position: relative;
+    transform: scale(2);
+    z-index: 2;
+}
+.static {
+    position: relative;
+    z-index: 1;
+}
+img {
+    image-rendering: pixelated;
+}
+.title {
+    font-size: 1.5em;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+}
+.mon {
+    border-collapse: collapse;
+    width: 100%;
+}
+.mon td, .mon th {
+    border: 1px solid gray;
+    padding: 8px;
+    text-align: center;
+}
+.mon th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #a0a5c8;
+    font-size: 1.2em;
+}
+.back {
+    background-color: #282828;
+}
+.monbutt {
+    z-index: 9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.buttsiz1 {
+    width: 128px;
+    height: 96px;
+}
+.buttsiz2 {
+    width: 96px;
+    height: 128px;
+}
+.buttsiz3 {
+    width: 128px;
+    height: 128px;
+}
+.buttsiz4 {
+    width: 160px;
+    height: 128px;
+}
+.buttsiz5 {
+    width: 160px;
+    height: 160px;
+}
+.moncont {
+    position: relative;
+    display: inline-block;
+}
+.descrip {
+    text-align: left;
+}
+button {
+    background-color: #111111;
+    color: #ffffff;
+}
 </style>
+<script>
+function togimage(x) {
+    for (let e of document.getElementsByTagName('tr')) {
+        if (e.classList.contains('back') == true) {
+        e.classList.remove('back');
+        }
+    }
+    if (x == 'enlarge') {
+		for (let e of document.getElementsByTagName('img')) {
+			if (e.classList.contains('static') == true) {
+			e.classList.add('none');
+			}
+			if (e.classList.contains('dynam') == true) {
+			e.classList.remove('none');
+			}
+		}
+	}
+	if (x == 'shrink') {
+		for (let e of document.getElementsByTagName('img')) {
+			if (e.classList.contains('dynam') == true) {
+			e.classList.add('none');
+			}
+			if (e.classList.contains('static') == true) {
+			e.classList.remove('none');
+			}
+		}
+    }
+}
+function nono(x,y,z) {
+    document.getElementById(x).classList.toggle('none');
+    document.getElementById(y).classList.toggle('none');
+    document.getElementById(z).classList.toggle('back');
+}
+</script>
 </head>
 <body bgcolor="#2d2d2d">
 <div class="banner">
@@ -226,32 +311,57 @@ img {
     <br>
         <a href="#special">Special</a>
     </p>
+    <p> Images:
+    <br>
+    <br>
+        <button onclick="togimage('shrink')">Shrink</button>
+    <br>
+    <br>
+        <button onclick="togimage('enlarge')">Enlarge</button>
+    <br>
 </div>
 <center>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="zombie"></a>Zombies</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog">
+    <div class="title">Unique Monsters</div>
+    <div class="descrip"><p><span class="mag">Click on the monster's image to toggle the size</span>. The data in these tables was gathered from <a href="http://www.lurkerlounge.com/diablo/jarulf/jarulf162.pdf">Jarulf's Guide</a>.</p><p> A zip file containing an ingame screenshot of every monster on this page is available <a href="files/unique-ss.zip">here</a>. To download the monster images on this page, go to my <a href="https://github.com/mgpat-gm/mgpat-gm.github.io">Github Repository</a>, click on "code", then, "Download ZIP". That contains all the files on this site. Unzip, navigate to the "/images/monsters/unique" folder.</p></div>
+</div>
+<br>
+<div class="blog"><a name="zombie"></a>
+    <div class="title">Zombies</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat1x1" src="images\monsters\unique\rotfeast-the-hungry.webp"><img class="none dynam" id="dynamic1x1" src="images\monsters\unique\rotfeast-the-hungry.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat1x1','dynamic1x1','back1x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat1x2" src="images\monsters\unique\soulpus.webp"><img class="none dynam" id="dynamic1x2" src="images\monsters\unique\soulpus.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat1x2','dynamic1x2','back1x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat1x3" src="images\monsters\unique\rotcarnage.webp"><img class="none dynam" id="dynamic1x3" src="images\monsters\unique\rotcarnage.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat1x3','dynamic1x3','back1x3')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat1x4" src="images\monsters\unique\goretongue.webp"><img class="none dynam" id="dynamic1x4" src="images\monsters\unique\goretongue.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat1x4','dynamic1x4','back1x4')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\rotfeast-the-hungry.webp"><img class="none" src="images\monsters\unique\rotfeast-the-hungry.gif"><br><b>Rotfeast the Hungry</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#zombie">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back1x1">
+                <td><b>Rotfeast the Hungry</b></td>
+                <td>Zombie</td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#zombie">Zombie</a></td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>2</td>
@@ -261,10 +371,10 @@ img {
                 <td>4 - 12<br>12 - 28<br>22 - 54</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\soulpus.webp"><img class="none" src="images\monsters\unique\soulpus.gif"><br><b>Soulpus</b></td>
+            <tr id="back1x2">
+                <td><b>Soulpus</b></td>
                 <td>Zombie</td>
-                <td><a href="monstern.html#zombie">Zombie</a></td>
+                <td>Zombie</td>
                 <td>0</td>
                 <td></td>
                 <td>2</td>
@@ -274,10 +384,10 @@ img {
                 <td>4 - 8<br>12 - 20<br>22 - 38</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\rotcarnage.webp"><img class="none" src="images\monsters\unique\rotcarnage.gif"><br><b>Rotcarnage</b></td>
+            <tr id="back1x3">
+                <td><b>Rotcarnage</b></td>
+                <td>Ghoul</td>
                 <td>Zombie</td>
-                <td><a href="monstern.html#zombie">Ghoul</a></td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -287,10 +397,10 @@ img {
                 <td>9 - 24<br>22 - 52<br>42 - 102</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\goretongue.webp"><img class="none" src="images\monsters\unique\goretongue.gif"><br><b>Goretongue</b></td>
+            <tr id="back1x4">
+                <td><b>Goretongue</b></td>
+                <td>Rotting Carcass</td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#zombie">Rotting Carcass</a></td>
                 <td>1</td>
                 <td></td>
                 <td>3</td>
@@ -301,34 +411,39 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="fallen"></a>Fallen Ones with spear</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="fallen"></a>
+    <div class="title">Fallen Ones with spear</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat2x1" src="images\monsters\unique\pukerat-the-unclean.webp"><img class="none dynam" id="dynamic2x1" src="images\monsters\unique\pukerat-the-unclean.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat2x1','dynamic2x1','back2x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat2x2" src="images\monsters\unique\bongo.webp"><img class="none dynam" id="dynamic2x2" src="images\monsters\unique\bongo.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat2x2','dynamic2x2','back2x2')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\pukerat-the-unclean.webp"><img class="none" src="images\monsters\unique\pukerat-the-unclean.gif"><br><b>Pukerat the Unclean</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#fallen">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back2x1">
+                <td><b>Pukerat the Unclean</b></td>
+                <td>Fallen One, spear</td>
                 <td>Fallen One</td>
-                <td><a href="monstern.html#fallen">Fallen One, spear</a></td>
                 <td>3</td>
                 <td></td>
                 <td>2</td>
@@ -338,10 +453,10 @@ img {
                 <td>6 - 18<br>16 - 40<br>30 - 78</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\bongo.webp"><img class="none" src="images\monsters\unique\bongo.gif"><br><b>Bongo</b></td>
+            <tr id="back2x2">
+                <td><b>Bongo</b></td>
+                <td>Devil Kin, spear</td>
                 <td>Fallen One</td>
-                <td><a href="monstern.html#fallen">Devil Kin, spear</a></td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -352,34 +467,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="fallen"></a>Fallen Ones with sword</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog">
+    <div class="title">Fallen Ones with sword</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat3x1" src="images\monsters\unique\bladeskin-the-slasher.webp"><img class="none dynam" id="dynamic3x1" src="images\monsters\unique\bladeskin-the-slasher.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat3x1','dynamic3x1','back3x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat3x2" src="images\monsters\unique\gutshank-the-quick.webp"><img class="none dynam" id="dynamic3x2" src="images\monsters\unique\gutshank-the-quick.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat3x2','dynamic3x2','back3x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat3x3" src="images\monsters\unique\shadowcrow.webp"><img class="none dynam" id="dynamic3x3" src="images\monsters\unique\shadowcrow.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat3x3','dynamic3x3','back3x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\bladeskin-the-slasher.webp"><img class="none" src="images\monsters\unique\bladeskin-the-slasher.gif"><br><b>Bladeskin the Slasher</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#fallen">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back3x1">
+                <td><b>Bladeskin the Slasher</b></td>
+                <td>Fallen One, sword</td>
                 <td>Fallen One</td>
-                <td><a href="monstern.html#fallen">Fallen One, sword</a></td>
                 <td>0</td>
                 <td></td>
                 <td>2</td>
@@ -389,10 +512,10 @@ img {
                 <td>1 - 5<br>6 - 14<br>10 - 26</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\gutshank-the-quick.webp"><img class="none" src="images\monsters\unique\gutshank-the-quick.gif"><br><b>Gutshank the Quick</b></td>
+            <tr id="back3x2">
+                <td><b>Gutshank the Quick</b></td>
+                <td>Carver, sword</td>
                 <td><b><i>Winged Fiend</b></i></td>
-                <td><a href="monstern.html#fallen">Carver, sword</a></td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -402,10 +525,10 @@ img {
                 <td>6 - 16<br>16 - 36<br>30 - 70</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\shadowcrow.webp"><img class="none" src="images\monsters\unique\shadowcrow.gif"><br><b>Shadowcrow</b></td>
+            <tr id="back3x3">
+                <td><b>Shadowcrow</b></td>
+                <td>Dark One, sword</td>
                 <td><b><i>Hidden</b></i></td>
-                <td><a href="monstern.html#fallen">Dark One, sword</a></td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>5</td>
@@ -416,34 +539,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="skeleton"></a>Skeletons</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="skeleton"></a>
+    <div class="title">Skeletons</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat4x1" src="images\monsters\unique\boneripper.webp"><img class="none dynam" id="dynamic4x1" src="images\monsters\unique\boneripper.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat4x1','dynamic4x1','back4x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat4x2" src="images\monsters\unique\bonehead-keenaxe.webp"><img class="none dynam" id="dynamic4x2" src="images\monsters\unique\bonehead-keenaxe.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat4x2','dynamic4x2','back4x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat4x3" src="images\monsters\unique\madeye-the-dead.webp"><img class="none dynam" id="dynamic4x3" src="images\monsters\unique\madeye-the-dead.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat4x3','dynamic4x3','back4x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\boneripper.webp"><img class="none" src="images\monsters\unique\boneripper.gif"><br><b>Boneripper</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#skeleton">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back4x1">
+                <td><b>Boneripper</b></td>
+                <td>Skeleton</td>
                 <td><b><i>Winged Fiend</b></i></td>
-                <td><a href="monstern.html#skeleton">Skeleton</a></td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>2</td>
@@ -453,10 +584,10 @@ img {
                 <td>6 - 15<br>16 - 34<br>30 - 66</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\bonehead-keenaxe.webp"><img class="none" src="images\monsters\unique\bonehead-keenaxe.gif"><br><b>Bonehead Keenaxe</b></td>
+            <tr id="back4x2">
+                <td><b>Bonehead Keenaxe</b></td>
+                <td>Corpse Axe</td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#skeleton">Corpse Axe</a></td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>2</td>
@@ -466,10 +597,10 @@ img {
                 <td>4 - 10<br>12 - 24<br>22 - 46</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\madeye-the-dead.webp"><img class="none" src="images\monsters\unique\madeye-the-dead.gif"><br><b>Madeye the Dead</b></td>
+            <tr id="back4x3">
+                <td><b>Madeye the Dead</b></td>
+                <td>Burning Dead</td>
                 <td><b><i>Winged Fiend</b></i></td>
-                <td><a href="monstern.html#skeleton">Burning Dead</a></td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>4</td>
@@ -480,34 +611,42 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"></a>Skeleton Archers</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog">
+    <div class="title">Skeleton Archers</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat5x1" src="images\monsters\unique\deadeye.webp"><img class="none dynam" id="dynamic5x1" src="images\monsters\unique\deadeye.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat5x1','dynamic5x1','back5x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat5x2" src="images\monsters\unique\skullfire.webp"><img class="none dynam" id="dynamic5x2" src="images\monsters\unique\skullfire.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat5x2','dynamic5x2','back5x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat5x3" src="images\monsters\unique\blackash-the-burning.webp"><img class="none dynam" id="dynamic5x3" src="images\monsters\unique\blackash-the-burning.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat5x3','dynamic5x3','back5x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\deadeye.webp"><img class="none" src="images\monsters\unique\deadeye.gif"><br><b>Deadeye</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#skeleton">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back5x1">
+                <td><b>Deadeye</b></td>
+                <td>Skeleton</td>
                 <td><b><i>Goat Archer</b></i></td>
-                <td><a href="monstern.html#skeleton">Skeleton</a></td>
                 <td>0</td>
                 <td></td>
                 <td>2</td>
@@ -517,10 +656,10 @@ img {
                 <td>6 - 9<br>16 - 22<br>30 - 42</td>
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\skullfire.webp"><img class="none" src="images\monsters\unique\skullfire.gif"><br><b>Skullfire</b></td>
+            <tr id="back5x2">
+                <td><b>Skullfire</b></td>
+                <td>Corpse Bow</td>
                 <td><b><i>Goat Archer</b></i></td>
-                <td><a href="monstern.html#skeleton">Corpse Bow</a></td>
                 <td>1</td>
                 <td></td>
                 <td>3</td>
@@ -530,10 +669,10 @@ img {
                 <td>6 - 10<br>16 - 24<br>30 - 46</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blackash-the-burning.webp"><img class="none" src="images\monsters\unique\blackash-the-burning.gif"><br><b>Blackash the Burning</b></td>
+            <tr id="back5x3">
+                <td><b>Blackash the Burning</b></td>
+                <td>Burning Dead</td>
                 <td><b><i>Goat Archer</b></i></td>
-                <td><a href="monstern.html#skeleton">Burning Dead</a></td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>4</td>
@@ -544,34 +683,39 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"></a>Skeleton Captains</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog">
+    <div class="title">Skeleton Captains</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat6x1" src="images\monsters\unique\brokenhead-bangshield.webp"><img class="none dynam" id="dynamic6x1" src="images\monsters\unique\brokenhead-bangshield.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat6x1','dynamic6x1','back6x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat6x2" src="images\monsters\unique\shadowdrinker.webp"><img class="none dynam" id="dynamic6x2" src="images\monsters\unique\shadowdrinker.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat6x2','dynamic6x2','back6x2')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\brokenhead-bangshield.webp"><img class="none" src="images\monsters\unique\brokenhead-bangshield.gif"><br><b>Brokenhead Bangshield</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#skeleton">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back6x1">
+                <td><b>Brokenhead Bangshield</b></td>
+                <td>Corpse Captain</td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#skeleton">Corpse Captain</a></td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -581,10 +725,10 @@ img {
                 <td>12 - 20<br>28 - 44<br>54 - 86</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\shadowdrinker.webp"><img class="none" src="images\monsters\unique\shadowdrinker.gif"><br><b>Shadowdrinker</b></td>
+            <tr id="back6x2">
+                <td><b>Shadowdrinker</b></td>
+                <td>Horror Captain</td>
                 <td><b><i>Hidden</b></i></td>
-                <td><a href="monstern.html#skeleton">Horror Captain</a></td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>5</td>
@@ -595,34 +739,45 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="scav"></a></a>Scavengers</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="scav"></a>
+    <div class="title">Scavengers</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat7x1" src="images\monsters\unique\shadowbite.webp"><img class="none dynam" id="dynamic7x1" src="images\monsters\unique\shadowbite.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat7x1','dynamic7x1','back7x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat7x2" src="images\monsters\unique\el-chupacabras.webp"><img class="none dynam" id="dynamic7x2" src="images\monsters\unique\el-chupacabras.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat7x2','dynamic7x2','back7x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat7x3" src="images\monsters\unique\pulsecrawler.webp"><img class="none dynam" id="dynamic7x3" src="images\monsters\unique\pulsecrawler.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat7x3','dynamic7x3','back7x3')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat7x4" src="images\monsters\unique\spineeater.webp"><img class="none dynam" id="dynamic7x4" src="images\monsters\unique\spineeater.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat7x4','dynamic7x4','back7x4')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\shadowbite.webp"><img class="none" src="images\monsters\unique\shadowbite.gif"><br><b>Shadowbite</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#scav">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back7x1">
+                <td><b>Shadowbite</b></td>
                 <td><b><i>Skeleton</b></i></td>
-                <td><a href="monstern.html#scav">Scavenger</a></td>
+                <td>Scavenger</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>2</td>
@@ -632,10 +787,10 @@ img {
                 <td>3 - 20<br>10 - 44<br>18 - 86</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\el-chupacabras.webp"><img class="none" src="images\monsters\unique\el-chupacabras.gif"><br><b>El Chupacabras</b></td>
+            <tr id="back7x2">
+                <td><b>El Chupacabras</b></td>
                 <td><b><i>Goat Man</b></i></td>
-                <td><a href="monstern.html#scav">Plague Eater</a></td>
+                <td>Plague Eater</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -645,10 +800,10 @@ img {
                 <td>10 - 18<br>24 - 40<br>46 - 78</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\pulsecrawler.webp"><img class="none" src="images\monsters\unique\pulsecrawler.gif"><br><b>Pulsecrawler</b></td>
+            <tr id="back7x3">
+                <td><b>Pulsecrawler</b></td>
                 <td>Scavenger</td>
-                <td><a href="monstern.html#scav">Shadow Beast</a></td>
+                <td>Shadow Beast</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>4</td>
@@ -658,10 +813,10 @@ img {
                 <td>16 - 20<br>36 - 44<br>70 - 86</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\spineeater.webp"><img class="none" src="images\monsters\unique\spineeater.gif"><br><b>Spineeater</b></td>
+            <tr id="back7x4">
+                <td><b>Spineeater</b></td>
                 <td>Scavenger</td>
-                <td><a href="monstern.html#scav">Bone Gasher</a></td>
+                <td>Bone Gasher</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>4</td>
@@ -672,34 +827,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> I </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="wingedfiend"></a></a>Winged Fiends</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="wingedfiend"></a>
+    <div class="title">Winged Fiends</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat8x1" src="images\monsters\unique\moonbender.webp"><img class="none dynam" id="dynamic8x1" src="images\monsters\unique\moonbender.gif">
+            <div class="monbutt buttsiz2" onclick="nono('stat8x1','dynamic8x1','back8x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat8x2" src="images\monsters\unique\wrathraven.webp"><img class="none dynam" id="dynamic8x2" src="images\monsters\unique\wrathraven.gif">
+            <div class="monbutt buttsiz2" onclick="nono('stat8x2','dynamic8x2','back8x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat8x3" src="images\monsters\unique\foulwing.webp"><img class="none dynam" id="dynamic8x3" src="images\monsters\unique\foulwing.gif">
+            <div class="monbutt buttsiz2" onclick="nono('stat8x3','dynamic8x3','back8x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\moonbender.webp"><img class="none" src="images\monsters\unique\moonbender.gif"><br><b>Moonbender</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#wingedfiend">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back8x1">
+                <td><b>Moonbender</b></td>
                 <td>Winged Fiend</td>
-                <td><a href="monstern.html#wingedfiend">Blink</a></td>
+                <td>Blink</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>4</td>
@@ -709,10 +872,10 @@ img {
                 <td>9 - 27<br>22 - 58<br>42 - 114</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\wrathraven.webp"><img class="none" src="images\monsters\unique\wrathraven.gif"><br><b>Wrathraven</b></td>
+            <tr id="back8x2">
+                <td><b>Wrathraven</b></td>
                 <td>Winged Fiend</td>
-                <td><a href="monstern.html#wingedfiend">Blink</a></td>
+                <td>Blink</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>5</td>
@@ -722,10 +885,10 @@ img {
                 <td>9 - 22<br>22 - 48<br>42 - 94</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\foulwing.webp"><img class="none" src="images\monsters\unique\foulwing.gif"><br><b>Foulwing</b></td>
+            <tr id="back8x3">
+                <td><b>Foulwing</b></td>
                 <td><b><i>Horned Demon</i></b></td>
-                <td><a href="monstern.html#wingedfiend">Gloom</a></td>
+                <td>Gloom</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>5</td>
@@ -736,34 +899,36 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="hidden"></a></a>Hiddens</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="hidden"></a>
+    <div class="title">Hiddens</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat9x1" src="images\monsters\unique\warpskull.webp"><img class="none dynam" id="dynamic9x1" src="images\monsters\unique\warpskull.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat9x1','dynamic9x1','back9x1')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\warpskull.webp"><img class="none" src="images\monsters\unique\warpskull.gif"><br><b>Warpskull</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#hidden">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back9x1">
+                <td><b>Warpskull</b></td>
                 <td>Hidden</td>
-                <td><a href="monstern.html#hidden">Hidden</a></td>
+                <td>Hidden</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>3</td>
@@ -774,34 +939,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="goatmen"></a></a>Goat Men</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="goatmen"></a>
+    <div class="title">Goat Men</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat10x1" src="images\monsters\unique\deathshade-fleshmaul.webp"><img class="none dynam" id="dynamic10x1" src="images\monsters\unique\deathshade-fleshmaul.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat10x1','dynamic10x1','back10x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat10x2" src="images\monsters\unique\bloodgutter.webp"><img class="none dynam" id="dynamic10x2" src="images\monsters\unique\bloodgutter.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat10x2','dynamic10x2','back10x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat10x3" src="images\monsters\unique\blighthorn-steelmace.webp"><img class="none dynam" id="dynamic10x3" src="images\monsters\unique\blighthorn-steelmace.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat10x3','dynamic10x3','back10x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\deathshade-fleshmaul.webp"><img class="none" src="images\monsters\unique\deathshade-fleshmaul.gif"><br><b>Deathshade Fleshmaul</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#goatmen">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back10x1">
+                <td><b>Deathshade Fleshmaul</b></td>
                 <td><b><i>Horned Demon</i></b></td>
-                <td><a href="monstern.html#goatmen">Stone Clan</a></td>
+                <td>Stone Clan</td>
                 <td>0</td>
                 <td></td>
                 <td>6</td>
@@ -811,10 +984,10 @@ img {
                 <td>12 - 24<br>28 - 52<br>54 - 102</td>
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\bloodgutter.webp"><img class="none" src="images\monsters\unique\bloodgutter.gif"><br><b>Bloodgutter</b></td>
+            <tr id="back10x2">
+                <td><b>Bloodgutter</b></td>
                 <td><b><i>Winged Fiend</i></b></td>
-                <td><a href="monstern.html#goatmen">Fire Clan</a></td>
+                <td>Fire Clan</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>6</td>
@@ -824,10 +997,10 @@ img {
                 <td>24 - 34<br>52 - 72<br>102 - 142</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blighthorn-steelmace.webp"><img class="none" src="images\monsters\unique\blighthorn-steelmace.gif"><br><b>Blighthorn Steelmace</b></td>
+            <tr id="back10x3">
+                <td><b>Blighthorn Steelmace</b></td>
                 <td><b><i>Horned Demon</i></b></td>
-                <td><a href="monstern.html#goatmen">Night Clan</a></td>
+                <td>Night Clan</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>7</td>
@@ -838,34 +1011,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title">Goat Men Archers</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"></a>
+    <div class="title">Goat Men Archers</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat11x1" src="images\monsters\unique\bloodskin-darkbow.webp"><img class="none dynam" id="dynamic11x1" src="images\monsters\unique\bloodskin-darkbow.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat11x1','dynamic11x1','back11x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat11x2" src="images\monsters\unique\blightfire.webp"><img class="none dynam" id="dynamic11x2" src="images\monsters\unique\blightfire.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat11x2','dynamic11x2','back11x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat11x3" src="images\monsters\unique\gorestone.webp"><img class="none dynam" id="dynamic11x3" src="images\monsters\unique\gorestone.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat11x3','dynamic11x3','back11x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\bloodskin-darkbow.webp"><img class="none" src="images\monsters\unique\bloodskin-darkbow.gif"><br><b>Bloodskin Darkbow</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#goatmen">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back11x1">
+                <td><b>Bloodskin Darkbow</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#goatmen">Flesh Clan</a></td>
+                <td>Flesh Clan</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>5</td>
@@ -875,10 +1056,10 @@ img {
                 <td>3 - 16<br>10 - 36<br>18 - 70</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blightfire.webp"><img class="none" src="images\monsters\unique\blightfire.gif"><br><b>Blightfire</b></td>
+            <tr id="back11x2">
+                <td><b>Blightfire</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#goatmen">Fire Clan</a></td>
+                <td>Fire Clan</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>7</td>
@@ -888,10 +1069,10 @@ img {
                 <td>13 - 21<br>30 - 46<br>58 - 90</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\gorestone.webp"><img class="none" src="images\monsters\unique\gorestone.gif"><br><b>Gorestone</b></td>
+            <tr id="back11x3">
+                <td><b>Gorestone</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#goatmen">Night Clan</a></td>
+                <td>Night Clan</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>7</td>
@@ -902,34 +1083,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="overlord"></a>Overlords</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="overlord"></a>
+    <div class="title">Overlords</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat12x1" src="images\monsters\unique\bilefroth-the-pit-master.webp"><img class="none dynam" id="dynamic12x1" src="images\monsters\unique\bilefroth-the-pit-master.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat12x1','dynamic12x1','back12x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat12x2" src="images\monsters\unique\baron-sludge.webp"><img class="none dynam" id="dynamic12x2" src="images\monsters\unique\baron-sludge.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat12x2','dynamic12x2','back12x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat12x3" src="images\monsters\unique\oozedrool.webp"><img class="none dynam" id="dynamic12x3" src="images\monsters\unique\oozedrool.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat12x3','dynamic12x3','back12x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\bilefroth-the-pit-master.webp"><img class="none" src="images\monsters\unique\bilefroth-the-pit-master.gif"><br><b>Bilefroth the Pit Master</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#overlord">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back12x1">
+                <td><b>Bilefroth the Pit Master</b></td>
                 <td><b><i>Winged Fiend</i></b></td>
-                <td><a href="monstern.html#overlord">Overlord</a></td>
+                <td>Overlord</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>6</td>
@@ -939,10 +1128,10 @@ img {
                 <td>16 - 23<br>36 - 50<br>70 - 68</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\baron-sludge.webp"><img class="none" src="images\monsters\unique\baron-sludge.gif"><br><b>Baron Sludge</b></td>
+            <tr id="back12x2">
+                <td><b>Baron Sludge</b></td>
                 <td><b><i>Hidden</i></b></td>
-                <td><a href="monstern.html#overlord">Mud Man</a></td>
+                <td>Mud Man</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>8</td>
@@ -952,10 +1141,10 @@ img {
                 <td>24 - 35<br>52 - 74<br>102 - 146</td>
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\oozedrool.webp"><img class="none" src="images\monsters\unique\oozedrool.gif"><br><b>Oozedrool</b></td>
+            <tr id="back12x3">
+                <td><b>Oozedrool</td>
                 <td>Overlord</td>
-                <td><a href="monstern.html#overlord">Toad Demon</a></td>
+                <td>Toad Demon</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>9</td>
@@ -966,36 +1155,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table width="80%">
-    <tr>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="wingdemon"></a>Gargoyles</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="wingdemon"></a>
+    <div class="title">Gargoyles</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat13x1" src="images\monsters\unique\nightwing-the-cold.webp"><img class="none dynam" id="dynamic13x1" src="images\monsters\unique\nightwing-the-cold.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat13x1','dynamic13x1','back13x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat13x2" src="images\monsters\unique\goldblight-of-the-flame.webp"><img class="none dynam" id="dynamic13x2" src="images\monsters\unique\goldblight-of-the-flame.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat13x2','dynamic13x2','back13x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat13x3" src="images\monsters\unique\viletouch.webp"><img class="none dynam" id="dynamic13x3" src="images\monsters\unique\viletouch.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat13x3','dynamic13x3','back13x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\nightwing-the-cold.webp"><img class="none" src="images\monsters\unique\nightwing-the-cold.gif"><br><b>Nightwing the Cold</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#wingdemon">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back13x1">
+                <td><b>Nightwing the Cold</b></td>
                 <td><b><i>Winged Fiend</i></b></td>
-                <td><a href="monstern.html#wingdemon">Gargoyle</a></td>
+                <td>Gargoyle</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>7</td>
@@ -1005,10 +1200,10 @@ img {
                 <td>18 - 26<br>40 - 56<br>78 - 114</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\goldblight-of-the-flame.webp"><img class="none" src="images\monsters\unique\goldblight-of-the-flame.gif"><br><b>Goldblight of the Flame</b></td>
+            <tr id="back13x2">
+                <td><b>Goldblight of the Flame</b></td>
                 <td>Gargoyle</td>
-                <td><a href="monstern.html#wingdemon">Blood Claw</a></td>
+                <td>Blood Claw</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>10</td>
@@ -1018,10 +1213,10 @@ img {
                 <td>15 - 35<br>34 - 74<br>66 - 146</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\viletouch.webp"><img class="none" src="images\monsters\unique\viletouch.gif"><br><b>Viletouch</b></td>
+            <tr id="back13x3">
+                <td><b>Viletouch</b></td>
                 <td>Gargoyle</td>
-                <td><a href="monstern.html#wingdemon">Death Wing</a></td>
+                <td>Death Wing</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>12</td>
@@ -1032,34 +1227,36 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> I </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="magma"></a>Magma Demons</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="magma"></a>
+    <div class="title">Magma Demons</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat14x1" src="images\monsters\unique\firewound-the-grim.webp"><img class="none dynam" id="dynamic14x1" src="images\monsters\unique\firewound-the-grim.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat14x1','dynamic14x1','back14x1')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\firewound-the-grim.webp"><img class="none" src="images\monsters\unique\firewound-the-grim.gif"><br><b>Nightwing the Cold</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#magma">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back14x1">
+                <td><b>Firewound the Grim</b></td>
                 <td>Magma Demon</td>
-                <td><a href="monstern.html#magma">Magma Demon</a></td>
+                <td>Magma Demon</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>8</td>
@@ -1070,34 +1267,42 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="horned"></a>Horned Demons</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="horned"></a>
+    <div class="title">Horned Demons</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat15x1" src="images\monsters\unique\breakspine.webp"><img class="none dynam" id="dynamic15x1" src="images\monsters\unique\breakspine.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat15x1','dynamic15x1','back15x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat15x2" src="images\monsters\unique\blackstorm.webp"><img class="none dynam" id="dynamic15x2" src="images\monsters\unique\blackstorm.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat15x2','dynamic15x2','back15x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat15x3" src="images\monsters\unique\bluehorn.webp"><img class="none dynam" id="dynamic15x3" src="images\monsters\unique\bluehorn.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat15x3','dynamic15x3','back15x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\breakspine.webp"><img class="none" src="images\monsters\unique\breakspine.gif"><br><b>Breakspine</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#horned">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back15x1">
+                <td><b>Breakspine</b></td>
                 <td>Horned Demon</td>
-                <td><a href="monstern.html#horned">Mud Runner</a></td>
+                <td>Mud Runner</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>9</td>
@@ -1107,10 +1312,10 @@ img {
                 <td>25 - 34<br>54 - 72<br>106 - 142</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blackstorm.webp"><img class="none" src="images\monsters\unique\blackstorm.gif"><br><b>Blackstorm</b></td>
+            <tr id="back15x2">
+                <td><b>Blackstorm</b></td>
                 <td>Horned Demon</td>
-                <td><a href="monstern.html#horned">Obsidian Lord</a></td>
+                <td>Obsidian Lord</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>10</td>
@@ -1120,10 +1325,10 @@ img {
                 <td>20 - 40<br>44 - 84<br>86 - 166</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\bluehorn.webp"><img class="none" src="images\monsters\unique\bluehorn.gif"><br><b>Bluehorn</b></td>
+            <tr id="back15x3">
+                <td><b>Bluehorn</b></td>
                 <td>Horned Demon</td>
-                <td><a href="monstern.html#horned">Frost Charger</a></td>
+                <td>Frost Charger</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>11</td>
@@ -1134,34 +1339,42 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="spit"></a>Spitting Terrors</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="spit"></a>
+    <div class="title">Spitting Terrors</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat16x1" src="images\monsters\unique\deathspit.webp"><img class="none dynam" id="dynamic16x1" src="images\monsters\unique\deathspit.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat16x1','dynamic16x1','back16x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat16x2" src="images\monsters\unique\chaoshowler.webp"><img class="none dynam" id="dynamic16x2" src="images\monsters\unique\chaoshowler.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat16x2','dynamic16x2','back16x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat16x3" src="images\monsters\unique\plaguewrath.webp"><img class="none dynam" id="dynamic16x3" src="images\monsters\unique\plaguewrath.gif">
+            <div class="monbutt buttsiz1" onclick="nono('stat16x3','dynamic16x3','back16x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\deathspit.webp"><img class="none" src="images\monsters\unique\deathspit.gif"><br><b>Deathspit</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#spit">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back16x1">
+                <td><b>Deathspit</b></td>
                 <td><b><i>Fast Spit</i></b></td>
-                <td><a href="monstern.html#spit">Acid Beast</a></td>
+                <td>Acid Beast</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>6</td>
@@ -1171,10 +1384,10 @@ img {
                 <td>12 - 32<br>28 - 68<br>54 - 134</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\chaoshowler.webp"><img class="none" src="images\monsters\unique\chaoshowler.gif"><br><b>Chaoshowler</b></td>
+            <tr id="back16x2">
+                <td><b>Chaoshowler</td>
                 <td><b><i>Fast Spit</i></b></td>
-                <td><a href="monstern.html#spit">Poison Spitter</a></td>
+                <td>Poison Spitter</td>
                 <td>0</td>
                 <td>Yes</td>
                 <td>8</td>
@@ -1184,10 +1397,10 @@ img {
                 <td>12 - 20<br>28 - 44<br>54 - 86</td>
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\plaguewrath.webp"><img class="none" src="images\monsters\unique\plaguewrath.gif"><br><b>Plaguewrath</b></td>
+            <tr id="back16x3">
+                <td><b>Plaguewrath</b></td>
                 <td><b><i>Fast Spit</i></b></td>
-                <td><a href="monstern.html#spit">Poison Spitter</a></td>
+                <td>Poison Spitter</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>10</td>
@@ -1198,34 +1411,42 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="lightning"></a>Lightning Demons</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="lightning"></a>
+    <div class="title">Lightning Demons</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat17x1" src="images\monsters\unique\brokenstorm.webp"><img class="none dynam" id="dynamic17x1" src="images\monsters\unique\brokenstorm.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat17x1','dynamic17x1','back17x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat17x2" src="images\monsters\unique\the-flayer.webp"><img class="none dynam" id="dynamic17x2" src="images\monsters\unique\the-flayer.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat17x2','dynamic17x2','back17x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat17x3" src="images\monsters\unique\doomcloud.webp"><img class="none dynam" id="dynamic17x3" src="images\monsters\unique\doomcloud.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat17x3','dynamic17x3','back17x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\brokenstorm.webp"><img class="none" src="images\monsters\unique\brokenstorm.gif"><br><b>Brokenstorm</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#lightning">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back17x1">
+                <td><b>Brokenstorm</b></td>
                 <td>Magma Demon</td>
-                <td><a href="monstern.html#lightning">Red Storm</a></td>
+                <td>Red Storm</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>9</td>
@@ -1235,10 +1456,10 @@ img {
                 <td>25 - 36<br>54 - 76<br>106 - 150</td>
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\the-flayer.webp"><img class="none" src="images\monsters\unique\the-flayer.gif"><br><b>The Flayer</b></td>
+            <tr id="back17x2">
+                <td><b>The Flayer</b></td>
                 <td>Magma Demon</td>
-                <td><a href="monstern.html#lightning">Storm Rider</a></td>
+                <td>Storm Rider</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>10</td>
@@ -1248,10 +1469,10 @@ img {
                 <td>20 - 35<br>44 - 74<br>86 - 146</td>
                 <td><span class="mag"> R </span><span class="fire"> R </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\doomcloud.webp"><img class="none" src="images\monsters\unique\doomcloud.gif"><br><b>Doomcloud</b></td>
+            <tr id="back17x3">
+                <td><b>Doomcloud</b></td>
                 <td>Magma Demon</td>
-                <td><a href="monstern.html#lightning">Maelstorm</a></td>
+                <td>Maelstorm</td>
                 <td>1</td>
                 <td></td>
                 <td>13</td>
@@ -1262,36 +1483,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> I </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table width="80%">
-    <tr>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="balrog"></a>Balrogs</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="balrog"></a>
+    <div class="title">Balrogs</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat18x1" src="images\monsters\unique\windspawn.webp"><img class="none dynam" id="dynamic18x1" src="images\monsters\unique\windspawn.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat18x1','dynamic18x1','back18x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat18x2" src="images\monsters\unique\gorefeast.webp"><img class="none dynam" id="dynamic18x2" src="images\monsters\unique\gorefeast.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat18x2','dynamic18x2','back18x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat18x3" src="images\monsters\unique\blackskull.webp"><img class="none dynam" id="dynamic18x3" src="images\monsters\unique\blackskull.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat18x3','dynamic18x3','back18x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\windspawn.webp"><img class="none" src="images\monsters\unique\windspawn.gif"><br><b>Windspawn</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#balrog">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back18x1">
+                <td><b>Windspawn</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#balrog">Vortex Lord</a></td>
+                <td>Vortex Lord</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>12</td>
@@ -1301,10 +1528,10 @@ img {
                 <td>35 - 40<br>74 - 84<br>146 - 166</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\gorefeast.webp"><img class="none" src="images\monsters\unique\gorefeast.gif"><br><b>Gorefeast</b></td>
+            <tr id="back18x2">
+                <td><b>Gorefeast</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#balrog">Vortex Lord</a></td>
+                <td>Vortex Lord</td>
                 <td>3</td>
                 <td></td>
                 <td>13</td>
@@ -1314,10 +1541,10 @@ img {
                 <td>20 - 55<br>44 - 114<br>86 - 226</td>
                 <td><span class="mag"> - </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blackskull.webp"><img class="none" src="images\monsters\unique\blackskull.gif"><br><b>Blackskull</b></td>
+            <tr id="back18x3">
+                <td><b>Blackskull</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#balrog">Balrog</a></td>
+                <td>Balrog</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>13</td>
@@ -1328,34 +1555,42 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="viper"></a>Vipers</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="viper"></a>
+    <div class="title">Vipers</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat19x1" src="images\monsters\unique\fangspeir.webp"><img class="none dynam" id="dynamic19x1" src="images\monsters\unique\fangspeir.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat19x1','dynamic19x1','back19x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat19x2" src="images\monsters\unique\viperflame.webp"><img class="none dynam" id="dynamic19x2" src="images\monsters\unique\viperflame.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat19x2','dynamic19x2','back19x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat19x3" src="images\monsters\unique\fangskin.webp"><img class="none dynam" id="dynamic19x3" src="images\monsters\unique\fangskin.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat19x3','dynamic19x3','back19x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\fangspeir.webp"><img class="none" src="images\monsters\unique\fangspeir.gif"><br><b>Fangspeir</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#viper">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back19x1">
+                <td><b>Fangspeir</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#viper">Cave Viper</a></td>
+                <td>Cave Viper</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>11</td>
@@ -1365,10 +1600,10 @@ img {
                 <td>15 - 32<br>34 - 68<br>66 - 134</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\viperflame.webp"><img class="none" src="images\monsters\unique\viperflame.gif"><br><b>Viperflame</b></td>
+            <tr id="back19x2">
+                <td><b>Viperflame</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#viper">Fire Drake</a></td>
+                <td>Fire Drake</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>12</td>
@@ -1378,10 +1613,10 @@ img {
                 <td>25 - 35<br>54 - 74<br>106 - 146</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\fangskin.webp"><img class="none" src="images\monsters\unique\fangskin.gif"><br><b>Fangskin</b></td>
+            <tr id="back19x3">
+                <td><b>Fangskin</b></td>
                 <td><b><i>Skeleton</i></b></td>
-                <td><a href="monstern.html#viper">Gold Viper</a></td>
+                <td>Gold Viper</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>14</td>
@@ -1392,34 +1627,51 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="succubi"></a>Succubi</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="succubi"></a>
+    <div class="title">Succubi</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat20x1" src="images\monsters\unique\witchfire-the-unholy.webp"><img class="none dynam" id="dynamic20x1" src="images\monsters\unique\witchfire-the-unholy.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x1','dynamic20x1','back20x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat20x2" src="images\monsters\unique\witchmoon.webp"><img class="none dynam" id="dynamic20x2" src="images\monsters\unique\witchmoon.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x2','dynamic20x2','back20x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat20x3" src="images\monsters\unique\stareye-the-witch.webp"><img class="none dynam" id="dynamic20x3" src="images\monsters\unique\stareye-the-witch.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x3','dynamic20x3','back20x3')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat20x4" src="images\monsters\unique\bloodlust.webp"><img class="none dynam" id="dynamic20x4" src="images\monsters\unique\bloodlust.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x4','dynamic20x4','back20x4')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat20x5" src="images\monsters\unique\blackjade.webp"><img class="none dynam" id="dynamic20x5" src="images\monsters\unique\blackjade.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x5','dynamic20x5','back20x5')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat20x6" src="images\monsters\unique\red-vex.webp"><img class="none dynam" id="dynamic20x6" src="images\monsters\unique\red-vex.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat20x6','dynamic20x6','back20x6')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\witchfire-the-unholy.webp"><img class="none" src="images\monsters\unique\witchfire-the-unholy.gif"><br><b>Witchfire the Unholy</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#succubi">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back20x1">
+                <td><b>Witchfire the Unholy</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#succubi">Succubus</a></td>
+                <td>Succubus</td>
                 <td>3</td>
                 <td>Yes</td>
                 <td>12</td>
@@ -1429,10 +1681,10 @@ img {
                 <td>10 - 20<br>24 - 44<br>46 - 86</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\witchmoon.webp"><img class="none" src="images\monsters\unique\witchmoon.gif"><br><b>Witchmoon</b></td>
+            <tr id="back20x2">
+                <td><b>Witchmoon</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#succubi">Snow Witch</a></td>
+                <td>Snow Witch</td>
                 <td>3</td>
                 <td></td>
                 <td>13</td>
@@ -1442,10 +1694,10 @@ img {
                 <td>30 - 40<br>64 - 84<br>126 - 166</td>
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\stareye-the-witch.webp"><img class="none" src="images\monsters\unique\stareye-the-witch.gif"><br><b>Stareye the Witch</b></td>
+            <tr id="back20x3">
+                <td><b>Stareye the Witch</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#succubi">Hell Spawn</a></td>
+                <td>Hell Spawn</td>
                 <td>2</td>
                 <td></td>
                 <td>14</td>
@@ -1455,10 +1707,10 @@ img {
                 <td>30 - 50<br>64 - 104<br>126 - 206</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\bloodlust.webp"><img class="none" src="images\monsters\unique\bloodlust.gif"><br><b>Bloodlust</b></td>
+            <tr id="back20x4">
+                <td><b>Bloodlust</b></td>
                 <td>Goat Archer</td>
-                <td><a href="monstern.html#succubi">Hell Spawn</a></td>
+                <td>Hell Spawn</td>
                 <td>1</td>
                 <td></td>
                 <td>15</td>
@@ -1468,10 +1720,10 @@ img {
                 <td>20 - 55<br>44 - 114<br>86 - 223</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\blackjade.webp"><img class="none" src="images\monsters\unique\blackjade.gif"><br><b>Blackjade</b></td>
+            <tr id="back20x5">
+                <td><b>Blackjade</b></td>
                 <td><b><i>Special</i></b></td>
-                <td><a href="monstern.html#succubi">Hell Spawn</a></td>
+                <td>Hell Spawn</td>
                 <td>3</td>
                 <td></td>
                 <td>15</td>
@@ -1481,10 +1733,10 @@ img {
                 <td>30 - 50<br>64 - 104<br>126 - 206</td>
                 <td><span class="mag"> I </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\red-vex.webp"><img class="none" src="images\monsters\unique\red-vex.gif"><br><b>Red Vex</b></td>
+            <tr id="back20x6">
+                <td><b>Red Vex</b></td>
                 <td><b><i>Special</i></b></td>
-                <td><a href="monstern.html#succubi">Hell Spawn</a></td>
+                <td>Hell Spawn</td>
                 <td>3</td>
                 <td></td>
                 <td>15</td>
@@ -1495,32 +1747,46 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="knights"></a>Knights</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="knights"></a>
+    <div class="title">Knights</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat21x1" src="images\monsters\unique\lionskull-the-bent.webp"><img class="none dynam" id="dynamic21x1" src="images\monsters\unique\lionskull-the-bent.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat21x1','dynamic21x1','back21x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat21x2" src="images\monsters\unique\rustweaver.webp"><img class="none dynam" id="dynamic21x2" src="images\monsters\unique\rustweaver.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat21x2','dynamic21x2','back21x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat21x3" src="images\monsters\unique\graywar-the-slayer.webp"><img class="none dynam" id="dynamic21x3" src="images\monsters\unique\graywar-the-slayer.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat21x3','dynamic21x3','back21x3')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat21x4" src="images\monsters\unique\steelskull-the-hunter.webp"><img class="none dynam" id="dynamic21x4" src="images\monsters\unique\steelskull-the-hunter.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat21x4','dynamic21x4','back21x4')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat21x5" src="images\monsters\unique\sir-gorash.webp"><img class="none dynam" id="dynamic21x5" src="images\monsters\unique\sir-gorash.gif">
+            <div class="monbutt buttsiz4" onclick="nono('stat21x5','dynamic21x5','back21x5')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\lionskull-the-bent.webp"><img class="none" src="images\monsters\unique\lionskull-the-bent.gif"><br><b>Lionskull the Bent</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#knights">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back21x1">
+                <td><b>Lionskull the Bent</b></td>
                 <td>Skeleton</td>
                 <td><a href="monstern.html#knights">Black Knight</a></td>
                 <td>2</td>
@@ -1532,10 +1798,10 @@ img {
                 <td>25 - 25<br>54 - 54<br>106 - 106</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\rustweaver.webp"><img class="none" src="images\monsters\unique\rustweaver.gif"><br><b>Rustweaver</b></td>
+            <tr id="back21x2">
+                <td><b>Rustweaver</b></td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#knights">Doom Guard</a></td>
+                <td>Doom Guard</td>
                 <td>3</td>
                 <td></td>
                 <td>13</td>
@@ -1545,10 +1811,10 @@ img {
                 <td>1 - 60<br>6 - 124<br>10 - 246</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> I </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\graywar-the-slayer.webp"><img class="none" src="images\monsters\unique\graywar-the-slayer.gif"><br><b>Graywar the Slayer</b></td>
+            <tr id="back21x3">
+                <td><b>Graywar the Slayer</b></td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#knights">Doom Guard</a></td>
+                <td>Doom Guard</td>
                 <td>1</td>
                 <td></td>
                 <td>14</td>
@@ -1558,10 +1824,10 @@ img {
                 <td>30 - 50<br>64 - 104<br>126 - 206</td>
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\steelskull-the-hunter.webp"><img class="none" src="images\monsters\unique\steelskull-the-hunter.gif"><br><b>Steelskull the Hunter</b></td>
+            <tr id="back21x4">
+                <td><b>Steelskull the Hunter</b></td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#knights">Steel Lord</a></td>
+                <td>Steel Lord</td>
                 <td>3</td>
                 <td></td>
                 <td>14</td>
@@ -1571,10 +1837,10 @@ img {
                 <td>40 - 50<br>84 - 104<br>166 - 206</td>
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\sir-gorash.webp"><img class="none" src="images\monsters\unique\sir-gorash.gif"><br><b>Sir Gorash</b></td>
+            <tr id="back21x5">
+                <td><b>Sir Gorash</b></td>
                 <td>Skeleton</td>
-                <td><a href="monstern.html#knights">Blood Knight</a></td>
+                <td>Blood Knight</td>
                 <td>1</td>
                 <td></td>
                 <td>16</td>
@@ -1585,34 +1851,42 @@ img {
                 <td><span class="mag"> - </span><span class="fire"> - </span><span class="norm"> - </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="mages"></a>Mages</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>Attack Type</td>
-                <td>Base Type</td>
-                <td>Intf</td>
-                <td>Mob</td>
-                <td>dlvl</td>
-                <td>mlvl Battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>Damage</td>
-                <td>Resists</td>
-            </tr>
+<div class="blog"><a name="mages"></a>
+    <div class="title">Mages</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat22x1" src="images\monsters\unique\dreadjudge.webp"><img class="none dynam" id="dynamic22x1" src="images\monsters\unique\dreadjudge.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat22x1','dynamic22x1','back22x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat22x2" src="images\monsters\unique\the-vizier.webp"><img class="none dynam" id="dynamic22x2" src="images\monsters\unique\the-vizier.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat22x2','dynamic22x2','back22x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat22x3" src="images\monsters\unique\arch-bishop-lazarus.webp"><img class="none dynam" id="dynamic22x3" src="images\monsters\unique\arch-bishop-lazarus.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat22x3','dynamic22x3','back22x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\dreadjudge.webp"><img class="none" src="images\monsters\unique\dreadjudge.gif"><br><b>Dreadjudge</b></td>
+                <th>Name</th>
+                <th><a href="monstern.html#mages">Base Type</a></th>
+                <th>Attack Type</th>
+                <th>Intf</th>
+                <th>Mob</th>
+                <th>dlvl</th>
+                <th>mlvl Battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>Damage</th>
+                <th>Resists</th>
+            </tr>
+            <tr id="back22x1">
+                <td><b>Dreadjudge</b></td>
                 <td>Mage</td>
-                <td><a href="monstern.html#mages">Magistrate</a></td>
+                <td>>Magistrate</td>
                 <td>1</td>
                 <td>Yes</td>
                 <td>14</td>
@@ -1622,10 +1896,10 @@ img {
                 <td>30 - 40<br>64 - 84<br>126 - 166</td>
                 <td><span class="mag"> I </span><span class="fire"> I </span><span class="norm"> R </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\the-vizier.webp"><img class="none" src="images\monsters\unique\the-vizier.gif"><br><b>The Vizier</b></td>
+            <tr id="back22x2">
+                <td><b>The Vizier</b></td>
                 <td>Mage</td>
-                <td><a href="monstern.html#mages">Cabalist</a></td>
+                <td>Cabalist</td>
                 <td>2</td>
                 <td>Yes</td>
                 <td>15</td>
@@ -1635,10 +1909,10 @@ img {
                 <td>25 - 40<br>54 - 84<br>106 - 166</td>
                 <td><span class="mag"> - </span><span class="fire"> I </span><span class="norm"> - </span></td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\arch-bishop-lazarus.webp"><img class="none" src="images\monsters\unique\arch-bishop-lazarus.gif"><br><b>Arch-Bishop Lazarus</b></td>
+            <tr id="back22x3">
+                <td><b>Arch-Bishop Lazarus</b></td>
                 <td><b><i>Special</i></b></td>
-                <td><a href="monstern.html#mages">Advocate</a></td>
+                <td>Advocate</td>
                 <td>3</td>
                 <td></td>
                 <td>15</td>
@@ -1649,31 +1923,39 @@ img {
                 <td><span class="mag"> I </span><span class="fire"> R </span><span class="norm"> R </span></td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table class="blog">
-    <tr>
-        <td class="title"><a name="special"></a>Special Monsters in Diablo - Demons (Skeleton King is Undead)</td>
-    </tr>
-    <tr>
-        <td>
-        <table class="new">
-            <tr class="title2">
-                <td>Name</td>
-                <td>dlvl</td>
-                <td>mlvl battle</td>
-                <td>mlvl items</td>
-                <td>HP</td>
-                <td>AC</td>
-                <td>To Hit%</td>
-                <td>Damage</td>
-                <td>Resists</td>
-                <td>Base Exp</td>
-            </tr>
+<div class="blog"><a name="special"></a>
+    <div class="title">Special Monsters in Diablo - Demons (Skeleton King is Undead)</div>
+    <div class="monimg">
+        <div class="moncont"><img class="static" id="stat23x1" src="images\monsters\unique\the-butcher.webp"><img class="none dynam" id="dynamic23x1" src="images\monsters\unique\the-butcher.gif">
+            <div class="monbutt buttsiz3" onclick="nono('stat23x1','dynamic23x1','back23x1')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat23x2" src="images\monsters\unique\skeleton-king.webp"><img class="none dynam" id="dynamic23x2" src="images\monsters\unique\skeleton-king.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat23x2','dynamic23x2','back23x2')"></div>
+        </div>
+        <div class="moncont"><img class="static" id="stat23x3" src="images\monsters\unique\the-dark-lord.webp"><img class="none dynam" id="dynamic23x3" src="images\monsters\unique\the-dark-lord.gif">
+            <div class="monbutt buttsiz5" onclick="nono('stat23x3','dynamic23x3','back23x3')"></div>
+        </div>
+    <br><br><br><br>
+    </div>
+    <div class="info">
+        <table class="mon">
             <tr>
-                <td><img class="sure" src="images\monsters\unique\the-butcher.webp"><img class="none" src="images\monsters\unique\the-butcher.gif"><br><b>The Butcher</b></td>
+                <th>Name</th>
+                <th>dlvl</th>
+                <th>mlvl battle</th>
+                <th>mlvl items</th>
+                <th>HP</th>
+                <th>AC</th>
+                <th>To Hit%</th>
+                <th>Damage</th>
+                <th>Resists</th>
+                <th>Base Exp</th>
+            </tr>
+            <tr id="back23x1">
+                <td><b>The Butcher</b></td>
                 <td>2</td>
                 <td>6<br>36<br>66</td>
                 <td>1<br>1<br>1</td>
@@ -1686,8 +1968,8 @@ img {
                 <span class="mag">-</span><span class="fire"> R </span><span class="norm"> R </span></td>
                 <td>710<br>3,420<br>6,840</td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\skeleton-king.webp"><img class="none" src="images\monsters\unique\skeleton-king.gif"><br><b>Skeleton King</b></td>
+            <tr id="back23x2">
+                <td><b>Skeleton King</b></td>
                 <td>3</td>
                 <td>14<br>44<br>74</td>
                 <td>9<br>9<br>9</td>
@@ -1700,8 +1982,8 @@ img {
                 <span class="mag">I</span><span class="fire"> R </span><span class="norm"> R </span></td>
                 <td>570<br>3,140<br>6,840</td>
             </tr>
-            <tr>
-                <td><img class="sure" src="images\monsters\unique\the-dark-lord.webp"><img class="none" src="images\monsters\unique\the-dark-lord.gif"><br><b>The Dark Lord</b></td>
+            <tr id="back23x3">
+                <td><b>The Dark Lord</b></td>
                 <td>16</td>
                 <td>30<br>45<br>60</td>
                 <td>30<br>30<br>30</td>
@@ -1715,16 +1997,9 @@ img {
                 <td>31,666<br>65,332<br>130,664</td>
             </tr>
         </table>
-        </td>
-    </tr>
-</table>
+    </div>
+</div>
 <br>
-<table width="80%">
-    <tr>
-        <td style="text-align: center;">
-        <span class="norm">Diablo&reg; - &copy;1996 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.</span></td>
-    </tr>
-</table>
 </center>
 </body>
 </html>
