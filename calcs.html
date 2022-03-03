@@ -32,6 +32,7 @@
 <script type="text/javascript" src="js/rare.js"></script>
 <script type="text/javascript" src="js/tibbs.js"></script>
 <script type="text/javascript" src="js/weapdam.js"></script>
+<script type="text/javascript" src="js/dps.js"></script>
 <style>
 a:link {
     text-decoration: none;
@@ -238,7 +239,9 @@ button {
     <br>
         <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#weapdam">Weapon</a>
     <br>
-        <a title="Select a weapon and damage attributes to caluculate damage interval and average damage." href="#armor">Armor</a>
+        <a title="Input your weapons average damage to see Damage Per Second" href="#dpscalc">DPS</a>
+    <br>
+        <a title="Calculate armor class of items." href="#armor">Armor</a>
     </p>
 <br>
     <p> Combat:
@@ -612,6 +615,34 @@ button {
 </table>
 </form>
 <br>
+<!-- //////// DPS Calculator //////// -->
+<form name="showdps">
+<table class="blog">
+    <tr>
+        <td colspan="4" class="title"><a name="dpscalc"></a>Damage Per Second Calculator</td>
+    </tr>
+    <tr>
+        <td colspan="4"><p>Input the average damage from the weapon damage calculator above.</td>
+    </tr>
+    <tr>
+        <td>Average Damage:<input type="text" name="avg" size="6" maxlength="6">
+            <select name="basetype" onchange="avgdps(this.form)">
+            <option value="sword">Swords/Clubs</option>
+            <option value="axe">Axes</option>
+            <option value="staff">Staves</option>
+            <option value="bow">Bows</option></select>
+            <input type="button" name="calc" value="Calculate" onclick="avgdps(this.form)"><input type="reset" name="reset" value="Reset"></td>
+    </tr>
+    <tr>
+        <td colspan="4"><br>Results:<br>
+        <textarea name="display" cols="60" rows="4" readonly></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="4"><i><br>Source: <a href="https://mgpat-gm.github.io">GhastMaster</i></a></td>
+    </tr>
+</table>
+</form>
+<br>
 <!-- //////// Armor Calculator //////// -->
 <form name="AcCheck">
 <table class="blog">
@@ -754,7 +785,7 @@ button {
                             <select name="player" onchange="parsePlayer()">
                             <option value="Warrior">Warrior
                             </option><option value="Rogue">Rogue
-                            </option><option value="Sorceror">Sorceror
+                            </option><option value="Sorcerer">Sorcerer
                             </option><option value="Monk">Monk
                             </option><option value="Bard">Bard
                             </option><option value="Barbarian">Barbarian
