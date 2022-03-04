@@ -616,22 +616,22 @@ button {
 </form>
 <br>
 <!-- //////// DPS Calculator //////// -->
-<form name="showdps">
+<form name="showdps" onSubmit="return false;">
 <table class="blog">
     <tr>
         <td colspan="4" class="title"><a name="dpscalc"></a>Damage Per Second Calculator</td>
     </tr>
     <tr>
-        <td colspan="4"><p>This does not take into account character damage modifiers. This is only intended to compare items with different speed suffixes.<br> eg. Master's bastard sword of Haste vs a King's claymore of Swiftness or Warrior's LWB vs Massive Long Bow of Swiftness.<p>Input the average damage from the weapon damage calculator above.</td>
+        <td colspan="4"><p>This does not take into account character damage modifiers. This is only intended to compare items with different speed suffixes.<br> eg. Lords's bastard sword of Haste vs a King's bastard sword or Warrior's LWB vs Massive Long Bow of Swiftness.<p>Input the average damage from the weapon damage calculator above.</td>
     </tr>
     <tr>
-        <td>Average Damage:<input type="text" name="avg" size="6" maxlength="6">
+        <td>Average Damage: <input type="text" name="avg" size="6" maxlength="6">
             <select name="basetype" onchange="avgdps(this.form)">
             <option value="sword">Swords/Clubs</option>
             <option value="axe">Axes</option>
             <option value="staff">Staves</option>
             <option value="bow">Bows</option></select>
-            <input type="button" name="calc" value="Calculate" onclick="avgdps(this.form)"><input type="reset" name="reset" value="Reset"></td>
+            <input type="button" name="calcdps" value="Calculate" onclick="avgdps(this.form)"><input type="reset" name="reset" value="Reset"></td>
     </tr>
     <tr>
         <td colspan="4"><br>Results:<br>
@@ -891,9 +891,9 @@ button {
                         <td align="right"><input value="Reset" onclick="reset_form()" type="button"></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><textarea name="results" rows="12" cols="67"></textarea>
+                        <td colspan="3"><textarea name="results" rows="12" cols="67" readonly></textarea>
                         <br>
-                        <textarea name="results2" rows="4" cols="67"></textarea></td>
+                        <textarea name="results2" rows="4" cols="67" readonly></textarea></td>
                     </tr>
                 </table>
                 </td>
