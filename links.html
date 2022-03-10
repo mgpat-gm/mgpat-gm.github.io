@@ -20,28 +20,6 @@ a:visited {
     text-decoration: none;
     color: #ffffff
 }
-a:hover {
-    background: none;
-    color: #ff8000
-}
-table.blog {
-    background-color: #111111;
-    padding: .3em;
-    color: #bca86c;
-    table-layout: fixed;
-}
-.title {
-    color:#ffffff;
-    font-size: 1.5em;
-    text-align: left;
-}
-.title2 {
-    color: #A0A5C8;
-    font-size: 1.2em;
-}
-.norm {
-    color: #FFFFFF;
-}
 .banner {
     margin: 0;
     font-size: 1em;
@@ -89,7 +67,81 @@ table.blog {
 .banner2 a, div.banner em { border-top: 0px groove #CCC }
 .banner2 a:first-child { border-top: none }
 .banner2 em { color: #CFC }
+table.blog {
+    background-color: #111111;
+    padding: .3em;
+    color: #bca86c;
+    table-layout: fixed;
+}
+.title {
+    color:#ffffff;
+    font-size: 1.5em;
+    text-align: left;
+}
+.title2 {
+    color: #A0A5C8;
+    font-size: 1.2em;
+}
+.norm {
+    color: #FFFFFF;
+}
+button {
+    background-color: #111111;
+}
+.aorg {
+    color: white;
+}
+.resto {
+    color: #e16c6c;
+}
+.oocities {
+    color: green;
+}
+.ws {
+    color: #cc99ff;
+}
+a.oocities {
+    color: green;
+}
+a.resto {
+    color: #e16c6c;
+}
+a.ws {
+    color: #cc99ff;
+}
+a.strike {
+    text-decoration: line-through;
+    color: #bca86c;
+}
+a.strike:hover {
+    text-decoration: line-through;
+    color: #bca86c;
+}
+.show {
+    display: inline;
+}
+.noshow {
+    display: none;
+}
+a:hover {
+    background: none;
+    color: #ff8000
+}
 </style>
+<script>
+function archive(w,x,y,z) {
+    for (let e of document.getElementsByTagName('a')) {
+        if (e.classList.contains(w) == true) {
+            e.classList.remove('noshow');
+            e.classList.add('show');
+        }
+        if (e.classList.contains(x) || e.classList.contains(y) || e.classList.contains(z) == true) {
+            e.classList.remove('show');
+            e.classList.add('noshow');
+        }
+    }
+}
+</script>
 </head>
 <body bgcolor="2d2d2d">
 <div class="banner">
@@ -152,9 +204,32 @@ table.blog {
     <a href="#other">Others</a>
     <br>
     <a href="#archive">Archived</a>
+    <br>
     </p>
+    <p>Switch Archive
+    <br>
+    <br>
+    <button class="aorg" onclick="archive('aorg','ws','oocities','resto')">archive.org</button>
+    <br>
+    <br>
+    <button class="ws" onclick="archive('ws','aorg','oocities','resto')">Geocities.ws</button>
+    <br>
+    <br>
+    <button class="oocities" onclick="archive('oocities','aorg','ws','resto')">oocities.org</button>
+    <br>
+    <br>
+    <button class="resto" onclick="archive('resto','aorg','ws','oocities')">restorativland</button>
 </div>
 <center>
+<table class="blog" width="80%">
+    <tr>
+        <td class="title">Links</td>
+    </tr>
+    <tr>
+        <td colspan="3"><p>Most of the pages that have been archived, are done so at <a href="https://web.archive.org">The Wayback Machine</a>. The Geocities links here may be archived at other sites as well. To switch the archive source for all archived geocities links, use the buttons on the right.<p>If you have a link that I do not, I would love to know about it. Please let me know by commenting on <a href="https://github.com/mgpat-gm/mgpat-gm.github.io/issues/1">this issue</a>.</td>
+    </tr>
+</table>
+<br>
 <!-- ////// Current & Evergreen ////// -->
 <table class="blog" width="80%">
     <tr>
@@ -173,12 +248,55 @@ table.blog {
 <a href="https://freshmeat-blog.de.tl/">- Fresh Meat</a><br>
 <a href="https://www.gog.com/game/diablo">- GoG Diablo</a><br>
 <a href="http://thehoradrim.ddns.net/home/">- The Horadrim</a><br>
-<a href="http://www.lurkerlounge.com/diablo/jarulf/jarulf162.pdf">- Jarulf’s Guide 1.62 PDF</a><br>
-<a href="https://wheybags.gitlab.io/jarulfs-guide/">- Jarulf’s Guide Git</a><br>
-<a href="http://www.bigd-online.com/JG/JGFrame.html">- Jarulf’s Guide Online</a><br>
+<a href="http://www.lurkerlounge.com/diablo/jarulf/jarulf162.pdf">- Jarulf's Guide 1.62 PDF</a><br>
+<a href="https://wheybags.gitlab.io/jarulfs-guide/">- Jarulf's Guide Git</a><br>
+<a href="http://www.bigd-online.com/JG/JGFrame.html">- Jarulf's Guide Online</a><br>
 <a href="https://www.lurkerlounge.com/forums/portal.php">- The Lurker Lounge</a><br>
-<a href="https://www.purediablo.com/strategycats/general-guide/">- Pure Diablo Strategy Compendium</a><br><br>
-        <span class="title2">Discord</span><br><br>
+<a href="https://www.purediablo.com/strategycats/general-guide/">- Pure Diablo Strategy Compendium</a><br>
+<a href="http://www.realmsbeyond.net/diablo/index.html">- Realms Beyond Diablo</a><br><br>
+        <span class="title2">Evergreen</span><br><br>
+<a href="https://web.archive.org/web/20140908012358/http://ftp.blizzard.com/pub/diablo/">- Blizzard FTP</a><br>
+<a href="https://web.archive.org/web/20140819080041/http://www.angelsofhell.com/lol.html">- Bostic's ‘Living off the Land' variant rules</a><br>
+<a href="https://web.archive.org/web/19991004151003/http://www.catbwo.de/">- Cat's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20080509092744/http://underworld.fortunecity.com/olympic/293/index.htm">- Caverns of Ice</a><br>
+<a href="https://web.archive.org/web/20060610142444/http://claudiospage.com:80/">- Claudio's Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20041101111502/http://www.geocities.com/TimesSquare/Arena/1105/index.html">- Concrete Diablo Pages</a><a class="ws strike noshow">- Concrete Diablo Pages</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arena/1105/index.html">- Concrete Diablo Pages</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arena/1105/index.html">- Concrete Diablo Pages</a><br>
+<a href="https://web.archive.org/web/20080218121853/http://ensaya.awardspace.com/diablo/diablo/pages/external/dsfglossary/index-2.html">- Dako-ta's Diablo Miscellanea</a><br>
+<a href="http://www.geocities.ws/daslonghorn/index-2.html">- Darkman's Lair</a><br>
+<a href="https://web.archive.org/web/20040218110306/http://www30.brinkster.com/deebye/strat/dbtmg1.html">- DeeBye's Tank Mage Guide</a><br>
+<a href="https://web.archive.org/web/20060103201159/http://home.cfl.rr.com/onesweetdream/Descend/Descend.htm">- Descend - IronMan</a>
+        </td>
+        <td style="vertical-align:top;"><span class="title2">Evergreen</span><br><br>
+<a href="http://www.ladyofthecake.com/diablo/index.html">- Diablo Hellfire Tomb of Knowledge</a><br>
+<a href="https://web.archive.org/web/19990427230825/http://home.stny.lrun.com/drhager/diablo.htm">- Diablo Multiplayer Guide for Rogues</a><br>
+<a href="https://web.archive.org/web/20050308005310/http://www.stormpages.com/jc316/diablo/vtdiablo.html">- The Diablo Page of Virgil Tibbs</a><br>
+<a href="https://web.archive.org/web/20051231051708/www.diabloii.net/strategy/nav-diablo-hellfire.shtml">- Diablo Strategy Compendium</a><br>
+<a href="https://web.archive.org/web/20050207092837/http://www.dpsyche.com/">- Dpsyche</a><br>
+<a href="https://web.archive.org/web/20000419074112/http://www.revolution98.com/diablo/html/tips.htm">- Dreams of the Sleeping God - King of Pain</a><br>
+<a href="https://web.archive.org/web/20070222084711/http://www.bloodoffold.netfirms.com/diablo-general/">- DSF Archive</a><br>
+<a href="https://www.tapatalk.com/groups/thedsfcommunity/">- DSF Community</a><br>
+<a href="https://web.archive.org/web/20010301203612/http://benland.dreamwater.com/DSFlist.html">- DSF Players List</a><br>
+<a href="https://web.archive.org/web/20010509174241/http://www.apocalypse.org:80/pub/u/fuzzy/diablo/Diablo_Exp_Table.html">- Experience Point Table</a><br>
+<a href="https://web.archive.org/web/20041207044850/http://www.diabloii.net/strategy/fluxmageguide/flux_mageguide.shtml">- Flux's Expert Mage Guide</a><br>
+<a href="https://web.archive.org/web/20010308230030/http://homepages.go.com/~hiddenbagu/warrior.htm">- .Gore.'s Warrior Strategies</a><br>
+<a href="http://www.angelfire.com/games3/HarmsDiablopage/#9">- Harm's Diablo Page</a><br>
+<a href="http://www.imanewbie.com/main/lo-diab-frameset.html">- ImaNewbie Diablo Toons</a><br>
+<a href="https://web.archive.org/web/19991008002936/http://pf.chemeng.lth.se/diablo/index.html">- Jarulf's Guide to Diablo and Hellfire</a><br>
+<a href="https://web.archive.org/web/20120118185501/http://ensaya.awardspace.com/">- Legit Diablo</a><br>
+<a href="https://web.archive.org/web/20050205044341/http://bloodoffold.netfirms.com/lennyland.htm">- LennyLand</a><br>
+<a href="http://www.lurkerlounge.com/lochnar/diablo.shtml">- Lochnar[ITB]'s Freshman Diablo</a><br>
+<a class="aorg" href="https://web.archive.org/web/20090805055220/http://www.geocities.com/TimesSquare/Maze/4747/index.html">- Moriah's Patch</a><a class="ws strike noshow">- Moriah's Patch</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Maze/4747/index.html">- Moriah's Patch</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Maze/4747/index.html">- Moriah's Patch</a><br>
+<a href="https://diablo2.diablowiki.net/Shrui%27s_Multiplayer_Rogue_Guide">- Shrui's Multiplayer Rogue Guide</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991006164235/http://www.geocities.com/TimesSquare/Dungeon/2680/">- Strategy Forum White Pages by Daria</a><a class="ws strike noshow">- Strategy Forum White Pages by Daria</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Dungeon/2680/">- Strategy Forum White Pages by Daria</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Dungeon/2680/">- Strategy Forum White Pages by Daria</a><br>
+<a href="http://www.realmsbeyond.net/sylvancliffs/geocities.com/lemmingofglory/">- The Sylvan Cliffs</a><br>
+<a href="https://web.archive.org/web/20041209135454/http://members.shaw.ca/Taibo/home.htm">- TaiBo's Site</a><br>
+<a href="https://web.archive.org/web/20080228214248/http://ensaya.awardspace.com/diablo/diablo/pages/external/chariss/welcome.html">- Through a Rogue's Eyes</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000110023905/http://www.geocities.com/Area51/Chamber/1992/diablo.html">- Van_Damned's Plain Guide for Diablo</a><a class="ws strike noshow">- Van_Damned's Plain Guide for Diablo</a><a class="oocities strike noshow">- Van_Damned's Plain Guide for Diablo</a><a class="resto strike noshow">- Van_Damned's Plain Guide for Diablo</a><br>
+<a href="https://web.archive.org/web/20011007210438/http://free.prohosting.com/~d2asylum/news.shtml">- Woody's Diablo Asylum</a><br>
+<a href="https://web.archive.org/web/20031004050913/http://bloodoffold.netfirms.com/">- Zedd's Diablo Page</a>
+        </td>
+        <td style="vertical-align:top;"><span class="title2">Discord</span><br><br>
+<a href="https://discord.gg/c4dc79r">- BRUT.me</a><br>
 <a href="https://discord.gg/YK9kahAcUF">- D1Legit</a><br>
 <a href="https://discord.com/invite/bfZK4uz">- Diablo 1996</a><br>
 <a href="https://discord.com/invite/Enkdeeg">- Diablo & Hellfire</a><br>
@@ -187,56 +305,7 @@ table.blog {
 <a href="https://discord.com/invite/xkdj9WM">- Diablo Stronghold</a><br>
 <a href="https://discord.com/invite/BTxMgKhA">- Diablo Wiki</a><br>
 <a href="https://discord.com/invite/AckTPMu">- The Horadrim</a><br>
-<a href="https://discord.com/invite/pwmYhxw">- PureDiablo</a><br>
 <a href="https://discord.com/invite/0dIgU3FsQhEf1QvR">- /r/Diablo</a>
-        </td>
-        <td style="vertical-align:top;"><span class="title2">Evergreen</span><br><br>
-<a href="https://web.archive.org/web/20140908012358/http://ftp.blizzard.com/pub/diablo/">- Blizzard FTP</a><br>
-<a href="https://web.archive.org/web/20140819080041/http://www.angelsofhell.com/lol.html">- Bostic’s ‘Living off the Land’ variant rules</a><br>
-<a href="https://web.archive.org/web/19991004151003/http://www.catbwo.de/">- Cat’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20080509092744/http://underworld.fortunecity.com/olympic/293/index.htm">- Caverns of Ice</a><br>
-<a href="http://www.geocities.ws/mirvoi/diablo/index.htm">- Caverns of Ice</a><br>
-<a href="https://web.archive.org/web/20060610142444/http://claudiospage.com:80/">- Claudio’s Page</a><br>
-<a href="https://web.archive.org/web/20041101111502/http://www.geocities.com/TimesSquare/Arena/1105/index.html">- Concrete Diablo Pages</a><br>
-<a href="https://web.archive.org/web/20080218121853/http://ensaya.awardspace.com/diablo/diablo/pages/external/dsfglossary/index-2.html">- Dako-ta’s Diablo Miscellanea</a><br>
-<a href="https://web.archive.org/web/20080517190429/http://home.att.net/~dsf.glossary/">- Dako-ta’s Diablo Miscellanea Original</a><br>
-<a href="https://web.archive.org/web/20041018235503/www.network54.com/Forum/58721">- Darkman’s Diablo Forum</a><br>
-<a href="http://www.geocities.ws/daslonghorn/index-2.html">- Darkman’s Lair</a><br>
-<a href="https://web.archive.org/web/20040218110306/http://www30.brinkster.com/deebye/strat/dbtmg1.html">- DeeBye’s Tank Mage Guide</a><br>
-<a href="https://web.archive.org/web/20060103201159/http://home.cfl.rr.com/onesweetdream/Descend/Descend.htm">- Descend - IronMan</a><br>
-<a href="http://www.ladyofthecake.com/diablo/index.html">- Diablo Hellfire Tomb of Knowledge</a><br>
-<a href="https://web.archive.org/web/19990427230825/http://home.stny.lrun.com/drhager/diablo.htm">- Diablo Multiplayer Guide for Rogues</a><br>
-<a href="https://web.archive.org/web/20050308005310/http://www.stormpages.com/jc316/diablo/vtdiablo.html">- The Diablo Page of Virgil Tibbs</a><br>
-<a href="https://web.archive.org/web/20011119110517/http://www.diablosc.com/oldnews.shtml">- Diablo Strategy Compendium</a><br>
-<a href="https://web.archive.org/web/20051231051708/www.diabloii.net/strategy/nav-diablo-hellfire.shtml">- Diablo Strategy Compendium</a><br>
-<a href="https://web.archive.org/web/20050207092837/http://www.dpsyche.com/">- Dpsyche</a><br>
-<a href="https://web.archive.org/web/20000419074112/http://www.revolution98.com/diablo/html/tips.htm">- Dreams of the Sleeping God - King of Pain</a><br>
-<a href="https://web.archive.org/web/20070222084711/http://www.bloodoffold.netfirms.com/diablo-general/">- DSF Archive</a><br>
-<a href="https://www.tapatalk.com/groups/thedsfcommunity/">- DSF Community</a>
-        </td>
-        <td style="vertical-align:top;"><span class="title2">Evergreen</span><br><br>
-        <a href="https://web.archive.org/web/20010301203612/http://benland.dreamwater.com/DSFlist.html">- DSF Players List</a><br>
-<a href="https://web.archive.org/web/20010509174241/http://www.apocalypse.org:80/pub/u/fuzzy/diablo/Diablo_Exp_Table.html">- Experience Point Table</a><br>
-<a href="https://web.archive.org/web/20041207044850/http://www.diabloii.net/strategy/fluxmageguide/flux_mageguide.shtml">- Flux’s Expert Mage Guide</a><br>
-<a href="https://web.archive.org/web/20010308230030/http://homepages.go.com/~hiddenbagu/warrior.htm">- .Gore.’s Warrior Strategies</a><br>
-<a href="http://www.angelfire.com/games3/HarmsDiablopage/#9">- Harm’s Diablo Page</a><br>
-<a href="http://www.imanewbie.com/main/lo-diab-frameset.html">- ImaNewbie Diablo Toons</a><br>
-<a href="https://web.archive.org/web/19991008002936/http://pf.chemeng.lth.se/diablo/index.html">- Jarulf’s Guide to Diablo and Hellfire</a><br>
-<a href="https://web.archive.org/web/20120118185501/http://ensaya.awardspace.com/">- Legit Diablo</a><br>
-<a href="https://web.archive.org/web/20031015061531/http://lennylen.com/">- LennyLand</a><br>
-<a href="https://web.archive.org/web/20050205044341/http://bloodoffold.netfirms.com/lennyland.htm">- LennyLand</a><br>
-<a href="https://web.archive.org/web/20160323001457/http://arewehavingfunyet.com/diablo/diablo.shtml">- Lochnar[ITB]’s Freshman Diablo</a><br>
-<a href="http://www.lurkerlounge.com/lochnar/diablo.shtml">- Lochnar[ITB]’s Freshman Diablo - Current host</a><br>
-<a href="https://web.archive.org/web/20090805055220/http://www.geocities.com/TimesSquare/Maze/4747/index.html">- Moriah’s Patch</a><br>
-<a href="http://www.realmsbeyond.net/diablo/index.html">- Realms Beyond Diablo</a><br>
-<a href="https://diablo2.diablowiki.net/Shrui%27s_Multiplayer_Rogue_Guide">- Shrui's Multiplayer Rogue Guide</a><br>
-<a href="https://web.archive.org/web/19991006164235/http://www.geocities.com/TimesSquare/Dungeon/2680/">- Strategy Forum White Pages by Daria</a><br>
-<a href="http://www.realmsbeyond.net/sylvancliffs/geocities.com/lemmingofglory/">- The Sylvan Cliffs</a><br>
-<a href="https://web.archive.org/web/20041209135454/http://members.shaw.ca/Taibo/home.htm">- TaiBo’s Site</a><br>
-<a href="https://web.archive.org/web/20080228214248/http://ensaya.awardspace.com/diablo/diablo/pages/external/chariss/welcome.html">- Through a Rogue’s Eyes</a><br>
-<a href="https://web.archive.org/web/20000110023905/http://www.geocities.com/Area51/Chamber/1992/diablo.html">- Van_Damned’s Plain Guide for Diablo</a><br>
-<a href="https://web.archive.org/web/20011007210438/http://free.prohosting.com/~d2asylum/news.shtml">- Woody’s Diablo Asylum</a><br>
-<a href="https://web.archive.org/web/20031004050913/http://bloodoffold.netfirms.com/">- Zedd’s Diablo Page</a>
         </td>
     </tr>
 </table>
@@ -254,21 +323,20 @@ table.blog {
 <a href="https://web.archive.org/web/20001017214413/http://www.planetdiablo.com/abysmal/index.htm">- Abysmal Diablo</a><br>
 <a href="https://web.archive.org/web/20000303202214/http://come.to:80/abysmal">- Abysmal Diablo - Old URL</a><br>
 <a href="https://mod.diablo.noktis.pl/">- Belzebub - Tchernobog</a><br>
-<a href="https://diablo.noktis.pl/awake/">- Diablo The Awakening</a><br>
-<a href="https://diablofixed.wordpress.com/">- Diablo Fixed</a><br>
 <a href="https://ericjrobinson.xyz/diabloplus/">- Diablo+</a><br>
 <a href="https://github.com/kphoenix137/DiabloPlus">- Diablo+ - Git</a><br>
+<a href="https://diablo.noktis.pl/awake/">- Diablo The Awakening</a><br>
+<a href="https://diablofixed.wordpress.com/">- Diablo Fixed</a><br>
 <a href="https://github.com/qndel/Infernity">- Infernity</a><br>
 <a href="https://www.sergi4ua.com/mods/infernity/">- Infernity Mod Version Archive</a><br>
 <a href="https://www.moddb.com/games/diablo">- ModDB</a><br>
 <a href="https://web.archive.org/web/20010428201049/http://www.members.home.com/netherworld/">- NetherWorld</a><br>
 <a href="https://www.pre-ablo.com/">- Pre-Ablo</a><br>
-<a href="https://web.archive.org/web/19990127213412/http://www.geocities.com/SunsetStrip/Cabaret/3659/Purgatory/Index.html">- Purgatory</a><br>
-<a href="https://github.com/qndel/tchernobog_versions">- Tchernobog</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990127213412/http://www.geocities.com/SunsetStrip/Cabaret/3659/Purgatory/Index.html">- Purgatory</a><a class="ws strike noshow">- Purgatory</a><a class="oocities strike noshow">- Purgatory</a><a class="resto strike noshow">- Purgatory</a><br>
 <a href="http://www.diablorebirth.net/">- The Rebirth</a><br>
 <a href="https://web.archive.org/web/20080417085421/http://rebirth.angrenost.org/">- The Rebirth - Archive</a><br>
-<a href="https://web.archive.org/web/20000619184300/http://www.vkmods.de/">- Varaya’s and Khan’s Mod Page</a><br>
-<a href="https://web.archive.org/web/20001010142634/http://www.glorious.de:80/vkmods/Main.html">- Varaya’s and Khan’s Mod Page</a><br><br>
+<a href="https://github.com/qndel/tchernobog_versions">- Tchernobog</a><br>
+<a href="https://web.archive.org/web/20000619184300/http://www.vkmods.de/">- Varaya's and Khan's Mod Page</a><br><br>
         <span class="title2">Classic QOL</span><br><br>
 <a href="http://diablopat.ch/index.php">- DiabloPatch</a><br>
 <a href="https://www.gog.com/forum/diablo/diablo_1_animated_manahealth_globes/page1">- Qndel ddraw</a><br>
@@ -285,12 +353,11 @@ table.blog {
 <a href="https://web.archive.org/web/20111228230845/http://www.thedark5.com/">- Hellfire - The Dark</a><br>
 <a href="https://www.patreon.com/hfhd">- Hellfire Enhanced</a><br>
 <a href="http://www.lurkerlounge.com/lemming/hffreadme.htm">- Hellfire Fixed</a><br>
-<a href="https://web.archive.org/web/20000308182914/http://underworld.fortunecity.com/olympic/293/hfmod.htm">- Ice’s Hellfire Modification</a><br>
-<a href="https://web.archive.org/web/20070425201628/http://www3.sympatico.ca/ted_powell/Malignus.htm">- Malingus’ Tower</a><br>
+<a href="https://web.archive.org/web/20000308182914/http://underworld.fortunecity.com/olympic/293/hfmod.htm">- Ice's Hellfire Modification</a><br>
+<a href="https://web.archive.org/web/20070425201628/http://www3.sympatico.ca/ted_powell/Malignus.htm">- Malingus' Tower</a><br>
 <a href="https://web.archive.org/web/20011207011606/http://home.mayn.de/loklorn/Purgatory/">- Purgatory</a><br>
-<a href="https://web.archive.org/web/19990127213412/http://www.geocities.com/SunsetStrip/Cabaret/3659/purgatory/index.html">- Purgatory - Old URL</a><br>
 <a href="https://kozelhq.net/th2guide/">- TH2 Data</a><br>
-<a href="https://web.archive.org/web/20020602052324/http://home0.inet.tele.dk/zakarun/indexold.htm">- Zakarun’s Diablo and KlikPlay site</a><br><br>
+<a href="https://web.archive.org/web/20020602052324/http://home0.inet.tele.dk/zakarun/indexold.htm">- Zakarun's Diablo and KlikPlay site</a><br><br>
         <span class="title2">Misc</span><br><br>
 <a href="https://matthewrkarlsen.github.io/d1-mod-workshop/">- D1 Mod Workshop</a><br>
 <a href="https://github.com/savagesteel/d1-graphics-tool">- Diablo 1 Graphics Tool</a><br>
@@ -304,10 +371,11 @@ table.blog {
 <a href="https://github.com/diasurgical/devilutionX">- DevilutionX</a><br>
 <a href="http://devilutionxcheaters.com/">- DevilutionX Cheaters</a><br>
 <a href="https://github.com/MidgetBrony/devilutionxLauncher">- DevilutionX Launcher</a><br>
-<a href="https://www.sergi4ua.com/diabloweb/">- Diablo Web</a><br>
+<a href="https://devilutionx.fandom.com/wiki/DevilutionX_Wiki">- DevilutionX Wiki</a><br>
+<a href="https://github.com/dgcor/DGEngine">- DGEngine</a><br>
 <a href="https://d07riv.github.io/diabloweb/">- Diablo Web</a><br>
+<a href="https://www.sergi4ua.com/diabloweb/">- Diablo Web</a><br>
 <a href="https://github.com/d07RiV/diabloweb">- Diablo Web - Git</a><br>
-<a href="https://labs.cd2h.org/gitforager/repository/repository.jsp?id=106884173">- djavul</a><br>
 <a href="https://freeablo.org/">- Freeablo</a><br><br>
         <span class="title2">Discord</span><br><br>
 <a href="https://discord.com/invite/AU3xtxD">- Abaddon</a><br>
@@ -374,18 +442,18 @@ table.blog {
         <td colspan="3"><p>These Sites are all currently hosted. Some of them are useful others not. Some contain cheats or very little information at all.</td>
     </tr>
     <tr>
-        <td style="vertical-align:top;"><span class="title2"">- English</span><br><br>
+        <td style="vertical-align:top;"><span class="title2"">English</span><br><br>
 <a href="https://www.alteredgamer.com/diablo/">- Alteredgamer.com</a><br>
 <a href="https://groups.google.com/forum/#!forum/alt.games.diablo">- alt.games.diablo Newsgroup/Archive</a><br>
 <a href="http://redhand.iwarp.com/band.html">- Band of the Red Hand</a><br>
-<a href="https://us.battle.net/support/en/article/7836">- Blizzard Official Patch</a><br>
 <a href="http://www.angelfire.com/me/lovemydog/">- Cains Diablo Page</a><br>
 <a href="https://diablo.chaosforge.org/">- Chaos Forge - Diablo Roguelike</a><br>
 <a href="http://www.angelfire.com/la/DipStick/files.html">- Cheater!!!!!!</a><br>
-<a href="http://www.mogelpower.de/cheats/loesung.php?id=5467">- Chookz’s Diablo FAQ</a><br>
-<a href="https://la2h.blogspot.com/">- Desmo’s English Blog</a><br>
+<a href="http://www.mogelpower.de/cheats/loesung.php?id=5467">- Chookz's Diablo FAQ</a><br>
+<a href="https://la2h.blogspot.com/">- Desmo's English Blog</a><br>
 <a href="http://www.angelfire.com/ny/magus911/index.html">- Diablo</a><br>
 <a href="http://www.rocler.qc.ca/pjbolduc/diablo/">- diablo</a><br>
+<a href="http://diablos_paradise.tripod.com/dpdiablo.htm">- Diablo's Paradise</a><br>
 <a href="https://thediablo1store.webs.com/">- The Diablo 1 Store</a><br>
 <a href="http://www.blizzardguides.com/diablo1_guide.html">- Diablo 1 Strategy Guide</a><br>
 <a href="https://sites.google.com/view/diabloait/dait">- Diablo Artificial Intelligence Tournament</a><br>
@@ -401,45 +469,46 @@ table.blog {
 <a href="https://diablonexsystem.webs.com/">- Diablo Nex System</a><br>
 <a href="https://github.com/RezWaki/Diablo-Powercheat">- Diablo Powercheat</a><br>
 <a href="http://www.gamesurge.com/features/editorials/diablo_revealed/index.shtml">- Diablo Revealed</a><br>
-<a href="http://diablos_paradise.tripod.com/dpdiablo.htm">- Diablo’s Paradise</a><br>
 <a href="https://diablo2.diablowiki.net/Diablo_I">- Diablo Wiki (Diablowiki.net)</a><br>
 <a href="https://diablo.fandom.com/wiki/Diablo_Wiki">- Diablo Wiki (Fandom)</a><br>
 <a href="http://www.bigd-online.com/Misc/RogueRally/RogueRally.html">- DSF Rogue Rally</a><br>
 <a href="http://www.bigd-online.com/Misc/WarriorRally/WarriorRally.html">- DSF Warrior Rally</a><br>
-<a href="http://theboojum.com/Tales/Dumptruk/dumptruk.htm">- Dumptruk’s Diablo and Hellfire Pages</a><br>
+<a href="http://theboojum.com/Tales/Dumptruk/dumptruk.htm">- Dumptruk's Diablo and Hellfire Pages</a><br>
 <a href="https://www.boristhebrave.com/2019/07/14/dungeon-generation-in-diablo-1/">- Dungeon Generation in Diablo 1</a><br>
-<a href="http://cyberdude2000.tripod.com/index.html">- Eric Johnson’s Diablo Cheats and Hacks</a><br>
-<a href="http://www.angelfire.com/ca/afroland/index.html">- Exodus’ Diablo Page</a><br>
+<a href="http://cyberdude2000.tripod.com/index.html">- Eric Johnson's Diablo Cheats and Hacks</a><br>
+<a href="http://www.angelfire.com/ca/afroland/index.html">- Exodus' Diablo Page</a><br>
 <a href="http://flashnpan.tripod.com/Strat.htm">- FlashPan Diablo Strategy Page</a><br>
 <a href="http://www.hevanet.com/bradc/gr/index.html">- Gharbad at the Roxbury</a><br>
-<a href="http://ghastmaster.byethost10.com/?i=1">- Ghast’s Grotto</a><br>
+<a href="http://ghastmaster.byethost10.com/?i=1">- Ghast's Grotto</a><br>
 <a href="http://www.guardiansofjustice.com/diablo/index2.htm">- Guardians of Justice</a><br>
-<a href="http://www.angelfire.com/yt/heavens/">- Heaven’s Demons</a><br>
+<a href="http://www.angelfire.com/yt/heavens/">- Heaven's Demons</a><br>
 <a href="https://www.reddit.com/r/Diablo1TheHoradrim/">- The Horadrim Server Reddit</a><br>
 <a href="http://www.legacyrealm.com/ironman/">- IronMan RPG Homepage</a><br>
-<a href="http://www.angelfire.com/games/airmcnair9/">- Killer’s of the Legits</a><br>
-<a href="http://www.angelfire.com/games2/kotl/main.html">- Killer’s of the Legits</a><br>
-<a href="http://lachdanan.tripod.com/noframes.html">- Lachdanan’s Home Page</a><br>
-<a href="http://www.legacyrealm.com/">- Legacy Realm</a>
+<a href="https://wheybags.gitlab.io/jarulfs-guide/">- Jarulf's Guide Git</a><br>
+<a href="http://www.angelfire.com/games/airmcnair9/">- Killer's of the Legits</a><br>
+<a href="http://www.angelfire.com/games2/kotl/main.html">- Killer's of the Legits</a><br>
+<a href="http://lachdanan.tripod.com/noframes.html">- Lachdanan's Home Page</a><br>
+<a href="http://www.legacyrealm.com/">- Legacy Realm</a><br>
+<a href="https://a3n.home.xs4all.nl/ASCIIMapofTown.html">- Map of Tristram</a>
         </td>
         <td style="vertical-align:top;"><span class="title2">English</span><br><br>
-<a href="https://a3n.home.xs4all.nl/ASCIIMapofTown.html">- Map of Tristram</a><br>
-<a href="http://www.angelfire.com/wi/Metalhaven/page1.html">- Metal’s Diablo Page</a><br>
+<a href="http://www.angelfire.com/wi/Metalhaven/page1.html">- Metal's Diablo Page</a><br>
 <a href="http://necromanthus.com/Games/Flash/diablo.html">- Necromanthus Diablo</a><br>
-<a href="http://www.angelfire.com/ok/diabloguildhome/diablo.html">- OologahQ’s Diablo Page</a><br>
+<a href="http://www.angelfire.com/ok/diabloguildhome/diablo.html">- OologahQ's Diablo Page</a><br>
 <a href="http://midnightsrealm.tripod.com/outpost.htm">- The Outpost: of the Draconian Empire</a><br>
 <a href="http://diablo1.96.lt/">- The Pandemonium Trial</a><br>
 <a href="https://www.playstation.com/en-us/games/diablo-psone/">- Playstation</a><br>
-<a href="http://quiksilversweb.tripod.com/diablo/hacks.html">- Qucksilver’s Web - Diablo ‘Hacks’</a><br>
+<a href="https://quiksilversweb.tripod.com/diablo/">- Qwiksilver's Web - Diablo</a><br>
 <a href="https://www.reddit.com/r/Diablo1/">- Reddit</a><br>
 <a href="http://www.sarouk.net/diablo.html">- Sarouk IronMan</a><br>
 <a href="http://www3.sympatico.ca/sarouk/">- Sarouk IronMan</a><br>
-<a href="http://www.silverraven.com/AGD/index.html">- Silver Raven’s Lair – AGD Archive</a><br>
-<a href="http://www.angelfire.com/nb/novemberbravo/index2.html">- Sonlee’s Diablo/Battle.Net Site</a><br>
+<a href="http://savagesteel.free.fr/diablo/">- SAVAGESTEEL'S DIABLO PAGE</a><br>
+<a href="http://www.silverraven.com/AGD/index.html">- Silver Raven's Lair – AGD Archive</a><br>
+<a href="http://www.angelfire.com/nb/novemberbravo/index2.html">- Sonlee's Diablo/Battle.Net Site</a><br>
 <a href="http://www.users.globalnet.co.uk/~spaz/downloads.htm">- Spaz Diablo</a><br>
 <a href="https://www.spriters-resource.com/pc_computer/diablodiablohellfire">- Sprite Resource - Diablo</a><br>
 <a href="https://www.angelfire.com/ca/heaven112/diablo.html">- Team Xtreme Imports Racing</a><br>
-<a href="http://www.thanatosrealms.com/diablo/">- Thanatos’ Diablo Realm</a><br>
+<a href="http://www.thanatosrealms.com/diablo/">- Thanatos' Diablo Realm</a><br>
 <a href="http://valarguild.org/gaming/diablo">- Valar Guild Games Site</a><br>
 <a href="http://www.angelfire.com/fl3/diablolink/">- ~Vizjerei~ Diablo</a><br>
 <a href="http://dadswell.mnsi.net/Old%20Page/1diablo.htm">- Warez the Beef?</a><br>
@@ -456,7 +525,7 @@ table.blog {
         <span class="title2">Czech</span><br><br>
 <a href="http://ismael.sweb.cz/">- Another Diablo Site</a><br>
 <a href="http://www.hosiztrpaslika.8u.cz/">- Hoši z trpaslíka</a><br>
-<a href="http://pete.pooky.sweb.cz/">- Rogues’ Power</a><br><br>
+<a href="http://pete.pooky.sweb.cz/">- Rogues' Power</a><br><br>
         <span class="title2">French</span><br><br>
 <a href="http://celtados.free.fr/diablo/index.php?page=aboutg">- Celtados</a><br>
 <a href="https://diablo.judgehype.com/introduction/">- Judgehype</a>
@@ -468,19 +537,19 @@ table.blog {
 <a href="http://www.gdl-home.de/">- Gilde Der Lasterer</a><br>
 <a href="http://www.pd.germanenforcers.de/">- Planet Diablo</a><br><br>
         <span class="title2">Japanese</span><br><br>
-<a href="http://resplease.blog107.fc2.com/">- Desmo’s Blog</a><br>
+<a href="http://resplease.blog107.fc2.com/">- Desmo's Blog</a><br>
 <a href="http://www.saturn.dti.ne.jp/~zod/diablo/diablo.html">- Diablo1 nasubin/zakuro website</a><br>
-<a href="http://yoh3.o.oo7.jp/diablo/">- Diablo Series Player’s Site</a><br>
+<a href="http://yoh3.o.oo7.jp/diablo/">- Diablo Series Player's Site</a><br>
 <a href="https://wikiwiki.jp/diablo1/">- Diablo Wiki</a><br>
 <a href="http://emelaldo.ninja-web.net/">- Emelado Diablo 1 Web Site</a><br>
-<a href="http://emelaldo.blog.shinobi.jp/">- Emelaldo’s Blog</a><br>
+<a href="http://emelaldo.blog.shinobi.jp/">- Emelaldo's Blog</a><br>
 <a href="http://www.uranus.dti.ne.jp/~j7w1/">- J7W1 of Diablo</a><br>
-<a href="https://kobadiablo.blog.ss-blog.jp/">- Koba’s Blog</a><br>
-<a href="http://managire.blog105.fc2.com/">- Mikoto’s Blog</a><br>
-<a href="http://moe.moe.gr.jp/diablo/">- Moe’s Diablo Page</a><br>
-<a href="http://www.din.or.jp/~lionel/diaindex.htm">- Nelnel’s Diablo Page</a><br>
-<a href="http://manjider.web.fc2.com/">- ONIHEI’s Diablo Guide for Beginers</a><br>
-<a href="http://www10.plala.or.jp/hollow/poo/Diablo/index.html">- Poopoo’s Diablo</a><br><br>
+<a href="https://kobadiablo.blog.ss-blog.jp/">- Koba's Blog</a><br>
+<a href="http://managire.blog105.fc2.com/">- Mikoto's Blog</a><br>
+<a href="http://moe.moe.gr.jp/diablo/">- Moe's Diablo Page</a><br>
+<a href="http://www.din.or.jp/~lionel/diaindex.htm">- Nelnel's Diablo Page</a><br>
+<a href="http://manjider.web.fc2.com/">- ONIHEI's Diablo Guide for Beginers</a><br>
+<a href="http://www10.plala.or.jp/hollow/poo/Diablo/index.html">- Poopoo's Diablo</a><br><br>
         <span class="title2">Korean</span><br><br>
 <a href="https://agogo.tistory.com/22">- Diablo 1 Shrines</a><br><br>
         <span class="title2">Polish</span><br><br>
@@ -490,8 +559,11 @@ table.blog {
 <a href="https://wiaparker.pl/category/blog/">- WiA Parker Blog</a><br><br>
         <span class="title2">Russian</span><br><br>
 <a href="http://www.diablo1.ru/game/">- Diablo and Hellfire</a><br><br>
-        <span class="title2">Slovakian</span><br><br>
+        <span class="title2">Slovak</span><br><br>
+<a href="http://diablo.brut.me/">- BRUT.me Diablo</a><br>
+<a href="http://brutlenet.brut.me/">- BRUT.me pvpgn Server</a><br>
 <a href="http://www.wray.sk/?page=diablo">- Wray's Guide to Hell</a>
+
         </td>
     </tr>
 </table>
@@ -505,420 +577,432 @@ table.blog {
         <td colspan="3"><p>These are all sites that have been archived. Some of them are useful others not. Some contain cheats or very little information at all.</td>
     </tr>
         <td style="vertical-align:top;"><span class="title2">English</span><br><br>
-<a href="https://web.archive.org/web/20011209084801/http://www.geocities.com/TimesSquare/Arcade/7080/index.htm">- Abandonned Portal</a><br>
-<a href="http://www.geocities.ws/CollegePark/6531/Diabarea.htm">- The Adventurer’s Guild</a><br>
-<a href="https://web.archive.org/web/19991018193900/http://www.geocities.com/CollegePark/6531/Diabarea.htm">- The Adventurer’s Guild</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011209084801/http://www.geocities.com/TimesSquare/Arcade/7080/index.htm">- Abandonned Portal</a><a class="ws strike noshow">- Abandonned Portal</a><a class="oocities strike noshow">- Abandonned Portal</a><a class="resto strike noshow">- Abandonned Portal</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117021551/http://geocities.com/CollegePark/6531/Diabarea.htm">- The Adventurer's Guild</a><a class="ws noshow" href="http://www.geocities.ws/CollegePark/6531/Diabarea.htm">- The Adventurer's Guild</a><a class="oocities strike noshow">- The Adventurer's Guild</a><a class="resto noshow" href="https://geocities.restorativland.org/CollegePark/6531/Diabarea.htm">- The Adventurer's Guild</a><br>
 <a href="https://web.archive.org/web/20020102105836/http://bentmuse.com/agdportal/">- The AGD Town Portal</a><br>
-<a href="https://web.archive.org/web/20010519133044/http://www.geocities.com/TimesSquare/Dungeon/9060/">- Allanon’s Lair: Home of Masters of Insanity</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010519133044/http://www.geocities.com/TimesSquare/Dungeon/9060/">- Allanon's Lair: Home of Masters of Insanity</a><a class="ws strike noshow">- Allanon's Lair: Home of Masters of Insanity</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Dungeon/9060/">- Allanon's Lair: Home of Masters of Insanity</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Dungeon/9060/">- Allanon's Lair: Home of Masters of Insanity</a><br>
 <a href="https://web.archive.org/web/19980111050631/http://www.aodh.com/frames3.htm">- Alliance of Divine Harmony</a><br>
 <a href="https://web.archive.org/web/19981205095039/http://home.sprynet.com/sprynet/galecki/Diablo.HTM">- All Purpose Fantasy Page</a><br>
 <a href="https://web.archive.org/web/20000303205830/http://web.tampabay.rr.com/moesteg/Diablo.htm">- AlterNative LABs Diablo Archive</a><br>
 <a href="https://web.archive.org/web/20000617120455/http://members.xoom.com:80/moesteg/Diablo.htm">- AlterNative LABs Diablo Archive</a><br>
 <a href="https://web.archive.org/web/20030605042421/http://www.galaxina.net/labs/diablo.htm">- AlterNative LABs Diablo Archive</a><br>
-<a href="https://web.archive.org/web/19990203073453/http://www.geocities.com/TimesSquare/Arcade/5155/">- The Ancient Mystics</a><br>
-<a href="https://web.archive.org/web/19990209001703/http://www.geocities.com/Area51/Vault/4910/Diab.htm">- Andre’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19970614141922/http://www.io.com/~anduril/Diablo/index.html">- Anduril’s Book of Diablo</a><br>
-<a href="https://web.archive.org/web/19991005065611/http://www.battlegrounds.com/diablo/">- Anduril’s Book of Diablo</a><br>
-<a href="https://web.archive.org/web/20010330081744/http://www.angelsofhell.com/">- Angel’s of Hell</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990203073453/http://www.geocities.com/TimesSquare/Arcade/5155/">- The Ancient Mystics</a><a class="ws strike noshow">- The Ancient Mystics</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/5155/">- The Ancient Mystics</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/5155/">- The Ancient Mystics</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990209001703/http://www.geocities.com/Area51/Vault/4910/Diab.htm">- Andre's Diablo Page</a><a class="ws strike noshow">- Andre's Diablo Page</a><a class="oocities strike noshow">- Andre's Diablo Page</a><a class="resto strike noshow">- Andre's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19970614141922/http://www.io.com/~anduril/Diablo/index.html">- Anduril's Book of Diablo</a><br>
+<a href="https://web.archive.org/web/19991005065611/http://www.battlegrounds.com/diablo/">- Anduril's Book of Diablo</a><br>
+<a href="https://web.archive.org/web/20010330081744/http://www.angelsofhell.com/">- Angel's of Hell</a><br>
 <a href="https://web.archive.org/web/20000301234605/http://clix.to/diabloguideandoth">- Anti Cheating Movement</a><br>
 <a href="https://web.archive.org/web/20080302044154/http://www.sonic.net/nhill/anticheating/">- Anti Cheating Movement</a><br>
-<a href="https://web.archive.org/web/19981206182405/http://members.aol.com/arkhobal/">- Arkhobal’s Chamber of Bone</a><br>
-<a href="https://web.archive.org/web/20000411173654/http://www.geocities.com/SiliconValley/Lakes/5725/index.htm">- Armageddon Triad Diablo Clan Page</a><br>
-<a href="https://web.archive.org/web/19990916063011/http://www.unixwizards.org/~yal/AW/misc.html">- Armin’s Spellcraft</a><br>
-<a href="https://web.archive.org/web/20001011081829/http://hjem.get2net.dk/atcox/">- Atcox’ Diablo Site</a><br>
-<a href="https://web.archive.org/web/20000609221106/http://geocities.com/TimesSquare/Fortress/6224/noframe.htm">- Bahar’s Diablo World</a><br>
-<a href="https://web.archive.org/web/20010723011940/http://www.geocities.com/SiliconValley/Heights/9532/">- Bai Zijian’s Page</a><br>
-<a href="https://web.archive.org/web/20010721004456/http://www.geocities.com/TimesSquare/Arcade/2796/">- Band of the Red Hand</a><br>
-<a href="https://web.archive.org/web/19991006005947/http://www.geocities.com/TimesSquare/Arcade/6671/frame.html">- Bariscan’s Diablo</a><br>
-<a href="https://web.archive.org/web/19970611041329/http://baron.simplenet.com/diablo/frames.htm">- Baron & Gowron’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990220155510/http://www.geocities.com/TimesSquare/1832/">- Belgradion’s Lair</a><br>
+<a href="https://web.archive.org/web/19981206182405/http://members.aol.com/arkhobal/">- Arkhobal's Chamber of Bone</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000411173654/http://www.geocities.com/SiliconValley/Lakes/5725/index.htm">- Armageddon Triad Diablo Clan Page</a><a class="ws strike noshow">- Armageddon Triad Diablo Clan Page</a><a class="oocities strike noshow">- Armageddon Triad Diablo Clan Page</a><a class="resto strike noshow">- Armageddon Triad Diablo Clan Page</a><br>
+<a href="https://web.archive.org/web/19990916063011/http://www.unixwizards.org/~yal/AW/misc.html">- Armin's Spellcraft</a><br>
+<a href="https://web.archive.org/web/20001011081829/http://hjem.get2net.dk/atcox/">- Atcox' Diablo Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000301192350/http://geocities.com/TimesSquare/Castle/9375/avdiablova.htm">- AV_DiablO_VA</a><a class="ws strike noshow">- AV_DiablO_VA</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Castle/9375/avdiablova.htm">- AV_DiablO_VA</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Castle/9375/avdiablova.htm">- AV_DiablO_VA</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000609221106/http://geocities.com/TimesSquare/Fortress/6224/noframe.htm">- Bahar's Diablo World</a><a class="ws strike noshow">- Bahar's Diablo World</a><a class="oocities strike noshow">- Bahar's Diablo World</a><a class="resto strike noshow">- Bahar's Diablo World</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010723011940/http://www.geocities.com/SiliconValley/Heights/9532/">- Bai Zijian's Page</a><a class="ws strike noshow">- Bai Zijian's Page</a><a class="oocities strike noshow">- Bai Zijian's Page</a><a class="resto strike noshow">- Bai Zijian's Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010721004456/http://www.geocities.com/TimesSquare/Arcade/2796/">- Band of the Red Hand</a><a class="ws strike noshow">- Band of the Red Hand</a><a class="oocities strike noshow">- Band of the Red Hand</a><a class="resto strike noshow">- Band of the Red Hand</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991006005947/http://www.geocities.com/TimesSquare/Arcade/6671/frame.html">- Bariscan's Diablo</a><a class="ws strike noshow">- Bariscan's Diablo</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/6671/frame.html">- Bariscan's Diablo</a><a class="resto strike noshow">- Bariscan's Diablo</a><br>
+<a href="https://web.archive.org/web/19970611041329/http://baron.simplenet.com/diablo/frames.htm">- Baron & Gowron's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990220155510/http://www.geocities.com/TimesSquare/1832/">- Belgradion's Lair</a><a class="ws strike noshow">- Belgradion's Lair</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/1832/">- Belgradion's Lair</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/1832/">- Belgradion's Lair</a><br>
 <a href="https://web.archive.org/web/20001029210112/http://www.bentmuse.com/">- Bentmuse.com</a><br>
 <a href="https://web.archive.org/web/20001004201355/http://www.chez.com/diablo/main.htm">- The Best There is in Diablo</a><br>
-<a href="https://web.archive.org/web/20011019170935/http://www.angelfire.com/games2/diablo1cheats1hacks1/">- Big Boy’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991010204017/http://www.geocities.com/TimesSquare/Dungeon/6741/">- BlackAdder’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991001133742/http://geocities.com/TimesSquare/Alley/2279/">- Black Paladin’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010519131535/http://www.bladedmasters.cjb.net/">- Bladed Masters</a><br>
-<a href="http://www.geocities.ws/TimesSquare/arcade/7289/">- Bleeding With Evil</a><br>
-<a href="https://web.archive.org/web/19990210074922/http://www.geocities.com/TimesSquare/Arcade/7289/">- Bleeding With Evil</a><br>
+<a href="https://web.archive.org/web/20011019170935/http://www.angelfire.com/games2/diablo1cheats1hacks1/">- Big Boy's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991010204017/http://www.geocities.com/TimesSquare/Dungeon/6741/">- BlackAdder's Diablo Page</a><a class="ws strike noshow">- BlackAdder's Diablo Page</a><a class="oocities strike noshow">- BlackAdder's Diablo Page</a><a class="resto strike noshow">- BlackAdder's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991001133742/http://geocities.com/TimesSquare/Alley/2279/">- Black Paladin's Diablo Page</a><a class="ws strike noshow">- Black Paladin's Diablo Page</a><a class="oocities strike noshow">- Black Paladin's Diablo Page</a><a class="resto strike noshow">- Black Paladin's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20010519131535/http://www.bladedmasters.cjb.net/">- ~Bladed Masters~</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990210074922/http://www.geocities.com/TimesSquare/Arcade/7289/">- Bleeding With Evil</a><a class="ws strike noshow">- Bleeding With Evil</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/7289/">- Bleeding With Evil</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/7289/">- Bleeding With Evil</a><br>
 <a href="https://web.archive.org/web/19981203004254/http://blizzard.com/diablo/">- Blizzard.com/Diablo</a><br>
 <a href="https://web.archive.org/web/20000818025516/http://www.blizzardgames.com/database/diabloseries/">- Blizzardgames</a><br>
-<a href="https://web.archive.org/web/20000524233401/http://www.geocities.com/TimesSquare/Arcade/9235/diablo.html">- Bloodfire’\s Diablo Homepage</a><br>
-<a href="https://web.archive.org/web/19970616142454/http://www.sover.net/~wwallace/Diablo/">- BloodLord’s Diablo Page</a><br>
-<a href="http://www.geocities.ws/free_bobafett/contents.htm">- BoBaFeTT’s Diablo World</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000524233401/http://www.geocities.com/TimesSquare/Arcade/9235/diablo.html">- Bloodfire's Diablo Homepage</a><a class="ws strike noshow">- Bloodfire's Diablo Homepage</a><a class="oocities strike noshow">- Bloodfire's Diablo Homepage</a><a class="resto strike noshow">- Bloodfire's Diablo Homepage</a><br>
+<a href="https://web.archive.org/web/19970616142454/http://www.sover.net/~wwallace/Diablo/">- BloodLord's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010815210535/http://geocities.com/free_bobafett/contents.htm">- BoBaFeTT's Diablo World</a><a class="ws noshow" href="http://www.geocities.ws/free_bobafett/contents.htm">- BoBaFeTT's Diablo World</a><a class="oocities strike noshow">- BoBaFeTT's Diablo World</a><a class="resto strike noshow">- BoBaFeTT's Diablo World</a><br>
 <a href="https://web.archive.org/web/19990429111456/http://www.angelfire.com/tx/BLACKMANE/enter.html">- The Brotherhood</a><br>
 <a href="https://web.archive.org/web/19990204012005/http://www.sota-oh.com/users/heils/brotherhoodpage.htm">- Brotherhood of Pain</a><br>
 <a href="https://web.archive.org/web/19970424152118/http://home1.gte.net/visari/">- The Brotherhood of the Vizierei</a><br>
 <a href="https://web.archive.org/web/19990427171123/http://www.angelfire.com/tx/brutist/Diablo.html">- Brutist</a><br>
-<a href="https://web.archive.org/web/20020212180541/http://www.geocities.com/CapeCanaveral/Hangar/3022/default.html">- BRUUMZIK’S Diablo HOMEPAGE</a><br>
-<a href="https://web.archive.org/web/19990506213726/http://users.iafrica.com/b/br/bryn/hellfire.htm">- Bryn’s Diablo Hellfire Page</a><br>
-<a href="https://web.archive.org/web/19990128143454/http://www.geocities.com/TimesSquare/Lair/6285/">- CDK</a><br>
-<a href="https://web.archive.org/web/20000119145809/http://sherman.mgh.harvard.edu/larry/diablo.htm">- Charis’ Diablo Variants and Strategy</a><br>
-<a href="https://web.archive.org/web/20010506012758/http://www.geocities.com/Area51/Cavern/4032/">- Charlie Diablo Domain</a><br>
-<a href="https://web.archive.org/web/20001008225652/http://retribution.igg.net:80/workshop.htm">- Charlie’s Hex Editing Workshop for ModMakers</a><br>
-<a href="https://web.archive.org/web/20020106142609/http://geocities.com/SiliconValley/Heights/4117/dhack.html">- Cheat and Kill</a><br>
-<a href="https://web.archive.org/web/19990128222257/http://home.earthlink.net/~checkm8/">- CheckM8’s Web Page</a><br>
-<a href="http://www.geocities.ws/iuchewie/diablo/">- Chewie’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20030415162000/http://www.geocities.com/iuchewie/diablo/">- Chewie’s Diablo Page</a><br>
-<a href="http://www.geocities.ws/landmaster1/diablo3.html">- Ching’s Diablo Cheat Page</a><br>
-<a href="https://web.archive.org/web/19990208234646/http://www.geocities.com/TimesSquare/Castle/5588/">- The Chronicles of SamuRon</a><br>
-<a href="https://web.archive.org/web/20010201071900/http://civik.net/">- Civik’s Diablo Site</a><br>
-<a href="https://web.archive.org/web/19991023091723/http://www.geocities.com/Area51/Vault/8987/index.html">- Clan Athanos</a><br>
-<a href="https://web.archive.org/web/20010508194452/http://www.geocities.com/TimesSquare/Lair/3555/">- Clan Gunn</a><br>
-<a href="https://web.archive.org/web/19991009043509/http://www.geocities.com/TimesSquare/Battlefield/3868/">- Clan Haven</a><br>
+<a class="aorg" href="https://web.archive.org/web/20020212180541/http://www.geocities.com/CapeCanaveral/Hangar/3022/default.html">- BRUUMZIK'S Diablo HOMEPAGE</a><a class="ws strike noshow">- BRUUMZIK'S Diablo HOMEPAGE</a><a class="oocities strike noshow">- BRUUMZIK'S Diablo HOMEPAGE</a><a class="resto strike noshow">- BRUUMZIK'S Diablo HOMEPAGE</a><br>
+<a href="https://web.archive.org/web/19990506213726/http://users.iafrica.com/b/br/bryn/hellfire.htm">- Bryn's Diablo Hellfire Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091027145254/http://geocities.com/mirvoi/diablo/index.htm">- Caverns of Ice</a><a class="ws noshow" href="http://www.geocities.ws/mirvoi/diablo/index.htm">- Caverns of Ice</a><a class="oocities strike noshow">- Caverns of Ice</a><a class="resto strike noshow">- Caverns of Ice</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990128143454/http://www.geocities.com/TimesSquare/Lair/6285/">- CDK</a><a class="ws strike noshow">- CDK</a><a class="oocities strike noshow">- CDK</a><a class="resto strike noshow">- CDK</a><br>
+<a href="https://web.archive.org/web/20000119145809/http://sherman.mgh.harvard.edu/larry/diablo.htm">- Charis' Diablo Variants and Strategy</a><br>
+<a href="https://web.archive.org/web/20001008225652/http://retribution.igg.net:80/workshop.htm">- Charlie's Hex Editing Workshop for ModMakers</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010506012758/http://www.geocities.com/Area51/Cavern/4032/">- Charlie Diablo Domain</a><a class="ws strike noshow">- Charlie Diablo Domain</a><a class="oocities strike noshow">- Charlie Diablo Domain</a><a class="resto strike noshow">- Charlie Diablo Domain</a><br>
+<a class="aorg" href="https://web.archive.org/web/20020106142609/http://geocities.com/SiliconValley/Heights/4117/dhack.html">- Cheat and Kill</a><a class="ws strike noshow">- Cheat and Kill</a><a class="oocities strike noshow">- Cheat and Kill</a><a class="resto strike noshow">- Cheat and Kill</a><br>
+<a href="https://web.archive.org/web/19990128222257/http://home.earthlink.net/~checkm8/">- CheckM8's Web Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20030415162000/http://geocities.com/iuchewie/diablo/">- Chewie's Diablo Page</a><a class="ws noshow" href="http://www.geocities.ws/iuchewie/diablo/">- Chewie's Diablo Page</a><a class="oocities strike noshow">- Chewie's Diablo Page</a><a class="resto strike noshow">- Chewie's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20090809231753/http://geocities.com/landmaster1/diablo3.html">- Ching's Diablo Cheat Page</a><a class="ws noshow" href="http://www.geocities.ws/landmaster1/diablo3.html">- Ching's Diablo Cheat Page</a><a class="oocities noshow" href="https://oocities.org/landmaster1/diablo3.html">- Ching's Diablo Cheat Page</a><a class="resto strike noshow">- Ching's Diablo Cheat Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990208234646/http://www.geocities.com/TimesSquare/Castle/5588/">- The Chronicles of SamuRon</a><a class="ws strike noshow">- The Chronicles of SamuRon</a><a class="oocities strike noshow">- The Chronicles of SamuRon</a><a class="resto strike noshow">- The Chronicles of SamuRon</a><br>
+<a href="https://web.archive.org/web/20010201071900/http://civik.net/">- Civik's Diablo Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991023091723/http://www.geocities.com/Area51/Vault/8987/index.html">- Clan Athanos</a><a class="ws strike noshow">- Clan Athanos</a><a class="oocities strike noshow">- Clan Athanos</a><a class="resto noshow" href="https://geocities.restorativland.org/Area51/Vault/8987/index.html">- Clan Athanos</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010508194452/http://www.geocities.com/TimesSquare/Lair/3555/">- Clan Gunn</a><a class="ws strike noshow">- Clan Gunn</a><a class="oocities strike noshow">- Clan Gunn</a><a class="resto strike noshow">- Clan Gunn</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991009043509/http://www.geocities.com/TimesSquare/Battlefield/3868/">- Clan Haven</a><a class="ws strike noshow">- Clan Haven</a><a class="oocities strike noshow">- Clan Haven</a><a class="resto strike noshow">- Clan Haven</a><br>
 <a href="https://web.archive.org/web/19970714084927/http://www.clankrieger.com/">- Clan Krieger</a><br>
-<a href="https://web.archive.org/web/19991003163442/http://www.geocities.com/TimesSquare/Lair/6651/">- Clan Macleod</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991003163442/http://www.geocities.com/TimesSquare/Lair/6651/">- Clan Macleod</a><a class="ws strike noshow">- Clan Macleod</a><a class="oocities strike noshow">- Clan Macleod</a><a class="resto strike noshow">- Clan Macleod</a><br>
 <a href="https://web.archive.org/web/20011015035730/http://cavebears.clanpages.com/index.html">- Clan of the Cavebears</a><br>
 <a href="https://web.archive.org/web/19980206091317/http://www.caninet.com/~mcullen/">- Clan of the Cheating Wolf</a><br>
 <a href="https://web.archive.org/web/19970616083444/http://www.algonet.se/~baw/diablo/Diablo.htm">- Clan of the Nightstalkers</a><br>
 <a href="https://web.archive.org/web/19970731101552/http://www.enter.net/~glen1n/">- The Clan of the White wolf</a><br>
-<a href="https://web.archive.org/web/20010701083653/http://www.angelfire.com/on/cody61/Main.html">- Cody’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990203194616/http://www.geocities.com/TimesSquare/Alley/7027/">- Cody’s EXTREME Diablo Spot</a><br>
-<a href="https://web.archive.org/web/20010609150809/http://geocities.com/coldflamedsf/">- Cold Flame’s Page</a><br>
-<a href="https://web.archive.org/web/20020412202438/http://www.geocities.com/TimesSquare/Labyrinth/7805/index.html">- Collectors of Ears’ Home Page</a><br>
+<a href="https://web.archive.org/web/20010701083653/http://www.angelfire.com/on/cody61/Main.html">- Cody's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990203194616/http://www.geocities.com/TimesSquare/Alley/7027/">- Cody's EXTREME Diablo Spot</a><a class="ws strike noshow">- Cody's EXTREME Diablo Spot</a><a class="oocities strike noshow">- Cody's EXTREME Diablo Spot</a><a class="resto strike noshow">- Cody's EXTREME Diablo Spot</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010609150809/http://geocities.com/coldflamedsf/">- Cold Flame's Page</a><a class="ws strike noshow">- Cold Flame's Page</a><a class="oocities strike noshow">- Cold Flame's Page</a><a class="resto strike noshow">- Cold Flame's Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20020412202438/http://www.geocities.com/TimesSquare/Labyrinth/7805/index.html">- Collectors of Ears' Home Page</a><a class="ws strike noshow">- Collectors of Ears' Home Page</a><a class="oocities strike noshow">- Collectors of Ears' Home Page</a><a class="resto strike noshow">- Collectors of Ears' Home Page</a><br>
 <a href="https://web.archive.org/web/19970329013546/http://www.ephemeral.com/guild/main.html">- Companions on the Road</a><br>
 <a href="https://web.archive.org/web/19990429122733/http://www.nfis.com/~blkrose/corrupt.htm">- Corrupt Eyes Clan</a><br>
 <a href="https://web.archive.org/web/20010202071400/http://cowlevel.com:80/">- Cow Level</a><br>
-<a href="https://web.archive.org/web/19991012230600/http://cowlevel.com/grassy/cowphone.htm">- Cow Phone</a><br>
 <a href="https://web.archive.org/web/20081002092603/http://ensaya.awardspace.com/diablo/diablo/pages/external/cowlevel/overview.htm">- The Cow Level</a><br>
-<a href="https://web.archive.org/web/20000531040113/http://www.geocities.com/Hollywood/6063/diablo.html">- The Creolem Clan</a><br>
-<a href="https://web.archive.org/web/20010424163908/http://www.geocities.com/timessquare/arena/2871/angels.html">- Crimson Cadre</a><br>
+<a href="https://web.archive.org/web/19991012230600/http://cowlevel.com/grassy/cowphone.htm">- Cow Phone</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000531040113/http://www.geocities.com/Hollywood/6063/diablo.html">- The Creolem Clan</a><a class="ws strike noshow">- The Creolem Clan</a><a class="oocities noshow" href="https://oocities.org/Hollywood/6063/diablo.html">- The Creolem Clan</a><a class="resto noshow" href="https://geocities.restorativland.org/Hollywood/6063/diablo.html">- The Creolem Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010424163908/http://www.geocities.com/timessquare/arena/2871/angels.html">- Crimson Cadre</a><a class="ws strike noshow">- Crimson Cadre</a><a class="oocities noshow" href="https://oocities.org/timessquare/arena/2871/angels.html">- Crimson Cadre</a><a class="resto strike noshow">- Crimson Cadre</a><br>
 <a href="https://web.archive.org/web/19990302095531/http://www.dejer.net/diabolic/">- The Crimson Keep - Diabolic</a><br>
-<a href="https://web.archive.org/web/19991110042540/http://www.geocities.com/TimesSquare/Arcade/4759/diablo.html">- Crossroads</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991110042540/http://www.geocities.com/TimesSquare/Arcade/4759/diablo.html">- Crossroads</a><a class="ws strike noshow">- Crossroads</a><a class="oocities strike noshow">- Crossroads</a><a class="resto strike noshow">- Crossroads</a><br>
 <a href="https://web.archive.org/web/19990128120227/http://www.fortunecity.com/underworld/raider/64/index.html">- Crusader Page</a><br>
 <a href="https://web.archive.org/web/20000925232625/http://www.angelfire.com/co3/cryptkiller2/LinktoCk.html">- Crypt Killers PK Clan</a><br>
-<a href="https://web.archive.org/web/19991011065821/http://www.geocities.com/TimesSquare/Dungeon/9796/d_members.html">- The Crystal Arch</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991011065821/http://www.geocities.com/TimesSquare/Dungeon/9796/d_members.html">- The Crystal Arch</a><a class="ws strike noshow">- The Crystal Arch</a><a class="oocities strike noshow">- The Crystal Arch</a><a class="resto strike noshow">- The Crystal Arch</a><br>
 <a href="https://web.archive.org/web/20120327131016/http://d1event.net/">- d1event.net</a><br>
 <a href="https://web.archive.org/web/20180827205244/https://d1legit.com/">- D1Legit</a><br>
 <a href="https://web.archive.org/web/20001001134809/http://members.aol.com/daemonmind/diablo.html">- Daemons Diablo Purgatory</a><br>
-<a href="https://web.archive.org/web/19970614164238/http://www.wolsi.com/~thrax/diablo/diablo.htm">- Daheryn’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000614204433/http://www.geocities.com/TimesSquare/Realm/7608/index.htm">- Danny’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991004210150/http://www.on-screen.net/hellfire/">- Danstar’s Hellfire</a><br>
-<a href="https://web.archive.org/web/20000104090102/http://www.geocities.com/Yosemite/Trails/3195/darkness.html">- Dark Elf Clan</a><br>
-<a href="https://web.archive.org/web/20000305100613/http://www.geocities.com/TimesSquare/Chasm/4158/index.html">- The Dark Exiles Diablo Guild</a><br>
+<a href="https://web.archive.org/web/19970614164238/http://www.wolsi.com/~thrax/diablo/diablo.htm">- Daheryn's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20080517190429/http://home.att.net/~dsf.glossary/">- Dako-ta's Diablo Miscellanea</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000614204433/http://www.geocities.com/TimesSquare/Realm/7608/index.htm">- Danny's Diablo Page</a><a class="ws strike noshow">- Danny's Diablo Page</a><a class="oocities strike noshow">- Danny's Diablo Page</a><a class="resto strike noshow">- Danny's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19991004210150/http://www.on-screen.net/hellfire/">- Danstar's Hellfire</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000104090102/http://www.geocities.com/Yosemite/Trails/3195/darkness.html">- Dark Elf Clan</a><a class="ws strike noshow">- Dark Elf Clan</a><a class="oocities strike noshow">- Dark Elf Clan</a><a class="resto strike noshow">- Dark Elf Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000305100613/http://www.geocities.com/TimesSquare/Chasm/4158/index.html">- The Dark Exiles Diablo Guild</a><a class="ws strike noshow">- The Dark Exiles Diablo Guild</a><a class="oocities strike noshow">- The Dark Exiles Diablo Guild</a><a class="resto strike noshow">- The Dark Exiles Diablo Guild</a><br>
 <a href="https://web.archive.org/web/20000711042446/http://members.aol.com/darkguilds/index.html">- Darkguild Cheaters Page</a><br>
-<a href="https://web.archive.org/web/20010811170814/http://www.geocities.com/TimesSquare/Castle/6530/diablo.html">- Darkhorse’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990128231312/http://www.geocities.com/TimesSquare/Arcade/9857/">- DarKnIght’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010811170814/http://www.geocities.com/TimesSquare/Castle/6530/diablo.html">- Darkhorse's Diablo Page</a><a class="ws strike noshow">- Darkhorse's Diablo Page</a><a class="oocities strike noshow">- Darkhorse's Diablo Page</a><a class="resto strike noshow">- Darkhorse's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20041018235503/www.network54.com/Forum/58721">- Darkman's Diablo Forum</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990128231312/http://www.geocities.com/TimesSquare/Arcade/9857/">- DarKnIght's Diablo Page</a><a class="ws strike noshow">- DarKnIght's Diablo Page</a><a class="oocities strike noshow">- DarKnIght's Diablo Page</a><a class="resto strike noshow">- DarKnIght's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19990225171149/http://www.swiftsite.com/DiabloDarkside/">- The Darkside</a><br>
-<a href="https://web.archive.org/web/19991003120728/http://www.geocities.com/TimesSquare/Alley/4760/">- Dark Soulz Realm</a><br>
-<a href="https://web.archive.org/web/19970808104658/http://www.inficad.com:80/~sleeper/dwar.html">- Dark Warrior’s Page</a><br>
-<a href="https://web.archive.org/web/20021001221909/http://www.angelfire.com/la/fire84/">- DARK WORLD’s Clan {PK}</a><br>
-<a href="https://web.archive.org/web/19990202094126/http://www.teleport.com/~dbeckler/diablo.html">- Dave’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010524180546/http://www.geocities.com/TimesSquare/Lair/1527/index.htm">- Deathdreams Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991003120728/http://www.geocities.com/TimesSquare/Alley/4760/">- Dark Soulz Realm</a><a class="ws strike noshow">- Dark Soulz Realm</a><a class="oocities strike noshow">- Dark Soulz Realm</a><a class="resto strike noshow">- Dark Soulz Realm</a><br>
+<a href="https://web.archive.org/web/19970808104658/http://www.inficad.com:80/~sleeper/dwar.html">- Dark Warrior's Page</a><br>
+<a href="https://web.archive.org/web/20021001221909/http://www.angelfire.com/la/fire84/">- DARK WORLD's Clan {PK}</a><br>
+<a href="https://web.archive.org/web/19990202094126/http://www.teleport.com/~dbeckler/diablo.html">- Dave's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19991013145713/http://petronet.net/tdg/diablo.html">- Death's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010524180546/http://www.geocities.com/TimesSquare/Lair/1527/index.htm">- Deathdreams Diablo Page</a><a class="ws strike noshow">- Deathdreams Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Lair/1527/index.htm">- Deathdreams Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Lair/1527/index.htm">- Deathdreams Diablo Page</a><br>
+<a href="https://web.archive.org/web/19990831171049/http://members.xoom.com/Deathdreams/">- Deathdreams Diablo Page</a><br>
 <a href="https://web.archive.org/web/19970709180158/http://www.sover.net/~death/">- Death Lords of Gehenna Clan</a><br>
-<a href="https://web.archive.org/web/19991013145713/http://petronet.net/tdg/diablo.html">- Death’s Diablo Page</a><br>
 <a href="https://web.archive.org/web/20151225104245/http://diablo1.se/notes/debug.html">- Debug Release of Diablo 1</a><br>
-<a href="https://web.archive.org/web/20000604032545/http://www.gamespot.com/features/diablo/index.html">- Desslock’s Diablo Guide</a><br>
-<a href="https://web.archive.org/web/19980112174244/http://www.infi-pos.com/~devil666/Diablo/">- Devil666’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990117033627/http://www.geocities.com/SiliconValley/8088/diablo.html">- Devil’s Diablo Den</a><br>
-<a href="https://web.archive.org/web/19990209125759/http://www.geocities.com/BourbonStreet/3875/index.html">- DeyRern’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/20000604032545/http://www.gamespot.com/features/diablo/index.html">- Desslock's Diablo Guide</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117033627/http://www.geocities.com/SiliconValley/8088/diablo.html">- Devil's Diablo Den</a><a class="ws strike noshow">- Devil's Diablo Den</a><a class="oocities strike noshow">- Devil's Diablo Den</a><a class="resto strike noshow">- Devil's Diablo Den</a><br>
+<a href="https://web.archive.org/web/19980112174244/http://www.infi-pos.com/~devil666/Diablo/">- Devil666's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990209125759/http://www.geocities.com/BourbonStreet/3875/index.html">- DeyRern's Diablo Page</a><a class="ws strike noshow">- DeyRern's Diablo Page</a><a class="oocities strike noshow">- DeyRern's Diablo Page</a><a class="resto strike noshow">- DeyRern's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19970406023656/http://www.trojanco.demon.co.uk/diabhack/index.htm">- Diabhack Page</a><br>
-<a href="https://web.archive.org/web/19991013211749/http://www.geocities.com/TimesSquare/Alley/8038/">- Diablatorium</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991013211749/http://www.geocities.com/TimesSquare/Alley/8038/">- Diablatorium</a><a class="ws strike noshow">- Diablatorium</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/8038/">- Diablatorium</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Alley/8038/">- Diablatorium</a><br>
 <a href="https://web.archive.org/web/19991022032901/http://www.multimania.com/warcric/diablo.htm">- Diablo</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000612074250/http://www.geocities.com/SiliconValley/Pines/1496/diablo.htm">- Diablo's Dungeon</a><a class="ws strike noshow">- Diablo's Dungeon</a><a class="oocities strike noshow">- Diablo's Dungeon</a><a class="resto strike noshow">- Diablo's Dungeon</a><br>
+<a href="https://web.archive.org/web/19970605043357/http://www.cnw.com/~darious/">- Diablo's Haven</a><br>
+<a href="https://web.archive.org/web/19991002182346/http://www.concentric.net/~Ramullen/">- Diablo's Head</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990220075315/http://geocities.com/TimesSquare/Alley/7263/index.html">- Diablo's Kingdom</a><a class="ws strike noshow">- Diablo's Kingdom</a><a class="oocities strike noshow">- Diablo's Kingdom</a><a class="resto strike noshow">- Diablo's Kingdom</a><br>
+<a href="https://web.archive.org/web/19981202094448/http://www.flash.net/~romper/mostwanted/">- Diablo's Most Wanted</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091021015353/http://www.geocities.com/TimesSquare/4410/666links.html">- Diablo's Portals to Hell</a><a class="ws strike noshow">- Diablo's Portals to Hell</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/4410/666links.html">- Diablo's Portals to Hell</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/4410/666links.html">- Diablo's Portals to Hell</a><br>
+<a href="https://web.archive.org/web/19991012151014/http://www.innolinx.com/gamequadrant/gamequad/diablo/hacks.htm">- Diablo's Tomb - Files - Hacks</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000619212405/http://www.geocities.com/TimesSquare/Castle/5232/5232.html">- Diablo's Ultimate Cheat Lair</a><a class="ws strike noshow">- Diablo's Ultimate Cheat Lair</a><a class="oocities strike noshow">- Diablo's Ultimate Cheat Lair</a><a class="resto strike noshow">- Diablo's Ultimate Cheat Lair</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010508194330/http://www.geocities.com/TimesSquare/Stadium/6871/">- Diablo's Warriors</a><a class="ws strike noshow">- Diablo's Warriors</a><a class="oocities strike noshow">- Diablo's Warriors</a><a class="resto strike noshow">- Diablo's Warriors</a><br>
+<a href="https://web.archive.org/web/19970406103234/http://www.oz.net/~torgy/">- Diablo ***WastedSpace, Inc.*** Diablo</a><br>
 <a href="https://web.archive.org/web/20170802185027/http://gamerz-bg.com/diablo1/downloads.html">- Diablo 1 Downloads</a><br>
 <a href="https://web.archive.org/web/19990427145650/http://www.kersur.net/~amacleod/diablo/index.html">- Diablo Abyss</a><br>
 <a href="https://web.archive.org/web/19981202215451/http://www.visi.com/~erikandr/diablo/index.html">- Diablo Addiction Support Pages</a><br>
-<a href="https://web.archive.org/web/20010508193557/http://www.geocities.com/Area51/Station/4621/">- Diablo Assault Force</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010508193557/http://www.geocities.com/Area51/Station/4621/">- Diablo Assault Force</a><a class="ws strike noshow">- Diablo Assault Force</a><a class="oocities strike noshow">- Diablo Assault Force</a><a class="resto strike noshow">- Diablo Assault Force</a><br>
 <a href="https://web.archive.org/web/19990828090009/http://www.armpit.force9.co.uk/Diablo/">- Diablo Ate My Balls!</a><br>
 <a href="https://web.archive.org/web/20010420134343/http://www.users.lith.com/~kevin/diablo/">- DiabloBackup.exe - by Kevin Lambert</a><br>
 <a href="https://web.archive.org/web/19970421131322/http://cinmpc.com/bounty/index.htm">- The Diablo Bounty Page</a><br>
-<a href="http://www.geocities.ws/SiliconValley/6867/">- Diablo by Freelance</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990203122301/http://geocities.com/SiliconValley/6867/">- Diablo by Freelance</a><a class="ws noshow" href="http://www.geocities.ws/SiliconValley/6867/">- Diablo by Freelance</a><a class="oocities strike noshow">- Diablo by Freelance</a><a class="resto noshow" href="https://geocities.restorativland.org/SiliconValley/6867/">- Diablo by Freelance</a><br>
 <a href="https://web.archive.org/web/2000108043436/http://www.diablocartoons.com/">- DiabloCartoons</a><br>
 <a href="https://web.archive.org/web/20010815050434/http://www.srv.net/~whone/diablo.html">- DIABLO CHAOS PAGE!!</a><br>
 <a href="https://web.archive.org/web/19981205120458/http://fanware.simplenet.com/diablo.htm">- The Diablo Character Database</a><br>
 <a href="https://web.archive.org/web/19971013023212/http://www.eurekanet.com/~tdinkler/diablo.htm">- Diablo Cheat Pages</a><br>
 <a href="https://web.archive.org/web/20001110094900/http://members.spree.com/funngames/matrix223/">- Diablo Cheats and Hacks</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991217180115/http://www.geocities.com/Area51/Comet/6219/index.html">- The Diablo Cheats and Trainers Webring</a><a class="ws strike noshow">- The Diablo Cheats and Trainers Webring</a><a class="oocities strike noshow">- The Diablo Cheats and Trainers Webring</a><a class="resto noshow" href="https://geocities.restorativland.org/Area51/Comet/6219/index.html">- The Diablo Cheats and Trainers Webring</a><br>
 <a href="https://web.archive.org/web/19991127104659/http://www.novaaccess.com/guild/diablo.html">- Diablo Cheats & Hacks</a><br>
 <a href="https://web.archive.org/web/20000617000108/http://members.xoom.com/Diablorules/diablo.html">- Diablo Cheats & Hacks</a><br>
-<a href="https://web.archive.org/web/20011019145909/http://www.geocities.com/TimesSquare/Arcade/7737/index.html">- Diablo Deathwalk</a><br>
-<a href="http://www.geocities.ws/diabloxtreme/main.htm">- Diablo Extreme</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011019145909/http://www.geocities.com/TimesSquare/Arcade/7737/index.html">- Diablo Deathwalk</a><a class="ws strike noshow">- Diablo Deathwalk</a><a class="oocities strike noshow">- Diablo Deathwalk</a><a class="resto strike noshow">- Diablo Deathwalk</a><br>
+<a class="aorg" href="https://web.archive.org/web/20001017230427/http://geocities.com/diabloxtreme/main.htm">- Diablo Extreme</a><a class="ws noshow" href="http://www.geocities.ws/diabloxtreme/main.htm">- Diablo Extreme</a><a class="oocities strike noshow">- Diablo Extreme</a><a class="resto strike noshow">- Diablo Extreme</a><br>
 <a href="https://web.archive.org/web/20030826013749/http://www.diablo-forum.de.vu/">- Diablo Forum</a><br>
-<a href="https://web.archive.org/web/19991013033729/http://geocities.com/TimesSquare/1057/diablo.html">- Diablo - Games Schtuff</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991013033729/http://geocities.com/TimesSquare/1057/diablo.html">- Diablo - Games Schtuff</a><a class="ws strike noshow">- Diablo - Games Schtuff</a><a class="oocities strike noshow">- Diablo - Games Schtuff</a><a class="resto strike noshow">- Diablo - Games Schtuff</a><br>
 <a href="https://web.archive.org/web/19980206052737/http://www.wf.net/~mitch/diablo/awa.htm">- Diablo Guild Ghengis Kahn</a><br>
 <a href="https://web.archive.org/web/19970215093156/http://pegasus.cc.ucf.edu/~ahg39137/frame1.html">- Diablo Harpers Guild Home Page</a><br>
 <a href="https://web.archive.org/web/19970607165346/http://www.ici.net/cust_pages/vendrick/diablo.htm">- Diablo Headquarters</a><br>
 <a href="https://web.archive.org/web/19990501220945/http://www.telerama.com/~gregleg/diabaid.html">- Diablo/Hellfire Multiplayer First Aid 2.1</a><br>
 <a href="https://web.archive.org/web/19990117005004/http://diablo.calcon.net/">- Diablo Hellfire Tomb of Knowlegde Archive</a><br>
-<a href="https://web.archive.org/web/19991009055739/http://www.geocities.com/Area51/Zone/4308/diablo.htm">- The Diablo Homepage</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991009055739/http://www.geocities.com/Area51/Zone/4308/diablo.htm">- The Diablo Homepage</a><a class="ws strike noshow">- The Diablo Homepage</a><a class="oocities strike noshow">- The Diablo Homepage</a><a class="resto noshow" href="https://geocities.restorativland.org/Area51/Zone/4308/diablo.htm">- The Diablo Homepage</a><br>
 <a href="https://web.archive.org/web/20090603204216/http://wiki.diablofans.com/index.php/Diablo_%28game%29">- Diablo I - Diablofans Wiki</a><br>
 <a href="https://web.archive.org/web/19991022033918/http://www.enteract.com/~bsmyk/diablo.htm">- Diablo Inferno</a><br>
 <a href="https://web.archive.org/web/19990428071143/http://www.gac.edu/~gkemmetm/diablo.html">- Diablo Information Site - Clan Legit</a><br>
-<a href="https://web.archive.org/web/19990117095740/http://www.geocities.com/TimesSquare/Arcade/2028/diablo.html">- Diablo Killers</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117095740/http://www.geocities.com/TimesSquare/Arcade/2028/diablo.html">- Diablo Killers</a><a class="ws strike noshow">- Diablo Killers</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/2028/diablo.html">- Diablo Killers</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/2028/diablo.html">- Diablo Killers</a><br>
 <a href="https://web.archive.org/web/19970630090740/http://www.supernal.net/~zi/">- The Diablo Killing Fields</a><br>
-<a href="https://web.archive.org/web/20021103215606/http://geocities.com/thediablopage/">- The Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021103215606/http://geocities.com/thediablopage/">- The Diablo Page</a><a class="ws strike noshow">- The Diablo Page</a><a class="oocities noshow" href="https://oocities.org/thediablopage/">- The Diablo Page</a><a class="resto strike noshow">- The Diablo Page</a><br>
 <a href="https://web.archive.org/web/20000122214208/http://www.sirius.com/~shadow/diablo.html">- Diablo PD</a><br>
 <a href="https://web.archive.org/web/19970527105510/http://www.cs.monash.edu.au/~stevem/diablo/pkiller.html">- The Diablo Pkiller Page</a><br>
-<a href="https://web.archive.org/web/20010519131208/http://thecaster.virtualave.net/diabloplus/">- Diablo Plus! - Backup Utility for Diablo</a><br>
 <a href="https://web.archive.org/web/20010503042149/http://freespace.virgin.net/ben.bell/diabloplus/">- Diablo Plus! - Backup Utility for Diablo</a><br>
-<a href="https://web.archive.org/web/19991007013450/http://www.geocities.com/TimesSquare/Alley/3338/">- Diablo Resource Center</a><br>
-<a href="https://web.archive.org/web/20000612074250/http://www.geocities.com/SiliconValley/Pines/1496/diablo.htm">- Diablo’s Dungeon</a><br>
-<a href="https://web.archive.org/web/19970605043357/http://www.cnw.com/~darious/">- Diablo’s Haven</a><br>
-<a href="https://web.archive.org/web/19991002182346/http://www.concentric.net/~Ramullen/">- Diablo’s Head</a><br>
-<a href="https://web.archive.org/web/19990220075315/http://geocities.com/TimesSquare/Alley/7263/index.html">- Diablo’s Kingdom</a><br>
-<a href="https://web.archive.org/web/19991002183949/http://www.geocities.com/Hollywood/8582/">- Diablo Slayer’s Page</a><br>
-<a href="https://web.archive.org/web/19981202094448/http://www.flash.net/~romper/mostwanted/">- Diablo’s Most Wanted</a><br>
-<a href="https://web.archive.org/web/20091021015353/http://www.geocities.com/TimesSquare/4410/666links.html">- Diablo’s Portals to Hell</a><br>
-<a href="https://web.archive.org/web/19991012151014/http://www.innolinx.com/gamequadrant/gamequad/diablo/hacks.htm">- Diablo’s Tomb - Files - Hacks</a><br>
-<a href="https://web.archive.org/web/19990117073327/http://geocities.com/WallStreet/Floor/3769/diablo.htm">- Diablo Stuff!</a><br>
-<a href="https://web.archive.org/web/20000619212405/http://www.geocities.com/TimesSquare/Castle/5232/5232.html">- Diablo’s Ultimate Cheat Lair</a><br>
+<a href="https://web.archive.org/web/20010519131208/http://thecaster.virtualave.net/diabloplus/">- Diablo Plus! - Backup Utility for Diablo</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991007013450/http://www.geocities.com/TimesSquare/Alley/3338/">- Diablo Resource Center</a><a class="ws strike noshow">- Diablo Resource Center</a><a class="oocities strike noshow">- Diablo Resource Center</a><a class="resto strike noshow">- Diablo Resource Center</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991002183949/http://www.geocities.com/Hollywood/8582/">- Diablo Slayer's Page</a><a class="ws strike noshow">- Diablo Slayer's Page</a><a class="oocities strike noshow">- Diablo Slayer's Page</a><a class="resto strike noshow">- Diablo Slayer's Page</a><br>
+<a href="https://web.archive.org/web/20011119110517/http://www.diablosc.com/oldnews.shtml">- Diablo Strategy Compendium</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117073327/http://geocities.com/WallStreet/Floor/3769/diablo.htm">- Diablo Stuff!</a><a class="ws strike noshow">- Diablo Stuff!</a><a class="oocities strike noshow">- Diablo Stuff!</a><a class="resto strike noshow">- Diablo Stuff!</a><br>
 <a href="https://web.archive.org/web/20000824020434/http://www.pcgame.com/super/diablo/">- Diablo SuperSite</a><br>
-<a href="https://web.archive.org/web/20010508194330/http://www.geocities.com/TimesSquare/Stadium/6871/">- Diablo’s Warriors</a><br>
-<a href="https://web.archive.org/web/20021030173434/http://geocities.com/TimesSquare/Castle/6741/frame.html">- Diablo Tavern</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021030173434/http://geocities.com/TimesSquare/Castle/6741/frame.html">- Diablo Tavern</a><a class="ws strike noshow">- Diablo Tavern</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Castle/6741/frame.html">- Diablo Tavern</a><a class="resto strike noshow">- Diablo Tavern</a><br>
 <a href="https://web.archive.org/web/20031113114429/http://www.netninja.com/diablo/">- Diablo Trainer</a><br>
-<a href="https://web.archive.org/web/19991002063536/http://www.geocities.com/TimesSquare/Arcade/8666/">- Diablo Unbound</a><br>
-<a href="https://web.archive.org/web/20010813193626/http://www.geocities.com/TimesSquare/Fortress/9414/diablo.html">- Diablo Warehouse</a>
+<a class="aorg" href="https://web.archive.org/web/19991002063536/http://www.geocities.com/TimesSquare/Arcade/8666/">- Diablo Unbound</a><a class="ws strike noshow">- Diablo Unbound</a><a class="oocities strike noshow">- Diablo Unbound</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/8666/">- Diablo Unbound</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010813193626/http://www.geocities.com/TimesSquare/Fortress/9414/diablo.html">- Diablo Warehouse</a><a class="ws strike noshow">- Diablo Warehouse</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Fortress/9414/diablo.html">- Diablo Warehouse</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Fortress/9414/diablo.html">- Diablo Warehouse</a>
         </td>
         <td style="vertical-align:top;"><span class="title2">English</span><br><br>
 <a href="https://diablo-archive.fandom.com/wiki/Diablo_Wiki">- Diablo Wiki (Gamepedia)</a><br>
 <a href="https://web.archive.org/web/20010405160457/http://www.diabloworld.com/">- Diablo World</a><br>
 <a href="https://web.archive.org/web/19970607011500/http://www.shu.edu/~martelfr/contents/diablo/index.html">- Diabolic</a><br>
-<a href="https://web.archive.org/web/19980210125921/http://www.space4less.com/usr/db/diablo.htm">- Diamondback’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/19980210125921/http://www.space4less.com/usr/db/diablo.htm">- Diamondback's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19981206080404/http://www.fairgame.com/diapolis/index.html">- Diapolis</a><br>
-<a href="https://web.archive.org/web/19990220024252/http://www.geocities.com/EnchantedForest/5166/Diablo.html">- Digga’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991018234221/http://www.geocities.com/TimesSquare/Dungeon/8637/homepg.html">- Disciple of Destruction</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990220024252/http://www.geocities.com/EnchantedForest/5166/Diablo.html">- Digga's Diablo Page</a><a class="ws strike noshow">- Digga's Diablo Page</a><a class="oocities strike noshow">- Digga's Diablo Page</a><a class="resto strike noshow">- Digga's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991018234221/http://www.geocities.com/TimesSquare/Dungeon/8637/homepg.html">- Disciple of Destruction</a><a class="ws strike noshow">- Disciple of Destruction</a><a class="oocities strike noshow">- Disciple of Destruction</a><a class="resto strike noshow">- Disciple of Destruction</a><br>
 <a href="https://web.archive.org/web/20010831095956/http://www.angelfire.com/ak2/DiabloHolyKnights/index.html">- The Domain of Sephiroth</a><br>
-<a href="https://web.archive.org/web/19991206022858/http://www.geocities.com/TimesSquare/Castle/8831/diabhome.htm">- Doombringer’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000621035357/http://doom-gaze.hypermart.net:80/">- Doom-Gaze’s PC Programming Web-site</a><br>
-<a href="https://web.archive.org/web/20030925065435/http://delinquentminds.com:80/">- Doom-Gaze’s Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991206022858/http://www.geocities.com/TimesSquare/Castle/8831/diabhome.htm">- Doombringer's Diablo Page</a><a class="ws strike noshow">- Doombringer's Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Castle/8831/diabhome.htm">- Doombringer's Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Castle/8831/diabhome.htm">- Doombringer's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20000621035357/http://doom-gaze.hypermart.net:80/">- Doom-Gaze's PC Programming Web-site</a><br>
+<a href="https://web.archive.org/web/20030925065435/http://delinquentminds.com:80/">- Doom-Gaze's Site</a><br>
 <a href="https://web.archive.org/web/20000118204909/http://djustice.8m.com/">- Draconic Justice</a><br>
-<a href="https://web.archive.org/web/19970429104520/http://www.pcisys.net/~edraven/diablo.shtml/">- Draven’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/19970429104520/http://www.pcisys.net/~edraven/diablo.shtml/">- Draven's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19990222010945/http://www.panix.com/~rhockens/">- Dread Order of Assassins</a><br>
 <a href="https://web.archive.org/web/20040107161659/http://dsg.realmsbeyond.net/index.htm">- Dreams of the Sleeping God</a><br>
-<a href="https://web.archive.org/web/20010517033144/http://www.geocities.com/TimesSquare/Alley/5999/">- Druid’s Guild</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010517033144/http://www.geocities.com/TimesSquare/Alley/5999/">- Druid's Guild</a><a class="ws strike noshow">- Druid's Guild</a><a class="oocities strike noshow">- Druid's Guild</a><a class="resto strike noshow">- Druid's Guild</a><br>
 <a href="https://web.archive.org/web/20000301163441/http://www.thedrunken.net/">- The Drunken</a><br>
 <a href="https://web.archive.org/web/20130815045934/http://thedsfcommunity.yuku.com/">- The DSF Community</a><br>
-<a href="https://web.archive.org/web/19990428123117/http://users.deltanet.com/~dragons/Dumptruk/dumptruks_home_page.htm">- Dumptruk’s Home Page</a><br>
-<a href="https://web.archive.org/web/19990302042736/http://abalone.cwru.edu/elenrod/diablo/">- Elendrod’s Guide to Diablo</a><br>
-<a href="https://web.archive.org/web/20050415164413/http://home3.swipnet.se/~w-38797/diablo/main.htm">- Erik’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990127152226/http://www.angelfire.com/pa/madnades/">- E’s Diablo Cheat page</a><br>
-<a href="https://web.archive.org/web/19991018180108/http://www.geocities.com/SiliconValley/Way/7374/">- Evil Empire’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19980131064206/http://evince.tierranet.com/">- Evince’s Cheat Page</a><br>
-<a href="https://web.archive.org/web/20010725162504/http://www.geocities.com/TimesSquare/Alley/1693/">- Exmortis' Diablo Lounge</a><br>
+<a href="https://web.archive.org/web/19990428123117/http://users.deltanet.com/~dragons/Dumptruk/dumptruks_home_page.htm">- Dumptruk's Home Page</a><br>
+<a href="https://web.archive.org/web/19990127152226/http://www.angelfire.com/pa/madnades/">- E's Diablo Cheat page</a><br>
+<a href="https://web.archive.org/web/19990302042736/http://abalone.cwru.edu/elenrod/diablo/">- Elendrod's Guide to Diablo</a><br>
+<a href="https://web.archive.org/web/20050415164413/http://home3.swipnet.se/~w-38797/diablo/main.htm">- Erik's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991018180108/http://www.geocities.com/SiliconValley/Way/7374/">- Evil Empire's Diablo Page</a><a class="ws strike noshow">- Evil Empire's Diablo Page</a><a class="oocities strike noshow">- Evil Empire's Diablo Page</a><a class="resto strike noshow">- Evil Empire's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19980131064206/http://evince.tierranet.com/">- Evince's Cheat Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010725162504/http://www.geocities.com/TimesSquare/Alley/1693/">- Exmortis' Diablo Lounge</a><a class="ws strike noshow">- Exmortis' Diablo Lounge</a><a class="oocities strike noshow">- Exmortis' Diablo Lounge</a><a class="resto strike noshow">- Exmortis' Diablo Lounge</a><br>
 <a href="https://web.archive.org/web/20191223193737/http://extreme-gamerz.org/diablo/">- Extreme-Gamerz</a><br>
-<a href="https://web.archive.org/web/20000616102016/http://www.geocities.com/TimesSquare/Realm/8302/diablo.html">- Ezekiel’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20021011033253/http://www.geocities.com/timessquare/dungeon/4966/enter.html">- Flame warriors of Doom</a><br>
-<a href="https://web.archive.org/web/20010418043422/http://home.snafu.de/fricka/diablo.html">- Fricka’s DIABLO Page</a><br>
-<a href="https://web.archive.org/web/19991104050948/http://www.geocities.com/TimesSquare/Arcade/4891/guild.html">- F.R.I.E.N.D.s</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000616102016/http://www.geocities.com/TimesSquare/Realm/8302/diablo.html">- Ezekiel's Diablo Page</a><a class="ws strike noshow">- Ezekiel's Diablo Page</a><a class="oocities strike noshow">- Ezekiel's Diablo Page</a><a class="resto strike noshow">- Ezekiel's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021011033253/http://www.geocities.com/timessquare/dungeon/4966/enter.html">- Flame warriors of Doom</a><a class="ws strike noshow">- Flame warriors of Doom</a><a class="oocities strike noshow">- Flame warriors of Doom</a><a class="resto strike noshow">- Flame warriors of Doom</a><br>
+<a href="https://web.archive.org/web/19970720202405/http://www.proaxis.com/~allenr/">- Freaq's Ultimate Diablo Page</a><br>
+<a href="https://web.archive.org/web/20010418043422/http://home.snafu.de/fricka/diablo.html">- Fricka's DIABLO Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991104050948/http://www.geocities.com/TimesSquare/Arcade/4891/guild.html">- F.R.I.E.N.D.s</a><a class="ws strike noshow">- F.R.I.E.N.D.s</a><a class="oocities strike noshow">- F.R.I.E.N.D.s</a><a class="resto strike noshow">- F.R.I.E.N.D.s</a><br>
 <a href="https://web.archive.org/web/19980519221414/http://www.fyreandsteel.com/">- Fyre & Steel</a><br>
 <a href="https://web.archive.org/web/19970717163514/http://www.gamecenter.com/Features/Guide/Diablo/">- Gamecenter.com</a><br>
-<a href="https://web.archive.org/web/19970630063334/http://www.gagames.com/specialty/diablo/">- Gamer’s Alliance</a><br>
+<a href="https://web.archive.org/web/19970630063334/http://www.gagames.com/specialty/diablo/">- Gamer's Alliance</a><br>
 <a href="https://web.archive.org/web/19991128200634/http://gamesdomain.com/top100/pages/2154.html">- Gamesdomain Links</a><br>
 <a href="https://web.archive.org/web/20150421113626/http://thegw.com/cheats/diablo.html">- GameWeb Downloads</a><br>
-<a href="https://web.archive.org/web/20010521161508/http://www.geocities.com/TimesSquare/Alley/9654/">- Ganker’s Games Galore</a><br>
-<a href="https://web.archive.org/web/19990218103713/http://www.geocities.com/TimesSquare/Arcade/9301/">- Gavin’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20001002105221fw_/http://geocities.com/TimesSquare/Dungeon/3145/index2.html">- GEALIN’S Diablo page</a><br>
-<a href="https://web.archive.org/web/19990302024746/http://users.why.net/arwine/diablo/index.htm">- Gene’s Cheat Page</a><br>
-<a href="https://web.archive.org/web/19990219175901/http://www.geocities.com/TimesSquare/Lair/3200/">- Golems Diablo Page/Hellfire</a><br>
-<a href="https://web.archive.org/web/19991008052252/http://bigsun.wbs.net/homepages/h/i/d/hiddenbagu/gore.html">- .Gore.</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010521161508/http://www.geocities.com/TimesSquare/Alley/9654/">- Ganker's Games Galore</a><a class="ws strike noshow">- Ganker's Games Galore</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/9654/">- Ganker's Games Galore</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Alley/9654/">- Ganker's Games Galore</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990218103713/http://www.geocities.com/TimesSquare/Arcade/9301/">- Gavin's Diablo Page</a><a class="ws strike noshow">- Gavin's Diablo Page</a><a class="oocities strike noshow">- Gavin's Diablo Page</a><a class="resto strike noshow">- Gavin's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20001002105221fw_/http://geocities.com/TimesSquare/Dungeon/3145/index2.html">- GEALIN'S Diablo page</a><a class="ws strike noshow">- GEALIN'S Diablo page</a><a class="oocities strike noshow">- GEALIN'S Diablo page</a><a class="resto strike noshow">- GEALIN'S Diablo page</a><br>
+<a href="https://web.archive.org/web/19990302024746/http://users.why.net/arwine/diablo/index.htm">- Gene's Cheat Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990219175901/http://www.geocities.com/TimesSquare/Lair/3200/">- Golems Diablo Page/Hellfire</a><a class="ws strike noshow">- Golems Diablo Page/Hellfire</a><a class="oocities strike noshow">- Golems Diablo Page/Hellfire</a><a class="resto strike noshow">- Golems Diablo Page/Hellfire</a><br>
 <a href="https://web.archive.org/web/19990508204111/http://www.lostinfo.com/diablo/">- The Great Library</a><br>
-<a href="https://web.archive.org/web/19991013140834/http://skyscraper.fortunecity.com/crypt/959/diablo.html">- GreenEmerald’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/19991013140834/http://skyscraper.fortunecity.com/crypt/959/diablo.html">- GreenEmerald's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19981205001344/http://hem.passagen.se/uffe69/diablo/">- Guild of the Fearless</a><br>
-<a href="https://web.archive.org/web/19990129081317/http://www.geocities.com/TimesSquare/Arcade/3944/">- The Hackers Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990129081317/http://www.geocities.com/TimesSquare/Arcade/3944/">- The Hackers Diablo Page</a><a class="ws strike noshow">- The Hackers Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/3944/">- The Hackers Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/3944/">- The Hackers Diablo Page</a><br>
 <a href="https://web.archive.org/web/20000423181501/http://www.kastenracing.com/chris/hsm.htm">- Handy Server Manager</a><br>
-<a href="https://web.archive.org/web/20021122044902/http://www.geocities.com/TimesSquare/Labyrinth/3359/">- HELL'S ARMY</a><br>
-<a href="https://web.archive.org/web/19990224014335/http://www.geocities.com/TimesSquare/Castle/4582/">- Hell Bringers</a><br>
-<a href="https://web.archive.org/web/19990907224141/http://www.geocities.com/Area51/Zone/5810/">- Hell Devils Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021122044902/http://www.geocities.com/TimesSquare/Labyrinth/3359/">- HELL'S ARMY</a><a class="ws strike noshow">- HELL'S ARMY</a><a class="oocities strike noshow">- HELL'S ARMY</a><a class="resto strike noshow">- HELL'S ARMY</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091027005002/http://geocities.com/skithf/">- Hell's Fury</a><a class="ws noshow" href="http://www.geocities.ws/skithf/">- Hell's Fury</a><a class="oocities strike noshow">- Hell's Fury</a><a class="resto strike noshow">- Hell's Fury</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990224014335/http://www.geocities.com/TimesSquare/Castle/4582/">- Hell Bringers</a><a class="ws strike noshow">- Hell Bringers</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Castle/4582/">- Hell Bringers</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Castle/4582/">- Hell Bringers</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990907224141/http://www.geocities.com/Area51/Zone/5810/">- Hell Devils Clan</a><a class="ws strike noshow">- Hell Devils Clan</a><a class="oocities strike noshow">- Hell Devils Clan</a><a class="resto strike noshow">- Hell Devils Clan</a><br>
 <a href="https://web.archive.org/web/19990418100528/http://www.diabloii.net/hellfire/index.shtml">- Hellfire at the Unofficial Diablo II Site</a><br>
 <a href="https://web.archive.org/web/19980121133627/http://www.gamepen.com/desslock/hellfire/interview.html">- Hellfire Interview with Synergistic Software</a><br>
-<a href="https://web.archive.org/web/20091027005002/http://geocities.com/skithf/">- Hell’s Fury</a><br>
-<a href="https://web.archive.org/web/20000417014817/http://www.thehelper.net/diablo.html">- The Helper’s Zone</a><br>
-<a href="https://web.archive.org/web/20041204092115if_/http://glas.its.tudelft.nl:80/~henjo/diablo/index.php">- Henjo’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19970219032312/http://www.camalott.com/~bull/diablo.html">- The High Council’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19981206042511/http://hubcap.clemson.edu/~rmannis/diablo/diablo.htm">- The Honest Man’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/*/http://everyonesucks.tierranet.com/hellrazor/*">- Hellrazor's Domain</a><br>
+<a href="https://web.archive.org/web/20000417014817/http://www.thehelper.net/diablo.html">- The Helper's Zone</a><br>
+<a href="https://web.archive.org/web/20041204092115if_/http://glas.its.tudelft.nl:80/~henjo/diablo/index.php">- Henjo's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19970219032312/http://www.camalott.com/~bull/diablo.html">- The High Council's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19981206042511/http://hubcap.clemson.edu/~rmannis/diablo/diablo.htm">- The Honest Man's Diablo Page</a><br>
 <a href="http://thehoradrim.tk/">- The Horadrim</a><br>
-<a href="https://web.archive.org/web/19990117083836/http://www.geocities.com/TimesSquare/8014/DFrames.htm">- Hurtleg’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20041213042903/http://www.geocities.com/TimesSquare/Dungeon/1109/">- Ian’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117083836/http://www.geocities.com/TimesSquare/8014/DFrames.htm">- Hurtleg's Diablo Page</a><a class="ws strike noshow">- Hurtleg's Diablo Page</a><a class="oocities strike noshow">- Hurtleg's Diablo Page</a><a class="resto strike noshow">- Hurtleg's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20041213042903/http://www.geocities.com/TimesSquare/Dungeon/1109/">- Ian's Diablo Page</a><a class="ws strike noshow">- Ian's Diablo Page</a><a class="oocities strike noshow">- Ian's Diablo Page</a><a class="resto strike noshow">- Ian's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19991222151958/http://www.angelfire.com/az/ImperialClan/diablo.html">- Imperial Clan</a><br>
-<a href="https://web.archive.org/web/19990202183806/http://www.geocities.com/TimesSquare/Alley/4534/diablo.html">- Inferno’s Diablo Cheat Fest</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990202183806/http://www.geocities.com/TimesSquare/Alley/4534/diablo.html">- Inferno's Diablo Cheat Fest</a><a class="ws strike noshow">- Inferno's Diablo Cheat Fest</a><a class="oocities strike noshow">- Inferno's Diablo Cheat Fest</a><a class="resto strike noshow">- Inferno's Diablo Cheat Fest</a><br>
 <a href="https://web.archive.org/web/19970311011947/http://home.istar.ca/~oblivion/">- Iron Ring Guild</a><br>
-<a href="https://web.archive.org/web/19991110063549/http://www.geocities.com/TimesSquare/Lair/2201/jade2.htm">- Jade Clan of the Kings</a><br>
-<a href="https://web.archive.org/web/20011202091349/http://members.core.com/~dfrease/JGFrame.html">- Jarulf’s Guide Online</a><br>
-<a href="https://web.archive.org/web/20000611234503/http://callamer.com/~jscarlet/games/diablo/diablo.htm">- Jim Scarletta’s Diablo Home Page</a><br>
-<a href="https://web.archive.org/web/19981206021748/http://home1.swipnet.se/~w-12876/diablo/index.htm">- Kael’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20020803132347/http://members.mint.net/darwin/diablocartoon/diablocartoon.html">- Kaos’s Diablo Cartoon Page</a><br>
-<a href="https://web.archive.org/web/20010616061037/http://members.nbci.com/Kaymen/Diablo/diablo.htm">- Kaymen Diablo Main Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991110063549/http://www.geocities.com/TimesSquare/Lair/2201/jade2.htm">- Jade Clan of the Kings</a><a class="ws strike noshow">- Jade Clan of the Kings</a><a class="oocities strike noshow">- Jade Clan of the Kings</a><a class="resto strike noshow">- Jade Clan of the Kings</a><br>
+<a href="https://web.archive.org/web/20011202091349/http://members.core.com/~dfrease/JGFrame.html">- Jarulf's Guide Online</a><br>
+<a href="https://web.archive.org/web/20000611234503/http://callamer.com/~jscarlet/games/diablo/diablo.htm">- Jim Scarletta's Diablo Home Page</a><br>
+<a href="https://web.archive.org/web/19981206021748/http://home1.swipnet.se/~w-12876/diablo/index.htm">- Kael's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20020803132347/http://members.mint.net/darwin/diablocartoon/diablocartoon.html">- Kaos's Diablo Cartoon Page</a><br>
 <a href="https://web.archive.org/web/20000203170214/http://members.xoom.com/Kaymen/Diablo/diablo.htm">- Kaymen Diablo Main Page</a><br>
+<a href="https://web.archive.org/web/20010616061037/http://members.nbci.com/Kaymen/Diablo/diablo.htm">- Kaymen Diablo Main Page</a><br>
 <a href="https://web.archive.org/web/20170615021907/http://www.khanduras.net/">- Khanduras Network</a><br>
-<a href="https://web.archive.org/web/19990218141918/http://geocities.com/TimesSquare/4761/diablo.html">- Killahill’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20030415234458/http://www.geocities.com/TimesSquare/Arcade/7473/diablo.html">- The KiLlA MaGe</a><br>
-<a href="https://web.archive.org/web/19980202160745/http://www.vr-net.com/~garfield/index.html">- KillRaven’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19980115175739/http://kingy.com/diablo/">- Kingy’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991010150150/http://www.geocities.com/TimesSquare/1916/">- Kitten’s Diablo and Hellfire Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990218141918/http://geocities.com/TimesSquare/4761/diablo.html">- Killahill's Diablo Page</a><a class="ws strike noshow">- Killahill's Diablo Page</a><a class="oocities strike noshow">- Killahill's Diablo Page</a><a class="resto strike noshow">- Killahill's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20030415234458/http://www.geocities.com/TimesSquare/Arcade/7473/diablo.html">- The KiLlA MaGe</a><a class="ws strike noshow">- The KiLlA MaGe</a><a class="oocities strike noshow">- The KiLlA MaGe</a><a class="resto strike noshow">- The KiLlA MaGe</a><br>
+<a href="https://web.archive.org/web/19980202160745/http://www.vr-net.com/~garfield/index.html">- KillRaven's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19980115175739/http://kingy.com/diablo/">- Kingy's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991010150150/http://www.geocities.com/TimesSquare/1916/">- Kitten's Diablo and Hellfire Page</a><a class="ws strike noshow">- Kitten's Diablo and Hellfire Page</a><a class="oocities strike noshow">- Kitten's Diablo and Hellfire Page</a><a class="resto strike noshow">- Kitten's Diablo and Hellfire Page</a><br>
 <a href="https://web.archive.org/web/20021123081440/http://legit-kb.virtualave.net/">- Knights of Blood</a><br>
-<a href="https://web.archive.org/web/19991018181606/http://www.geocities.com/TimesSquare/Castle/1329/">- Knights of the Round Table</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991018181606/http://www.geocities.com/TimesSquare/Castle/1329/">- Knights of the Round Table</a><a class="ws strike noshow">- Knights of the Round Table</a><a class="oocities strike noshow">- Knights of the Round Table</a><a class="resto strike noshow">- Knights of the Round Table</a><br>
 <a href="https://web.archive.org/web/19970703195942/http://www.checkmaster.com/internetchecks/alex/index.html">- The Lacticians Guild</a><br>
 <a href="https://web.archive.org/web/19990429103448/http://www.neosoft.com/~dramsey/jr/diablo.htm">- Last Homely House Reference Page</a><br>
-<a href="https://web.archive.org/web/19991001154224/http://www.geocities.com/TimesSquare/Alley/9166/">- Lava’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010504174352/http://www.geocities.com/TimesSquare/Castle/7056/">- Lawman{AO}’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000303210819/http://www.geocities.com/TimesSquare/Galaxy/9662/right.html">- Lazy’s Realm</a><br>
-<a href="https://web.archive.org/web/20020225083016/http://www.geocities.com/TimesSquare/Realm/7680/allies.htm">- The League of Allied Diablo Legit Guilds</a><br>
-<a href="https://web.archive.org/web/20000502171548/http://home.earthlink.net/~leeq/diablo.htm">- Lee’s Ironman Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991001154224/http://www.geocities.com/TimesSquare/Alley/9166/">- Lava's Diablo Page</a><a class="ws strike noshow">- Lava's Diablo Page</a><a class="oocities strike noshow">- Lava's Diablo Page</a><a class="resto strike noshow">- Lava's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010504174352/http://www.geocities.com/TimesSquare/Castle/7056/">- Lawman{AO}'s Diablo Page</a><a class="ws strike noshow">- Lawman{AO}'s Diablo Page</a><a class="oocities strike noshow">- Lawman{AO}'s Diablo Page</a><a class="resto strike noshow">- Lawman{AO}'s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000303210819/http://www.geocities.com/TimesSquare/Galaxy/9662/right.html">- Lazy's Realm</a><a class="ws strike noshow">- Lazy's Realm</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Galaxy/9662/right.html">- Lazy's Realm</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Galaxy/9662/right.html">- Lazy's Realm</a><br>
+<a class="aorg" href="https://web.archive.org/web/20020225083016/http://www.geocities.com/TimesSquare/Realm/7680/allies.htm">- The League of Allied Diablo Legit Guilds</a><a class="ws strike noshow">- The League of Allied Diablo Legit Guilds</a><a class="oocities strike noshow">- The League of Allied Diablo Legit Guilds</a><a class="resto strike noshow">- The League of Allied Diablo Legit Guilds</a><br>
+<a href="https://web.archive.org/web/20000502171548/http://home.earthlink.net/~leeq/diablo.htm">- Lee's Ironman Site</a><br>
 <a href="https://web.archive.org/web/19991127104354/http://www.infinite-damage.com/Alliance/index.html">- Legit Alliance</a><br>
 <a href="https://web.archive.org/web/20030817065003/legit-diablo.de.vu/">- Legit Diablo</a><br>
-<a href="https://web.archive.org/web/19991011033153/http://www.geocities.com/TimesSquare/Alley/9744/">- The Little Shop of Diablo Horrors</a><br>
+<a href="https://web.archive.org/web/20031015061531/http://lennylen.com/">- LennyLand</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991011033153/http://www.geocities.com/TimesSquare/Alley/9744/">- The Little Shop of Diablo Horrors</a><a class="ws strike noshow">- The Little Shop of Diablo Horrors</a><a class="oocities strike noshow">- The Little Shop of Diablo Horrors</a><a class="resto strike noshow">- The Little Shop of Diablo Horrors</a><br>
+<a href="https://web.archive.org/web/20160323001457/http://arewehavingfunyet.com/diablo/diablo.shtml">- Lochnar[ITB]'s Freshman Diablo</a><br>
 <a href="https://web.archive.org/web/19991112123125/http://www2.arnes.si/~ssdvvonc/coe-koe/lodge.htm">- Lodge</a><br>
-<a href="https://web.archive.org/web/19991104230133/http://www.geocities.com/TimesSquare/Alley/6337/cheat.html">- LOE’s Diablo Cheats</a><br>
-<a href="https://web.archive.org/web/19990117100138/http://www.geocities.com/SiliconValley/Pines/1807/main.htm">- Lord M’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991104230133/http://www.geocities.com/TimesSquare/Alley/6337/cheat.html">- LOE's Diablo Cheats</a><a class="ws strike noshow">- LOE's Diablo Cheats</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/6337/cheat.html">- LOE's Diablo Cheats</a><a class="resto strike noshow">- LOE's Diablo Cheats</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117100138/http://www.geocities.com/SiliconValley/Pines/1807/main.htm">- Lord M's Diablo Page</a><a class="ws strike noshow">- Lord M's Diablo Page</a><a class="oocities strike noshow">- Lord M's Diablo Page</a><a class="resto strike noshow">- Lord M's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19970619232401/http://www.initco.net/~burleigh/">- Lords of Azurwroth</a><br>
-<a href="https://web.archive.org/web/20010815183908/http://www.geocities.com/TimesSquare/Castle/7658/index1.html">- Lords of Balance</a><br>
-<a href="https://web.archive.org/web/20000616170910/http://www.geocities.com/Baja/4611/index.html">- Lords of Nexus</a><br>
-<a href="https://web.archive.org/web/19990203051603/http://www.geocities.com/TimesSquare/Alley/5448/">- Lord Soth’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010815183908/http://www.geocities.com/TimesSquare/Castle/7658/index1.html">- Lords of Balance</a><a class="ws strike noshow">- Lords of Balance</a><a class="oocities strike noshow">- Lords of Balance</a><a class="resto strike noshow">- Lords of Balance</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000616170910/http://www.geocities.com/Baja/4611/index.html">- Lords of Nexus</a><a class="ws strike noshow">- Lords of Nexus</a><a class="oocities strike noshow">- Lords of Nexus</a><a class="resto strike noshow">- Lords of Nexus</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990203051603/http://www.geocities.com/TimesSquare/Alley/5448/">- Lord Soth's Diablo Page</a><a class="ws strike noshow">- Lord Soth's Diablo Page</a><a class="oocities strike noshow">- Lord Soth's Diablo Page</a><a class="resto strike noshow">- Lord Soth's Diablo Page</a><br>
 <a href="https://web.archive.org/web/20000124200403/http://www.personal.psu.edu/users/r/d/rdm139/index.shtml">- The Lurker Lounge</a><br>
 <a href="https://web.archive.org/web/20001116213600/http://lurkerlounge.net-games.com:80/">- The Lurker Lounge</a><br>
-<a href="https://web.archive.org/web/20010302013700/http://www.lurkerlounge.com/">- The Lurker Lounge</a><br>
+<a href="https://web.archive.org/web/19990219103329/http://users.intertex.net/tmart/diablo/main.html">- Mac's Haven</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000916214203/http://www.geocities.com/TimesSquare/Realm/1026/diablo/">- The Macintosh Diablo Page</a><a class="ws strike noshow">- The Macintosh Diablo Page</a><a class="oocities strike noshow">- The Macintosh Diablo Page</a><a class="resto strike noshow">- The Macintosh Diablo Page</a><br>
 <a href="https://web.archive.org/web/20080702043729/http://www.macdiablo.com:80/index.html">- The Macintosh Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000916214203/http://www.geocities.com/TimesSquare/Realm/1026/diablo/">- The Macintosh Diablo Page - Original</a><br>
 <a href="https://web.archive.org/web/20050207044941/http://members.aol.com/cybermonk6/">- The Macintosh Diablo Resource</a><br>
-<a href="https://web.archive.org/web/19990219103329/http://users.intertex.net/tmart/diablo/main.html">- Mac’s Haven</a><br>
-<a href="https://web.archive.org/web/20011117092735/http://www.geocities.com/Area51/Corridor/6629/diablo.html">- The Mad Bovine’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010404001739/http://www.geocities.com/TimesSquare/Alley/2112/">- Magik’s Diablo Cheaters' Heaven</a><br>
-<a href="https://web.archive.org/web/20010519180442/http://www.geocities.com/TimesSquare/6706/">- MagnuS'Z Diablo Realm</a><br>
-<a href="https://web.archive.org/web/19970529124313/http://www.geocities.com/SiliconValley/Heights/8825/diablo.htm">- Malaysia’s EoL Home Page</a><br>
-<a href="https://web.archive.org/web/20020112104939/http://www.geocities.com/SiliconValley/Ridge/8863/Diablocheats.html">- Mandrake’s Chamber</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011117092735/http://www.geocities.com/Area51/Corridor/6629/diablo.html">- The Mad Bovine's Diablo Page</a><a class="ws strike noshow">- The Mad Bovine's Diablo Page</a><a class="oocities strike noshow">- The Mad Bovine's Diablo Page</a><a class="resto strike noshow">- The Mad Bovine's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010404001739/http://www.geocities.com/TimesSquare/Alley/2112/">- Magik's Diablo Cheaters' Heaven</a><a class="ws strike noshow">- Magik's Diablo Cheaters' Heaven</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/2112/">- Magik's Diablo Cheaters' Heaven</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Alley/2112/">- Magik's Diablo Cheaters' Heaven</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010519180442/http://www.geocities.com/TimesSquare/6706/">- MagnuS'Z Diablo Realm</a><a class="ws strike noshow">- MagnuS'Z Diablo Realm</a><a class="oocities strike noshow">- MagnuS'Z Diablo Realm</a><a class="resto strike noshow">- MagnuS'Z Diablo Realm</a><br>
+<a class="aorg" href="https://web.archive.org/web/19970529124313/http://www.geocities.com/SiliconValley/Heights/8825/diablo.htm">- Malaysia's EoL Home Page</a><a class="ws strike noshow">- Malaysia's EoL Home Page</a><a class="oocities strike noshow">- Malaysia's EoL Home Page</a><a class="resto strike noshow">- Malaysia's EoL Home Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20020112104939/http://www.geocities.com/SiliconValley/Ridge/8863/Diablocheats.html">- Mandrake's Chamber</a><a class="ws strike noshow">- Mandrake's Chamber</a><a class="oocities strike noshow">- Mandrake's Chamber</a><a class="resto strike noshow">- Mandrake's Chamber</a><br>
 <a href="https://web.archive.org/web/20001019084418/http://mantakno.homepage.dk/index2.htm">- ManTakNo</a><br>
-<a href="https://web.archive.org/web/20011221162448/http://www.geocities.com/TimesSquare/Battlefield/9800/">- Mark’s Amazing Diablo Page</a><br>
-<a href="https://web.archive.org/web/19981202095608/http://www.ida.net/users/rqxli/">- Master of Disaster’s Diablo Domain</a><br>
-<a href="https://web.archive.org/web/20010720032450/http://www.geocities.com/TimesSquare/Castle/7455/">- Matt in da hat'§ DiabLo Home Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011221162448/http://www.geocities.com/TimesSquare/Battlefield/9800/">- Mark's Amazing Diablo Page</a><a class="ws strike noshow">- Mark's Amazing Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Battlefield/9800/">- Mark's Amazing Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Battlefield/9800/">- Mark's Amazing Diablo Page</a><br>
+<a href="https://web.archive.org/web/19981202095608/http://www.ida.net/users/rqxli/">- Master of Disaster's Diablo Domain</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010720032450/http://www.geocities.com/TimesSquare/Castle/7455/">- Matt in da hat'§ DiabLo Home Page</a><a class="ws strike noshow">- Matt in da hat'§ DiabLo Home Page</a><a class="oocities strike noshow">- Matt in da hat'§ DiabLo Home Page</a><a class="resto strike noshow">- Matt in da hat'§ DiabLo Home Page</a><br>
 <a href="https://web.archive.org/web/19991021205753/http://www.fortunecity.com/underworld/defender/75/">- Mattz Diablo Homepage</a><br>
-<a href="https://web.archive.org/web/19991018193855/http://www.geocities.com/TimesSquare/Arcade/5205/">- Maximum Carnage</a><br>
-<a href="https://web.archive.org/web/19991104092205/http://members.xoom.com/MaxWacky/diablo.html">- MaxWacky’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000310114204/http://geocities.com/SiliconValley/Lakes/4840/diablo.html">- Melvin37’s Diablo Downloads</a><br>
-<a href="https://web.archive.org/web/19970518124500/http://www.odc.net/~dms/diablo/">- Memnoch’s Lair</a><br>
-<a href="https://web.archive.org/web/20000926023548/http://www.angelfire.com/wi/Metalhaven/">- Metal’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990218194008/http://www.geocities.com:80/TimesSquare/Bunker/3937/">- Mfalken’s Diablo Strategy Guide</a><br>
-<a href="https://web.archive.org/web/20010516022504/http://www.geocities.com/Area51/Zone/3413/">- The Midnight Riders</a><br>
-<a href="https://web.archive.org/web/20001016144348/http://www.angelfire.com/wa2/diablohacks/stuff.html">- Mike’s Diablo Hacks</a><br>
-<a href="https://web.archive.org/web/20000411210342/http://www.fortunecity.com/underworld/myst/47/index.html">- Ming’s Studio Hellfire Page</a><br>
-<a href="https://web.archive.org/web/19991001171152/http://www.geocities.com/TimesSquare/Dungeon/8963/">- Mitch</a><br>
-<a href="https://web.archive.org/web/19970415204909/http://webclub.solutions.fi/~arijo/diablo/index.htm">- Morgoth’s Lord of darkness unofficial diablo homepage</a><br>
-<a href="https://web.archive.org/web/20090831022358/http://geocities.com/arnievanwakeren/maxmelee12.html">- Moriah’s AC & To Hit Calc</a><br>
-<a href="https://web.archive.org/web/20091024004748/http://geocities.com/TimesSquare/Maze/4747/maxmelee12.html">- Moriah’s AC & To Hit Calc</a><br>
-<a href="https://web.archive.org/web/20091027013213/http://geocities.com/arnievanwakeren/">- Moriah’s Patch</a><br>
-<a href="https://web.archive.org/web/19991010091657/http://www.geocities.com/TimesSquare/Alley/2091/">- MrCow’s Page of Justice</a><br>
-<a href="https://web.archive.org/web/20000503002913/http://home1.swipnet.se:80/~w-19872/diablo.html">- Mr. Pink’s Hideout</a><br>
-<a href="https://web.archive.org/web/19980502084420/http://tausapiah.simplenet.com/download/diablo/diablo.htm">- Mr. Tausapiah’s Diablo Cheats and Items Archive Page</a><br>
-<a href="https://web.archive.org/web/19991103094156/http://www.geocities.com/ResearchTriangle/Lab/7487/diablo.html">- Muchila’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990209164522/http://www.geocities.com/TimesSquare/Alley/7542/">- Muon’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990209094123/http://www.jaysquare.ch/nelson/diablo/">- Nelson’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991023021011/http://www.geocities.com/TimesSquare/Alley/9815/hellfire.html">- Nelson’s Hellfire Page</a><br>
-<a href="https://web.archive.org/web/20011116203737/http://www.geocities.com/area51/dunes/9730/">- Neo’s Diablo Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991018193855/http://www.geocities.com/TimesSquare/Arcade/5205/">- Maximum Carnage</a><a class="ws strike noshow">- Maximum Carnage</a><a class="oocities strike noshow">- Maximum Carnage</a><a class="resto strike noshow">- Maximum Carnage</a><br>
+<a href="https://web.archive.org/web/19991104092205/http://members.xoom.com/MaxWacky/diablo.html">- MaxWacky's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000310114204/http://geocities.com/SiliconValley/Lakes/4840/diablo.html">- Melvin37's Diablo Downloads</a><a class="ws strike noshow">- Melvin37's Diablo Downloads</a><a class="oocities strike noshow">- Melvin37's Diablo Downloads</a><a class="resto strike noshow">- Melvin37's Diablo Downloads</a><br>
+<a href="https://web.archive.org/web/19970518124500/http://www.odc.net/~dms/diablo/">- Memnoch's Lair</a><br>
+<a href="https://web.archive.org/web/20000926023548/http://www.angelfire.com/wi/Metalhaven/">- Metal's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990218194008/http://www.geocities.com/TimesSquare/Bunker/3937/">- Mfalken's Diablo Strategy Guide</a><a class="ws strike noshow">- Mfalken's Diablo Strategy Guide</a><a class="oocities strike noshow">- Mfalken's Diablo Strategy Guide</a><a class="resto strike noshow">- Mfalken's Diablo Strategy Guide</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010516022504/http://www.geocities.com/Area51/Zone/3413/">- The Midnight Riders</a><a class="ws strike noshow">- The Midnight Riders</a><a class="oocities strike noshow">- The Midnight Riders</a><a class="resto strike noshow">- The Midnight Riders</a><br>
+<a href="https://web.archive.org/web/20001016144348/http://www.angelfire.com/wa2/diablohacks/stuff.html">- Mike's Diablo Hacks</a><br>
+<a href="https://web.archive.org/web/20000411210342/http://www.fortunecity.com/underworld/myst/47/index.html">- Ming's Studio Hellfire Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991001171152/http://www.geocities.com/TimesSquare/Dungeon/8963/">- Mitch</a><a class="ws strike noshow">- Mitch</a><a class="oocities strike noshow">- Mitch</a><a class="resto strike noshow">- Mitch</a><br>
+<a href="https://web.archive.org/web/19970415204909/http://webclub.solutions.fi/~arijo/diablo/index.htm">- Morgoth's Lord of darkness unofficial diablo homepage</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010421212450/http://www.geocities.com/TimesSquare/Maze/4747/maxmelee12.html">- Moriah's AC & To Hit Calc</a><a class="ws strike noshow">- Moriah's AC & To Hit Calc</a><a class="oocities strike noshow">- Moriah's AC & To Hit Calc</a><a class="resto strike noshow">- Moriah's AC & To Hit Calc</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091027013213/http://geocities.com/arnievanwakeren/">- Moriah's Patch</a><a class="ws strike noshow">- Moriah's Patch</a><a class="oocities strike noshow">- Moriah's Patch</a><a class="resto strike noshow">- Moriah's Patch</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991010091657/http://www.geocities.com/TimesSquare/Alley/2091/">- MrCow's Page of Justice</a><a class="ws strike noshow">- MrCow's Page of Justice</a><a class="oocities strike noshow">- MrCow's Page of Justice</a><a class="resto strike noshow">- MrCow's Page of Justice</a><br>
+<a href="https://web.archive.org/web/20000503002913/http://home1.swipnet.se:80/~w-19872/diablo.html">- Mr. Pink's Hideout</a><br>
+<a href="https://web.archive.org/web/19980502084420/http://tausapiah.simplenet.com/download/diablo/diablo.htm">- Mr. Tausapiah's Diablo Cheats and Items Archive Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991103094156/http://www.geocities.com/ResearchTriangle/Lab/7487/diablo.html">- Muchila's Diablo Page</a><a class="ws strike noshow">- Muchila's Diablo Page</a><a class="oocities strike noshow">- Muchila's Diablo Page</a><a class="resto strike noshow">- Muchila's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990209164522/http://www.geocities.com/TimesSquare/Alley/7542/">- Muon's Diablo Page</a><a class="ws strike noshow">- Muon's Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/7542/">- Muon's Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Alley/7542/">- Muon's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19990209094123/http://www.jaysquare.ch/nelson/diablo/">- Nelson's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991023021011/http://www.geocities.com/TimesSquare/Alley/9815/hellfire.html">- Nelson's Hellfire Page</a><a class="ws strike noshow">- Nelson's Hellfire Page</a><a class="oocities strike noshow">- Nelson's Hellfire Page</a><a class="resto strike noshow">- Nelson's Hellfire Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011116203737/http://www.geocities.com/area51/dunes/9730/">- Neo's Diablo Site</a><a class="ws strike noshow">- Neo's Diablo Site</a><a class="oocities strike noshow">- Neo's Diablo Site</a><a class="resto strike noshow">- Neo's Diablo Site</a><br>
 <a href="https://web.archive.org/web/20010210211231/http://network54.com/Browse/Gaming/Role_Playing/Diablo/Forums">- Network 54 Forums</a><br>
-<a href="https://web.archive.org/web/20010519064857/http://www.geocities.com/TimesSquare/Chamber/4060/">- The New Roman Army</a><br>
-<a href="https://web.archive.org/web/20011027153736/http://www.geocities.com/TimesSquare/Labyrinth/2016/">- Nick’s Page</a><br>
-<a href="https://web.archive.org/web/19991001160032/http://www.geocities.com/SiliconValley/Pines/2124/">- NightBlade’s Official Homepage</a><br>
-<a href="https://web.archive.org/web/20000610181139/http://www.geocities.com/TimesSquare/Alley/8239/dialo.html">- Niklas Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010521175149/http://users.cyberzone.net/queenie/">- Nina’s Diablo Item Shop</a><br>
-<a href="https://web.archive.org/web/20000831090002/http://www.sonic.net/nhill/diablo/">- Noah’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991010190326/http://www.geocities.com/Area51/1811/">- The Occult</a><br>
-<a href="https://web.archive.org/web/19990202031315/http://www.geocities.com/Broadway/5786/">- The Official Death Knight Clan Homepage</a><br>
-<a href="https://web.archive.org/web/19990220054508/http://www.geocities.com/SiliconValley/2268/">- ‘The Official Diablo Web Page’</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010519064857/http://www.geocities.com/TimesSquare/Chamber/4060/">- The New Roman Army</a><a class="ws strike noshow">- The New Roman Army</a><a class="oocities strike noshow">- The New Roman Army</a><a class="resto strike noshow">- The New Roman Army</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011027153736/http://www.geocities.com/TimesSquare/Labyrinth/2016/">- Nick's Page</a><a class="ws strike noshow">- Nick's Page</a><a class="oocities strike noshow">- Nick's Page</a><a class="resto strike noshow">- Nick's Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991001160032/http://www.geocities.com/SiliconValley/Pines/2124/">- NightBlade's Official Homepage</a><a class="ws strike noshow">- NightBlade's Official Homepage</a><a class="oocities noshow" href="https://oocities.org/SiliconValley/Pines/2124/">- NightBlade's Official Homepage</a><a class="resto noshow" href="https://geocities.restorativland.org/SiliconValley/Pines/2124/">- NightBlade's Official Homepage</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000610181139/http://www.geocities.com/TimesSquare/Alley/8239/dialo.html">- Niklas Diablo Page</a><a class="ws strike noshow">- Niklas Diablo Page</a><a class="oocities strike noshow">- Niklas Diablo Page</a><a class="resto strike noshow">- Niklas Diablo Page</a><br>
+<a href="https://web.archive.org/web/20010521175149/http://users.cyberzone.net/queenie/">- Nina's Diablo Item Shop</a><br>
+<a href="https://web.archive.org/web/20000831090002/http://www.sonic.net/nhill/diablo/">- Noah's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991010190326/http://www.geocities.com/Area51/1811/">- The Occult</a><a class="ws strike noshow">- The Occult</a><a class="oocities strike noshow">- The Occult</a><a class="resto noshow" href="https://geocities.restorativland.org/Area51/1811/">- The Occult</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990202031315/http://www.geocities.com/Broadway/5786/">- The Official Death Knight Clan Homepage</a><a class="ws strike noshow">- The Official Death Knight Clan Homepage</a><a class="oocities strike noshow">- The Official Death Knight Clan Homepage</a><a class="resto strike noshow">- The Official Death Knight Clan Homepage</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990220054508/http://www.geocities.com/SiliconValley/2268/">- ‘The Official Diablo Web Page'</a><a class="ws strike noshow">- ‘The Official Diablo Web Page'</a><a class="oocities strike noshow">- ‘The Official Diablo Web Page'</a><a class="resto strike noshow">- ‘The Official Diablo Web Page'</a><br>
 <a href="https://web.archive.org/web/20020131003057/http://www.angelfire.com/wi/WhosNext/Diablo.html">- Official Website of Stuff</a><br>
-<a href="https://web.archive.org/web/20010414090150/http://www.geocities.com/TimesSquare/8144/ogpdiab.htm">- The Online Gaming Planet’s Diablo Page!</a><br>
-<a href="https://web.archive.org/web/19971023170244/http://www.dlcwest.com/~johnson/diablo/index.htm">- Oracle’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010414090150/http://www.geocities.com/TimesSquare/8144/ogpdiab.htm">- The Online Gaming Planet's Diablo Page!</a><a class="ws strike noshow">- The Online Gaming Planet's Diablo Page!</a><a class="oocities strike noshow">- The Online Gaming Planet's Diablo Page!</a><a class="resto strike noshow">- The Online Gaming Planet's Diablo Page!</a><br>
+<a href="https://web.archive.org/web/19971023170244/http://www.dlcwest.com/~johnson/diablo/index.htm">- Oracle's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19970613214558/http://www.exit109.com/~kparadine/">- The Order of Semprini</a><br>
 <a href="https://web.archive.org/web/19980202184722/http://www.serv.net/~teague/">- Order of the Dark Side</a><br>
 <a href="https://web.archive.org/web/19981205111517/http://www.cswnet.com/~dbruce/Meridian/">- The Order of the Divine Shield</a><br>
-<a href="https://web.archive.org/web/19991001224134/http://www.geocities.com/TimesSquare/Castle/8379/">- Order of Tristram</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991001224134/http://www.geocities.com/TimesSquare/Castle/8379/">- Order of Tristram</a><a class="ws strike noshow">- Order of Tristram</a><a class="oocities strike noshow">- Order of Tristram</a><a class="resto strike noshow">- Order of Tristram</a><br>
 <a href="https://web.archive.org/web/20000527192852/http://www-scf.usc.edu/~jakloepf/troy/troy.htm">- The Order of Troy</a><br>
-<a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">- OrkinMan’s Diablo Item Price Guide</a><br>
+<a href="https://web.archive.org/web/20080405195055/http://www.angelsofhell.com/prices.html">- OrkinMan's Diablo Item Price Guide</a><br>
 <a href="https://web.archive.org/web/19990203221449/http://www.sfu.ca/~alaric/main.htm">- The Other Diablo Page</a><br>
-<a href="https://web.archive.org/web/19970418062659/http://ryoohki.res.cmu.edu/diablo/">- Padan Fain’s Traveling Wagon</a><br>
+<a href="https://web.archive.org/web/19970418062659/http://ryoohki.res.cmu.edu/diablo/">- Padan Fain's Traveling Wagon</a><br>
 <a href="https://web.archive.org/web/20070519230046/http://surf.to/paladijn">- Paladijn's hideout</a><br>
 <a href="https://web.archive.org/web/19990821232624/http://members.xoom.com/PoL/">- Paladins of Light Guild</a><br>
-<a href="https://web.archive.org/web/20000120074353/http://www.geocities.com/SiliconValley/Heights/7343/guild.htm">- The Paladins of Verity</a><br>
-<a href="https://web.archive.org/web/19990830011001/http://www.geocities.com/TimesSquare/Hangar/6768/">- Pasius’s Diablo Downloads Gateway</a><br>
-<a href="https://web.archive.org/web/19980117044056/http://spel.passagen.se/diablo/">- Passagen’s Diablo.se</a><br>
-<a href="https://web.archive.org/web/19991110052824/http://www.geocities.com/SiliconValley/Lakes/4396/guild.htm">- The Path of Resistance’s HQ</a><br>
-<a href="https://web.archive.org/web/19990220112146/http://www.fortunecity.com/roswell/wells/45/index.html">- Pendragon’s Diablo Hacks & Cheats</a>
+<a class="aorg" href="https://web.archive.org/web/20000120074353/http://www.geocities.com/SiliconValley/Heights/7343/guild.htm">- The Paladins of Verity</a><a class="ws strike noshow">- The Paladins of Verity</a><a class="oocities strike noshow">- The Paladins of Verity</a><a class="resto strike noshow">- The Paladins of Verity</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990830011001/http://www.geocities.com/TimesSquare/Hangar/6768/">- Pasius's Diablo Downloads Gateway</a><a class="ws strike noshow">- Pasius's Diablo Downloads Gateway</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Hangar/6768/">- Pasius's Diablo Downloads Gateway</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Hangar/6768/">- Pasius's Diablo Downloads Gateway</a><br>
+<a href="https://web.archive.org/web/19980117044056/http://spel.passagen.se/diablo/">- Passagen's Diablo.se</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991110052824/http://www.geocities.com/SiliconValley/Lakes/4396/guild.htm">- The Path of Resistance's HQ</a><a class="ws strike noshow">- The Path of Resistance's HQ</a><a class="oocities strike noshow">- The Path of Resistance's HQ</a><a class="resto strike noshow">- The Path of Resistance's HQ</a><br>
+<a href="https://web.archive.org/web/19990220112146/http://www.fortunecity.com/roswell/wells/45/index.html">- Pendragon's Diablo Hacks & Cheats</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990221034342/http://www.geocities.com/TimesSquare/Arcade/8652/">- Pentogram of Power</a><a class="ws strike noshow">- Pentogram of Power</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/8652/">- Pentogram of Power</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/8652/">- Pentogram of Power</a><br>
+<a href="https://web.archive.org/web/19990508175834/http://gamecheatz.com/diablo/">- Pete's Cheat Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991014022538/http://www.geocities.com/Area51/Vault/6114/">- Phantom's Diablo Cheats</a><a class="ws strike noshow">- Phantom's Diablo Cheats</a><a class="oocities strike noshow">- Phantom's Diablo Cheats</a><a class="resto strike noshow">- Phantom's Diablo Cheats</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010826005532/http://www.geocities.com/TimesSquare/Lair/4837/diablo.html">- PhantomDragon's Lair</a><a class="ws strike noshow">- PhantomDragon's Lair</a><a class="oocities strike noshow">- PhantomDragon's Lair</a><a class="resto strike noshow">- PhantomDragon's Lair</a>
         </td>
         <td style="vertical-align:top;"><span class="title2">English</span><br><br>
-<a href="https://web.archive.org/web/19990221034342/http://www.geocities.com/TimesSquare/Arcade/8652/">- Pentogram of Power</a><br>
-<a href="https://web.archive.org/web/19990508175834/http://gamecheatz.com/diablo/">- Pete’s Cheat Page</a><br>
-<a href="https://web.archive.org/web/20010826005532/http://www.geocities.com/TimesSquare/Lair/4837/diablo.html">- PhantomDragon’s Lair</a><br>
-<a href="https://web.archive.org/web/19991014022538/http://www.geocities.com/Area51/Vault/6114/">- Phantom’s Diablo Cheats</a><br>
-<a href="https://web.archive.org/web/20031127063316/http://www.geocities.com/pirengle_bnm/">- Pirengle’s Top 10</a><br>
-<a href="https://web.archive.org/web/19991004041455/http://www.geocities.com/TimesSquare/Alley/6473/">- Preston’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991104003241/http://www.geocities.com/TimesSquare/Arcade/2224/diablo.html">- Pyrotechnics</a><br>
-<a href="https://web.archive.org/web/20000408195532/http://www.geocities.com/TimesSquare/7780/index2.html">- Raydon’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990223224731/http://www.geocities.com/TimesSquare/Alley/2867/index.html">- Raymond’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20031127063316/http://www.geocities.com/pirengle_bnm/">- Pirengle's Top 10</a><a class="ws strike noshow">- Pirengle's Top 10</a><a class="oocities strike noshow">- Pirengle's Top 10</a><a class="resto strike noshow">- Pirengle's Top 10</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991004041455/http://www.geocities.com/TimesSquare/Alley/6473/">- Preston's Diablo Page</a><a class="ws strike noshow">- Preston's Diablo Page</a><a class="oocities strike noshow">- Preston's Diablo Page</a><a class="resto strike noshow">- Preston's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990127213412/http://www.geocities.com/SunsetStrip/Cabaret/3659/purgatory/index.html">- Purgatory</a><a class="ws strike noshow">- Purgatory</a><a class="oocities strike noshow">- Purgatory</a><a class="resto strike noshow">- Purgatory</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991104003241/http://www.geocities.com/TimesSquare/Arcade/2224/diablo.html">- Pyrotechnics</a><a class="ws strike noshow">- Pyrotechnics</a><a class="oocities strike noshow">- Pyrotechnics</a><a class="resto strike noshow">- Pyrotechnics</a><br>
+<a href="https://web.archive.org/web/*/http://members.xoom.com/qsw/games/diablo*">- Qwiksilver's Web - Diablo</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000408195532/http://www.geocities.com/TimesSquare/7780/index2.html">- Raydon's Diablo Page</a><a class="ws strike noshow">- Raydon's Diablo Page</a><a class="oocities strike noshow">- Raydon's Diablo Page</a><a class="resto strike noshow">- Raydon's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990223224731/http://www.geocities.com/TimesSquare/Alley/2867/index.html">- Raymond's Diablo Page</a><a class="ws strike noshow">- Raymond's Diablo Page</a><a class="oocities strike noshow">- Raymond's Diablo Page</a><a class="resto strike noshow">- Raymond's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19980109043452/http://raymond.tierranet.com/">- Raymond's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20001006233952/http://www.geocities.com/SiliconValley/7485/Diablo.html">- The Realm of Diablo Homepage</a><a class="ws strike noshow">- The Realm of Diablo Homepage</a><a class="oocities strike noshow">- The Realm of Diablo Homepage</a><a class="resto strike noshow">- The Realm of Diablo Homepage</a><br>
 <a href="https://web.archive.org/web/20011103212602/http://users.ev1.net/~ledet/diablo/diablo.html">- Realm of the Dark Lord</a><br>
-<a href="https://web.archive.org/web/20001006233952/http://www.geocities.com/SiliconValley/7485/Diablo.html">- The Realm of Diablo Homepage</a><br>
 <a href="https://web.archive.org/web/20010202151400/http://www.infinite-damage.com/diablo/index.html">- Renegade Asylum</a><br>
-<a href="https://web.archive.org/web/20010517054818/http://www.geocities.com/TimesSquare/Lair/9912/">- Rgasm’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990224224249/http://www.dodgenet.com/~jeremy23/diablo.html">- Rich’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/19981205091251/http://www.cybermedia.net/dkight/retribution.htm">- Retribution's Keep</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010517054818/http://www.geocities.com/TimesSquare/Lair/9912/">- Rgasm's Diablo Page</a><a class="ws strike noshow">- Rgasm's Diablo Page</a><a class="oocities strike noshow">- Rgasm's Diablo Page</a><a class="resto strike noshow">- Rgasm's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19990224224249/http://www.dodgenet.com/~jeremy23/diablo.html">- Rich's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19981205121432/http://members.tripod.com/~tkoruna/ridcully.html">- Ridcully Institute</a><br>
-<a href="https://web.archive.org/web/19991012024742/http://www.geocities.com/Area51/Cavern/7141/index.htm">- ROP’s Diablo Cheat Page</a><br>
-<a href="https://web.archive.org/web/19990819041642/http://www.geocities.com/TimesSquare/Arcade/7414/diablo.html">- Runefaust’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20021015155417/http://www.geocities.com/TimesSquare/Castle/5013/diablo.html">- RyRob’s Homepage</a><br>
-<a href="https://web.archive.org/web/20091027050239/http://geocities.com/TimesSquare/Lair/1404/">- SailorMerc(GDR)’s Suplies</a><br>
-<a href="https://web.archive.org/web/19970106232832/http://www.concentric.net/~shockesj/games/diablo/diablo.shtml">- Sam’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19970529123859/http://sandman.simplenet.com/diablo.htm">- Sandman’s Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991012024742/http://www.geocities.com/Area51/Cavern/7141/index.htm">- ROP's Diablo Cheat Page</a><a class="ws strike noshow">- ROP's Diablo Cheat Page</a><a class="oocities strike noshow">- ROP's Diablo Cheat Page</a><a class="resto strike noshow">- ROP's Diablo Cheat Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990819041642/http://www.geocities.com/TimesSquare/Arcade/7414/diablo.html">- Runefaust's Diablo Page</a><a class="ws strike noshow">- Runefaust's Diablo Page</a><a class="oocities strike noshow">- Runefaust's Diablo Page</a><a class="resto strike noshow">- Runefaust's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021015155417/http://www.geocities.com/TimesSquare/Castle/5013/diablo.html">- RyRob's Homepage</a><a class="ws strike noshow">- RyRob's Homepage</a><a class="oocities strike noshow">- RyRob's Homepage</a><a class="resto strike noshow">- RyRob's Homepage</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091027050239/http://geocities.com/TimesSquare/Lair/1404/">- SailorMerc(GDR)'s Suplies</a><a class="ws strike noshow">- SailorMerc(GDR)'s Suplies</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Lair/1404/">- SailorMerc(GDR)'s Suplies</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Lair/1404/">- SailorMerc(GDR)'s Suplies</a><br>
+<a href="https://web.archive.org/web/19970106232832/http://www.concentric.net/~shockesj/games/diablo/diablo.shtml">- Sam's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19970529123859/http://sandman.simplenet.com/diablo.htm">- Sandman's Diablo Page</a><br>
 <a href="https://web.archive.org/web/20190728130021/www.angelfire.com/on3/scdiablo/index.html">- SCDiablo</a><br>
 <a href="https://web.archive.org/web/19980214124938/http://www.lunartech.com/games/">- SCSI Raiders Hideout</a><br>
-<a href="https://web.archive.org/web/20010812012317/http://www.geocities.com/Area51/Corridor/7290/seanchan.html">- The Seanchan Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010812012317/http://www.geocities.com/Area51/Corridor/7290/seanchan.html">- The Seanchan Clan</a><a class="ws strike noshow">- The Seanchan Clan</a><a class="oocities strike noshow">- The Seanchan Clan</a><a class="resto strike noshow">- The Seanchan Clan</a><br>
 <a href="https://web.archive.org/web/19990908223304/http://www.best.com/~sandkat/diablo/">- Seekers of the True Blade</a><br>
-<a href="https://web.archive.org/web/20011207160516/http://www.geocities.com/SiliconValley/Park/6985/diablo.html">- Serek SkullStaff’s Page</a><br>
-<a href="https://web.archive.org/web/19991002023542/http://members.xoom.com/Sethoroth/">- Seth’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20020605111143/http://www.shadowrun.tierranet.com:80/">- Shadowrun’s Game Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20011207160516/http://www.geocities.com/SiliconValley/Park/6985/diablo.html">- Serek SkullStaff's Page</a><a class="ws strike noshow">- Serek SkullStaff's Page</a><a class="oocities strike noshow">- Serek SkullStaff's Page</a><a class="resto strike noshow">- Serek SkullStaff's Page</a><br>
+<a href="https://web.archive.org/web/19991002023542/http://members.xoom.com/Sethoroth/">- Seth's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20020605111143/http://www.shadowrun.tierranet.com:80/">- Shadowrun's Game Page</a><br>
 <a href="https://web.archive.org/web/20021213114932/http://www.angelfire.com/sc/zerocntrl/filename.html">- Shadow Tigers</a><br>
-<a href="https://web.archive.org/web/19980128071258/http://www.gprep.pvt.k12.md.us/~mikes/diablo.html">- Shafe’s Diablo Page on the Web</a><br>
+<a href="https://web.archive.org/web/19980128071258/http://www.gprep.pvt.k12.md.us/~mikes/diablo.html">- Shafe's Diablo Page on the Web</a><br>
 <a href="https://web.archive.org/web/20010721035619/http://members.tripod.com/TheSilverRaven/">- Silver Raven</a><br>
-<a href="https://web.archive.org/web/20010811235652/http://www.geocities.com/TimesSquare/Alley/3135/">- SirTITAN’s Realm</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010811235652/http://www.geocities.com/TimesSquare/Alley/3135/">- SirTITAN's Realm</a><a class="ws strike noshow">- SirTITAN's Realm</a><a class="oocities strike noshow">- SirTITAN's Realm</a><a class="resto strike noshow">- SirTITAN's Realm</a><br>
 <a href="https://web.archive.org/web/19980612190342/http://www.dejer.net/sss/diablo/">- Soldiers of the Silver Star</a><br>
 <a href="https://web.archive.org/web/19970625192937/http://www.gci-net.com/~users/h/highcouncil/diablo.htp">- Sons of the Crusade</a><br>
-<a href="https://web.archive.org/web/20091026034433/http://geocities.com/spiritoftherebellion/index.html">- Spirit of the Rebellion</a><br>
-<a href="https://web.archive.org/web/19990909063851/http://members.xoom.com/stalkertwo/">- Stalker’s Diablo Cheater’s Paradise</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091026034433/http://geocities.com/spiritoftherebellion/index.html">- Spirit of the Rebellion</a><a class="ws strike noshow">- Spirit of the Rebellion</a><a class="oocities strike noshow">- Spirit of the Rebellion</a><a class="resto strike noshow">- Spirit of the Rebellion</a><br>
+<a href="https://web.archive.org/web/19990909063851/http://members.xoom.com/stalkertwo/">- Stalker's Diablo Cheater's Paradise</a><br>
 <a href="https://web.archive.org/web/19980423092037/http://www.stormcrow.simplenet.com/diablo.html">- StoRmcRoW Diablo Cheats</a><br>
-<a href="https://web.archive.org/web/19991111015851/http://www.geocities.com/TimesSquare/Alley/6665/diablo.html">- The Storm Legion</a><br>
-<a href="https://web.archive.org/web/20010401014324/http://www.stu.webprovider.com:80/">- Stu’s Diablo Trainer</a><br>
-<a href="https://web.archive.org/web/19990221050559/http://www.geocities.com/TimesSquare/Arcade/2779/">- Stu’s Diablo Trainer</a><br>
-<a href="https://web.archive.org/web/20010428163002if_/http://www.subbot.net:80/games/diablo/">- Subspace’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20000303122545/http://www.geocities.com/TimesSquare/Alley/3643/index.html">- Super Diablo Home Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991111015851/http://www.geocities.com/TimesSquare/Alley/6665/diablo.html">- The Storm Legion</a><a class="ws strike noshow">- The Storm Legion</a><a class="oocities strike noshow">- The Storm Legion</a><a class="resto strike noshow">- The Storm Legion</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990221050559/http://www.geocities.com/TimesSquare/Arcade/2779/">- Stu's Diablo Trainer</a><a class="ws strike noshow">- Stu's Diablo Trainer</a><a class="oocities strike noshow">- Stu's Diablo Trainer</a><a class="resto strike noshow">- Stu's Diablo Trainer</a><br>
+<a href="https://web.archive.org/web/20010401014324/http://www.stu.webprovider.com:80/">- Stu's Diablo Trainer</a><br>
+<a href="https://web.archive.org/web/20010428163002if_/http://www.subbot.net:80/games/diablo/">- Subspace's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000303122545/http://www.geocities.com/TimesSquare/Alley/3643/index.html">- Super Diablo Home Page</a><a class="ws strike noshow">- Super Diablo Home Page</a><a class="oocities strike noshow">- Super Diablo Home Page</a><a class="resto strike noshow">- Super Diablo Home Page</a><br>
 <a href="https://web.archive.org/web/20051217000649/http://www2.1starnet.com/mrayj/main.html">- Supply Depot</a><br>
-<a href="https://web.archive.org/web/19991006110236/http://www.geocities.com/SiliconValley/Lakes/4766/">- Swede’s Diablo Site</a><br>
-<a href="https://web.archive.org/web/19991005201755/http://homepages.ihug.co.nz/~svanham/">- Swift’s Diablo Lair</a><br>
-<a href="https://web.archive.org/web/19990208211649/http://www.geocities.com/TimesSquare/Alley/4071/index.htm">- Swoops Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991006110236/http://www.geocities.com/SiliconValley/Lakes/4766/">- Swede's Diablo Site</a><a class="ws strike noshow">- Swede's Diablo Site</a><a class="oocities strike noshow">- Swede's Diablo Site</a><a class="resto strike noshow">- Swede's Diablo Site</a><br>
+<a href="https://web.archive.org/web/19991005201755/http://homepages.ihug.co.nz/~svanham/">- Swift's Diablo Lair</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990208211649/http://www.geocities.com/TimesSquare/Alley/4071/index.htm">- Swoops Diablo Page</a><a class="ws strike noshow">- Swoops Diablo Page</a><a class="oocities strike noshow">- Swoops Diablo Page</a><a class="resto strike noshow">- Swoops Diablo Page</a><br>
 <a href="https://web.archive.org/web/19970724133305/http://www.kiss.uni-lj.si/~k4ef0231/diablo/index.htm">- Tales of Tristram</a><br>
 <a href="https://web.archive.org/web/19991109191733/http://www.angelfire.com/ca/TristramTales/index.html">- Tales of Tristram</a><br>
-<a href="https://web.archive.org/web/19990202103622/http://www.ten.net/games/diablo/">- Ten’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990117104108/http://www.geocities.com/Area51/Corridor/2430/diablo.htm">- thano’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/19990202103622/http://www.ten.net/games/diablo/">- Ten's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117104108/http://www.geocities.com/Area51/Corridor/2430/diablo.htm">- thano's Diablo Page</a><a class="ws strike noshow">- thano's Diablo Page</a><a class="oocities strike noshow">- thano's Diablo Page</a><a class="resto strike noshow">- thano's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19990224054600/http://www.novagate.com/~troyb/index.html">- To Hell and Back</a><br>
-<a href="https://web.archive.org/web/19990221131300/http://www.geocities.com/TimesSquare/Chasm/1284/">- Tomb$tones Semi-Animated Toons Page</a><br>
-<a href="https://web.archive.org/web/19990223190106/http://www.geocities.com/TimesSquare/Castle/6143/">- The TOO MUCH DIABLO list</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990221131300/http://www.geocities.com/TimesSquare/Chasm/1284/">- Tomb$tones Semi-Animated Toons Page</a><a class="ws strike noshow">- Tomb$tones Semi-Animated Toons Page</a><a class="oocities strike noshow">- Tomb$tones Semi-Animated Toons Page</a><a class="resto strike noshow">- Tomb$tones Semi-Animated Toons Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990223190106/http://www.geocities.com/TimesSquare/Castle/6143/">- The TOO MUCH DIABLO list</a><a class="ws strike noshow">- The TOO MUCH DIABLO list</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Castle/6143/">- The TOO MUCH DIABLO list</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Castle/6143/">- The TOO MUCH DIABLO list</a><br>
 <a href="https://web.archive.org/web/20181025200341/http://tristr.am/">- Tristr.am</a><br>
-<a href="https://web.archive.org/web/19990203235024/http://www.geocities.com/TimesSquare/Alley/6348/">- Tristram Elite</a><br>
-<a href="https://web.archive.org/web/19991022042129/http://www.geocities.com/TimesSquare/8750/">- Tristram Village</a><br>
-<a href="https://www.oocities.org/timessquare/alley/5485/newarc3.html">- Tryon’s Diablo Cartoon Archives</a><br>
-<a href="https://web.archive.org/web/19970617002809/http://www.gac.edu/~mjohnson/Diablo/">- Twig’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010430044119/http://www.geocities.com/TimesSquare/Lair/8415/">- Ug’s Diablo Tavern</a><br>
-<a href="https://web.archive.org/web/20010506103719/http://www.geocities.com/TimesSquare/Alley/7558/member.html">- The Underground Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990203235024/http://www.geocities.com/TimesSquare/Alley/6348/">- Tristram Elite</a><a class="ws strike noshow">- Tristram Elite</a><a class="oocities strike noshow">- Tristram Elite</a><a class="resto strike noshow">- Tristram Elite</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991022042129/http://www.geocities.com/TimesSquare/8750/">- Tristram Village</a><a class="ws strike noshow">- Tristram Village</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/8750/">- Tristram Village</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/8750/">- Tristram Village</a><br>
+<a class="aorg" href="https://web.archive.org/web/20091024082801/http://geocities.com/TimesSquare/Alley/5485/newarc1.html">- Tryon's Diablo Cartoon Archives</a><a class="ws strike noshow">- Tryon's Diablo Cartoon Archives</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Alley/5485/newarc1.html">- Tryon's Diablo Cartoon Archives</a><a class="resto strike noshow">- Tryon's Diablo Cartoon Archives</a><br>
+<a href="https://web.archive.org/web/19970617002809/http://www.gac.edu/~mjohnson/Diablo/">- Twig's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010430044119/http://www.geocities.com/TimesSquare/Lair/8415/">- Ug's Diablo Tavern</a><a class="ws strike noshow">- Ug's Diablo Tavern</a><a class="oocities strike noshow">- Ug's Diablo Tavern</a><a class="resto strike noshow">- Ug's Diablo Tavern</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010506103719/http://www.geocities.com/TimesSquare/Alley/7558/member.html">- The Underground Clan</a><a class="ws strike noshow">- The Underground Clan</a><a class="oocities strike noshow">- The Underground Clan</a><a class="resto strike noshow">- The Underground Clan</a><br>
 <a href="https://web.archive.org/web/19991129050950/http://gamesdomain.com/faqdir/Diablo.txt">- Unofficial Diablo FAQ</a><br>
 <a href="https://web.archive.org/web/19990428032505/http://diablo.scorched.com/">- The Unofficial Diablo Homepage</a><br>
 <a href="https://web.archive.org/web/20011102053926/http://fly.to/our_diablo_page">- The Unofficial Diablo Page And the KcOh Clan Page</a><br>
-<a href="https://web.archive.org/web/20010516210256/http://www.geocities.com/TimesSquare/Alley/3845/">- Vigilante Clan</a><br>
-<a href="https://web.archive.org/web/19991103041820/http://www.geocities.com/SiliconValley/Heights/7343/diablo.htm">- Vlad’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990117073854/http://geocities.com/SunsetStrip/Towers/3765/diablo.html">- Warnerve’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/20001010142634/http://www.glorious.de:80/vkmods/Main.html">- Varaya's and Khan's Mod Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010516210256/http://www.geocities.com/TimesSquare/Alley/3845/">- Vigilante Clan</a><a class="ws strike noshow">- Vigilante Clan</a><a class="oocities strike noshow">- Vigilante Clan</a><a class="resto strike noshow">- Vigilante Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991103041820/http://www.geocities.com/SiliconValley/Heights/7343/diablo.htm">- Vlad's Diablo Page</a><a class="ws strike noshow">- Vlad's Diablo Page</a><a class="oocities strike noshow">- Vlad's Diablo Page</a><a class="resto strike noshow">- Vlad's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990117073854/http://geocities.com/SunsetStrip/Towers/3765/diablo.html">- Warnerve's Diablo Page</a><a class="ws strike noshow">- Warnerve's Diablo Page</a><a class="oocities strike noshow">- Warnerve's Diablo Page</a><a class="resto strike noshow">- Warnerve's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19981206075930/http://hem.passagen.se/perg/">- Warriors Diablo Place</a><br>
-<a href="https://web.archive.org/web/20000118232839/http://www.geocities.com/TimesSquare/Alley/5630/index.html">- Westside Pkillaz' Diablo Clan</a><br>
-<a href="https://web.archive.org/web/20010424092731/http://www.geocities.com/timessquare/dungeon/1416/diablo.html">- White Knight’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19981205230921/http://www.senet.com.au/~wiseman/main.htm">- Wiseman’s Abode</a><br>
+<a href="https://web.archive.org/web/19991008052252/http://bigsun.wbs.net/homepages/h/i/d/hiddenbagu/gore.html">- The Way of the Warrior</a><br>
+<a class="aorg" href="https://web.archive.org/web/20000118232839/http://www.geocities.com/TimesSquare/Alley/5630/index.html">- Westside Pkillaz' Diablo Clan</a><a class="ws strike noshow">- Westside Pkillaz' Diablo Clan</a><a class="oocities strike noshow">- Westside Pkillaz' Diablo Clan</a><a class="resto strike noshow">- Westside Pkillaz' Diablo Clan</a><br>
+<a class="aorg" href="https://web.archive.org/web/20010424092731/http://www.geocities.com/timessquare/dungeon/1416/diablo.html">- White Knight's Diablo Page</a><a class="ws strike noshow">- White Knight's Diablo Page</a><a class="oocities strike noshow">- White Knight's Diablo Page</a><a class="resto strike noshow">- White Knight's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19981205230921/http://www.senet.com.au/~wiseman/main.htm">- Wiseman's Abode</a><br>
 <a href="https://web.archive.org/web/20000229182421/http://www.wolf-guild.com/dcheats.htm">- Wolf-Guild Diablo Cheats</a><br>
 <a href="https://web.archive.org/web/20000617151719/http://www.bgonline.com/wolf/cheat.htm">- Wolf-Guild Diablo Cheats</a><br>
-<a href="https://web.archive.org/web/*/http://www.geocities.com/TimesSquare/Battlefield/6655/*">- Woody’s Diablo Asyluim</a><br>
-<a href="https://web.archive.org/web/19991003053837/http://www.geocities.com/SiliconValley/Heights/9760/">- The World of Diablo(the devil)</a><br>
+<a class="aorg" href="https://web.archive.org/web/*/http://www.geocities.com/TimesSquare/Battlefield/6655/*">- Woody's Diablo Asyluim</a><a class="ws strike noshow">- Woody's Diablo Asyluim</a><a class="oocities strike noshow">- Woody's Diablo Asyluim</a><a class="resto strike noshow">- Woody's Diablo Asyluim</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991003053837/http://www.geocities.com/SiliconValley/Heights/9760/">- The World of Diablo(the devil)</a><a class="ws strike noshow">- The World of Diablo(the devil)</a><a class="oocities strike noshow">- The World of Diablo(the devil)</a><a class="resto strike noshow">- The World of Diablo(the devil)</a><br>
 <a href="https://web.archive.org/web/19970410193002/http://www.iag.net:80/~docizm/">- World of Docizm</a><br>
-<a href="https://web.archive.org/web/19991123015322/http://www.geocities.com/TimesSquare/Arcade/9882/index.html">- Xenocide’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19990210175055/http://www.geocities.com/TimesSquare/9086/Diablo.html">- ~ZarQuoN~’s Diablo Site</a><br>
-<a href="https://web.archive.org/web/20001007210144/http://www.geocities.com/SiliconValley/Grid/9988/index.html">- Zika’s Item and Price Finders</a><br>
-<a href="https://web.archive.org/web/19990220172929/http://home.sol.no/~zyntax/diablo.htm">- ZyNTaX’s Diablo Page</a><br><br>
+<a class="aorg" href="https://web.archive.org/web/19991123015322/http://www.geocities.com/TimesSquare/Arcade/9882/index.html">- Xenocide's Diablo Page</a><a class="ws strike noshow">- Xenocide's Diablo Page</a><a class="oocities noshow" href="https://oocities.org/TimesSquare/Arcade/9882/index.html">- Xenocide's Diablo Page</a><a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Arcade/9882/index.html">- Xenocide's Diablo Page</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990210175055/http://www.geocities.com/TimesSquare/9086/Diablo.html">- ~ZarQuoN~'s Diablo Site</a><a class="ws strike noshow">- ~ZarQuoN~'s Diablo Site</a><a class="oocities strike noshow">- ~ZarQuoN~'s Diablo Site</a><a class="resto strike noshow">- ~ZarQuoN~'s Diablo Site</a><br>
+<a class="aorg" href="https://web.archive.org/web/20001007210144/http://www.geocities.com/SiliconValley/Grid/9988/index.html">- Zika's Item and Price Finders</a><a class="ws strike noshow">- Zika's Item and Price Finders</a><a class="oocities strike noshow">- Zika's Item and Price Finders</a><a class="resto strike noshow">- Zika's Item and Price Finders</a><br>
+<a href="https://web.archive.org/web/19990220172929/http://home.sol.no/~zyntax/diablo.htm">- ZyNTaX's Diablo Page</a><br><br>
         <span class="title2">Czech</span><br><br>
 <a href="https://web.archive.org/web/20040722180630/http://www.envirex.cz:80/lab/diablo/modbeta.htm">- "BETA-DIABLO" Mod</a><br><br>
         <span class="title2">French</span><br><br>
 <a href="https://web.archive.org/web/20010302053127/http://www.diablo.free.fr/">- Cadre General</a><br>
 <a href="https://web.archive.org/web/19990502221404/http://www.multimania.com/lecelte/diablo/diablo.htm">- DIABLO Yann Lemarié HomePage</a><br>
-<a href="https://web.archive.org/web/19991008021408/http://www.geocities.com/SouthBeach/Sands/7460/">- La Guilde du Jedi</a><br>
+<a class="aorg" href="https://web.archive.org/web/19991008021408/http://www.geocities.com/SouthBeach/Sands/7460/">- La Guilde du Jedi</a><a class="ws strike noshow">- La Guilde du Jedi</a><a class="oocities strike noshow">- La Guilde du Jedi</a><a class="resto strike noshow">- La Guilde du Jedi</a><br>
 <a href="https://web.archive.org/web/20000309030114/http://www.chez.com/webonline/index2.html">- The Unofficial Diablo Homepage in French</a><br><br>
         <span class="title2">German</span><br><br>
-<a href="https://web.archive.org/web/19990128162700/http://www.geocities.com/Hollywood/6343/">- DIABLO’s Gilde des Ring of Honor</a><br>
+<a class="aorg" href="https://web.archive.org/web/19990128162700/http://www.geocities.com/Hollywood/6343/">- DIABLO's Gilde des Ring of Honor</a><a class="ws strike noshow">- DIABLO's Gilde des Ring of Honor</a><a class="oocities strike noshow">- DIABLO's Gilde des Ring of Honor</a><a class="resto noshow" href="https://geocities.restorativland.org/Hollywood/6343/">- DIABLO's Gilde des Ring of Honor</a><br>
 <a href="https://web.archive.org/web/20050915014134/http://www.ohri.de/">- Die Welt des Ohrensammler</a><br>
 <a href="https://web.archive.org/web/20080705064410/http://www.bauelemente-riede.de/pastor/diablo/">- Evil Has Survived</a><br>
 <a href="https://web.archive.org/web/20160530060259/http://evil-has-survived.de.vu/">- Evil Has Survived</a><br>
@@ -927,14 +1011,14 @@ table.blog {
 <a href="https://web.archive.org/web/20210211055115/https://diablo3.ingame.de/forum/forums/18-Diablo-1-Forum">- inDiablo.de Forum</a><br>
 <a href="https://web.archive.org/web/19991003015801/http://privat.schlund.de:80/m/motte/">- Mottes Homepage</a><br>
 <a href="https://web.archive.org/web/20161107125756/http://www.planetdiablo.de/">- Planet Diablo</a><br>
-<a href="https://web.archive.org/web/20010307053518/http://home.t-online.de/home/plunder.hanfpfeife/diablo.htm">- Plunder’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20010819013330/http://www.math.tu-clausthal.de/~malru/diablo.html">- Spiritcatcher’s scrap yard</a><br><br>
+<a href="https://web.archive.org/web/20010307053518/http://home.t-online.de/home/plunder.hanfpfeife/diablo.htm">- Plunder's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20010819013330/http://www.math.tu-clausthal.de/~malru/diablo.html">- Spiritcatcher's scrap yard</a><br><br>
         <span class="title2">Japanese</span><br><br>
 <a href="https://web.archive.org/web/20050318004455/http://www.geocities.co.jp/SiliconValley-PaloAlto/5181/">- 28 Rooms</a><br>
 <a href="https://web.archive.org/web/20000824100904/http://www.venus.dti.ne.jp/~linda/">- About Linda</a><br>
-<a href="https://web.archive.org/web/19981206153234/http://www.spr.dpc.ne.jp/~adinn/main.html">- Adventurer’s Inn</a><br>
-<a href="https://web.archive.org/web/20050309111832fw_/http://www.kk.iij4u.or.jp/~angie/Diablo/index.htm">- Akie’s Diablo World</a><br>
-<a href="https://web.archive.org/web/20021129143906/http://www.geocities.com/Tokyo/Harbor/2107/">- Cho-Bi</a><br>
+<a href="https://web.archive.org/web/19981206153234/http://www.spr.dpc.ne.jp/~adinn/main.html">- Adventurer's Inn</a><br>
+<a href="https://web.archive.org/web/20050309111832fw_/http://www.kk.iij4u.or.jp/~angie/Diablo/index.htm">- Akie's Diablo World</a><br>
+<a class="aorg" href="https://web.archive.org/web/20021129143906/http://www.geocities.com/Tokyo/Harbor/2107/">- Cho-Bi</a><a class="ws strike noshow">- Cho-Bi</a><a class="oocities strike noshow">- Cho-Bi</a><a class="resto strike noshow">- Cho-Bi</a><br>
 <a href="https://web.archive.org/web/19991003231827/http://www.ousay.udn.ne.jp/diablo/">- Diablo</a><br>
 <a href="https://web.archive.org/web/20081105101503/http://diablo.shirouto.jp/">- Diablo-Castle</a><br>
 <a href="https://web.archive.org/web/20010813015941/http://www.asahi-net.or.jp:80/~se1m-nitu/html/diablo0.htm">- Diablo Corner</a><br>
@@ -945,32 +1029,32 @@ table.blog {
 <a href="https://web.archive.org/web/20010510004511/http://www.page.sannet.ne.jp/m_yasu/">- DiabloML</a><br>
 <a href="https://web.archive.org/web/19990219102049/http://www-user.interq.or.jp/cres/index9.html">- Diablo PK</a><br>
 <a href="https://web.archive.org/web/20020219082454/http://www.masaaki.com/diablo/">- Diablo Play Together</a><br>
-<a href="https://web.archive.org/web/20000424211602/http://www2.chokai.ne.jp:80/~yuetu/diablo/index.html">- Doll-User’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/20000424211602/http://www2.chokai.ne.jp:80/~yuetu/diablo/index.html">- Doll-User's Diablo Page</a><br>
 <a href="https://web.archive.org/web/19990128005303/http://www.pluto.dti.ne.jp/~tsutomu/">- Ears</a><br>
 <a href="https://web.archive.org/web/19991122221559/http://www.urban.ne.jp/home/knakata/contents.html">- Freshly Cut Diablo Diary</a><br>
-<a href="https://web.archive.org/web/19971025192909/http://www.twin.or.jp/~guppy/">- Guppy’s Page</a><br>
-<a href="https://web.archive.org/web/20061230102927/http://homepage3.nifty.com/happy-shop/">- Happy-Shop’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/20190210114237/http://www.ops.dti.ne.jp/~kain/diablo/">- Kain’s Room</a><br>
-<a href="https://web.archive.org/web/20050826081252/http://karasawa3504.hp.infoseek.co.jp/top.html#ue">- Karasawa’s</a><br>
-<a href="https://web.archive.org/web/20081224082007/http://owlnote.cside.com/ha/">- KEGANI’s La2H Guide</a><br>
-<a href="https://web.archive.org/web/20140715051500/http://www.red-wolf.sakura.ne.jp/dia/diablo.html">- King’s Diablo Page of the Zodiac</a><br>
+<a href="https://web.archive.org/web/19971025192909/http://www.twin.or.jp/~guppy/">- Guppy's Page</a><br>
+<a href="https://web.archive.org/web/20061230102927/http://homepage3.nifty.com/happy-shop/">- Happy-Shop's Diablo Page</a><br>
+<a href="https://web.archive.org/web/20190210114237/http://www.ops.dti.ne.jp/~kain/diablo/">- Kain's Room</a><br>
+<a href="https://web.archive.org/web/20050826081252/http://karasawa3504.hp.infoseek.co.jp/top.html#ue">- Karasawa's</a><br>
+<a href="https://web.archive.org/web/20081224082007/http://owlnote.cside.com/ha/">- KEGANI's La2H Guide</a><br>
+<a href="https://web.archive.org/web/20140715051500/http://www.red-wolf.sakura.ne.jp/dia/diablo.html">- King's Diablo Page of the Zodiac</a><br>
 <a href="https://web.archive.org/web/20010124080100/http://www1.ocn.ne.jp/~daylight/">- The Last Diablo Homepage</a><br>
-<a href="https://web.archive.org/web/19990203044730/http://www.remus.dti.ne.jp/~mog/">- Mog’s Diablo Page</a><br>
-<a href="https://web.archive.org/web/19991011095926/http://www.ceres.dti.ne.jp/~munechan/diablo/diablo.htm">- Munechan’s Homepage</a><br>
+<a href="https://web.archive.org/web/19990203044730/http://www.remus.dti.ne.jp/~mog/">- Mog's Diablo Page</a><br>
+<a href="https://web.archive.org/web/19991011095926/http://www.ceres.dti.ne.jp/~munechan/diablo/diablo.htm">- Munechan's Homepage</a><br>
 <a href="https://web.archive.org/web/20181105065958/http://www.geocities.co.jp/Playtown/3616/index2.html">- Naked lunch in the hell</a><br>
 <a href="https://web.archive.org/web/20060717044848/http://www.ceres.dti.ne.jp/~cozy/diablo/diablomain.htm">- Notes on Diablo</a><br>
 <a href="https://web.archive.org/web/20070329014400/http://www.moon.sphere.ne.jp/null8/">- Null8 Page of Diablo</a><br>
-<a href="https://web.archive.org/web/19991103133443/http://www.geocities.co.jp/Playtown/5992/diablo.htm">- Per’s Website</a><br>
+<a href="https://web.archive.org/web/19991103133443/http://www.geocities.co.jp/Playtown/5992/diablo.htm">- Per's Website</a><br>
 <a href="https://web.archive.org/web/20050129173017/http://rosepink-web.hp.infoseek.co.jp/">- Pink Rose</a><br>
 <a href="https://web.archive.org/web/19980128152714/http://www.246.ne.jp/~asa/">- Room for the Zodiac</a><br>
 <a href="https://web.archive.org/web/19990220110925/http://www.lares.dti.ne.jp/~s-fox/daiary_main.html">- Silver Fox Diablo Blog</a><br>
 <a href="https://web.archive.org/web/20181107014857/http://www.geocities.co.jp/Technopolis-Mars/4417/main.htm">- Tai-Blackfire... Welcome to the Dying</a><br>
-<a href="https://web.archive.org/web/20010219042002fw_/http://www.srs.ne.jp/~tamon/diablo/diablo1/index.html">- Tamon’s Diablo Page</a><br>
+<a href="https://web.archive.org/web/20010219042002fw_/http://www.srs.ne.jp/~tamon/diablo/diablo1/index.html">- Tamon's Diablo Page</a><br>
 <a href="https://web.archive.org/web/20080515085430/http://owlnote.cside.com/uw/">- Ultimate Warrios</a><br><br>
         <span class="title2">Polish</span><br><br>
 <a href="https://web.archive.org/web/20100613004851/http://bk.angrenost.org/">- Biblioteka Kalaisa</a><br>
 <a href="https://web.archive.org/web/20040104003708/http://klan.666.webpark.pl/">- Black Templars</a><br>
-<a href="https://web.archive.org/web/20050206025632/http://klanbdb.za.pl/newsy.htm">- Brotherhood of Dragon’s Blood</a><br>
+<a href="https://web.archive.org/web/20050206025632/http://klanbdb.za.pl/newsy.htm">- Brotherhood of Dragon's Blood</a><br>
 <a href="https://web.archive.org/web/20080417085421/http://rebirth.angrenost.org/">- Diablo Rebirth Polish</a><br>
 <a href="https://web.archive.org/web/20181227043057/http://diablo1.info/">- Epicentrum Diablo</a><br>
 <a href="https://web.archive.org/web/20090220150806/http://diablo1.pl:80/">- Epicentrum Diablo</a><br>
@@ -979,19 +1063,16 @@ table.blog {
 <a href="https://web.archive.org/web/20160827063710/http://diablo1.ovh.org/">- Kronika Noktisa</a><br>
 <a href="https://web.archive.org/web/20080607044459/http://diabloday.realm.pl/">- Kronika Polskiego</a><br>
 <a href="https://web.archive.org/web/20080407235309/http://www.sinwar.ovp.pl/">- The Sin War</a><br>
-<a href="https://web.archive.org/web/20070908112823/http://www.pkd.diablo.prv.pl/">- Soul Stone Seekers</a>
+<a href="https://web.archive.org/web/20070908112823/http://www.pkd.diablo.prv.pl/">- Soul Stone Seekers</a><br><br>
+        <span class="title2">Portuguese</span><br><br>
+<a class="aorg" href="https://web.archive.org/web/20010519020736/https://www.geocities.com/TimesSquare/Maze/5361/">- Stark's Diablo Page</a>
+<a class="ws strike noshow">- Stark's Diablo Page</a>
+<a class="oocities noshow" href="https://oocities.org/TimesSquare/Maze/5361/">- Stark's Diablo Page</a>
+<a class="resto noshow" href="https://geocities.restorativland.org/TimesSquare/Maze/5361/">- Stark's Diablo Page</a>
         </td>
     </tr>
 </table>
 <br>
-<table class="blog" width="80%">
-    <tr>
-        <td class="title">Missing Links</td>
-    </tr>
-    <tr>
-        <td colspan="3"><p>If you have a link that I do not, I would love to know about it. Please let me know by commenting on <a href="https://github.com/mgpat-gm/mgpat-gm.github.io/issues/1">this issue</a>.</td>
-    </tr>
-</table>
 <table width="80%">
     <tr>
         <td style="text-align: center;">
