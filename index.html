@@ -40,6 +40,9 @@ table.bount tr:hover .most {
 table.sub {
     border-collapse: collapse;
 }
+.fire {
+    color: #e16c6c;
+}
 .magic {
     color: #A0A5C8;
 }
@@ -195,6 +198,8 @@ table.sub {
     <p> Browse Page:
     <br>
     <br>
+        <a href="#tdg">Dark Graphics</a>
+    <br>
         <a href="#super">Superlatives</a>
     <br>
         <a href="#blizzftp">Blizzard FTP</a>
@@ -206,6 +211,171 @@ table.sub {
         <a href="#shopnotes">Shop Notes</a>
 </div>
 <center>
+<!-- //////// Superlatives //////// -->
+<table class="blog">
+    <tr>
+        <td class="title"><a name="tdg"></a>The Dark Graphics Tool</td>
+        <td class="date">July 07, 2023 </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <p>This is a guide to using The Dark Graphics Tool(TDG) to extract content from MPQ files in Diablo(and other games).<p><span class="title2">Downloads:</span><p>
+        <span class="magic">1</span> - <a href="https://www.hiveworkshop.com/threads/ladiks-mpq-editor.249562/">Ladik's MPQ Editor</a>.<br>
+        <span class="magic">2</span> - Download the <a href="http://www.zezula.net/download/listfiles.zip">listfiles</a> from <a href="http://www.zezula.net/en/mpq/download.html">Lazidslav Zezula</a>.<br>
+        <span class="magic">3</span> - <a href="https://cdn.discordapp.com/attachments/747886758502465617/770664360065499136/tdg23.zip">The Dark Graphics Tool</a>.<br>
+        <span class="magic">4</span> - Download or view raw on github the <a href="https://raw.githubusercontent.com/diasurgical/devilution/master/Source/monstdat.cpp">monster data</a> from the devilution source.<br>
+        <span class="magic">5</span> - <a href="https://www.gimp.org/downloads/"> GIMP</a> (GNU Image Manipulation Program)
+        <p><span class="title2">Extraction:</span><p>
+        <span class="magic">1</span> - Extract the Diablo 1 listfile from it's zip file<br>
+        <span class="magic">2</span> - Start Ladik's MPQ Editor<br>
+        <span class="magic">3</span> - Open diabdat.mpq from the diablo installation folder or from the installation cd. Use the Diablo 1 listfile.<br>
+        <span class="magic">4</span> - Navigate to the monsters folder and extract it.<br>
+        <span class="magic">5</span> - Navigate to the levels folder and extract it.<br>
+        <span class="magic">6</span> - For items navigate to Data\Inv\Objcurs.CEL and extract that.<br>
+        <p><span class="title2">Item Extraction:</span><p>
+        <span class="magic">7</span> - Start TDG, click on "open cel" and navigate to the objcurs.cel. Open that and then click "open pal". Open "town.pal"<br>
+        <span class="magic">8</span> - Click the arrows to navigate the images and click "save bmp" to save the image as a bitmap image.<br>
+        <p><span class="title2">Monster Extraction:</span><p>
+        <span class="magic">9</span> - For monsters click "open cl2". Below is the monsdat.cpp info for an Advocate.<br><br>{128,2000,"Monsters\\Mage\\Mage%c.CL2",TRUE,"Monsters\\Mage\\Mage%c%i.WAV",FALSE,TRUE, "Monsters\\Mage\\Cnselbk.TRN",{12,1,20,8,28,20},{0,0,0,0,0,0},"Advocate",30,30,30,145,145,AI_COUNSLR,<br><br>
+        <span class="magic">10</span> - You can see in the line for the Advocate from the cpp file that the image location in the mpq files you extracted is "monsters\mage" there are several cl2 files there. Pick the one you want<br>
+        <span class="magic">11</span> - Click on "open pal" and navigate to the level folder that corresponds to the location where your monster can spawn In this case it is "level 4"(for other monsters these apply: 1 - cathedral, 2 - catacombs, 3 - caves, 4 - hell). There are several palette files in the level folder. You can pick any one you want that ends with "_#" in the file name. # is a number.<br>
+        <span class="magic">11</span> - <span class="fire">With TDG palettes and trns are persistant, so if you have one loaded it will be applied until you close the program.</span> This can be confusing if you forget, having changed the base trn and there is still a leader trn applied.</span><br>
+        <span class="magic">12</span> - Click on "base trn" and navigate to the monsters\mage folder and pick the trn file which in this case is Cnselbk.TRN as we see in the line from the monsdat.cpp file. Normal monsters in Diablo 1 have only the base TRN<br>
+        <span class="magic">13</span> - The advocate is one of a few monsters that do not render properly without adjusting the palette. You can see the belt is white in the image preview.<br>
+        <span class="magic">14</span> - In these cases, I hit the ampersand button(in the program, not your keyboard) to open the current palette. On the bottom right square, hover over to get a tooltip if you wish. Then hit ctrl+left mouse click. Select the black color to replace the white.<br>
+        <span class="magic">15</span> - Use the arrows to see which images you want to save. Each CL2 has a set of sprites for a different action of the monster. Each action has a set for each direction.<br>
+        <span class="magic">16</span> - For each image you want to create, you will need to click "save bmp". Save this as 1.bmp. Hit the arrow right and save that bmp until you have saved all the images for the action you want to create, naming the images in numerical order so that you can track that later in GIMP.<br>
+        <p><span class="title2">Boss Extraction:</span><p>
+        <span class="magic">17</span> - For boss monsters there is sometimes(maybe everytime) an extra step.<br>
+        <span class="magic">18</span> - Scroll down to the bottom of monsdat.cpp and you'll see something like this:<br><br>
+        {MT_BZOMBIE,"Rotcarnage","RCRN",3,102,AI_ZOMBIE,3,9,24, IMMUNE_MAGIC|RESIST_LIGHTNING|IMMUNE_NULL_40,11,45,0,0},<br><br>
+        <span class="magic">19</span> - "MT_BZOMBIE" indicates the CL2 folder you use. "monsters/zombie" in this case. The "B" in front of zomie can mean you need to use the "bluered.trn" as the base trn. In the case of Rotcarnage, it definitely means use the bluered.trn. Some bosses have letters in the front of the mtype but it does not require two TRNs to be used. The letter in the front should match the first letter of the base trn from the normal monster folder.<br>
+        <span class="magic">20</span> - Now under "mTrnName" column you see "RCRN" which indicates the second TRN you need to use. Click on "leader TRN" and navigate to the monsters/monsters/ folder and pick the RCRN.trn file to use. You'll have to play around to see if this is the only TRN required. If only one is required you can put it as the base trn.<br>
+        <p><span class="title2">GIMP GIF Creation:</span><p>
+        <span class="magic">21</span> - open gnu image manipulation program (GIMP)<br>
+        <span class="magic">22</span> - click on "open as layers" and select all the bmp files you extracted with the dark graphics for the current monster action you are working on.<br>
+        <span class="magic">23</span> - Navigate to Layer>transparency>color to alpha. You can use the select tool next to the color if white from the background is not already selected.<br>
+        <span class="magic">24</span> - Click on each layer and press ctrl+Y to repeat the color to alpha process for each layer.<br>
+        <span class="magic">25</span> - Click on filters, animation, optimize for gif.<br>
+        <span class="magic">26</span> - For each layer rename based on how the speed of the animation from my list below. The first frame is at the bottom and named "1.bmp(100ms)". Rename this to 1.bmp(50ms), rename the next one "2.bmp(50ms)(replace)". Keep doing this for each layer.<br>
+        <span class="magic">27</span> - Now go to file>export as. Change the filename to whatever you desire and make the extension .gif. Click "export", check the "as animation" box and "loop forever" box. Hit export.
+        <p><span class="title2">Animated Monster GIF ms:</span><p>
+        </tr>
+        <tr>
+        <td>These are the correct timings of animated gifs for each monster type.<br><br>
+        <table class="bount sub">
+            <tr>
+                <td class="most">Type</td>
+                <td class="most">ms</td>
+            </tr>
+            <tr>
+                <td class="magic">Balrogs</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td class="magic">Fallen-spear</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td class="magic">Fallen-sword</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td class="magic">Goat Men</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Goatmen Archers</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td class="magic">Hiddens</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Horned Demons</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Knights</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Lightning Demons</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td class="magic">Mages</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Magma Demons</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Overlords</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td class="magic">Scavengers</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Skeleton Archers</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td class="magic">Skeleton Captains</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td class="magic">Skeletons</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td class="magic">Spitting Terrors</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Succubi</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Vipers</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">Winged Demons</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Winged Fiends</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Zombies</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td class="magic">The-Butcher</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td class="magic">Skeleton King</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td class="magic">The Dark Lord</td>
+                <td>50</td>
+            </tr>
+        </table></td>
+        </td>
+    </tr>
+    <tr>
+        <td><br>- Ghast</td>
+    </tr>
+</table>
+<br>
 <!-- //////// Superlatives //////// -->
 <table class="blog">
     <tr>
